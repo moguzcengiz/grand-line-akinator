@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://kalnassag.com/onepiece#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Giro_Giro_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Toro_Toro_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Oto_Oto_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Poke_Poke_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Jackal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Suna_Suna_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_King_Cobra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Hana_Hana_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Rako_Rako_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Beri_Beri_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Ton_Ton_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Uma_Uma_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Hito_Hito_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Choki_Choki_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Pasa_Pasa_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Mushi_Mushi_no_Mi,_Model:_Suzumebachi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kobu_Kobu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Tori_Tori_no_Mi,_Model:_Eagle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Sara_Sara_no_Mi,_Model:_Axolotl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Sabi_Sabi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Nori_Nori_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Magu_Magu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Supa_Supa_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Jiki_Jiki_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Bomu_Bomu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Pika_Pika_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Yomi_Yomi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Ito_Ito_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece-ext#AncientZoan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kalnassag.com/onepiece#DevilFruitType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Shima_Shima_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Bisu_Bisu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Pero_Pero_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mochi_Mochi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Special_Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Tsutsu_Tsutsu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Muchi_Muchi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Giraffe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Ope_Ope_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Guru_Guru_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Sui_Sui_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Deka_Deka_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Beta_Beta_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Nui_Nui_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#hasFruitType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://kalnassag.com/onepiece#DevilFruit"/>
+    <rdfs:range rdf:resource="http://kalnassag.com/onepiece#DevilFruitType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Doa_Doa_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Horo_Horo_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Aro_Aro_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Sube_Sube_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Wolf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Tori_Tori_no_Mi,_Model:_Falcon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece-ext#MythicalZoan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kalnassag.com/onepiece#DevilFruitType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Zoan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kalnassag.com/onepiece#DevilFruitType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Suke_Suke_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Artificial_Zoan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Iku_Iku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Mushi_Mushi_no_Mi,_Model:_Kabutomushi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Memo_Memo_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Bara_Bara_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mato_Mato_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kage_Kage_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Jake_Jake_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Hira_Hira_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#SMILE">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Artificial_Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Gasu_Gasu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Hobi_Hobi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb3">
+    <rdf:first rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+    <rdf:rest rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Hoya_Hoya_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Riki_Riki_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mera_Mera_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Bata_Bata_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kibi_Kibi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Yuki_Yuki_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Shibo_Shibo_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Bane_Bane_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Oshi_Oshi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mira_Mira_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Gocha_Gocha_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Zushi_Zushi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Netsu_Netsu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb4">
+    <rdf:first rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Tanuki">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mori_Mori_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Baku_Baku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Paramecia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kalnassag.com/onepiece#DevilFruitType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Doru_Doru_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Logia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://kalnassag.com/onepiece#DevilFruitType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Fuku_Fuku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kira_Kira_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Nikyu_Nikyu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Ame_Ame_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Special_Paramecia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Buku_Buku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Horu_Horu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Toki_Toki_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Susu_Susu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Woshu_Woshu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kame_Kame_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Nagi_Nagi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Ori_Ori_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kuri_Kuri_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Juku_Juku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Soru_Soru_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Moku_Moku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Wapu_Wapu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Goro_Goro_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kuku_Kuku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Awa_Awa_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Kiro_Kiro_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Bari_Bari_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Tori_Tori_no_Mi,_Model:_Albatross">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Shiro_Shiro_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Fuwa_Fuwa_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mane_Mane_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Toshi_Toshi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mero_Mero_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Dachshund">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Buki_Buki_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#DevilFruitType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Yami_Yami_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Numa_Numa_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Gabu_Gabu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Ato_Ato_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Gomu_Gomu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Shiku_Shiku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Neko_Neko_no_Mi,_Model:_Leopard">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Noro_Noro_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb2">
+    <rdf:first rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+    <rdf:rest rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Wara_Wara_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Shari_Shari_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Ishi_Ishi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Doku_Doku_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Gura_Gura_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Toge_Toge_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Hie_Hie_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Logia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Hound">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Pamu_Pamu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Iba_Iba_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Batto_Batto_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Mogu_Mogu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_Anaconda">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Chiyu_Chiyu_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Tama_Tama_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Nomi_Nomi_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Zou_Zou_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:oneOf rdf:nodeID="n0a42ed5fb4954fd3ae7cba721ec4d13eb2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Maki_Maki_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Bison">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Zoan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#DevilFruit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kalnassag.com/onepiece#Fude_Fude_no_Mi">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasFruitType rdf:resource="http://kalnassag.com/onepiece#Paramecia"/>
+  </rdf:Description>
+</rdf:RDF>

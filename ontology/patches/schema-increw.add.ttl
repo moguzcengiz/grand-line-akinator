@@ -1,0 +1,4 @@
+# Patch "schema-increw": corrected domain/range (character -> crew), consistent with owl:inverseOf op:hasCrewMember.
+@prefix op:   <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+op:inCrew rdfs:domain op:Character ; rdfs:range op:PirateCrew .

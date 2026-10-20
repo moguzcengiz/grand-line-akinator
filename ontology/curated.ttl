@@ -1,0 +1,56 @@
+# Manually curated demo facts (NOT in the upstream dataset). Documented in docs/ONTOLOGY.md.
+# Only widely established canon facts; anything not certain is left out and therefore "unknown".
+@prefix op:   <http://kalnassag.com/onepiece#> .
+@prefix opx:  <http://kalnassag.com/onepiece-ext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ---- Haki (closed set: only characters listed here have known Haki facts) ----
+op:Monkey_D_Luffy opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Roronoa_Zoro opx:hasHaki opx:ArmamentHaki, opx:ConquerorsHaki .
+op:Shanks opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Edward_Newgate opx:hasHaki opx:ArmamentHaki, opx:ConquerorsHaki .
+op:Charlotte_Linlin opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Kaidou opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Silvers_Rayleigh opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Gol_D_Roger opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Sanji opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki .
+op:Charlotte_Katakuri opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki .
+op:Sakazuki opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki .
+op:Borsalino opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki .
+op:Monkey_D_Garp opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Donquixote_Doflamingo opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Boa_Hancock opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Trafalgar_D_Water_Law opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki .
+op:Dracule_Mihawk opx:hasHaki opx:ArmamentHaki .
+op:Eustass_Kid opx:hasHaki opx:ArmamentHaki .
+op:Marshall_D_Teach opx:hasHaki opx:ArmamentHaki .
+op:Crocodile opx:hasHaki opx:ArmamentHaki .
+op:Jinbe opx:hasHaki opx:ArmamentHaki .
+op:Kuzan opx:hasHaki opx:ArmamentHaki .
+
+# ---- Ancient / Mythical Zoan fruits (new fruit individuals + their current users) ----
+opx:Tori_Tori_no_Mi_Model_Phoenix a op:DevilFruit ; rdfs:label "Bird-Bird Fruit, Model: Phoenix"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Marco .
+opx:Hito_Hito_no_Mi_Model_Daibutsu a op:DevilFruit ; rdfs:label "Human-Human Fruit, Model: Daibutsu"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Sengoku .
+opx:Uo_Uo_no_Mi_Model_Seiryu a op:DevilFruit ; rdfs:label "Fish-Fish Fruit, Model: Seiryu"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Kaidou .
+opx:Inu_Inu_no_Mi_Model_Okuchi_no_Makami a op:DevilFruit ; rdfs:label "Dog-Dog Fruit, Model: Okuchi no Makami"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Yamato .
+opx:Ryu_Ryu_no_Mi_Model_Allosaurus a op:DevilFruit ; rdfs:label "Dragon-Dragon Fruit, Model: Allosaurus"@en ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:X_Drake .
+opx:Ryu_Ryu_no_Mi_Model_Brachiosaurus a op:DevilFruit ; rdfs:label "Dragon-Dragon Fruit, Model: Brachiosaurus"@en ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:Queen .
+opx:Zou_Zou_no_Mi_Model_Mammoth a op:DevilFruit ; rdfs:label "Elephant-Elephant Fruit, Model: Mammoth"@en ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:Jack .
+
+# ---- Ships ----
+opx:Caravel a opx:ShipType ; rdfs:label "Caravel"@en .
+opx:Submarine a opx:ShipType ; rdfs:label "Submarine"@en .
+opx:Going_Merry a opx:Ship ; rdfs:label "Going Merry"@en ; opx:operatedBy op:Straw_Hat_Pirates ; opx:shipOwner op:Monkey_D_Luffy ; opx:shipType opx:Caravel .
+opx:Thousand_Sunny a opx:Ship ; rdfs:label "Thousand Sunny"@en ; opx:operatedBy op:Straw_Hat_Pirates ; opx:shipOwner op:Monkey_D_Luffy ; opx:builtBy op:Franky .
+opx:Moby_Dick a opx:Ship ; rdfs:label "Moby Dick"@en ; opx:operatedBy op:Whitebeard_Pirates ; opx:shipOwner op:Edward_Newgate .
+opx:Red_Force a opx:Ship ; rdfs:label "Red Force"@en ; opx:operatedBy op:Red_Hair_Pirates ; opx:shipOwner op:Shanks .
+opx:Polar_Tang a opx:Ship ; rdfs:label "Polar Tang"@en ; opx:operatedBy op:Heart_Pirates ; opx:shipOwner op:Trafalgar_D_Water_Law ; opx:shipType opx:Submarine .
+opx:Oro_Jackson a opx:Ship ; rdfs:label "Oro Jackson"@en ; opx:operatedBy op:Roger_Pirates ; opx:shipOwner op:Gol_D_Roger ; opx:builtBy op:Tom .
+opx:Queen_Mama_Chanter a opx:Ship ; rdfs:label "Queen Mama Chanter"@en ; opx:operatedBy op:Big_Mom_Pirates ; opx:shipOwner op:Charlotte_Linlin .
+opx:Victoria_Punk a opx:Ship ; rdfs:label "Victoria Punk"@en ; opx:operatedBy op:Kid_Pirates ; opx:shipOwner op:Eustass_Kid .
+opx:Thriller_Bark_Ship a opx:Ship ; rdfs:label "Thriller Bark"@en ; opx:operatedBy op:Thriller_Bark_Pirates ; opx:shipOwner op:Gecko_Moria .
+
+# ---- occupation hierarchy (curated; only the two relations that are unambiguous) ----
+op:Pirate_Captain opx:broaderOccupation op:Pirate .
+op:Pirate_Officer opx:broaderOccupation op:Pirate .
+op:Pirate_Captain opx:broaderOccupation op:Captain .

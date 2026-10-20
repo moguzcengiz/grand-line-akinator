@@ -1,0 +1,7 @@
+# Patch "schema-increw": REMOVED from the upstream schema before reasoning/import (upstream files are never edited).
+# op:inCrew is declared owl:inverseOf op:hasCrewMember but carries the SAME domain/range (PirateCrew -> Character) as hasCrewMember,
+# contradicting both the inverse axiom and its own comment ("The crew to which this pirate belongs"); the data uses
+# <character> op:inCrew <crew>.  Left alone, OWL RL types every character as a PirateCrew and every crew as a Character.
+@prefix op:   <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+op:inCrew rdfs:domain op:PirateCrew ; rdfs:range op:Character .

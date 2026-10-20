@@ -1,0 +1,53 @@
+name: grand-line-akinator
+
+x-backend-env: &backend-env
+  NEO4J_URI: bolt://neo4j:7687
+  NEO4J_USER: neo4j
+  NEO4J_PASSWORD: ${NEO4J_PASSWORD:?set NEO4J_PASSWORD in .env}
+  TOGETHER_API_KEY: ${TOGETHER_API_KEY:-}
+  TOGETHER_MODEL: ${TOGETHER_MODEL:-meta-llama/Llama-3.3-70B-Instruct-Turbo}
+  TOGETHER_BASE_URL: ${TOGETHER_BASE_URL:-https://api.together.xyz/v1}
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?set NEO4J_PASSWORD in .env}
+      NEO4J_server_memory_heap_max__size: 1G
+    ports: ["7474:7474", "7687:7687"]
+    volumes: [neo4j_data:/data]
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p \"$${NEO4J_AUTH#neo4j/}\" 'RETURN 1' >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 15s
+
+  ingestion:                       # one-shot: RDF -> OWL RL -> Neo4j (idempotent)
+    build: { context: ., dockerfile: backend/Dockerfile }
+    command: ["python", "-m", "app.ingestion"]
+    environment: *backend-env
+    depends_on: { neo4j: { condition: service_healthy } }
+    restart: "no"
+
+  backend:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    environment: *backend-env
+    ports: ["${BACKEND_PORT:-8000}:8000"]
+    depends_on:
+      neo4j: { condition: service_healthy }
+      ingestion: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/api/health').status==200 else 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 20s
+
+  frontend:
+    build: { context: frontend }
+    ports: ["${FRONTEND_PORT:-3000}:80"]
+    depends_on: { backend: { condition: service_healthy } }
+
+volumes:
+  neo4j_data:

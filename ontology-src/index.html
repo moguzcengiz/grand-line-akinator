@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Knowledge Graph Explorer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .file-selector {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .file-selector label {
+            font-weight: 600;
+            color: #333;
+        }
+        .file-selector input[type="radio"] {
+            margin-right: 5px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        .tab.active {
+            color: #2196F3;
+            border-bottom-color: #2196F3;
+        }
+        .tab:hover {
+            color: #2196F3;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 18px;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #2196F3;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2196F3;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        .search {
+            margin-bottom: 20px;
+        }
+        .search input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+            position: sticky;
+            top: 0;
+        }
+        tr:hover {
+            background: #f8f9fa;
+        }
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .class-tree {
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            overflow: auto;
+            max-height: 600px;
+        }
+        .class-item {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .class-item:hover {
+            background: #e3f2fd;
+        }
+        .class-name {
+            color: #1976d2;
+            font-weight: 600;
+        }
+        .triple-view {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .triple {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border-left: 3px solid #2196F3;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        .subject { color: #1976d2; }
+        .predicate { color: #388e3c; }
+        .object { color: #d32f2f; }
+        .filters {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn.active {
+            background: #2196F3;
+            color: white;
+            border-color: #2196F3;
+        }
+        #cy {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        .graph-controls {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .graph-controls button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .graph-controls button:hover {
+            background: #f0f0f0;
+        }
+        .graph-controls select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .info-panel {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            display: none;
+        }
+        .info-panel.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏴‍☠️ One Piece Knowledge Graph Explorer</h1>
+        <p class="subtitle">Explore the structured data of the One Piece universe</p>
+        
+        <div class="file-selector">
+            <label>Data Source:</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" name="dataSource" value="both" checked onchange="reloadData()">
+                    Both Files (Ontology + Entities)
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="dataSource" value="ontology" onchange="reloadData()">
+                    Ontology Only
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="dataSource" value="entities" onchange="reloadData()">
+                    Entities Only
+                </label>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('overview')">Overview</button>
+            <button class="tab" onclick="showTab('graph')">Graph Visualization</button>
+            <button class="tab" onclick="showTab('browse')">Browse Characters</button>
+            <button class="tab" onclick="showTab('structure')">Ontology Structure</button>
+            <button class="tab" onclick="showTab('triples')">Triple View</button>
+            <button class="tab" onclick="showTab('raw')">Raw Data</button>
+        </div>
+
+        <div id="overview" class="tab-content active">
+            <div class="loading">Loading data...</div>
+            <div id="overview-content" style="display:none;">
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-entities">-</div>
+                        <div class="stat-label">Entities</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-triples">-</div>
+                        <div class="stat-label">Total Triples</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-classes">-</div>
+                        <div class="stat-label">Classes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-properties">-</div>
+                        <div class="stat-label">Properties</div>
+                    </div>
+                </div>
+                <h3>About This Dataset</h3>
+                <p>This knowledge graph contains structured data about the One Piece universe in RDF format. Browse the tabs above to explore characters, visualize the graph, view the ontology structure, or examine the raw RDF triples.</p>
+                <p style="margin-top: 15px;"><strong>Data sources:</strong> One Piece Fandom Wiki</p>
+                <p><strong>Languages:</strong> Japanese (ja), English (en)</p>
+            </div>
+        </div>
+
+        <div id="graph" class="tab-content">
+            <div class="graph-controls">
+                <button onclick="resetGraph()">Reset View</button>
+                <button onclick="fitGraph()">Fit to Screen</button>
+                <label>
+                    Layout:
+                    <select id="layout-select" onchange="changeLayout()">
+                        <option value="cose">Force-directed</option>
+                        <option value="circle">Circle</option>
+                        <option value="grid">Grid</option>
+                        <option value="breadthfirst">Hierarchical</option>
+                        <option value="concentric">Concentric</option>
+                    </select>
+                </label>
+                <label>
+                    Max Nodes:
+                    <select id="max-nodes" onchange="reloadGraph()">
+                        <option value="50">50</option>
+                        <option value="100" selected>100</option>
+                        <option value="200">200</option>
+                        <option value="500">500</option>
+                        <option value="all">All</option>
+                    </select>
+                </label>
+            </div>
+            <div id="cy"></div>
+            <div id="node-info" class="info-panel"></div>
+        </div>
+
+        <div id="browse" class="tab-content">
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Search by English or Japanese name..." onkeyup="filterTable()">
+            </div>
+            <div class="filters" id="type-filters"></div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>English Name</th>
+                            <th>Japanese Name</th>
+                            <th>Type</th>
+                            <th>Additional Info</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr><td colspan="4" class="loading">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="structure" class="tab-content">
+            <h3>Ontology Class Hierarchy</h3>
+            <div id="class-tree" class="class-tree">
+                <div class="loading">Loading ontology structure...</div>
+            </div>
+        </div>
+
+        <div id="triples" class="tab-content">
+            <div class="search">
+                <input type="text" id="triple-search" placeholder="Filter triples..." onkeyup="filterTriples()">
+            </div>
+            <div id="triple-view" class="triple-view">
+                <div class="loading">Loading triples...</div>
+            </div>
+        </div>
+
+        <div id="raw" class="tab-content">
+            <div id="raw-content">
+                <div class="loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/n3/browser/n3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+    <script>
+        let allQuads = [];
+        let entities = [];
+        let currentTypeFilter = null;
+        let cy = null;
+        let ontologyText = '';
+        let entitiesText = '';
+
+        function getSelectedSource() {
+            return document.querySelector('input[name="dataSource"]:checked').value;
+        }
+
+        async function reloadData() {
+            // Show loading
+            document.querySelectorAll('.loading').forEach(el => {
+                el.style.display = 'block';
+            });
+            document.getElementById('overview-content').style.display = 'none';
+            
+            await loadData();
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            // Initialize graph when tab is shown
+            if (tabName === 'graph' && !cy) {
+                initGraph();
+            }
+        }
+
+        async function loadData() {
+            try {
+                const source = getSelectedSource();
+                let textToProcess = '';
+                
+                if (source === 'both' || source === 'ontology') {
+                    const ontologyResponse = await fetch('onepiece-ontology.ttl');
+                    if (!ontologyResponse.ok) throw new Error('Failed to load ontology');
+                    ontologyText = await ontologyResponse.text();
+                    textToProcess += ontologyText;
+                }
+                
+                if (source === 'both' || source === 'entities') {
+                    const entitiesResponse = await fetch('OnePieceEntities.ttl');
+                    if (!entitiesResponse.ok) throw new Error('Failed to load entities');
+                    entitiesText = await entitiesResponse.text();
+                    textToProcess += '\n' + entitiesText;
+                }
+
+                // Update raw view
+                updateRawView(source);
+
+                // Parse RDF
+                const parser = new N3.Parser();
+                const quads = [];
+
+                return new Promise((resolve, reject) => {
+                    parser.parse(textToProcess, (error, quad) => {
+                        if (error) {
+                            reject(error);
+                        } else if (quad) {
+                            quads.push(quad);
+                        } else {
+                            allQuads = quads;
+                            processData(quads);
+                            if (cy) {
+                                reloadGraph();
+                            }
+                            resolve();
+                        }
+                    });
+                });
+
+            } catch (error) {
+                console.error('Error:', error);
+                showError('Failed to load data. Make sure the RDF files are accessible.');
+            }
+        }
+
+        function updateRawView(source) {
+            const rawContent = document.getElementById('raw-content');
+            rawContent.innerHTML = '';
+            
+            if (source === 'both' || source === 'ontology') {
+                const h3 = document.createElement('h3');
+                h3.textContent = 'onepiece-ontology.ttl';
+                const pre = document.createElement('pre');
+                pre.textContent = ontologyText;
+                rawContent.appendChild(h3);
+                rawContent.appendChild(pre);
+            }
+            
+            if (source === 'both' || source === 'entities') {
+                const h3 = document.createElement('h3');
+                h3.textContent = 'OnePieceEntities.ttl';
+                h3.style.marginTop = '30px';
+                const pre = document.createElement('pre');
+                pre.textContent = entitiesText;
+                rawContent.appendChild(h3);
+                rawContent.appendChild(pre);
+            }
+        }
+
+        function showError(message) {
+            document.querySelectorAll('.loading').forEach(el => {
+                el.innerHTML = `<div class="error">${message}</div>`;
+            });
+        }
+
+        function processData(quads) {
+            const subjects = new Set();
+            const classes = new Set();
+            const properties = new Set();
+            const entityMap = new Map();
+            const classHierarchy = new Map();
+
+            quads.forEach(quad => {
+                const s = quad.subject.value;
+                const p = quad.predicate.value;
+                const o = quad.object.value;
+
+                subjects.add(s);
+
+                if (p === 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type') {
+                    if (o.includes('owl#Class') || o.includes('rdfs#Class')) {
+                        classes.add(s);
+                    } else {
+                        classes.add(o);
+                        if (!entityMap.has(s)) {
+                            entityMap.set(s, { id: s, type: o, props: {} });
+                        }
+                        entityMap.get(s).type = o;
+                    }
+                } else if (p === 'http://www.w3.org/2000/01/rdf-schema#subClassOf') {
+                    if (!classHierarchy.has(o)) classHierarchy.set(o, []);
+                    classHierarchy.get(o).push(s);
+                } else {
+                    properties.add(p);
+                    
+                    if (entityMap.has(s)) {
+                        const propName = p.split(/[#\/]/).pop();
+                        if (p.includes('label')) {
+                            const lang = quad.object.language || 'none';
+                            if (lang === 'en') entityMap.get(s).enName = o;
+                            if (lang === 'ja') entityMap.get(s).jaName = o;
+                        }
+                        entityMap.get(s).props[propName] = o;
+                    }
+                }
+            });
+
+            document.getElementById('stat-triples').textContent = quads.length.toLocaleString();
+            document.getElementById('stat-entities').textContent = entityMap.size.toLocaleString();
+            document.getElementById('stat-classes').textContent = classes.size;
+            document.getElementById('stat-properties').textContent = properties.size;
+
+            document.querySelector('#overview .loading').style.display = 'none';
+            document.getElementById('overview-content').style.display = 'block';
+
+            entities = Array.from(entityMap.values());
+            populateTable(entities);
+            populateClassTree(classHierarchy, classes);
+            populateTriples(quads);
+        }
+
+        function populateTable(ents) {
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+
+            const types = new Set(ents.map(e => e.type?.split(/[#\/]/).pop()).filter(Boolean));
+            const filterContainer = document.getElementById('type-filters');
+            filterContainer.innerHTML = '<button class="filter-btn active" onclick="filterByType(null)">All</button>';
+            types.forEach(type => {
+                filterContainer.innerHTML += `<button class="filter-btn" onclick="filterByType('${type}')">${type}</button>`;
+            });
+
+            ents.forEach(ent => {
+                const row = tbody.insertRow();
+                row.className = 'entity-row';
+                row.dataset.type = ent.type?.split(/[#\/]/).pop() || '';
+                
+                row.insertCell(0).textContent = ent.enName || '-';
+                row.insertCell(1).textContent = ent.jaName || '-';
+                row.insertCell(2).textContent = ent.type?.split(/[#\/]/).pop() || '-';
+                
+                const propsCell = row.insertCell(3);
+                const propCount = Object.keys(ent.props).length;
+                propsCell.textContent = `${propCount} properties`;
+                propsCell.style.color = '#666';
+                propsCell.style.fontSize = '14px';
+            });
+        }
+
+        function filterByType(type) {
+            currentTypeFilter = type;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.querySelectorAll('.entity-row').forEach(row => {
+                if (!type || row.dataset.type === type) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function filterTable() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            document.querySelectorAll('.entity-row').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const matchesSearch = text.includes(input);
+                const matchesType = !currentTypeFilter || row.dataset.type === currentTypeFilter;
+                row.style.display = (matchesSearch && matchesType) ? '' : 'none';
+            });
+        }
+
+        function populateClassTree(hierarchy, classes) {
+            const tree = document.getElementById('class-tree');
+            tree.innerHTML = '<div style="margin-bottom: 15px; color: #666;">Class hierarchy from the ontology</div>';
+            
+            const children = new Set();
+            hierarchy.forEach(kids => kids.forEach(k => children.add(k)));
+            
+            const roots = Array.from(classes).filter(c => !children.has(c));
+            
+            roots.forEach(root => {
+                renderClass(root, hierarchy, tree, 0);
+            });
+        }
+
+        function renderClass(classUri, hierarchy, container, level) {
+            const className = classUri.split(/[#\/]/).pop();
+            const div = document.createElement('div');
+            div.className = 'class-item';
+            div.style.paddingLeft = (level * 30) + 'px';
+            div.innerHTML = `<span class="class-name">${level > 0 ? '└─ ' : ''}${className}</span>`;
+            container.appendChild(div);
+            
+            if (hierarchy.has(classUri)) {
+                hierarchy.get(classUri).forEach(child => {
+                    renderClass(child, hierarchy, container, level + 1);
+                });
+            }
+        }
+
+        function populateTriples(quads) {
+            const container = document.getElementById('triple-view');
+            container.innerHTML = '';
+            
+            quads.slice(0, 200).forEach(quad => {
+                const div = document.createElement('div');
+                div.className = 'triple';
+                const s = quad.subject.value.split(/[#\/]/).pop();
+                const p = quad.predicate.value.split(/[#\/]/).pop();
+                const o = quad.object.value.length > 80 ? 
+                    quad.object.value.substring(0, 80) + '...' : 
+                    (quad.object.value.split(/[#\/]/).pop() || quad.object.value);
+                
+                div.innerHTML = `<span class="subject">${s}</span> <span class="predicate">${p}</span> <span class="object">"${o}"</span>`;
+                container.appendChild(div);
+            });
+            
+            if (quads.length > 200) {
+                const note = document.createElement('div');
+                note.style.padding = '15px';
+                note.style.color = '#666';
+                note.textContent = `Showing first 200 of ${quads.length.toLocaleString()} triples. Use search to filter.`;
+                container.appendChild(note);
+            }
+        }
+
+        function filterTriples() {
+            const input = document.getElementById('triple-search').value.toLowerCase();
+            document.querySelectorAll('.triple').forEach(triple => {
+                triple.style.display = triple.textContent.toLowerCase().includes(input) ? '' : 'none';
+            });
+        }
+
+        function initGraph() {
+            const maxNodes = document.getElementById('max-nodes').value;
+            const nodesToShow = maxNodes === 'all' ? entities.length : parseInt(maxNodes);
+            
+            const elements = [];
+            const displayEntities = entities.slice(0, nodesToShow);
+            
+            // Create nodes
+            displayEntities.forEach((ent, idx) => {
+                const label = ent.enName || ent.jaName || ent.id.split(/[#\/]/).pop();
+                const type = ent.type?.split(/[#\/]/).pop() || 'Unknown';
+                
+                elements.push({
+                    data: {
+                        id: 'n' + idx,
+                        label: label,
+                        type: type,
+                        entity: ent
+                    }
+                });
+            });
+            
+            // Create edges from relationships in the data
+            allQuads.forEach(quad => {
+                const sourceIdx = displayEntities.findIndex(e => e.id === quad.subject.value);
+                const targetIdx = displayEntities.findIndex(e => e.id === quad.object.value);
+                
+                if (sourceIdx !== -1 && targetIdx !== -1) {
+                    const predicate = quad.predicate.value.split(/[#\/]/).pop();
+                    elements.push({
+                        data: {
+                            source: 'n' + sourceIdx,
+                            target: 'n' + targetIdx,
+                            label: predicate
+                        }
+                    });
+                }
+            });
+
+            cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: elements,
+                style: [
+                    {
+                        selector: 'node',
+                        style: {
+                            'background-color': '#2196F3',
+                            'label': 'data(label)',
+                            'color': '#333',
+                            'text-valign': 'center',
+                            'text-halign': 'center',
+                            'font-size': '12px',
+                            'width': '40px',
+                            'height': '40px',
+                            'text-wrap': 'wrap',
+                            'text-max-width': '80px'
+                        }
+                    },
+                    {
+                        selector: 'edge',
+                        style: {
+                            'width': 2,
+                            'line-color': '#ccc',
+                            'target-arrow-color': '#ccc',
+                            'target-arrow-shape': 'triangle',
+                            'curve-style': 'bezier',
+                            'label': 'data(label)',
+                            'font-size': '10px',
+                            'text-rotation': 'autorotate',
+                            'text-margin-y': -10
+                        }
+                    }
+                ],
+                layout: {
+                    name: 'cose',
+                    animate: false,
+                    nodeDimensionsIncludeLabels: true
+                },
+                wheelSensitivity: 0.2,
+                minZoom: 0.1,
+                maxZoom: 3
+            });
+
+            // Add click handler
+            cy.on('tap', 'node', function(evt) {
+                const node = evt.target;
+                const entity = node.data('entity');
+                showNodeInfo(entity);
+            });
+        }
+
+        function showNodeInfo(entity) {
+            const panel = document.getElementById('node-info');
+            let html = '<h4>Entity Details</h4>';
+            html += `<p><strong>English:</strong> ${entity.enName || '-'}</p>`;
+            html += `<p><strong>Japanese:</strong> ${entity.jaName || '-'}</p>`;
+            html += `<p><strong>Type:</strong> ${entity.type?.split(/[#\/]/).pop() || '-'}</p>`;
+            html += `<p><strong>Properties:</strong> ${Object.keys(entity.props).length}</p>`;
+            panel.innerHTML = html;
+            panel.classList.add('visible');
+        }
+
+        function reloadGraph() {
+            if (cy) {
+                cy.destroy();
+                cy = null;
+            }
+            initGraph();
+        }
+
+        function resetGraph() {
+            if (cy) {
+                cy.reset();
+            }
+        }
+
+        function fitGraph() {
+            if (cy) {
+                cy.fit();
+            }
+        }
+
+        function changeLayout() {
+            if (!cy) return;
+            const layoutName = document.getElementById('layout-select').value;
+            cy.layout({ name: layoutName, animate: false }).run();
+        }
+
+        window.addEventListener('load', loadData);
+    </script>
+</body>
+</html>
