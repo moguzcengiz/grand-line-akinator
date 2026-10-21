@@ -32,6 +32,10 @@ opx:CaptainCharacter a owl:Class ; rdfs:subClassOf op:Character ; rdfs:label "Ca
 [ a owl:Restriction ; owl:onProperty opx:hasHaki ; owl:someValuesFrom opx:HakiType ] rdfs:subClassOf opx:HakiUser .
 [ a owl:Restriction ; owl:onProperty op:occupation ; owl:hasValue op:Captain ] rdfs:subClassOf opx:CaptainCharacter .
 [ a owl:Restriction ; owl:onProperty op:occupation ; owl:hasValue op:Pirate_Captain ] rdfs:subClassOf opx:CaptainCharacter .
+# "pirate" is recorded in two places that disagree (Kaido / Boa Hancock: pirate crew but no Pirate occupation; 192 such characters, 69 the other way):
+# make them one fact.  pirate crew member <=> occupation Pirate (OWL RL cls-hv1 / cls-hv2).
+opx:PirateAffiliatedCharacter rdfs:subClassOf [ a owl:Restriction ; owl:onProperty op:occupation ; owl:hasValue op:Pirate ] .
+[ a owl:Restriction ; owl:onProperty op:occupation ; owl:hasValue op:Pirate ] rdfs:subClassOf opx:PirateAffiliatedCharacter .
 
 # ---- Devil Fruit ownership: base ontology declares op:hasDevilFruit but data only has the inverse ----
 op:DevilFruitCurrentUser owl:inverseOf op:hasDevilFruit .

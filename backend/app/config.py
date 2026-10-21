@@ -59,6 +59,8 @@ ANSWER_MODEL = os.environ.get("ANSWER_MODEL", "calibrated")
 # (Shanks has no recorded Captain occupation.)  Category / status / fruit-type FALSEs stay at 0.98.  1.0 = old closed-world behaviour.
 ABSENCE_RELIABILITY = float(os.environ.get("ABSENCE_RELIABILITY", "0.80"))
 DEFINITE_RELIABILITY = 0.98
+# P(a graph TRUE is really true / accepted by the player) on those same list questions (Luffy "Prisoner", Shanks "resides in Mary Geoise")
+PRESENCE_RELIABILITY = float(os.environ.get("PRESENCE_RELIABILITY", "0.90"))
 # Correlated contradictions: one missing fact (Shanks has no recorded Captain occupation) shows up in several related questions and must not be
 # punished once per question.  The k-th contradiction of a candidate on RELATED questions (|phi| >= RELATED_PHI) is discounted to ratio^(DISCOUNT^k).
 CONTRADICTION_DISCOUNT = float(os.environ.get("CONTRADICTION_DISCOUNT", "0.5"))

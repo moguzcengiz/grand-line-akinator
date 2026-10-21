@@ -40,23 +40,32 @@ def likelihood_matrix(unknown_prior_true: float = 0.5, table=None) -> np.ndarray
 
 
 def likelihood_tensor(unknown_prior_true: np.ndarray, table=None, false_reliability: np.ndarray | None = None) -> np.ndarray:
-    """(Q,3,5): per-question likelihoods, rows TRUE / FALSE / UNKNOWN.
+    """(Q,4,5): per-question likelihoods, rows TRUE / FALSE / UNKNOWN / NOT-APPLICABLE FALSE.
     UNKNOWN: P(fact is true | KB has no record) = unknown_prior_true (0.5 = "can be either").
     FALSE:   a graph FALSE that only means "absent from an incomplete list" is true with probability 1 - false_reliability, so its row is the
-             mixture r * FALSE_row + (1 - r) * TRUE_row (r = 1 reproduces the old closed-world behaviour)."""
+             mixture r * FALSE_row + (1 - r) * TRUE_row (r = 1 reproduces the old closed-world behaviour).
+    TRUE:    on those same list questions a recorded fact can be wrong or trivia a player rejects (Shanks "resides in Mary Geoise", Luffy
+             "Prisoner"): mixture with config.PRESENCE_RELIABILITY.  The simulator never contradicts a graph TRUE, so only hand-played games show it.
+    N/A:     FALSE because the question is about another category (a Devil Fruit has no occupation) - definite, never "maybe not listed"."""
     t = table or likelihood_table()
     T, F = np.array(t[TRUE]), np.array(t[FALSE])
     p = np.asarray(unknown_prior_true, dtype=float)
     r = np.ones_like(p) if false_reliability is None else np.asarray(false_reliability, dtype=float)
-    unknown = p[:, None] * T[None, :] + (1 - p)[:, None] * F[None, :]
-    false_row = r[:, None] * F[None, :] + (1 - r)[:, None] * T[None, :]
-    true_row = np.broadcast_to(T, (len(p), 5))
-    return np.stack([true_row, false_row, unknown], axis=1)
+    tr = np.where(r < config.DEFINITE_RELIABILITY - 1e-9, config.PRESENCE_RELIABILITY, 1.0)
+    na = np.maximum(r, config.DEFINITE_RELIABILITY)
+    mix = lambda a, x, y: a[:, None] * x[None, :] + (1 - a)[:, None] * y[None, :]
+    return np.stack([mix(tr, T, F), mix(r, F, T), mix(p, T, F), mix(na, F, T)], axis=1)
 
 
-def _row(truth: np.ndarray) -> np.ndarray:
-    """Map truth values {1,0,-1} to likelihood-matrix row indices {0,1,2}."""
-    return np.where(truth == TRUE, 0, np.where(truth == FALSE, 1, 2))
+def _with_na(L: np.ndarray) -> np.ndarray:
+    """A 3-row likelihood (tests, shared matrix) gets a N/A row equal to its FALSE row."""
+    return L if L.shape[-2] == 4 else np.concatenate([L, L[..., 1:2, :]], axis=-2)
+
+
+def _row(truth: np.ndarray, na: np.ndarray | None = None) -> np.ndarray:
+    """Map truth values {1,0,-1} to likelihood-matrix row indices {0,1,2}; a not-applicable FALSE to 3."""
+    r = np.where(truth == TRUE, 0, np.where(truth == FALSE, 1, 2))
+    return r if na is None else np.where(na & (truth == FALSE), 3, r)
 
 
 @dataclass
@@ -71,18 +80,24 @@ class Bank:
     prior: np.ndarray | None = None          # None = uniform
     families: list = field(default_factory=list)
     topics: list = field(default_factory=list)
+    concepts: list = field(default_factory=list)
+    na: np.ndarray = None                    # na[q, e]: question q is about another category than entity e (its FALSE is definite)
 
     def __post_init__(self):
         if self.truth is None:
             self.truth = np.zeros((0, len(self.entity_uris)), dtype=np.int8)
+        if self.na is None:
+            self.na = np.zeros((0, len(self.entity_uris)), dtype=bool)
 
-    def add(self, question, truth_row: np.ndarray) -> int:
+    def add(self, question, truth_row: np.ndarray, na_row: np.ndarray | None = None) -> int:
         if question.id in self.index:
             return self.index[question.id]
-        from .questions import false_reliability, family, topic, unknown_prior_true
+        from .questions import concepts, false_reliability, family, topic, unknown_prior_true
         self.false_rel.append(false_reliability(question))
         self.families.append(family(question))
         self.topics.append(topic(question))
+        self.concepts.append(concepts(question))
+        self.na = np.vstack([self.na, (np.zeros(len(self.entity_uris), dtype=bool) if na_row is None else na_row.astype(bool))[None, :]])
         self.unknown_prior.append(unknown_prior_true(question))
         self.index[question.id] = len(self.questions)
         self.questions.append(question)
@@ -90,21 +105,24 @@ class Bank:
         return self.index[question.id]
 
 
-def expected_info_gain(w: np.ndarray, truth: np.ndarray, L: np.ndarray, gamma: float = 1.0):
+def expected_info_gain(w: np.ndarray, truth: np.ndarray, L: np.ndarray, gamma: float = 1.0, na: np.ndarray | None = None):
     """Vectorised expected entropy reduction for every question row of `truth`.
 
-    w: normalised candidate weights (E,).  L: (Q,3,5) per-question likelihoods (or one shared (3,5) matrix).
+    w: normalised candidate weights (E,).  L: (Q,4,5) per-question likelihoods (or one shared matrix; 3 rows = no separate N/A row).
+    na: (Q,E) not-applicable mask (see Bank.na), None = none.
     Returns (score, ig, coverage, p_true, p_false, p_unknown), each shape (Q,).
     IG = H(w) - sum_a P(a) H(w | a), exact under the answer model (5 answers incl. "don't know").
     score = IG * coverage**gamma where coverage = 1 - P(unknown): low-coverage questions are penalised.
     """
+    L = _with_na(L)
     if L.ndim == 2:
         L = np.broadcast_to(L, (truth.shape[0],) + L.shape)
+    na = np.zeros(truth.shape, dtype=bool) if na is None else na
     wlogw = np.where(w > 0, w * np.log(np.where(w > 0, w, 1)), 0.0)
     H = -wlogw.sum()
-    masks = [truth == TRUE, truth == FALSE, truth == UNKNOWN]
-    P = np.stack([(m * w).sum(1) for m in masks], 1)           # (Q,3) mass per truth class
-    S = np.stack([(m * wlogw).sum(1) for m in masks], 1)       # (Q,3) sum w log w per truth class
+    masks = [truth == TRUE, (truth == FALSE) & ~na, truth == UNKNOWN, (truth == FALSE) & na]
+    P = np.stack([(m * w).sum(1) for m in masks], 1)           # (Q,4) mass per truth class
+    S = np.stack([(m * wlogw).sum(1) for m in masks], 1)       # (Q,4) sum w log w per truth class
     exp_post = np.zeros(truth.shape[0])
     for a in range(L.shape[2]):
         la = L[:, :, a]                                         # (Q,3)
@@ -115,7 +133,7 @@ def expected_info_gain(w: np.ndarray, truth: np.ndarray, L: np.ndarray, gamma: f
         exp_post += mass * h_a
     ig = np.maximum(H - exp_post, 0.0)
     coverage = 1.0 - P[:, 2]
-    return ig * coverage ** gamma, ig, coverage, P[:, 0], P[:, 1], P[:, 2]
+    return ig * coverage ** gamma, ig, coverage, P[:, 0], P[:, 1] + P[:, 3], P[:, 2]
 
 
 class GameState:
@@ -144,16 +162,29 @@ class GameState:
         for a in self.asked:
             f = self.bank.families[a["index"]]
             used[f] = used.get(f, 0) + 1
+        covered = self.covered_concepts()
         idx = [i for i, q in enumerate(self.bank.questions) if q.id not in self.asked_ids and q.id not in extra_exclude
-               and used.get(self.bank.families[i], 0) < (config.FAMILY_MAX if family_max is None else family_max)]
+               and used.get(self.bank.families[i], 0) < (config.FAMILY_MAX if family_max is None else family_max)
+               and not (self.bank.concepts[i] and self.bank.concepts[i] <= covered)]
         if not idx:
             return []
-        score, ig, cov, pt, pf, pu = expected_info_gain(self.w, self.bank.truth[idx], self._L(idx), config.COVERAGE_GAMMA)
+        score, ig, cov, pt, pf, pu = expected_info_gain(self.w, self.bank.truth[idx], self._L(idx), config.COVERAGE_GAMMA, self.bank.na[idx])
         # diminishing returns for asking the same kind of question again and again
         score = score * np.array([config.FAMILY_DECAY ** used.get(self.bank.families[i], 0) for i in idx])
         order = np.argsort(-score)
         return [{"index": idx[j], "score": float(score[j]), "info_gain": float(ig[j]), "coverage": float(cov[j]),
                  "p_yes": float(pt[j]), "p_no": float(pf[j]), "p_unknown": float(pu[j])} for j in order]
+
+    def covered_concepts(self) -> set:
+        """Concepts already asked about ("captain", "pirate", "haki" ...): a question made only of covered concepts is the same question
+        re-worded and would punish one missing fact again.  A single-concept question covers its concept whatever the answer; a combination
+        ("captain of a pirate crew") covers its parts only when answered yes - a "no" does not tell which part failed."""
+        out = set()
+        for a in self.asked:
+            c = self.bank.concepts[a["index"]]
+            if len(c) == 1 or a["answer"] in ("yes", "probably"):
+                out |= c
+        return out
 
     def pick(self, strategy: str = "info_gain", ranked: list[dict] | None = None) -> dict | None:
         ranked = ranked if ranked is not None else self.rank()
@@ -167,8 +198,8 @@ class GameState:
     # ---- update
     def answer(self, q_index: int, answer: str):
         a = ANSWERS.index(answer)
-        rows = _row(self.bank.truth[q_index])
-        L = self._L([q_index])[0] if self.L_override is None else self.L_override
+        rows = _row(self.bank.truth[q_index], self.bank.na[q_index])
+        L = _with_na(self._L([q_index])[0] if self.L_override is None else self.L_override)
         factor = L[rows, a].astype(float)
         factor, contra = self._discount_correlated_contradictions(q_index, a, rows, factor, L)
         before = self.w.copy()
@@ -187,11 +218,10 @@ class GameState:
         """One missing / wrong graph fact often contradicts the player in several RELATED questions (captain / pirate captain / pirate role ...).
         Only 'not listed' style questions (false_rel below the definite level) are discounted; definite facts (category, life status) keep their full weight."""
         yes_like, no_like = a in (0, 1), a in (3, 4)
-        truth = self.bank.truth[q_index]
         soft = self.bank.false_rel[q_index] < config.DEFINITE_RELIABILITY - 1e-9
         if not soft or not (yes_like or no_like):
             return factor, np.zeros(len(factor), dtype=bool)
-        contra = (truth == FALSE) if yes_like else (truth == TRUE)
+        contra = (rows == 1) if yes_like else (rows == 0)                # not-applicable FALSEs (row 3) are definite, never discounted
         if not contra.any() or not self.asked:
             return factor, contra
         from .policy import weighted_phi

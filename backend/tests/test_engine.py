@@ -274,3 +274,39 @@ def test_definite_questions_are_never_discounted():
     mid = st.w[1] / st.w[0]
     st.answer(1, "yes"); r2 = (st.w[1] / st.w[0]) / mid
     assert abs(r1 - r2) < 1e-9
+
+
+# ------------------------------------------------------------------ another category's FALSE is definite; re-worded questions are not repeated
+def test_a_question_about_another_category_eliminates_definitely():
+    # entity 0: a character with the role, 1: a character without it (not listed), 2: a Devil Fruit (has no roles at all)
+    b = Bank(["c_yes", "c_no", "fruit"])
+    b.add(q(0), np.array([1, 0, 0], dtype=np.int8), np.array([False, False, True]))
+    b.false_rel = [config.ABSENCE_RELIABILITY]
+    st = GameState(b)
+    st.answer(0, "yes")
+    assert st.w[1] > 4 * st.w[2], "a not-listed character survives a 'yes', a Devil Fruit does not (definite level, like category questions)"
+
+
+def test_a_rejected_listed_fact_is_costly_but_not_fatal():
+    # the user's Luffy game: Luffy led with 54% when "Prisoner?" (listed for him: Impel Down) got a "no" and dropped him to 4%
+    st = GameState(_soft_bank([[1, 0]]))
+    st.answer(0, "no")
+    assert 0.1 < st.w[0] / st.w[1] < 0.5
+
+
+def test_reworded_questions_are_not_asked_again():
+    from app.questions import Cond, Path, QuerySpec, Question, Step
+    mk_ = lambda i, *paths: Question(id=f"c{i}", text=f"Concept question {i}?", spec=QuerySpec(paths=list(paths), mode="all" if len(paths) > 1 else "any"))
+    lab = lambda l: Path(start="Character", cond=Cond(kind="label", label=l), scope="rel:OCCUPATION")
+    role = lambda r: Path(start="Character", steps=[Step(rel="OCCUPATION")], cond=Cond(kind="uri", uri=config.OP + r), scope="rel:OCCUPATION")
+    qs = [mk_(0, lab("CaptainCharacter")), mk_(1, lab("CaptainCharacter"), lab("PirateAffiliatedCharacter")), mk_(2, role("Pirate_Captain")),
+          mk_(3, lab("PirateAffiliatedCharacter")), mk_(4, role("Pirate_Officer"))]
+    rng = np.random.default_rng(2)
+    b = Bank([f"e{j}" for j in range(60)])
+    for x in qs:
+        b.add(x, rng.integers(0, 2, size=60).astype(np.int8))
+    st = GameState(b)
+    st.answer(1, "no")                                        # "captain of a pirate crew?" no: still unclear which part failed
+    assert {r["index"] for r in st.rank()} == {0, 2, 3, 4}
+    st.answer(0, "yes"); st.answer(3, "yes")                  # captain and pirate both answered
+    assert {r["index"] for r in st.rank()} == {4}, "Pirate Captain is a re-wording now; Pirate Officer is a refinement"

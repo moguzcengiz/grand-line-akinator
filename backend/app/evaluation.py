@@ -15,7 +15,7 @@ from pathlib import Path
 import numpy as np
 
 from . import config, service
-from .questions import omission_prone
+from .questions import concepts, omission_prone
 
 # name -> (mode, strategy, exploration).  "rule"/"ig" = the old deterministic information-gain policy (baseline).
 STRATEGIES = {"random": ("rule", "random", "off"), "rule": ("rule", "info_gain", "off"), "ig": ("rule", "info_gain", "off"),
@@ -45,8 +45,15 @@ def play(kb, target_idx: int, mode: str, strategy: str, rng: random.Random, nois
     while True:                                   # like a real player: a wrong guess -> "not quite" -> the game keeps asking (max 3 guesses)
         while sess.status == "asking" and sess.current:
             best = sess.current["best"]
-            om = omission if omission_prone(kb.bank.questions[best["index"]]) else 0.0      # omissions only exist where a graph FALSE just means "not listed"
-            a = simulated_answer(int(kb.bank.truth[best["index"], target_idx]), rng, noise, mismatch, om)
+            # omissions only exist where a graph FALSE just means "not listed" (never for a question about another category)
+            q = kb.bank.questions[best["index"]]
+            truth = int(kb.bank.truth[best["index"], target_idx])
+            if truth == 0 and omission and omission_prone(q) and kb.entities[target_idx]["category"] in {p.start for p in q.spec.paths}:
+                # a missing fact is missing for every re-wording of it: one draw per (target, concept), so "captain?" and "captain of a pirate
+                # crew?" agree.  ponytail: a combination counts as omitted if any part is; questions without a concept draw on their own.
+                keys = sorted(concepts(q)) or [q.id]
+                truth = int(any(random.Random(f"{target_idx}|{k}").random() < omission for k in keys))
+            a = simulated_answer(truth, rng, noise, mismatch)
             answers.append(a)
             service.answer(sess, a, None)
         guess = sess.prediction_idx if sess.prediction_idx is not None else sess.state.top(1)[0][0]

@@ -1,0 +1,8 @@
+# Patch 'curated-shanks' (triples REMOVED from the upstream data before reasoning/import). Hand-written, not generated.
+# The wiki infobox of Shanks mixes in Figarland-family data: he does not live in Mary Geoise and is not a Knight of God / Devoted Blade of God.
+# A player thinking of Shanks answers "no" to these, and a recorded-but-wrong TRUE cost him the game (found by playing him by hand).
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Shanks op:residence op:Mary_Geoise ;
+    op:affiliatesWith op:Knights_of_God ;
+    op:occupation op:Devoted_Blade_of_God .

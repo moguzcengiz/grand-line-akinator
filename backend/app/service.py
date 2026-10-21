@@ -42,13 +42,18 @@ class KB:
                 self.duplicates_dropped += 1
                 continue
             seen_rows[row.tobytes()] = q.id
-            self.bank.add(q, row)
+            self.bank.add(q, row, self.na_row(q.spec))
         self.rule_questions = [q for q in self.rule_questions if q.id in self.bank.index]
         self.build_seconds = round(time.time() - t0, 1)
 
     def truth_row(self, spec: Q.QuerySpec) -> np.ndarray:
         t = Q.evaluate(spec, self.uris, self.cats)
         return np.array([t[u] for u in self.uris], dtype=np.int8)
+
+    def na_row(self, spec: Q.QuerySpec) -> np.ndarray:
+        """Entities of a category the question is not about (a Devil Fruit for an occupation question)."""
+        starts = {p.start for p in spec.paths}
+        return np.array([e["category"] not in starts for e in self.entities])
 
     def admit_llm_question(self, q: Q.Question, state: GameState, min_ig: float) -> tuple[int | None, str | None]:
         """Validate an LLM proposal against the live schema and the game: -> (bank index, None) or (None, reason).
@@ -69,11 +74,12 @@ class KB:
         if phi >= config.EQUIV_PHI:
             return None, "redundant"
         L = likelihood_tensor(np.array([Q.unknown_prior_true(q)]), false_reliability=np.array([Q.false_reliability(q)]))
-        ig = float(expected_info_gain(state.w, row[None, :], L)[1][0])
+        na = self.na_row(q.spec)
+        ig = float(expected_info_gain(state.w, row[None, :], L, na=na[None, :])[1][0])
         if ig < min_ig:
             return None, "low-value"
         with _lock:
-            return self.bank.add(q, row), None
+            return self.bank.add(q, row, na), None
 
     def entity_facts(self, uri: str, limit=10) -> list[dict]:
         return graph.run("MATCH (e:Resource {uri:$u})-[r]->(t:Resource) WHERE NOT type(r) IN ['MANGA_DEBUT','ANIME_DEBUT','ENGLISH_VOICE_ACTOR','JAPANESE_VOICE_ACTOR','LIVE_ACTION_PORTRAYED_BY'] "
@@ -320,7 +326,8 @@ def explain(sess: Session, idx: int):
         if tv == 1:
             support = "graph fact found" if facts or all(p.cond.kind == "exists" and not p.steps for p in q.spec.paths) else "graph fact found (entity category)"
         elif tv == 0:
-            support = "graph has no such fact (closed-world: counted as false)"
+            support = ("graph has no such fact (not listed - weak evidence, the list may be incomplete)" if kb.bank.false_rel[a["index"]] < config.DEFINITE_RELIABILITY - 1e-9
+                       else "graph has no such fact (counted as false)")
         else:
             support = "no recorded fact - UNKNOWN in the graph (not treated as false)"
         ans_yes = a["answer"] in ("yes", "probably")

@@ -1,0 +1,6 @@
+# Patch 'curated-shanks' (triples ADDED in their place). Hand-written, not generated.
+# Shanks is the captain of the Red Hair Pirates, but upstream only lists Chief / Emperor / Apprentice, so "Pirate" and "captain" questions said no.
+# op:Pirate_Captain makes him a CaptainCharacter and (property chain in extension.ttl) a Pirate.
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Shanks op:occupation op:Pirate_Captain .
