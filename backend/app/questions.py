@@ -317,15 +317,9 @@ REL_TEXT = {
 OPEN_RELS = {"BUILT_BY", "SHIP_TYPE", "AFFILIATES_WITH", "OCCUPATION", "STATUS_OF_CHARACTER", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "HAS_BLOOD_TYPE",
              "JAPANESE_VOICE_ACTOR", "ENGLISH_VOICE_ACTOR"}
 REL_MIN_SUPPORT = {"RESIDENCE": 15, "PLACE_OF_ORIGIN": 15, "OCCUPATION": 12}   # obscure relations need broader support
-# edges handled by dedicated questions below, so excluded from the generic relation->target sweep
-SWEEP_SKIP = ["MANGA_DEBUT", "ANIME_DEBUT", "DEVIL_FRUIT_USE_DEBUT_MANGA", "DEVIL_FRUIT_USE_DEBUT_ANIME", "DEVIL_FRUIT_DEBUT_MANGA",
-              "DEVIL_FRUIT_DEBUT_ANIME", "LIVE_ACTION_PORTRAYED_BY", "HAS_DEVIL_FRUIT", "DEVIL_FRUIT_CURRENT_USER", "OWNS_SHIP",
-              "PREVIOUSLY_HAD_DEVIL_FRUIT", "DEVIL_FRUIT_PREVIOUS_USER", "HAS_FRUIT_SUBTYPE", "HAS_FRUIT_TYPE", "IN_CREW",
-              "HAS_CREW_MEMBER", "HAS_BOUNTY", "GIVEN_TO", "GIVEN_AFTER", "OPERATED_BY", "HAS_HAKI",
-              # low-quality for a guessing game: trivia nobody remembers
-              "ENGLISH_VOICE_ACTOR", "JAPANESE_VOICE_ACTOR", "HAS_BLOOD_TYPE",
-              # covered by the organisation-typed cross-category question below (avoids duplicates)
-              "AFFILIATES_WITH"]
+# the ONLY relations the generic relation->target sweep may turn into questions (whitelist: a new relation in the data is never asked
+# about by accident).  Fruit, affiliation, Haki and ship-ownership relations get dedicated questions below.  Full list: docs/CONNECTIONS.md
+SWEEP_RELS = ["STATUS_OF_CHARACTER", "OCCUPATION", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "SHIP_OWNER", "SHIP_TYPE", "BUILT_BY"]
 # umbrella organisations already asked through the OWL-inferred class questions below (would be near-duplicates)
 UMBRELLA_ORGS = {"Marines", "Revolutionary_Army", "World_Government"}
 # OWL-RL-derived classes (see ontology/extension.ttl) -> (question, start category, completeness scope)
@@ -364,9 +358,9 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
 
     # relation -> target questions straight from the graph, filtered by support
     rows = graph.run(
-        "MATCH (a:Resource)-[r]->(t:Resource) WHERE a.category IN $cats AND NOT type(r) IN $skip "
+        "MATCH (a:Resource)-[r]->(t:Resource) WHERE a.category IN $cats AND type(r) IN $rels "
         "RETURN a.category AS cat, type(r) AS rel, t.uri AS uri, t.name AS name, count(DISTINCT a) AS n",
-        cats=config.CATEGORIES, skip=SWEEP_SKIP)
+        cats=config.CATEGORIES, rels=SWEEP_RELS)
     for r in rows:
         if r["name"] == "Unknown":
             continue

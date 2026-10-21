@@ -68,6 +68,13 @@ def test_semantic_duplicates_of_asked_questions_are_excluded():
     assert 1 not in ids and 2 not in ids and 3 in ids
 
 
+def test_agreement_on_a_small_known_slice_is_not_a_duplicate():
+    # "Is it a character?" vs "Does it use Haki?" (TRUE for a few characters, UNKNOWN for the rest, FALSE for non-characters)
+    is_char = np.array([1] * 100 + [0] * 20, dtype=np.int8)
+    haki = np.array([1] * 10 + [-1] * 90 + [0] * 20, dtype=np.int8)
+    assert policy.weighted_phi(haki[None, :], is_char, np.ones(120))[0] < 0.5
+
+
 def test_topic_diversity_prefers_a_fresh_topic():
     rng = np.random.default_rng(8)
     rows = [rng.integers(0, 2, size=200) for _ in range(6)]

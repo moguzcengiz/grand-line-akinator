@@ -23,6 +23,51 @@ export default function Explorer({ initial }: { initial?: string }) {
   const sim = useRef<ReturnType<typeof forceSimulation<GNode>> | null>(null);
   const nodesRef = useRef<GNode[]>([]);
   const edgesRef = useRef<GEdge[]>([]);
+  // pan / zoom (k) of the whole graph, in viewBox units; drag = a node being moved or the background being panned
+  const [view, setView] = useState({ x: 0, y: 0, k: 1 });
+  const [full, setFull] = useState(false);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ node?: GNode; sx: number; sy: number; vx: number; vy: number; cx: number; cy: number; moved: boolean } | null>(null);
+
+  const toSvg = (cx: number, cy: number) => new DOMPoint(cx, cy).matrixTransform(svgRef.current!.getScreenCTM()!.inverse());
+  const zoomAt = (px: number, py: number, f: number) =>
+    setView((v) => { const k = Math.min(5, Math.max(0.2, v.k * f)); return { k, x: px - ((px - v.x) * k) / v.k, y: py - ((py - v.y) * k) / v.k }; });
+
+  useEffect(() => {
+    const el = svgRef.current!;
+    const onWheel = (e: WheelEvent) => { e.preventDefault(); const p = toSvg(e.clientX, e.clientY); zoomAt(p.x, p.y, Math.exp(-e.deltaY * 0.0015)); };
+    const onFs = () => setFull(document.fullscreenElement === boxRef.current);
+    el.addEventListener("wheel", onWheel, { passive: false });     // passive:false so the page does not scroll while zooming
+    document.addEventListener("fullscreenchange", onFs);
+    return () => { el.removeEventListener("wheel", onWheel); document.removeEventListener("fullscreenchange", onFs); };
+  }, []);
+
+  const down = (e: React.PointerEvent, node?: GNode) => {
+    e.stopPropagation();
+    svgRef.current!.setPointerCapture(e.pointerId);
+    const p = toSvg(e.clientX, e.clientY);
+    drag.current = { node, sx: p.x, sy: p.y, vx: view.x, vy: view.y, cx: e.clientX, cy: e.clientY, moved: false };
+  };
+  const move = (e: React.PointerEvent) => {
+    const d = drag.current;
+    if (!d) return;
+    if (Math.hypot(e.clientX - d.cx, e.clientY - d.cy) > 4) d.moved = true;
+    const p = toSvg(e.clientX, e.clientY);
+    if (d.node) {
+      d.node.fx = (p.x - view.x) / view.k; d.node.fy = (p.y - view.y) / view.k;
+      sim.current?.alphaTarget(0.3).restart();
+    } else setView((v) => ({ ...v, x: d.vx + p.x - d.sx, y: d.vy + p.y - d.sy }));
+  };
+  const up = () => {
+    const d = drag.current;
+    drag.current = null;
+    if (!d?.node) return;
+    d.node.fx = d.node.fy = null;
+    sim.current?.alphaTarget(0);
+    if (!d.moved) load(d.node.id, true);                           // a click without dragging still expands the node
+  };
+  const toggleFull = () => (document.fullscreenElement ? document.exitFullscreen() : boxRef.current?.requestFullscreen());
 
   const restart = () => {
     sim.current?.stop();
@@ -48,6 +93,7 @@ export default function Explorer({ initial }: { initial?: string }) {
     setSel(nodesRef.current.find((n) => n.id === d.center) ?? null);
     setHint(d.total_edges > d.edges.length ? `showing ${d.edges.length} of ${d.total_edges} relations (inferred and curated first)` : "");
     setTrail((t) => (expand ? [...t, d.center] : [d.center]));
+    if (!expand) setView({ x: 0, y: 0, k: 1 });
     restart();
   };
 
@@ -76,7 +122,15 @@ export default function Explorer({ initial }: { initial?: string }) {
           {PRESETS.map((p) => <button key={p} className="btn btn-ghost !py-1 text-sm" onClick={() => load(p, false)}>{p.replace(/_/g, " ")}</button>)}
           <label className="text-sm cursor-pointer ml-auto"><input type="checkbox" checked={onlyInf} onChange={(e) => setOnlyInf(e.target.checked)} /> only OWL-inferred edges</label>
         </div>
-        <svg viewBox={`0 0 ${W} ${H}`} className="w-full bg-navy-900 rounded-lg border border-gold-600/30" role="img" aria-label="knowledge graph neighbourhood">
+        <div ref={boxRef} className={`relative ${full ? "h-screen bg-navy-900" : ""}`}>
+        <div className="absolute top-2 right-2 z-10 flex gap-1">
+          {([["+", "Zoom in", () => zoomAt(W / 2, H / 2, 1.3)], ["−", "Zoom out", () => zoomAt(W / 2, H / 2, 1 / 1.3)],
+             ["⟲", "Reset view", () => setView({ x: 0, y: 0, k: 1 })], [full ? "✕" : "⛶", full ? "Exit full screen" : "Full screen", toggleFull]] as const).map(([t, label, fn]) =>
+            <button key={label} title={label} aria-label={label} onClick={fn} className="w-8 h-8 rounded bg-navy-800/90 border border-gold-600/50 text-gold-300 hover:bg-navy-700">{t}</button>)}
+        </div>
+        <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className={`w-full bg-navy-900 rounded-lg border border-gold-600/30 touch-none ${full ? "h-full" : ""} ${drag.current && !drag.current.node ? "cursor-grabbing" : "cursor-grab"}`}
+          role="img" aria-label="knowledge graph neighbourhood" onPointerDown={(e) => down(e)} onPointerMove={move} onPointerUp={up} onPointerCancel={up}>
+          <g transform={`translate(${view.x},${view.y}) scale(${view.k})`}>
           <defs>{Object.entries(PROV_COLOR).map(([k, c]) => <marker key={k} id={`arrow-${k}`} viewBox="0 0 10 10" refX="22" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill={c} /></marker>)}</defs>
           {edges.map((e, i) => {
             const a = byId.get(e.source), b = byId.get(e.target);
@@ -86,12 +140,14 @@ export default function Explorer({ initial }: { initial?: string }) {
               <text x={mx} y={my} fontSize="9" fill="#cbd5e1" textAnchor="middle" className="select-none">{e.rel.toLowerCase().replace(/_/g, " ")}</text></g>;
           })}
           {nodes.map((n) => (
-            <g key={n.id} transform={`translate(${n.x ?? W / 2},${n.y ?? H / 2})`} className="cursor-pointer" onClick={() => load(n.id, true)} onMouseEnter={() => setSel(n)}>
+            <g key={n.id} transform={`translate(${n.x ?? W / 2},${n.y ?? H / 2})`} className="cursor-pointer" onPointerDown={(e) => down(e, n)} onMouseEnter={() => setSel(n)}>
               <circle r={n.id === trail[trail.length - 1] ? 17 : 13} fill={color(n)} stroke={sel?.id === n.id ? "#fff" : "#08162b"} strokeWidth={2.5} />
               <text y={30} fontSize="11" textAnchor="middle" fill="#f6ecd2" className="select-none">{short(n.name)}</text>
             </g>
           ))}
+          </g>
         </svg>
+        </div>
         <div className="flex flex-wrap gap-4 text-xs mt-2 items-center">
           {Object.entries(PROV_COLOR).map(([k, c]) => <span key={k}><span className="inline-block w-5 h-0.5 align-middle mr-1" style={{ background: c }} />{k}</span>)}
           <span className="opacity-70">·</span>

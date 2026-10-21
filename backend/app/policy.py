@@ -76,7 +76,10 @@ def weighted_phi(rows: np.ndarray, ref: np.ndarray, w: np.ndarray) -> np.ndarray
         pa, pb = (wm * a).sum(1) / tot, (wm * b).sum(1) / tot
         p11 = (wm * a * b).sum(1) / tot
         phi = (p11 - pa * pb) / np.sqrt(pa * (1 - pa) * pb * (1 - pb))
-    return np.nan_to_num(np.abs(phi), nan=0.0, posinf=0.0)
+        # agreeing on a small shared known slice is not equivalence: "Does it use Haki?" (known for 21 curated characters + fruits/ships)
+        # matches "Is it a character?" there exactly, but asks something else.  Scale by the weighted overlap of the two known sets.
+        overlap = tot / ((((rows != -1) | (ref != -1)[None, :]) * w[None, :]).sum(1))
+    return np.nan_to_num(np.abs(phi) * overlap, nan=0.0, posinf=0.0)
 
 
 def _minmax(x: np.ndarray) -> np.ndarray:
