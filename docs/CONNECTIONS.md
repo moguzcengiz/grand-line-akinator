@@ -1,6 +1,6 @@
 # Ontology connections
 
-Every relationship type in the Neo4j graph (after patches + OWL RL), produced by a live `MATCH (a)-[r]->(b)` count.
+Every relationship type in the Fuseki graph (after patches + OWL RL), produced by a live count over `?a ?p ?b . ?p g:relType ?rel` (the counts below were taken on the previous Neo4j store; the ingested graph is identical).
 **Used** = feeds the question bank. Generic questions come only from the `SWEEP_RELS` whitelist in `backend/app/questions.py`; dedicated questions are built by hand in the same file.
 Anything not listed as used is never asked about.
 

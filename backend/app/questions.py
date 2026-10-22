@@ -1,7 +1,8 @@
-"""Question specs -> safe parameterised Cypher, plus rule-based generation from the *imported* schema.
+"""Question specs -> safe SPARQL for Apache Jena Fuseki, plus rule-based generation from the *imported* schema.
 
-A question is data (QuerySpec), never free-form Cypher.  Identifiers (labels / relationship types / property names)
-are validated against the live schema whitelist; every value goes through Cypher parameters.
+A question is data (QuerySpec), never free-form SPARQL.  Identifiers (labels / relationship types / property names)
+are validated by regex and against the live schema whitelist; every value goes through graph.run's $name substitution
+(URIRef -> validated <iri>, number / string -> escaped typed literal).  Store layout: see graph.py.
 """
 import hashlib
 import re
@@ -150,92 +151,116 @@ def spec_id(spec: QuerySpec) -> str:
 
 
 # ------------------------------------------------------------------ compilation
-def _pattern(path: Path) -> tuple[str, str]:
-    """(MATCH pattern, name of the last node variable)."""
-    pat, last = "(e)", "e"
+def _prop(name: str) -> str:
+    if not IDENT.match(name or ""):
+        raise ValueError(f"bad property name {name!r}")
+    return f"g:{name}"
+
+
+def _steps(path: Path) -> tuple[str, str]:
+    """(basic graph pattern walking the steps from ?e, name of the last node variable)."""
+    pat, prev = "", "?e"
     for i, st in enumerate(path.steps, 1):
         if not IDENT.match(st.rel):
             raise ValueError(f"bad relationship type {st.rel!r}")
-        pat += (f"-[:`{st.rel}`]->" if st.dir == "out" else f"<-[:`{st.rel}`]-") + f"(n{i})"
-        last = f"n{i}"
-    return pat, last
+        pat += (f"{prev} ?p{i} ?n{i} . " if st.dir == "out" else f"?n{i} ?p{i} {prev} . ") + f'?p{i} g:relType "{st.rel}" . '
+        prev = f"?n{i}"
+    return pat, prev
 
 
-def _where(path: Path, last: str) -> str:
+def _cond(path: Path, last: str) -> str:
     c = path.cond
     if c.kind == "uri":
-        return f"{last}.uri = $u"
+        return f"FILTER({last} = $u)"
     if c.kind == "label":
         if not c.label or not IDENT.match(c.label):
             raise ValueError("bad label")
-        return f"{last}:`{c.label}`"
+        return f'{last} g:label "{c.label}" .'
     if c.kind == "cmp":
         if c.prop not in NUMERIC_PROPS or c.op is None or c.value is None:
             raise ValueError("bad comparison")
-        return f"{last}.{c.prop} {c.op} $v"
-    return "true"
+        return f"{last} {_prop(c.prop)} ?val . FILTER(?val {c.op} $v)"
+    return ""
 
 
-def _cat(path: Path) -> str:
-    return f"MATCH (e:`{path.start}`) WHERE e.category = '{path.start}'"
+def _select(path: Path, body: str) -> str:
+    """Entities of the start category for which `body` has a match."""
+    return f'SELECT DISTINCT ?e WHERE {{ ?e g:category "{path.start}" . FILTER EXISTS {{ {body} }} }}'
+
+
+def _all(path: Path) -> str:
+    return f'SELECT DISTINCT ?e WHERE {{ ?e g:category "{path.start}" }}'
 
 
 def compile_path(path: Path) -> tuple[str, str, dict]:
-    """-> (Cypher returning matching URIs, Cypher returning KNOWN URIs, parameters)."""
-    params = {"u": path.cond.uri, "v": path.cond.value}
-    all_q = f"{_cat(path)} RETURN collect(e.uri) AS uris"
-    pat, last = _pattern(path)
-    where = _where(path, last)
+    """-> (SPARQL selecting matching entities ?e, SPARQL selecting KNOWN entities ?e, parameters)."""
+    params = {"u": graph.iri(path.cond.uri) if path.cond.uri else None, "v": path.cond.value}
+    if not SCOPE.match(path.scope):
+        raise ValueError(f"bad scope {path.scope!r}")
+    all_q = _all(path)
+    pat, last = _steps(path)
     if path.cond.kind == "exists" and not path.steps:          # "is it a <category>?"
         return all_q, all_q, params
     if path.cond.kind == "count":
         c = path.cond
         if not path.steps or c.op != ">=" or c.value is None or c.value < 1:
             raise ValueError("count needs >=1 step, op '>=' and a value >= 1")
-        true_q = f"{_cat(path)} AND COUNT {{ MATCH {pat} }} >= $v RETURN collect(e.uri) AS uris"
+        key = ', "|", '.join(f"STR(?n{i})" for i in range(1, len(path.steps) + 1))     # one distinct path = one distinct node tuple
+        true_q = (f'SELECT DISTINCT ?e WHERE {{ ?e g:category "{path.start}" . {{ SELECT ?e WHERE {{ {pat} }} GROUP BY ?e '
+                  f'HAVING (COUNT(DISTINCT CONCAT({key})) >= $v) }} }}')
         complete = path.scope == "closed" and all(st.rel in COMPLETE_RELS for st in path.steps)
         return true_q, (all_q if complete else true_q), params
-    # EXISTS { MATCH (e)-[..]->(n1) WHERE .. } keeps everything parameterised and returns one row per entity
-    true_q = f"{_cat(path)} AND EXISTS {{ MATCH {pat} WHERE {where} }} RETURN collect(e.uri) AS uris"
+    true_q = _select(path, f"{pat} {_cond(path, last)}")
     if path.cond.kind == "cmp":
-        known_q = f"{_cat(path)} AND EXISTS {{ MATCH {pat} WHERE {last}.{path.cond.prop} IS NOT NULL }} RETURN collect(e.uri) AS uris"
+        known_q = _select(path, f"{pat} {last} {_prop(path.cond.prop)} ?val .")
     elif path.scope == "closed":
         known_q = all_q
     elif path.scope == "positive":    # open world: absence of the fact is NOT evidence of falsity
         known_q = true_q
     elif path.scope == "status":      # "Unknown" status must stay unknown, not become "not alive"
-        known_q = f"{_cat(path)} AND EXISTS {{ MATCH {pat} WHERE {last}.name IN ['Alive','Deceased'] }} RETURN collect(e.uri) AS uris"
+        known_q = _select(path, f'{pat} {last} g:name ?nm . FILTER(?nm IN ("Alive", "Deceased"))')
     elif path.scope == "path":        # something to evaluate on: the path (ignoring the final condition) exists
-        known_q = f"{_cat(path)} AND EXISTS {{ MATCH {pat} }} RETURN collect(e.uri) AS uris"
+        known_q = _select(path, pat)
     elif path.scope.startswith("last:"):
         _, kind, name = path.scope.split(":")
-        inner = f"({last})-[:`{name}`]->()" if kind == "rel" else f"{last}.{name} IS NOT NULL"
-        known_q = f"{_cat(path)} AND EXISTS {{ MATCH {pat} WHERE {inner} }} RETURN collect(e.uri) AS uris"
+        inner = f'{last} ?lp ?lx . ?lp g:relType "{name}" .' if kind == "rel" else f"{last} {_prop(name)} ?lx ."
+        known_q = _select(path, f"{pat} {inner}")
     elif path.scope.startswith("rel:"):
-        known_q = f"{_cat(path)} AND EXISTS {{ (e)-[:`{path.scope[4:]}`]->() }} RETURN collect(e.uri) AS uris"
-    elif path.scope.startswith("prop:"):
-        known_q = f"{_cat(path)} AND e.{path.scope[5:]} IS NOT NULL RETURN collect(e.uri) AS uris"
-    else:
-        raise ValueError(f"bad scope {path.scope!r}")
-    if not SCOPE.match(path.scope):
-        raise ValueError(f"bad scope {path.scope!r}")
+        known_q = _select(path, f'?e ?rp ?rx . ?rp g:relType "{path.scope[4:]}" .')
+    else:                             # prop:P (SCOPE admits nothing else)
+        known_q = _select(path, f"?e {_prop(path.scope[5:])} ?px .")
     return true_q, known_q, params
 
 
-def compile_explain(path: Path) -> str | None:
-    """Cypher returning one supporting path (with provenance) for entity $e; None if there is no path to show."""
-    pat, last = _pattern(path)
+def explain_path(path: Path, uri: str) -> dict | None:
+    """One supporting path of entity `uri` (with the provenance of every edge), or None if there is nothing to show:
+    {"hops": [{type, provenance, from, to}], "end": name, "end_inferred": [OWL RL types of the last node], "value": cmp value | None}."""
     if not path.steps and path.cond.kind != "label":
         return None
-    return (f"MATCH (e:`{path.start}` {{uri: $e}}) MATCH p = {pat} WHERE {_where(path, last)} "
-            "RETURN [r IN relationships(p) | {type: type(r), provenance: r.provenance, "
-            "from: startNode(r).name, to: endNode(r).name}] AS hops, "
-            f"{last}.name AS end, {last}.inferred_types AS end_inferred, "
-            f"{'%s.%s' % (last, path.cond.prop) if path.cond.kind == 'cmp' else 'null'} AS value LIMIT 1")
+    prev, pat, sel = "?e", "", ""
+    for i, st in enumerate(path.steps, 1):
+        if not IDENT.match(st.rel):
+            raise ValueError(f"bad relationship type {st.rel!r}")
+        pat += (f"GRAPH ?g{i} {{ {prev} ?p{i} ?n{i} }} " if st.dir == "out" else f"GRAPH ?g{i} {{ ?n{i} ?p{i} {prev} }} ") + f'?p{i} g:relType "{st.rel}" . '
+        pat += f"{prev} g:name ?f{i} . ?n{i} g:name ?t{i} . "
+        sel += f" ?g{i} ?f{i} ?t{i}"
+        prev = f"?n{i}"
+    q = (f'SELECT ?end ?last ?val{sel} WHERE {{ VALUES ?e {{ $e }} ?e g:category "{path.start}" . {pat} {_cond(path, prev)} '
+         f'{prev} g:name ?end . BIND({prev} AS ?last) }} LIMIT 1')
+    rows = graph.run(q, e=graph.iri(uri), u=graph.iri(path.cond.uri) if path.cond.uri else None, v=path.cond.value)
+    if not rows:
+        return None
+    r = rows[0]
+    hops = []
+    for i, st in enumerate(path.steps, 1):
+        a, b = r[f"f{i}"], r[f"t{i}"]
+        hops.append({"type": st.rel, "provenance": r[f"g{i}"].rsplit(":", 1)[-1], "from": a if st.dir == "out" else b, "to": b if st.dir == "out" else a})
+    inf = [x["t"] for x in graph.run("SELECT ?t WHERE { $l g:inferredType ?t } ORDER BY ?t", l=graph.iri(r["last"]))]
+    return {"hops": hops, "end": r["end"], "end_inferred": inf, "value": r.get("val")}
 
 
 def category_uris() -> dict[str, list[str]]:
-    return {c: graph.run(f"MATCH (e:`{c}`) WHERE e.category = '{c}' RETURN collect(e.uri) AS uris")[0]["uris"] for c in config.CATEGORIES}
+    return {c: [r["e"] for r in graph.run('SELECT ?e WHERE { ?e g:category $c } ORDER BY ?e', c=c)] for c in config.CATEGORIES}
 
 
 def combine(vals: list[int], mode: str) -> int:
@@ -258,8 +283,8 @@ def evaluate(spec: QuerySpec, uris: list[str], cats: dict[str, list[str]] | None
     per_entity: dict[str, list[int]] = {}
     for p in spec.paths:
         tq, kq, params = compile_path(p)
-        true_set = set(graph.run(tq, **params)[0]["uris"])
-        known = set(graph.run(kq, **params)[0]["uris"]) | true_set
+        true_set = {r["e"] for r in graph.run(tq, **params)}
+        known = {r["e"] for r in graph.run(kq, **params)} | true_set
         for u in cats[p.start]:
             per_entity.setdefault(u, []).append(1 if u in true_set else (0 if u in known else -1))
     out = {}
@@ -275,15 +300,15 @@ def evaluate(spec: QuerySpec, uris: list[str], cats: dict[str, list[str]] | None
 # ------------------------------------------------------------------ schema introspection / validation
 def schema_summary() -> dict:
     """What the LLM and the rule generator may use. Built from the live graph, not hardcoded."""
-    rels = graph.run("MATCH (a:Resource)-[r]->(b:Resource) WHERE a.category IS NOT NULL "
-                     "RETURN a.category AS start, type(r) AS rel, count(*) AS n ORDER BY n DESC")
-    labels = graph.run("MATCH (n:Resource) UNWIND labels(n) AS l WITH l, count(*) AS n WHERE l <> 'Resource' RETURN l AS label, n ORDER BY n DESC")
+    rels = graph.run("SELECT ?start ?rel (COUNT(*) AS ?n) WHERE { ?a g:category ?start . ?a ?p ?b . ?p g:relType ?rel . ?b g:name ?bn } "
+                     "GROUP BY ?start ?rel ORDER BY DESC(?n) ?start ?rel")
+    labels = graph.run("SELECT ?label (COUNT(*) AS ?n) WHERE { ?x g:label ?label } GROUP BY ?label ORDER BY DESC(?n) ?label")
     return {"relationships": rels, "labels": labels, "numeric_props": sorted(NUMERIC_PROPS)}
 
 
 def allowed_identifiers() -> tuple[set[str], set[str]]:
-    rels = {r["rel"] for r in graph.run("MATCH ()-[r]->() RETURN DISTINCT type(r) AS rel")}
-    labels = {l["label"] for l in graph.run("MATCH (n:Resource) UNWIND labels(n) AS label RETURN DISTINCT label")}
+    rels = {r["rel"] for r in graph.run("SELECT DISTINCT ?rel WHERE { ?p g:relType ?rel }")}
+    labels = {l["label"] for l in graph.run("SELECT DISTINCT ?label WHERE { ?n g:label ?label }")}
     return rels, labels
 
 
@@ -301,7 +326,10 @@ def validate_spec(spec: QuerySpec, rels: set[str], labels: set[str]) -> str | No
         if c.kind == "uri":
             if not c.uri or not p.steps:
                 return "uri condition needs a target uri and at least one step"
-            if not graph.run("MATCH (n:Resource {uri:$u}) RETURN count(n) AS c", u=c.uri)[0]["c"]:
+            try:
+                if not graph.run("ASK { $u g:name ?x }", u=graph.iri(c.uri))[0]["ask"]:
+                    return f"unknown uri {c.uri}"
+            except ValueError:
                 return f"unknown uri {c.uri}"
         if c.kind == "count":
             if not p.steps or c.op != ">=" or c.value is None or c.value < 1:
@@ -380,8 +408,8 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
 
     # relation -> target questions straight from the graph, filtered by support
     rows = graph.run(
-        "MATCH (a:Resource)-[r]->(t:Resource) WHERE a.category IN $cats AND type(r) IN $rels "
-        "RETURN a.category AS cat, type(r) AS rel, t.uri AS uri, t.name AS name, count(DISTINCT a) AS n",
+        "SELECT ?cat ?rel ?uri ?name (COUNT(DISTINCT ?a) AS ?n) WHERE { VALUES ?cat { $cats } VALUES ?rel { $rels } "
+        "?a g:category ?cat . ?a ?p ?uri . ?p g:relType ?rel . ?uri g:name ?name } GROUP BY ?cat ?rel ?uri ?name ORDER BY ?cat ?rel ?uri",
         cats=config.CATEGORIES, rels=SWEEP_RELS)
     for r in rows:
         if r["name"] == "Unknown":
@@ -400,7 +428,8 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
                             scope="status" if r["rel"] == "STATUS_OF_CHARACTER" else (f"rel:{r['rel']}" if r["rel"] in OPEN_RELS else "closed"))]))
 
     # fruit type: fruits directly, characters through their fruit (one question, two paths)
-    for t in graph.run("MATCH (f:DevilFruit)-[:HAS_FRUIT_TYPE]->(t) WHERE f.category='DevilFruit' RETURN t.uri AS uri, t.name AS name, count(f) AS n"):
+    for t in graph.run('SELECT ?uri ?name (COUNT(DISTINCT ?f) AS ?n) WHERE { ?f g:category "DevilFruit" . ?f ?p ?uri . ?p g:relType "HAS_FRUIT_TYPE" . ?uri g:name ?name } '
+                   'GROUP BY ?uri ?name ORDER BY ?uri'):
         if t["n"] >= 2:
             c = Cond(kind="uri", uri=t["uri"])
             add(_mk(f"Is it (or does it eat) a {t['name'].replace('_', ' ')}-type Devil Fruit?", [
@@ -408,9 +437,9 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
                 Path(start="Character", steps=[Step(rel="HAS_DEVIL_FRUIT"), Step(rel="HAS_FRUIT_TYPE")], cond=c, scope="positive")]))
 
     # affiliation spanning categories: character direct, fruit via its user, ship via its crew
-    for r in graph.run("MATCH (a:Character)-[:AFFILIATES_WITH]->(t) WHERE a.category='Character' "
-                       "AND (t:PirateOrganization OR t:MarineOrganization OR t:RevolutionaryOrganization OR t:WorldGovernmentOrganization) "
-                       "RETURN t.uri AS uri, t.name AS name, count(a) AS n ORDER BY n DESC"):
+    for r in graph.run('SELECT ?uri ?name (COUNT(DISTINCT ?a) AS ?n) WHERE { ?a g:category "Character" . ?a ?p ?uri . ?p g:relType "AFFILIATES_WITH" . ?uri g:name ?name . '
+                       '?uri g:label ?l . VALUES ?l { "PirateOrganization" "MarineOrganization" "RevolutionaryOrganization" "WorldGovernmentOrganization" } } '
+                       'GROUP BY ?uri ?name ORDER BY DESC(?n) ?uri'):
         if r["n"] >= config.MIN_SUPPORT and r["uri"].rsplit("#", 1)[-1] not in UMBRELLA_ORGS:
             c = Cond(kind="uri", uri=r["uri"])
             add(_mk(f"Does it have a connection to {r['name'].replace('_', ' ')}?", [
@@ -422,8 +451,8 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
     fruit_user = [Step(rel="DEVIL_FRUIT_CURRENT_USER")]
     for rel, tmpl in (("OCCUPATION", "Was it eaten by someone with the role or occupation \"{t}\"?"), ("PLACE_OF_ORIGIN", "Was it eaten by someone who comes from {t}?"),
                       ("RESIDENCE", "Was it eaten by someone who lives in {t}?")):
-        for r in graph.run(f"MATCH (f:DevilFruit)-[:DEVIL_FRUIT_CURRENT_USER]->(u)-[:`{rel}`]->(t) WHERE f.category='DevilFruit' "
-                           "RETURN t.uri AS uri, t.name AS name, count(DISTINCT f) AS n"):
+        for r in graph.run('SELECT ?uri ?name (COUNT(DISTINCT ?f) AS ?n) WHERE { ?f g:category "DevilFruit" . ?f ?p1 ?u . ?p1 g:relType "DEVIL_FRUIT_CURRENT_USER" . '
+                           '?u ?p2 ?uri . ?p2 g:relType $rel . ?uri g:name ?name } GROUP BY ?uri ?name ORDER BY ?uri', rel=rel):
             if 4 <= r["n"] <= n_by_cat["DevilFruit"] - 4 and r["name"] != "Unknown":
                 add(_mk(tmpl.format(t=r["name"].replace("_", " ")), [Path(start="DevilFruit", steps=fruit_user + [Step(rel=rel)],
                         cond=Cond(kind="uri", uri=r["uri"]), scope="path")]))

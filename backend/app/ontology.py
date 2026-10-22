@@ -1,4 +1,4 @@
-"""RDF loading, extension rules and OWL RL materialisation (no Neo4j needed -> unit-testable)."""
+"""RDF loading, extension rules and OWL RL materialisation (no Fuseki needed -> unit-testable)."""
 import re
 from rdflib import Graph, URIRef, Namespace, RDF, RDFS, OWL, Literal
 import owlrl

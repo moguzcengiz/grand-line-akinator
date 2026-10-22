@@ -1,23 +1,23 @@
 # Grand Line Akinator
 
-Ontology-driven Akinator for One Piece (characters, Devil Fruits, ships). Questions are generated from a **Neo4j knowledge graph built from
+Ontology-driven Akinator for One Piece (characters, Devil Fruits, ships). Questions are generated from a **Apache Jena Fuseki (RDF/SPARQL) knowledge graph built from
 [kalnassag/one-piece-ontology](https://github.com/kalnassag/one-piece-ontology)**, selected by **expected information gain**, and every prediction is explained with graph facts.
-Stack: FastAPI · Neo4j 5 Community · RDFLib + owlrl · Together AI (optional) · React/TS/Vite/Tailwind · Docker Compose.
+Stack: FastAPI · Apache Jena Fuseki 5 (TDB2) · RDFLib + owlrl · Together AI (optional) · React/TS/Vite/Tailwind · Docker Compose.
 
 ## Run
 ```bash
-cp .env.example .env          # set TOGETHER_API_KEY and NEO4J_PASSWORD (never commit .env)
-docker compose up --build -d  # neo4j -> ingestion (one-shot) -> backend -> frontend  (~90 s cold)
+cp .env.example .env          # set TOGETHER_API_KEY and FUSEKI_PASSWORD (never commit .env)
+docker compose up --build -d  # fuseki -> ingestion (one-shot) -> backend -> frontend  (~90 s cold)
 ```
 | | URL |
 |---|---|
 | Frontend | http://localhost:3000 |
 | API + Swagger | http://localhost:8000 · http://localhost:8000/docs |
-| Neo4j Browser | http://localhost:7474 (user `neo4j`, password from `.env`) |
+| Fuseki (SPARQL UI / endpoint `/ds/sparql`) | http://localhost:3030 (reads are open; writes need user `admin` + `FUSEKI_PASSWORD`) |
 
-If 3000/8000 are taken on your machine set `FRONTEND_PORT` / `BACKEND_PORT` in `.env`.
+If 3000/8000 are taken on your machine set `FRONTEND_PORT` / `BACKEND_PORT` (and `FUSEKI_PORT` for 3030) in `.env`.
 Re-run ingestion any time (idempotent): `docker compose run --rm backend python -m app.ingestion`
-Neo4j data lives in the named volume `neo4j_data`. Without a Together key the app still works (rule-based; AI mode falls back per turn).
+Fuseki data lives in the named volume `fuseki_data`. Without a Together key the app still works (rule-based; AI mode falls back per turn).
 
 ## How the upstream ontology is integrated and extended
 Full details: [docs/ONTOLOGY.md](docs/ONTOLOGY.md) · architecture diagram: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -44,7 +44,7 @@ Prediction: Monkey D. Luffy, with the graph path behind every answer and which f
 
 ## Tests and evaluation
 ```bash
-docker compose run --rm --no-deps backend python -m pytest -q tests          # unit + integration (integration needs the running neo4j service)
+docker compose run --rm --no-deps backend python -m pytest -q tests          # unit + integration (integration needs the running fuseki service)
 ./eval_results/final_eval.sh      # ontology-patch x unknown-handling ablation, baselines (previous deterministic policy), ~10 min
 ./eval_results/policy_eval.sh     # adaptive vs deterministic policy: accuracy, variety, redundancy, weight/temperature sweep, ~10 min
 ./eval_results/ai_eval.sh         # AI-assisted planner on the same 12 targets, ~10 min

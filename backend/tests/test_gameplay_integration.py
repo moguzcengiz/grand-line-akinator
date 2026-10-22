@@ -1,4 +1,4 @@
-"""Integration tests against the live Neo4j graph (skipped automatically when Neo4j is not reachable).
+"""Integration tests against the live Fuseki graph (skipped automatically when Fuseki is not reachable).
 
 Run inside Docker:  docker compose run --rm --no-deps backend python -m pytest -q tests/test_gameplay_integration.py
 """
@@ -12,10 +12,10 @@ pytestmark = pytest.mark.integration
 @pytest.fixture(scope="module")
 def kb():
     try:
-        graph.driver().verify_connectivity()
+        graph.ping()
         return service.get_kb()
     except Exception as e:                                           # pragma: no cover
-        pytest.skip(f"neo4j not reachable: {e}")
+        pytest.skip(f"fuseki not reachable: {e}")
 
 
 def q_by_text(kb, text):
@@ -27,7 +27,8 @@ def idx(kb, name):
 
 
 def no_fruit_characters(kb):
-    with_fruit = {r["u"] for r in graph.run("MATCH (c:Character)-[:HAS_DEVIL_FRUIT|PREVIOUSLY_HAD_DEVIL_FRUIT]->() RETURN c.uri AS u")}
+    with_fruit = {r["u"] for r in graph.run(
+        'SELECT DISTINCT ?u WHERE { ?u g:category "Character" . ?u ?p ?f . ?p g:relType ?r . VALUES ?r { "HAS_DEVIL_FRUIT" "PREVIOUSLY_HAD_DEVIL_FRUIT" } }')}
     return [i for i, e in enumerate(kb.entities) if e["category"] == "Character" and e["uri"] not in with_fruit]
 
 
@@ -56,8 +57,9 @@ def test_unknown_ship_builder_and_type_are_unknown(kb):
 
 def test_unknown_life_status_is_unknown(kb):
     alive = kb.bank.truth[q_by_text(kb, "Is it a living character?")]
-    unknown_status = graph.run("MATCH (c:Character)-[:STATUS_OF_CHARACTER]->(s {local:'Unknown'}) WHERE c.category='Character' "
-                               "AND NOT EXISTS { (c)-[:STATUS_OF_CHARACTER]->(t) WHERE t.local IN ['Alive','Deceased'] } RETURN c.uri AS u")
+    unknown_status = graph.run(
+        'SELECT DISTINCT ?u WHERE { ?u g:category "Character" . ?u ?p ?s . ?p g:relType "STATUS_OF_CHARACTER" . ?s g:local "Unknown" . '
+        'FILTER NOT EXISTS { ?u ?p2 ?t . ?p2 g:relType "STATUS_OF_CHARACTER" . ?t g:local ?l . FILTER(?l IN ("Alive", "Deceased")) } }')
     assert unknown_status and all(alive[kb.idx[r["u"]]] == -1 for r in unknown_status)
 
 
@@ -75,9 +77,9 @@ def test_unknown_never_eliminates_a_candidate_outright(kb):
 @pytest.mark.parametrize("name", ["Buzz", "Gasparde", "Honey_Queen"])
 def test_unresolved_users_are_not_guessed(kb, name):
     uri = f"http://kalnassag.com/onepiece#{name}"
-    row = graph.run("MATCH (n:Resource {uri:$u}) RETURN n.category AS c", u=uri)
+    row = graph.run("SELECT ?c WHERE { $u g:name ?n . OPTIONAL { $u g:category ?c } }", u=graph.iri(uri))
     assert row and row[0]["c"] is None, "must stay a non-entity node (no verified mapping)"
-    assert graph.run("MATCH (n:Resource {uri:$u})<-[r]-() RETURN count(r) AS c", u=uri)[0]["c"] >= 1   # the original link is untouched
+    assert graph.run("SELECT (COUNT(*) AS ?c) WHERE { ?s ?p $u . ?p g:relType ?r }", u=graph.iri(uri))[0]["c"] >= 1   # the original link is untouched
 
 
 # ---------------------------------------------------------------- Blackbeard & Law end to end
@@ -99,7 +101,8 @@ def test_blackbeard_and_law_fruit_links_drive_questions_and_prediction(kb, name,
     from app.main import app
     t = idx(kb, name)
     assert kb.bank.truth[q_by_text(kb, "Has your character eaten a Devil Fruit?"), t] == 1       # repaired link -> TRUE (was missing)
-    assert fruit in {r["name"] for r in graph.run("MATCH (c:Character {name:$n})-[:HAS_DEVIL_FRUIT]->(f) RETURN f.name AS name", n=name)}
+    assert fruit in {r["name"] for r in graph.run(
+        'SELECT ?name WHERE { ?c g:name $n . ?c g:category "Character" . ?c ?p ?f . ?p g:relType "HAS_DEVIL_FRUIT" . ?f g:name ?name }', n=name)}
     with TestClient(app) as client:
         g, asked = _play(client, kb, t)
     assert g["prediction"]["name"] == name, f"predicted {g['prediction']['name']} after {len(asked)} questions: {asked}"
@@ -253,13 +256,15 @@ def test_conjunction_is_unknown_when_a_conjunct_is_unknown(kb):
 def test_fruit_user_questions_stay_unknown_when_the_users_facts_are_missing(kb):
     t = kb.bank.truth
     no_user = [i for i, e in enumerate(kb.entities) if e["category"] == "DevilFruit" and not graph.run(
-        "MATCH (f:DevilFruit {uri:$u})-[:DEVIL_FRUIT_CURRENT_USER]->() RETURN count(*) AS c", u=e["uri"])[0]["c"]]
+        'SELECT (COUNT(*) AS ?c) WHERE { $u ?p ?x . ?p g:relType "DEVIL_FRUIT_CURRENT_USER" }', u=graph.iri(e["uri"]))[0]["c"]]
     assert no_user
     for text in ("Was it eaten by a captain?", "Was it eaten by a pirate?", "Is the person who ate it still alive?"):
         q = q_by_text(kb, text)
         assert all(t[q, i] == -1 for i in no_user), text
     cap = q_by_text(kb, "Was it eaten by a captain?")
-    no_job_user = graph.run("MATCH (f:DevilFruit)-[:DEVIL_FRUIT_CURRENT_USER]->(u) WHERE f.category='DevilFruit' AND NOT (u)-[:OCCUPATION]->() RETURN f.uri AS u")
+    no_job_user = graph.run(
+        'SELECT DISTINCT (?f AS ?u) WHERE { ?f g:category "DevilFruit" . ?f ?p ?x . ?p g:relType "DEVIL_FRUIT_CURRENT_USER" . '
+        'FILTER NOT EXISTS { ?x ?p2 ?o . ?p2 g:relType "OCCUPATION" } }')
     assert no_job_user and all(t[cap, kb.idx[r["u"]]] == -1 for r in no_job_user), "a user without a recorded occupation must not make the answer FALSE"
 
 
@@ -271,7 +276,9 @@ def test_whitebeard_counts_as_a_devil_fruit_eater_and_a_pirate(kb):
     assert t[q_by_text(kb, "Has your character eaten a Devil Fruit?"), w] == 1            # previous user of Gura Gura
     pirate = q_by_text(kb, 'Does it have the role or occupation "Pirate"?')
     assert t[pirate, w] == 1                                                              # inferred from Pirate Captain via the occupation hierarchy
-    assert graph.run("MATCH (:Character {name:'Edward Newgate'})-[r:OCCUPATION {provenance:'inferred'}]->(o {name:'Pirate'}) RETURN count(r) AS c")[0]["c"] == 1
+    assert graph.run(
+        'SELECT (COUNT(*) AS ?c) WHERE { GRAPH <urn:akinator:inferred> { ?a ?p ?o } ?p g:relType "OCCUPATION" . '
+        '?a g:name "Edward Newgate" . ?a g:category "Character" . ?o g:name "Pirate" }')[0]["c"] == 1
 
 
 def _human_whitebeard(kb, seed, max_guesses=5):

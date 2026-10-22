@@ -1,15 +1,16 @@
-"""RDF -> OWL RL -> Neo4j ingestion.  Run:  python -m app.ingestion
+"""RDF -> OWL RL -> Fuseki ingestion.  Run:  python -m app.ingestion
 
-Idempotent: wipes the graph and rebuilds it deterministically from the ontology files.
-Provenance on every relationship:  explicit (upstream data) | curated (our extension/curated files) | inferred (owlrl).
+Idempotent: replaces the four named graphs (graph.GRAPHS) deterministically from the ontology files.
+Provenance of every edge / type triple = the named graph it is stored in: explicit (upstream data) | curated (our extension/curated
+files) | inferred (owlrl).  Per-node game data (name, category, labels, popularity ...) lives in the 'game' graph.
 """
 import json
 import re
 import sys
 import time
-from collections import Counter, defaultdict
+from collections import Counter
 
-from rdflib import Graph, URIRef, Literal, RDF, RDFS, OWL
+from rdflib import Graph, URIRef, Literal, Namespace, RDF, RDFS, OWL
 
 from . import config, graph
 from .ontology import load_sources, materialize, is_domain_triple, nonreflexive_same_as, OP, OPX
@@ -19,6 +20,7 @@ NUMERIC = {"height", "age", "ageAtDeath", "bountyAmount"}
 CATEGORY_CLASSES = {"Character", "DevilFruit", "Ship"}
 SKIP_LITERAL = {"opwikiurl", "internalID", "dbpediaID", "wikipediaOD"}
 META_PREFIX = (str(RDF), str(RDFS), str(OWL))
+RUN = "urn:akinator:run:latest"                           # g:report = JSON of the latest ingestion (stored before validation)
 
 
 def _is_resource(u) -> bool:
@@ -38,7 +40,7 @@ def _name(g: Graph, u: URIRef) -> tuple[str, str | None]:
 
 
 def build_model():
-    """Pure-python part: returns (nodes, edges, report). Testable without Neo4j."""
+    """Pure-python part: returns (nodes, edges, types, report). Testable without Fuseki."""
     base, ext = load_sources()
     union = base + ext
     t0 = time.time()
@@ -93,6 +95,8 @@ def build_model():
             prov = prov_of(t)
             if cur is None or (cur["provenance"] == "inferred" and prov != "inferred"):
                 edges[key] = {"s": str(s), "t": graph.rel_type(str(p)), "o": str(o), "predicate": str(p), "provenance": prov}
+    types = [{"s": str(s), "class": str(o), "provenance": prov_of((s, p, o))} for s, p, o in full.triples((None, RDF.type, None))
+             if _is_resource(s) and _is_resource(o)]
 
     for n in nodes.values():
         for k, v in list(n["props"].items()):
@@ -107,6 +111,7 @@ def build_model():
     haki_known = {e["s"] for e in edges.values() if e["t"] == "HAS_HAKI"}
     for u in haki_known:
         nodes[u]["props"]["haki_known"] = True
+    add_popularity(nodes, edges.values())
 
     report = {
         "source_triples": {"base": len(base), "extension": len(ext)},
@@ -122,59 +127,78 @@ def build_model():
         "edges_by_provenance": dict(Counter(e["provenance"] for e in edges.values())),
         "entities": dict(Counter(n["category"] for n in nodes.values() if n["category"])),
     }
-    return nodes, list(edges.values()), report
+    report["type_triples"] = len(types)
+    return nodes, list(edges.values()), types, report
 
 
-def _batches(xs, n=2000):
-    for i in range(0, len(xs), n):
-        yield xs[i:i + n]
-
-
-def load_into_neo4j(nodes, edges):
-    graph.run("MATCH (n) DETACH DELETE n")
-    graph.run("CREATE CONSTRAINT resource_uri IF NOT EXISTS FOR (n:Resource) REQUIRE n.uri IS UNIQUE")
-    by_labels = defaultdict(list)
-    for n in nodes.values():
-        row = {"uri": n["uri"], "props": {**n["props"], "local": n["local"], "name": n["name"],
-               "category": n["category"], "explicit_types": sorted(n["explicit_types"]),
-               "inferred_types": sorted(n["inferred_types"])}}
-        row["props"] = {k: v for k, v in row["props"].items() if v is not None}
-        by_labels[tuple(n["labels"])].append(row)
-    for labels, rows in by_labels.items():
-        lab = ":".join(f"`{l}`" for l in labels)
-        for b in _batches(rows):
-            graph.run(f"UNWIND $rows AS r CREATE (n:{lab} {{uri: r.uri}}) SET n += r.props", rows=b)
-    by_type = defaultdict(list)
-    for e in edges:
-        by_type[e["t"]].append(e)
-    for t, rows in by_type.items():
-        for b in _batches(rows):
-            graph.run(f"UNWIND $rows AS r MATCH (a:Resource {{uri: r.s}}), (b:Resource {{uri: r.o}}) "
-                      f"CREATE (a)-[x:`{t}`]->(b) SET x.provenance = r.provenance, x.predicate = r.predicate", rows=b)
-
-
-def compute_popularity():
+def add_popularity(nodes: dict, edges):
     """Graph-salience popularity proxy: node degree (in+out). Fruits / ships inherit their user's / owner's degree."""
-    graph.run("MATCH (e:Resource) WHERE e.category IS NOT NULL SET e.degree = COUNT { (e)--() }")
-    graph.run("MATCH (e:Resource) WHERE e.category = 'Character' SET e.popularity = e.degree")
-    graph.run("MATCH (e:Resource) WHERE e.category IN ['DevilFruit','Ship'] "
-              "OPTIONAL MATCH (e)-[:DEVIL_FRUIT_CURRENT_USER|SHIP_OWNER]->(o:Resource) "
-              "WITH e, max(o.degree) AS od SET e.popularity = e.degree + coalesce(od, 0)")
+    edges = list(edges)
+    deg = Counter()
+    for e in edges:
+        deg[e["s"]] += 1
+        deg[e["o"]] += 1
+    owner = {}
+    for e in edges:
+        if e["t"] in ("DEVIL_FRUIT_CURRENT_USER", "SHIP_OWNER") and nodes[e["o"]]["category"]:     # only entities carry a degree
+            owner[e["s"]] = max(owner.get(e["s"], 0), deg[e["o"]])
+    for u, n in nodes.items():
+        if n["category"]:
+            n["props"]["degree"] = deg[u]
+            n["props"]["popularity"] = deg[u] + (owner.get(u, 0) if n["category"] in ("DevilFruit", "Ship") else 0)
 
 
-def validate(report):
-    """Sanity checks against the freshly loaded graph. Raises on failure."""
-    q = lambda cypher, **k: graph.run(cypher, **k)[0]["c"]
-    counts = {c: q(f"MATCH (n:`{c}`) WHERE n.category = $c RETURN count(n) AS c", c=c) for c in config.CATEGORIES}
+def to_graphs(nodes: dict, edges, types) -> dict[str, Graph]:
+    """The four named graphs.  Node properties keep their python type (int / float / bool / str)."""
+    g = Namespace(graph.G)
+    out = {k: Graph() for k in graph.GRAPHS}
+    for e in edges:
+        out[e["provenance"]].add((URIRef(e["s"]), URIRef(e["predicate"]), URIRef(e["o"])))
+        out["game"].add((URIRef(e["predicate"]), g.relType, Literal(e["t"])))
+    for t in types:
+        out[t["provenance"]].add((URIRef(t["s"]), RDF.type, URIRef(t["class"])))
+    game = out["game"]
+    for n in nodes.values():
+        u = URIRef(n["uri"])
+        game.add((u, g.name, Literal(n["name"])))
+        game.add((u, g.local, Literal(n["local"])))
+        if n["category"]:
+            game.add((u, g.category, Literal(n["category"])))
+        for lab in n["labels"]:
+            if lab != "Resource":
+                game.add((u, g.label, Literal(lab)))
+        for t in n["explicit_types"]:
+            game.add((u, g.explicitType, Literal(t)))
+        for t in n["inferred_types"]:
+            game.add((u, g.inferredType, Literal(t)))
+        for k, v in n["props"].items():
+            for x in (v if isinstance(v, list) else [v]):
+                if x is not None:
+                    game.add((u, g[graph.label_name(k)], Literal(x)))
+    return out
+
+
+def load_into_fuseki(graphs: dict[str, Graph]):
+    for name, gr in graphs.items():
+        graph.put_graph(name, gr.serialize(format="nt"))
+
+
+def validate(nodes, edges, report):
+    """Sanity checks on the model, then that the store holds it. Raises on failure."""
+    counts = Counter(n["category"] for n in nodes.values() if n["category"])
+    counts = {c: counts.get(c, 0) for c in config.CATEGORIES}
+    inferred = Counter(e["t"] for e in edges if e["provenance"] == "inferred")
+    stored = {c: graph.run("SELECT (COUNT(?e) AS ?c) WHERE { GRAPH <urn:akinator:game> { ?e g:category $c } }", c=c)[0]["c"] for c in config.CATEGORIES}
     patched = config.APPLY_PATCHES
     checks = {
+        "store holds every entity": stored == counts,
         "characters >= 1500": counts["Character"] >= 1500,
         "devil fruits >= 134": counts["DevilFruit"] >= 134,
         "ships == 9 (curated)": counts["Ship"] == 9,
-        "inferred HAS_DEVIL_FRUIT edges > 0": q("MATCH ()-[r:HAS_DEVIL_FRUIT {provenance:'inferred'}]->() RETURN count(r) AS c") > 0,
-        "inferred Ancient/Mythical fruit types > 0": q("MATCH ()-[r:HAS_FRUIT_TYPE {provenance:'inferred'}]->() RETURN count(r) AS c") > 0,
-        "OWL RL derived PirateAffiliatedCharacter label > 0": q("MATCH (n:PirateAffiliatedCharacter) RETURN count(n) AS c") > 0,
-        "no sameAs-merged chapters (distinct MANGA_DEBUT targets > 400)": q("MATCH ()-[:MANGA_DEBUT]->(c) RETURN count(DISTINCT c) AS c") > 400,
+        "inferred HAS_DEVIL_FRUIT edges > 0": inferred["HAS_DEVIL_FRUIT"] > 0,
+        "inferred Ancient/Mythical fruit types > 0": inferred["HAS_FRUIT_TYPE"] > 0,
+        "OWL RL derived PirateAffiliatedCharacter label > 0": any("PirateAffiliatedCharacter" in n["labels"] for n in nodes.values()),
+        "no sameAs-merged chapters (distinct MANGA_DEBUT targets > 400)": len({e["o"] for e in edges if e["t"] == "MANGA_DEBUT"}) > 400,
         "no non-reflexive owl:sameAs inferred (no entity merged)": report["owl_sameAs_non_reflexive"] == 0 or not patched,
         "no functional-property axiom had to be dropped": not report["functional_axioms_dropped_for_reasoning"] or not patched,
         "SHACL: zero violations on the patched graph": report["shacl"]["violations"] == 0 or not patched,
@@ -189,12 +213,17 @@ def validate(report):
 
 def main():
     graph.wait_ready()
-    nodes, edges, report = build_model()
-    load_into_neo4j(nodes, edges)
-    compute_popularity()
-    validate(report)
+    nodes, edges, types, report = build_model()
+    graphs = to_graphs(nodes, edges, types)
     report["finished_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    graph.run("MERGE (r:IngestionRun {id:'latest'}) SET r.report = $r", r=json.dumps(report))
+    report["store"] = {"engine": "Apache Jena Fuseki (TDB2)", "triples_by_graph": {k: len(v) for k, v in graphs.items()}}
+    graphs["game"].add((URIRef(RUN), URIRef(graph.G + "report"), Literal(json.dumps(report))))
+    load_into_fuseki(graphs)
+    try:
+        validate(nodes, edges, report)
+    finally:                                                   # the stored report carries the validation outcome (also when it failed)
+        graphs["game"].set((URIRef(RUN), URIRef(graph.G + "report"), Literal(json.dumps(report))))
+        graph.put_graph("game", graphs["game"].serialize(format="nt"))
     print(json.dumps(report, indent=2))
 
 

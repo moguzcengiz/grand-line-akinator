@@ -1,4 +1,4 @@
-"""Guards for the documented upstream inconsistencies (see docs/ONTOLOGY_AUDIT.md). No Neo4j needed."""
+"""Guards for the documented upstream inconsistencies (see docs/ONTOLOGY_AUDIT.md). No Fuseki needed."""
 import pytest
 from rdflib import RDF, RDFS, URIRef
 

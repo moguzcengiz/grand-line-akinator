@@ -1,7 +1,7 @@
 """Together AI (OpenAI-compatible) helper for AI-assisted mode.
 
-The model never writes Cypher.  It returns JSON that is parsed into pydantic QuerySpec objects, validated against the
-live schema whitelist and compiled by app.questions into parameterised Cypher.  Any failure -> caller falls back to rules.
+The model never writes SPARQL.  It returns JSON that is parsed into pydantic QuerySpec objects, validated against the
+live schema whitelist and compiled by app.questions into parameterised SPARQL.  Any failure -> caller falls back to rules.
 """
 import json
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
@@ -31,8 +31,8 @@ class LLMReply(BaseModel):
     dropped: int = 0                     # malformed items skipped by the tolerant parser
 
 
-SYSTEM = """You are the question planner of an Akinator-style guessing game about One Piece, backed by a Neo4j knowledge graph.
-You NEVER write Cypher and you NEVER decide which question is asked: the game engine validates and scores everything you return.
+SYSTEM = """You are the question planner of an Akinator-style guessing game about One Piece, backed by an Apache Jena Fuseki (RDF) knowledge graph.
+You NEVER write SPARQL and you NEVER decide which question is asked: the game engine validates and scores everything you return.
 Answer with ONE JSON object: {"paraphrases":[{"id","text"}], "new_questions":[{"text","spec"}], "reaction": "..."}
 
 paraphrases: rewrite each offered question as one natural, friendly yes/no question that fits the current game phase. Keep the meaning identical,

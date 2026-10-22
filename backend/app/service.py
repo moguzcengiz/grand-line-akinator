@@ -17,7 +17,8 @@ _lock = threading.Lock()
 
 class KB:
     def __init__(self):
-        rows = graph.run("MATCH (e:Resource) WHERE e.category IN $c RETURN e.uri AS uri, e.name AS name, e.category AS category, coalesce(e.popularity, 0) AS popularity ORDER BY e.uri", c=config.CATEGORIES)
+        rows = graph.run("SELECT ?uri ?name ?category (COALESCE(?pop, 0) AS ?popularity) WHERE { VALUES ?category { $c } ?uri g:category ?category . ?uri g:name ?name . "
+                         "OPTIONAL { ?uri g:popularity ?pop } } ORDER BY ?uri", c=config.CATEGORIES)
         if not rows:
             raise RuntimeError("graph is empty - run `python -m app.ingestion`")
         self.entities = rows
@@ -82,8 +83,9 @@ class KB:
             return self.bank.add(q, row, na), None
 
     def entity_facts(self, uri: str, limit=10) -> list[dict]:
-        return graph.run("MATCH (e:Resource {uri:$u})-[r]->(t:Resource) WHERE NOT type(r) IN ['MANGA_DEBUT','ANIME_DEBUT','ENGLISH_VOICE_ACTOR','JAPANESE_VOICE_ACTOR','LIVE_ACTION_PORTRAYED_BY'] "
-                         "RETURN type(r) AS rel, t.name AS name, t.uri AS uri, r.provenance AS provenance LIMIT $n", u=uri, n=limit)
+        return graph.run("SELECT ?rel ?name ?uri ?provenance WHERE { GRAPH ?g { $u ?p ?uri } ?p g:relType ?rel . ?uri g:name ?name . "
+                         'MINUS { VALUES ?rel { "MANGA_DEBUT" "ANIME_DEBUT" "ENGLISH_VOICE_ACTOR" "JAPANESE_VOICE_ACTOR" "LIVE_ACTION_PORTRAYED_BY" } } '
+                         f'BIND(STRAFTER(STR(?g), "urn:akinator:") AS ?provenance) }} ORDER BY ?rel ?uri LIMIT {int(limit)}', u=graph.iri(uri))
 
 
 EXPLORATION = {"off": 0.0, "low": 0.03, "medium": None, "high": 0.15}      # None -> config.TEMPERATURE
@@ -294,13 +296,9 @@ def _select_question(sess: Session):
 def _entity_path_facts(kb: KB, uri: str, spec: Q.QuerySpec, name: str = "") -> list[str]:
     facts = []
     for p in spec.paths:
-        cypher = Q.compile_explain(p)
-        if not cypher:
+        r = Q.explain_path(p, uri)
+        if not r:
             continue
-        rows = graph.run(cypher, e=uri, u=p.cond.uri, v=p.cond.value)
-        if not rows:
-            continue
-        r = rows[0]
         hops = " ; ".join(f"{h['from']} —{h['type']} [{h['provenance']}]→ {h['to']}" for h in r["hops"])
         if p.cond.kind == "label":
             hops += (f"{name} " if not r["hops"] else " ⇒ ") + f"rdf:type {p.cond.label}" + (" (inferred by OWL RL)" if p.cond.label in (r.get("end_inferred") or []) else "")
@@ -314,9 +312,8 @@ def explain(sess: Session, idx: int):
     from .schemas import Evidence, Prediction
     kb, st = sess.kb, sess.state
     e = kb.entities[idx]
-    node = graph.run("MATCH (n:Resource {uri:$u}) RETURN n.explicit_types AS ex, n.inferred_types AS inf", u=e["uri"])
-    node = node[0] if node else {}
-    inferred_edges = graph.run("MATCH (n:Resource {uri:$u})-[r {provenance:'inferred'}]->(t) RETURN type(r) AS rel, t.name AS name", u=e["uri"])
+    inf_types = [r["t"] for r in graph.run("SELECT ?t WHERE { $u g:inferredType ?t } ORDER BY ?t", u=graph.iri(e["uri"]))]
+    inferred_edges = graph.run("SELECT ?rel ?name WHERE { GRAPH <urn:akinator:inferred> { $u ?p ?t } ?p g:relType ?rel . ?t g:name ?name } ORDER BY ?rel ?name", u=graph.iri(e["uri"]))
     ev = []
     for a in st.asked:
         q = kb.bank.questions[a["index"]]
@@ -340,7 +337,7 @@ def explain(sess: Session, idx: int):
         ev.append(Evidence(question=a.get("text") or q.text, answer=SEEN[a["answer"]], lift=round(lift, 3), support=support, facts=facts, kind=kind))
     ev.sort(key=lambda x: -x.lift)
     inferred = [f"{e['name']} —{r['rel']} [inferred]→ {r['name']}" for r in inferred_edges]
-    inferred += [f"{e['name']} rdf:type {t} [inferred by OWL RL]" for t in (node.get("inf") or []) if t not in ("Resource",)]
+    inferred += [f"{e['name']} rdf:type {t} [inferred by OWL RL]" for t in inf_types if t not in ("Resource",)]
     top_p = float(st.w[idx])
     strong = [x for x in ev if x.facts and x.kind == "supports"][:3]
     expl = (f"{e['name']} ({e['category']}) is the most probable candidate with score {top_p:.1%}. "

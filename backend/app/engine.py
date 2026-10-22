@@ -1,6 +1,6 @@
 """Pure-numpy game engine: three-valued knowledge matrix, probabilistic updates, expected information gain.
 
-No Neo4j / FastAPI imports -> fully unit-testable.
+No Fuseki / FastAPI imports -> fully unit-testable.
 """
 import random
 from dataclasses import dataclass, field

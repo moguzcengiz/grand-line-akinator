@@ -1,4 +1,4 @@
-"""Multi-objective question policy: score -> top-k -> seeded softmax sample.  Pure numpy (unit-testable, no Neo4j).
+"""Multi-objective question policy: score -> top-k -> seeded softmax sample.  Pure numpy (unit-testable, no Fuseki).
 
 Replaces "always ask the argmax-information-gain question" (which made every game open identically) by
 

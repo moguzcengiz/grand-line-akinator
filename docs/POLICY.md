@@ -95,7 +95,7 @@ Openings of the adaptive policy (top 4 of 5): “Is your character affiliated wi
 Conclusions that the data supports: variety did not reduce top-1 accuracy (74.0% vs 72.0% over 200 games, 84.5% vs 85.0% over 200 variety games; both inside the noise) and games got ~5 questions shorter (18.7 -> 13.6). **The cause of the shortening was not isolated**: removing the novelty component does not lengthen games (12.8 vs 12.9 questions), so it must not be attributed to duplicate avoidance; the old policy additionally multiplied information gain by coverage and had no phase logic, and the sweep only shows that removing *info* costs 1.2 questions. **What it does not support:** the share of games found within 3 guesses is 3 points lower in the 200-game run (83.5% vs 86.5%; not significant at n = 200, equal in the variety run). Opening variety is real but bounded: five broad questions, not dozens - the policy refuses to open with a weak question.
 
 ## 5. Richer question grammar (`app/questions.py`)
-Operators (all validated against the live schema, all compile to parameterised Cypher, all have an explicit True / False / Unknown evaluation):
+Operators (all validated against the live schema, all compile to parameterised SPARQL, all have an explicit True / False / Unknown evaluation):
 | operator | example question | unknown handling |
 |---|---|---|
 | class membership (OWL-inferred label) | "Is your character affiliated with the World Government?" | scope `rel:AFFILIATES_WITH` |
@@ -110,7 +110,7 @@ Operators (all validated against the live schema, all compile to parameterised C
 New scopes `path`, `last:rel:R`, `last:prop:P` were added after a test showed that a fruit's *user* without a recorded occupation had made "eaten by a captain?" FALSE - a violation of the open-world rule that is now covered by `test_fruit_user_questions_stay_unknown_when_the_users_facts_are_missing`.
 
 ## 6. LLM planner (`app/llm.py`, `service._ai_plan`)
-Input: phase, recent topics, last answer, operators, schema, candidate summary (names are only used for wording), already-asked questions and the top-4 questions *by policy score*. Output (pydantic): paraphrases, <= 3 new question specs, a <= 90 character reaction. The model never writes Cypher and never chooses the question.
+Input: phase, recent topics, last answer, operators, schema, candidate summary (names are only used for wording), already-asked questions and the top-4 questions *by policy score*. Output (pydantic): paraphrases, <= 3 new question specs, a <= 90 character reaction. The model never writes SPARQL and never chooses the question.
 Every proposal is rejected when: outside the live schema or malformed (*unsupported*), no entity can be TRUE (*unanswerable*), two question marks / "or" alternatives (*ambiguous*), \|phi\| >= 0.97 with any banked question (*redundant*), information gain below half the median of the current top questions (*low-value*), or its text names a current candidate (*leaks-candidate*). Reasons are counted per game (developer view). Accepted questions still have to win on the policy score.
 Caches: wording per question id (`_PARA_CACHE`), whole planner replies per (phase, offered question ids) (`_REPLY_CACHE`), accepted question specs persist in the bank. A cache hit costs no API call; the contextual reaction then falls back to the deterministic template.
 

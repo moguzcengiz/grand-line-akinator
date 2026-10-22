@@ -1,4 +1,4 @@
-"""Unit tests of the adaptive question policy and the richer question grammar (no Neo4j needed)."""
+"""Unit tests of the adaptive question policy and the richer question grammar (no Fuseki needed)."""
 import json
 import random
 from collections import Counter
@@ -169,16 +169,16 @@ def test_cardinality_only_accepted_without_claiming_completeness():
     assert validate_spec(QuerySpec(paths=[ok]), {"AFFILIATES_WITH"}, set()) is None
     assert "completeness" in validate_spec(QuerySpec(paths=[bad]), {"AFFILIATES_WITH"}, set())
     tq, kq, params = compile_path(ok)
-    assert "COUNT {" in tq and kq == tq and params["v"] == 2            # absent -> unknown, never false
+    assert "HAVING (COUNT(DISTINCT" in tq and kq == tq and params["v"] == 2            # absent -> unknown, never false
     assert COMPLETE_RELS == set(), "no relation is declared complete in the upstream data"
     with pytest.raises(ValueError):
         compile_path(Path(start="Character", cond=Cond(kind="count", op="<=", value=2), steps=[Step(rel="A")], scope="positive"))
 
 
-def test_inverse_and_multi_hop_compile_to_parameterised_cypher():
+def test_inverse_and_multi_hop_compile_to_parameterised_sparql():
     p = Path(start="DevilFruit", steps=[Step(rel="HAS_DEVIL_FRUIT", dir="in"), Step(rel="OWNS_SHIP")], cond=Cond(kind="exists"), scope="rel:DEVIL_FRUIT_CURRENT_USER")
     tq, kq, _ = compile_path(p)
-    assert "<-[:`HAS_DEVIL_FRUIT`]-(n1)-[:`OWNS_SHIP`]->(n2)" in tq
+    assert '?n1 ?p1 ?e . ?p1 g:relType "HAS_DEVIL_FRUIT" . ?n1 ?p2 ?n2 . ?p2 g:relType "OWNS_SHIP"' in tq
 
 
 def test_topic_and_complexity_helpers():

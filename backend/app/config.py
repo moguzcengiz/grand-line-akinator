@@ -3,9 +3,10 @@ from pathlib import Path
 
 ROOT = Path(os.environ.get("ONTOLOGY_ROOT", Path(__file__).resolve().parents[2]))
 
-NEO4J_URI = os.environ.get("NEO4J_URI", "bolt://localhost:7687")
-NEO4J_USER = os.environ.get("NEO4J_USER", "neo4j")
-NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD", "")
+FUSEKI_URL = os.environ.get("FUSEKI_URL", "http://localhost:3030")
+FUSEKI_DATASET = os.environ.get("FUSEKI_DATASET", "ds")
+FUSEKI_USER = os.environ.get("FUSEKI_USER", "admin")
+FUSEKI_PASSWORD = os.environ.get("FUSEKI_PASSWORD", "")
 
 TOGETHER_API_KEY = os.environ.get("TOGETHER_API_KEY", "")
 TOGETHER_MODEL = os.environ.get("TOGETHER_MODEL", "meta-llama/Llama-3.3-70B-Instruct-Turbo")

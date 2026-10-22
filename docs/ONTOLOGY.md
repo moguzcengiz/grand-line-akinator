@@ -1,4 +1,4 @@
-# Ontology architecture, extensions and RDF → Neo4j mapping
+# Ontology architecture, extensions and RDF → Fuseki mapping
 
 ## 1. Upstream ontology (verified, not assumed)
 Source: <https://github.com/kalnassag/one-piece-ontology> (vendored unchanged in `ontology-src/`).
@@ -55,19 +55,19 @@ inferred:  op:Monkey_D_Luffy   a opx:PirateAffiliatedCharacter               (cl
 ```
 The game's question *"Does your character possess a Devil Fruit?"* is answered from the inferred class label – without reasoning the graph could not answer it.
 
-## 4. RDF → Neo4j mapping (`app/ingestion.py`)
-| RDF | Neo4j |
+## 4. RDF → Fuseki mapping (`app/ingestion.py`)
+| RDF | Fuseki (TDB2, default graph = union of the named graphs; `g:` = `http://kalnassag.com/akinator#`) |
 |---|---|
-| any URI in the op/opx namespaces | `(:Resource {uri, local, name, name_ja, category, explicit_types, inferred_types})` – URI is unique-constrained and never rewritten |
-| `rdf:type C` | extra label `C` (local name). Types derived by OWL RL are labels too, listed in `inferred_types`. Inferred `Character/DevilFruit/Ship` types do **not** create labels (so a user typed only by an `rdfs:range` is not a game entity) |
-| `rdfs:label @en` / `@ja` | `name` / `name_ja` (fallback: prettified local name) |
-| datatype property | node property (`height`, `age` → numeric scalar = max value; others string or list). `opwikiurl`, `internalID`… dropped |
-| `Chapter_N` / `Episode_N` | derived property `number` |
-| object property `p` | relationship `UPPER_SNAKE(p)` with `predicate` (full URI) and `provenance` |
-| provenance | `explicit` (upstream triple) · `curated` (our extension/curated files or rule output) · `inferred` (owlrl only) – an explicit/curated triple that is also derivable stays explicit/curated |
-| category | `Ship` > `DevilFruit` > `Character` explicit class → `category` |
+| any URI in the op/opx namespaces | the URI itself (never rewritten); per-node data lives in graph `urn:akinator:game`: `g:name`, `g:local`, `g:category`, `g:name_ja`, `g:explicitType`, `g:inferredType` |
+| `rdf:type C` | the triple (in the graph of its provenance) plus `g:label "C"` (local name). Types derived by OWL RL are labels too, also listed as `g:inferredType`. Inferred `Character/DevilFruit/Ship` types do **not** create labels (so a user typed only by an `rdfs:range` is not a game entity) |
+| `rdfs:label @en` / `@ja` | `g:name` / `g:name_ja` (fallback: prettified local name) |
+| datatype property | `g:<prop>` literal on the node (`height`, `age` → numeric scalar = max value; others string or list). `opwikiurl`, `internalID`… dropped |
+| `Chapter_N` / `Episode_N` | derived `g:number` |
+| object property `p` | the triple `s p o` itself; `p g:relType "UPPER_SNAKE(p)"` gives the relation name used by question specs |
+| provenance | the named graph the triple is stored in: `urn:akinator:explicit` (upstream triple) · `curated` (our extension/curated files or rule output) · `inferred` (owlrl only) – an explicit/curated triple that is also derivable stays explicit/curated |
+| category | `Ship` > `DevilFruit` > `Character` explicit class → `g:category` |
 
-The ingestion wipes and rebuilds the graph (deterministic, idempotent), validates counts/provenance, and stores a JSON report in `(:IngestionRun {id:'latest'})`, exposed at `/api/ontology/stats`.
+The ingestion replaces the four named graphs (Graph Store Protocol PUT; deterministic, idempotent), validates counts/provenance, and stores a JSON report as `<urn:akinator:run:latest> g:report`, exposed at `/api/ontology/stats`.
 
 ## 5. Explicit / inferred / unknown
 Each (question, entity) cell is **True / False / Unknown**. Missing facts are *not* automatically false:

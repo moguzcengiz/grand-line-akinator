@@ -65,9 +65,9 @@ Causes observed in a live per-turn trace, and fixed afterwards: (1) a single mal
 
 ## 6. Reproduce everything (Docker only)
 ```bash
-cp .env.example .env                      # set TOGETHER_API_KEY and NEO4J_PASSWORD (+ BACKEND_PORT/FRONTEND_PORT if 8000/3000 are taken)
-docker compose up --build -d              # neo4j -> ingestion (RDF -> patches -> OWL RL -> SHACL -> Neo4j) -> backend -> frontend
-docker compose ps                         # all healthy;  http://localhost:3000  (API docs :8000/docs, Neo4j browser :7474)
+cp .env.example .env                      # set TOGETHER_API_KEY and FUSEKI_PASSWORD (+ BACKEND_PORT/FRONTEND_PORT if 8000/3000 are taken)
+docker compose up --build -d              # fuseki -> ingestion (RDF -> patches -> OWL RL -> SHACL -> Fuseki) -> backend -> frontend
+docker compose ps                         # all healthy;  http://localhost:3000  (API docs :8000/docs, Fuseki :3030)
 
 docker compose run --rm ingestion                                              # re-import (idempotent); fails on SHACL violation / merged entities
 docker compose run --rm --no-deps backend python -m pytest -q tests            # unit + integration tests
