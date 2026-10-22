@@ -420,9 +420,12 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
                 Path(start="DevilFruit", steps=[Step(rel="HAS_FRUIT_TYPE")], cond=c),
                 Path(start="Character", steps=[Step(rel="HAS_DEVIL_FRUIT"), Step(rel="HAS_FRUIT_TYPE")], cond=c, scope="positive")]))
 
-    # affiliation spanning categories: character direct, fruit via its user, ship via its crew
+    # affiliation spanning categories: character direct, fruit via its user, ship via its crew.  Every organisation with enough members
+    # (Straw Hat Grand Fleet, Baroque Works, Charlotte Family ...), not only the crews / Marines / Revolutionaries / World Government; upstream
+    # also uses characters and places as affiliation targets (Caesar Clown, Impel Down): those are no organisation and are left out.
     for r in graph.run('SELECT ?uri ?name (COUNT(DISTINCT ?a) AS ?n) WHERE { ?a g:category "Character" . ?a ?p ?uri . ?p g:relType "AFFILIATES_WITH" . ?uri g:name ?name . '
-                       '?uri g:label ?l . VALUES ?l { "PirateOrganization" "MarineOrganization" "RevolutionaryOrganization" "WorldGovernmentOrganization" } } '
+                       'FILTER EXISTS { ?uri g:label ?l . VALUES ?l { "Affiliation" "PirateOrganization" "MarineOrganization" "RevolutionaryOrganization" '
+                       '"WorldGovernmentOrganization" } } FILTER NOT EXISTS { ?uri g:category ?any } FILTER NOT EXISTS { ?uri g:label "Location" } } '
                        'GROUP BY ?uri ?name ORDER BY DESC(?n) ?uri'):
         if r["n"] >= config.MIN_SUPPORT and r["uri"].rsplit("#", 1)[-1] not in UMBRELLA_ORGS:
             c = Cond(kind="uri", uri=r["uri"])

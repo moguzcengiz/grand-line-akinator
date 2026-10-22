@@ -356,7 +356,8 @@ def explain(sess: Session, idx: int):
     inferred += [f"{e['name']} rdf:type {t} [inferred by OWL RL]" for t in inf_types if t not in ("Resource",)]
     top_p = float(st.w[idx])
     strong = [x for x in ev if x.facts and x.kind == "supports"][:3]
-    expl = (f"{e['name']} ({e['category']}) is the most probable candidate with score {top_p:.1%}. "
+    expl = ((f"{e['name']} ({e['category']}) was my last guess, and you said it was wrong. " if idx in st.rejected
+             else f"{e['name']} ({e['category']}) is the most probable candidate with score {top_p:.1%}. ")
             + ("Key graph-backed evidence: " + "; ".join(f"“{x.question}” answered {x.answer} — {x.facts[0]}" for x in strong) + "." if strong
                else "The answers matched this entity better than every other candidate, but no multi-hop graph path was needed.")
             + (f" {len(inferred)} of its facts are inferred by OWL RL reasoning." if inferred else ""))
