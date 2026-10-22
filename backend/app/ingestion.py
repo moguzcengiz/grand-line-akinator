@@ -13,7 +13,7 @@ from collections import Counter
 from rdflib import Graph, URIRef, Literal, Namespace, RDF, RDFS, OWL
 
 from . import config, graph
-from .ontology import load_sources, materialize, is_domain_triple, nonreflexive_same_as, OP, OPX
+from .ontology import clashes, load_sources, materialize, is_domain_triple, nonreflexive_same_as, OP, OPX
 from .validation import shacl_report
 
 NUMERIC = {"height", "age", "ageAtDeath", "bountyAmount"}
@@ -46,6 +46,7 @@ def build_model():
     t0 = time.time()
     inferred, unresolved = materialize(union)
     merged = nonreflexive_same_as(inferred)
+    contradictions = clashes(inferred)
     shacl = shacl_report(union)
     reasoning_s = round(time.time() - t0, 1)
     inferred_dom = Graph()
@@ -120,6 +121,7 @@ def build_model():
         "reasoning_seconds": reasoning_s,
         "functional_axioms_dropped_for_reasoning": unresolved,
         "owl_sameAs_non_reflexive": len(merged),
+        "owl_clashes": {"count": len(contradictions), "examples": contradictions[:10]},
         "shacl": shacl,
         "reasoner": "owlrl OWLRL_Semantics (OWL 2 RL subset, NOT full OWL 2 DL)",
         "nodes": len(nodes),
@@ -188,6 +190,7 @@ def validate(nodes, edges, report):
     counts = Counter(n["category"] for n in nodes.values() if n["category"])
     counts = {c: counts.get(c, 0) for c in config.CATEGORIES}
     inferred = Counter(e["t"] for e in edges if e["provenance"] == "inferred")
+    fruit_types = Counter(e["s"] for e in edges if e["t"] == "HAS_FRUIT_TYPE")
     stored = {c: graph.run("SELECT (COUNT(?e) AS ?c) WHERE { GRAPH <urn:akinator:game> { ?e g:category $c } }", c=c)[0]["c"] for c in config.CATEGORIES}
     patched = config.APPLY_PATCHES
     checks = {
@@ -196,11 +199,12 @@ def validate(nodes, edges, report):
         "devil fruits >= 134": counts["DevilFruit"] >= 134,
         "ships == 9 (curated)": counts["Ship"] == 9,
         "inferred HAS_DEVIL_FRUIT edges > 0": inferred["HAS_DEVIL_FRUIT"] > 0,
-        "inferred Ancient/Mythical fruit types > 0": inferred["HAS_FRUIT_TYPE"] > 0,
+        "every Devil Fruit has exactly one type": all(fruit_types.get(u, 0) == 1 for u, n in nodes.items() if n["category"] == "DevilFruit"),
         "OWL RL derived PirateAffiliatedCharacter label > 0": any("PirateAffiliatedCharacter" in n["labels"] for n in nodes.values()),
         "no sameAs-merged chapters (distinct MANGA_DEBUT targets > 400)": len({e["o"] for e in edges if e["t"] == "MANGA_DEBUT"}) > 400,
         "no non-reflexive owl:sameAs inferred (no entity merged)": report["owl_sameAs_non_reflexive"] == 0 or not patched,
         "no functional-property axiom had to be dropped": not report["functional_axioms_dropped_for_reasoning"] or not patched,
+        "OWL RL: no contradiction (disjointness / differentFrom / functional)": report["owl_clashes"]["count"] == 0 or not patched,
         "SHACL: zero violations on the patched graph": report["shacl"]["violations"] == 0 or not patched,
     }
     report["patches_applied"] = patched

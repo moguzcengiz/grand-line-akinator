@@ -1,0 +1,6 @@
+# Patch 'typo-predicates' (triples ADDED in their place). Hand-written, see the .remove file.
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Monkey_D_Luffy op:hasDevilFruit op:Gomu_Gomu_no_Mi .
+op:Koby op:affiliatesWith op:Marines .
+op:Gomu_Gomu_no_Mi op:devilFruitDebutManga op:Chapter_1 ; op:devilFruitDebutAnime op:Episode_1 .

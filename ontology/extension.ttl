@@ -5,6 +5,7 @@
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
 
 <http://kalnassag.com/onepiece-ext> a owl:Ontology ; owl:imports <http://kalnassag.com/onepiece> ;
     rdfs:comment "Extension of the One Piece ontology for the Grand Line Akinator demo."@en .
@@ -43,16 +44,18 @@ op:DevilFruitPreviousUser owl:inverseOf opx:previouslyHadDevilFruit .
 opx:previouslyHadDevilFruit a owl:ObjectProperty ; rdfs:domain op:Character ; rdfs:range op:DevilFruit .
 
 # ---- Devil Fruit sub-types (Ancient / Mythical Zoan) via property chain (OWL RL prp-spo2) ----
-opx:AncientZoan a op:DevilFruitType ; rdfs:label "Ancient Zoan"@en .
-opx:MythicalZoan a op:DevilFruitType ; rdfs:label "Mythical Zoan"@en .
-opx:hasFruitSubtype a owl:ObjectProperty ; rdfs:domain op:DevilFruit ; rdfs:range op:DevilFruitType ;
+# sub-types are their own class: op:DevilFruitType is closed upstream (owl:oneOf Paramecia Zoan Logia)
+opx:DevilFruitSubtype a owl:Class ; rdfs:label "Devil Fruit sub-type"@en .
+opx:AncientZoan a opx:DevilFruitSubtype ; rdfs:label "Ancient Zoan"@en .
+opx:MythicalZoan a opx:DevilFruitSubtype ; rdfs:label "Mythical Zoan"@en .
+opx:hasFruitSubtype a owl:ObjectProperty ; rdfs:domain op:DevilFruit ; rdfs:range opx:DevilFruitSubtype ;
     rdfs:comment "Fine-grained fruit type (curated)."@en .
-opx:subtypeOf a owl:ObjectProperty ; rdfs:domain op:DevilFruitType ; rdfs:range op:DevilFruitType .
+opx:subtypeOf a owl:ObjectProperty ; rdfs:domain opx:DevilFruitSubtype ; rdfs:range op:DevilFruitType .
 opx:AncientZoan opx:subtypeOf op:Zoan .
 opx:MythicalZoan opx:subtypeOf op:Zoan .
 # upstream values that are subtypes, not types (patches/fruit-subtypes): every SMILE is a Zoan, the Mochi-Mochi Fruit a Paramecia
-op:Artificial_Zoan a op:DevilFruitType ; rdfs:label "Artificial Zoan"@en ; opx:subtypeOf op:Zoan .
-op:Special_Paramecia a op:DevilFruitType ; rdfs:label "Special Paramecia"@en ; opx:subtypeOf op:Paramecia .
+op:Artificial_Zoan a opx:DevilFruitSubtype ; rdfs:label "Artificial Zoan"@en ; opx:subtypeOf op:Zoan .
+op:Special_Paramecia a opx:DevilFruitSubtype ; rdfs:label "Special Paramecia"@en ; opx:subtypeOf op:Paramecia .
 op:hasFruitType owl:propertyChainAxiom ( opx:hasFruitSubtype opx:subtypeOf ) .
 
 # ---- Haki ----
@@ -99,3 +102,51 @@ opx:DevilFruitEater a owl:Class ; rdfs:subClassOf op:Character ; rdfs:label "Dev
 opx:broaderOccupation a owl:ObjectProperty ; rdfs:domain op:Occupation ; rdfs:range op:Occupation ;
     rdfs:comment "Curated: the more general occupation of a specific one."@en .
 op:occupation owl:propertyChainAxiom ( op:occupation opx:broaderOccupation ) .
+
+# ==== constraints (docs/ONTOLOGY_CONSTRAINTS.md).  OWL RL derives the positive consequences and turns a violation into an owlrl error,
+# which fails the ingestion (ontology.clashes).  Each one was measured against the patched data: 0 violations.
+
+# enumerations whose members are pairwise different values.  ontology.closed_enumerations() writes the owl:differentFrom pairs at load time
+# (owlrl's owl:AllDifferent never checks pairs with the last list member).  op:Status is NOT one: "Unknown" is not a state of the world.
+opx:ClosedEnumeration a owl:Class ; rdfs:label "closed enumeration"@en .
+op:DevilFruitType a opx:ClosedEnumeration .
+opx:DevilFruitSubtype a opx:ClosedEnumeration .
+op:BloodType a opx:ClosedEnumeration .
+op:Race a opx:ClosedEnumeration .
+opx:ShipType a opx:ClosedEnumeration .
+
+# C1: a character, a Devil Fruit and a ship are different kinds of thing
+[] a owl:AllDisjointClasses ; owl:members ( op:Character op:DevilFruit opx:Ship ) .
+
+# C2: one status per character; alive and deceased exclude each other
+op:statusOfCharacter a owl:FunctionalProperty .
+op:Alive owl:differentFrom op:Deceased .
+opx:LivingCharacter a owl:Class ; rdfs:subClassOf op:Character ; rdfs:label "Living character"@en ;
+    owl:equivalentClass [ a owl:Restriction ; owl:onProperty op:statusOfCharacter ; owl:hasValue op:Alive ] .
+opx:DeceasedCharacter a owl:Class ; rdfs:subClassOf op:Character ; rdfs:label "Deceased character"@en ;
+    owl:equivalentClass [ a owl:Restriction ; owl:onProperty op:statusOfCharacter ; owl:hasValue op:Deceased ] .
+opx:LivingCharacter owl:disjointWith opx:DeceasedCharacter .
+
+# C3 / C4: a Devil Fruit has one type (Paramecia / Zoan / Logia) and at most one sub-type.  A CHARACTER can still eat two (Blackbeard).
+op:hasFruitType a owl:FunctionalProperty .
+opx:hasFruitSubtype a owl:FunctionalProperty .
+
+# C5: a fruit is released on its user's death: a dead character holds none now (opx:DevilFruitEater, "ate one once", stays possible)
+opx:DeceasedCharacter owl:disjointWith opx:DevilFruitUser .
+
+# C6 / C7: one current user per fruit, and the current user is not also a previous user of it.  op:hasDevilFruit is NOT functional (Blackbeard).
+op:DevilFruitCurrentUser a owl:FunctionalProperty .
+op:hasDevilFruit a owl:InverseFunctionalProperty .
+op:DevilFruitCurrentUser owl:propertyDisjointWith op:DevilFruitPreviousUser .
+
+# C8: characters are not values, and these value kinds do not overlap (data-quality guard)
+op:Character owl:disjointWith op:Status, op:DevilFruitType, opx:DevilFruitSubtype, opx:HakiType, opx:ShipType, op:BloodType, op:Race,
+    op:MangaIssue, op:AnimeEpisode, op:Arc, op:Bounty, schema:Person .
+[] a owl:AllDisjointClasses ; owl:members ( op:DevilFruit opx:Ship op:Occupation op:Location op:Status op:DevilFruitType ) .
+
+# C10: single-valued facts
+op:hasBloodType a owl:FunctionalProperty .
+op:race a owl:FunctionalProperty .
+opx:shipOwner a owl:FunctionalProperty .
+opx:operatedBy a owl:FunctionalProperty .
+opx:shipType a owl:FunctionalProperty .

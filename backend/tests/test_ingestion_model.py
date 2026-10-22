@@ -28,7 +28,9 @@ def test_luffy_inferred_facts(model):
     nodes, edges, *_ = model
     luffy = nodes["http://kalnassag.com/onepiece#Monkey_D_Luffy"]
     assert {"DevilFruitUser", "PirateAffiliatedCharacter", "HakiUser"} <= luffy["inferred_types"]
-    assert any(e["t"] == "HAS_DEVIL_FRUIT" and e["s"] == luffy["uri"] and e["provenance"] == "inferred" for e in edges)
+    # Luffy's own link is asserted (curated typo fix of op:hasdevilFruit); Marco's comes from the inverse of the fruit's current user
+    assert any(e["t"] == "HAS_DEVIL_FRUIT" and e["s"] == luffy["uri"] and e["provenance"] == "curated" for e in edges)
+    assert any(e["t"] == "HAS_DEVIL_FRUIT" and e["s"].endswith("#Marco") and e["provenance"] == "inferred" for e in edges)
 
 
 def test_inferred_category_types_do_not_create_entities(model):
@@ -53,9 +55,10 @@ def test_named_graphs_carry_provenance_and_game_data(model):
     nodes, edges, types, _ = model
     gs = to_graphs(nodes, edges, types)
     luffy, g = URIRef("http://kalnassag.com/onepiece#Monkey_D_Luffy"), graph.G
-    inferred_fruit = next(e for e in edges if e["t"] == "HAS_DEVIL_FRUIT" and e["s"] == str(luffy) and e["provenance"] == "inferred")
-    assert (luffy, URIRef(inferred_fruit["predicate"]), URIRef(inferred_fruit["o"])) in gs["inferred"]
-    assert (luffy, URIRef(inferred_fruit["predicate"]), URIRef(inferred_fruit["o"])) not in gs["explicit"]
+    marco = URIRef("http://kalnassag.com/onepiece#Marco")
+    inferred_fruit = next(e for e in edges if e["t"] == "HAS_DEVIL_FRUIT" and e["s"] == str(marco) and e["provenance"] == "inferred")
+    assert (marco, URIRef(inferred_fruit["predicate"]), URIRef(inferred_fruit["o"])) in gs["inferred"]
+    assert (marco, URIRef(inferred_fruit["predicate"]), URIRef(inferred_fruit["o"])) not in gs["explicit"]
     assert gs["game"].value(luffy, URIRef(g + "category")).toPython() == "Character"
     assert gs["game"].value(luffy, URIRef(g + "popularity")).toPython() > 40
     assert gs["game"].value(URIRef(inferred_fruit["predicate"]), URIRef(g + "relType")).toPython() == "HAS_DEVIL_FRUIT"

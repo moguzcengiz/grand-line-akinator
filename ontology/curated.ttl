@@ -29,13 +29,13 @@ op:Jinbe opx:hasHaki opx:ArmamentHaki .
 op:Kuzan opx:hasHaki opx:ArmamentHaki .
 
 # ---- Ancient / Mythical Zoan fruits (new fruit individuals + their current users) ----
-opx:Tori_Tori_no_Mi_Model_Phoenix a op:DevilFruit ; rdfs:label "Bird-Bird Fruit, Model: Phoenix"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Marco .
-opx:Hito_Hito_no_Mi_Model_Daibutsu a op:DevilFruit ; rdfs:label "Human-Human Fruit, Model: Daibutsu"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Sengoku .
-opx:Uo_Uo_no_Mi_Model_Seiryu a op:DevilFruit ; rdfs:label "Fish-Fish Fruit, Model: Seiryu"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Kaidou .
-opx:Inu_Inu_no_Mi_Model_Okuchi_no_Makami a op:DevilFruit ; rdfs:label "Dog-Dog Fruit, Model: Okuchi no Makami"@en ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Yamato .
-opx:Ryu_Ryu_no_Mi_Model_Allosaurus a op:DevilFruit ; rdfs:label "Dragon-Dragon Fruit, Model: Allosaurus"@en ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:X_Drake .
-opx:Ryu_Ryu_no_Mi_Model_Brachiosaurus a op:DevilFruit ; rdfs:label "Dragon-Dragon Fruit, Model: Brachiosaurus"@en ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:Queen .
-opx:Zou_Zou_no_Mi_Model_Mammoth a op:DevilFruit ; rdfs:label "Elephant-Elephant Fruit, Model: Mammoth"@en ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:Jack .
+opx:Tori_Tori_no_Mi_Model_Phoenix a op:DevilFruit ; rdfs:label "Bird-Bird Fruit, Model: Phoenix"@en ; op:hasFruitType op:Zoan ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Marco .
+opx:Hito_Hito_no_Mi_Model_Daibutsu a op:DevilFruit ; rdfs:label "Human-Human Fruit, Model: Daibutsu"@en ; op:hasFruitType op:Zoan ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Sengoku .
+opx:Uo_Uo_no_Mi_Model_Seiryu a op:DevilFruit ; rdfs:label "Fish-Fish Fruit, Model: Seiryu"@en ; op:hasFruitType op:Zoan ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Kaidou .
+opx:Inu_Inu_no_Mi_Model_Okuchi_no_Makami a op:DevilFruit ; rdfs:label "Dog-Dog Fruit, Model: Okuchi no Makami"@en ; op:hasFruitType op:Zoan ; opx:hasFruitSubtype opx:MythicalZoan ; op:DevilFruitCurrentUser op:Yamato .
+opx:Ryu_Ryu_no_Mi_Model_Allosaurus a op:DevilFruit ; rdfs:label "Dragon-Dragon Fruit, Model: Allosaurus"@en ; op:hasFruitType op:Zoan ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:X_Drake .
+opx:Ryu_Ryu_no_Mi_Model_Brachiosaurus a op:DevilFruit ; rdfs:label "Dragon-Dragon Fruit, Model: Brachiosaurus"@en ; op:hasFruitType op:Zoan ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:Queen .
+opx:Zou_Zou_no_Mi_Model_Mammoth a op:DevilFruit ; rdfs:label "Elephant-Elephant Fruit, Model: Mammoth"@en ; op:hasFruitType op:Zoan ; opx:hasFruitSubtype opx:AncientZoan ; op:DevilFruitCurrentUser op:Jack .
 
 # ---- Ships ----
 opx:Caravel a opx:ShipType ; rdfs:label "Caravel"@en .

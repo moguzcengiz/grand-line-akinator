@@ -1,0 +1,8 @@
+# Patch 'typo-predicates' (triples REMOVED from the upstream data). Hand-written.
+# The hand-made Straw Hat model (OnePieceEntities-Base Model.ttl) uses 4 misspelled, undeclared predicates; nothing in the schema applies to
+# them (no domain, no OWL class membership).  They are re-written to the declared properties in typo-predicates.add.ttl.
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Monkey_D_Luffy op:hasdevilFruit op:Gomu_Gomu_no_Mi .
+op:Koby op:affilatesWith op:Marines .
+op:Gomu_Gomu_no_Mi op:DevilFruitDebutManga op:Chapter_1 ; op:DevilFruitDebutAnime op:Episode_1 .

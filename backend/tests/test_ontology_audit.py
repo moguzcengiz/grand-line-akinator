@@ -64,7 +64,9 @@ def test_increw_domain_range_fixed(patched):
 
 def test_shacl_flags_upstream_but_not_patched(up, patched):
     base, ext = patched
-    assert shacl_report(up + o.load_ext(up))["violations"] == 23
+    # 23 double debuts + 9 statuses (7 merged characters, 2 ships) + 2 ship/character twins + 2 off-list fruit types + 1 fruit with two
+    # spellings of its current user: every one is fixed by a patch
+    assert shacl_report(up + o.load_ext(up))["violations"] == 37
     assert shacl_report(base + ext)["violations"] == 0
 
 
@@ -103,3 +105,15 @@ def test_unresolved_entities_not_mentioned_in_any_patch():
     text = " ".join(str(x) for t in list(rm) + list(add) for x in t)
     for name in ("Buzz", "Gasparde", "Honey_Queen"):
         assert f"onepiece#{name}" not in text
+
+
+def test_contradictions_are_reported_not_dropped(patched):
+    # the constraints in extension.ttl only matter if a violation surfaces: owlrl writes it as an error triple that is_domain_triple() drops
+    from rdflib import URIRef
+    base, ext = patched
+    assert o.clashes(o.materialize(base + ext)[0]) == []
+    bad = base + ext
+    bad.add((URIRef(o.OP + "Nami"), RDF.type, o.OP.DevilFruit))                                   # a character that is also a fruit
+    bad.add((URIRef(o.OP + "Marco"), o.OP.statusOfCharacter, o.OP.Deceased))                        # Marco holds the Phoenix fruit
+    found = " ".join(o.clashes(o.materialize(bad)[0]))
+    assert "Nami" in found and "DeceasedCharacter" in found and "Marco" in found

@@ -1,0 +1,6 @@
+# Patch 'teach-admiral' (triple REMOVED from the upstream data). Hand-written.
+# Upstream lists "Admiral" among Marshall D. Teach's occupations; he never was an admiral (wiki infobox: pirate, Emperor, former Warlord).
+# Found by the constraints audit (docs/ONTOLOGY_CONSTRAINTS.md, C9).
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Marshall_D_Teach op:occupation op:Admiral .

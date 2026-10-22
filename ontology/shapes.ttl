@@ -4,6 +4,7 @@
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 @prefix op:   <http://kalnassag.com/onepiece#> .
 @prefix opx:  <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
@@ -16,4 +17,15 @@ opx:InternalIdShape a sh:NodeShape ; sh:targetSubjectsOf op:internalID ;
     sh:property [ sh:path op:internalID ; sh:maxCount 1 ; sh:message "internalID is functional." ] .
 
 opx:DevilFruitShape a sh:NodeShape ; sh:targetClass op:DevilFruit ;
-    sh:property [ sh:path op:hasFruitType ; sh:minCount 1 ; sh:severity sh:Warning ; sh:message "Devil Fruit without a type." ] .
+    sh:property [ sh:path op:hasFruitType ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( op:Paramecia op:Zoan op:Logia ) ;
+                  sh:message "A Devil Fruit has exactly one type: Paramecia, Zoan or Logia (finer kinds go to opx:hasFruitSubtype)." ] ;
+    sh:property [ sh:path op:DevilFruitCurrentUser ; sh:maxCount 1 ; sh:message "A Devil Fruit has at most one current user." ] .
+
+# "exactly one" and "one of" are not OWL RL; the OWL side (extension.ttl) only derives and detects clashes.
+opx:CharacterStatusShape a sh:NodeShape ; sh:targetClass op:Character ;
+    sh:property [ sh:path op:statusOfCharacter ; sh:maxCount 1 ; sh:in ( op:Alive op:Deceased op:Unknown ) ;
+                  sh:message "A character has at most one status: Alive, Deceased or Unknown." ] .
+
+opx:CategoryShape a sh:NodeShape ; sh:targetClass op:Character, op:DevilFruit, opx:Ship ;
+    sh:property [ sh:path rdf:type ; sh:qualifiedValueShape [ sh:in ( op:Character op:DevilFruit opx:Ship ) ] ; sh:qualifiedMaxCount 1 ;
+                  sh:message "An entity is exactly one of character, Devil Fruit, ship." ] .

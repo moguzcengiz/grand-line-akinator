@@ -2,5 +2,5 @@
 @prefix op: <http://kalnassag.com/onepiece#> .
 @prefix opx: <http://kalnassag.com/onepiece-ext#> .
 
-op:SMILE opx:hasFruitSubtype op:Artificial_Zoan .
-op:Mochi_Mochi_no_Mi opx:hasFruitSubtype op:Special_Paramecia .
+op:SMILE op:hasFruitType op:Zoan ; opx:hasFruitSubtype op:Artificial_Zoan .
+op:Mochi_Mochi_no_Mi op:hasFruitType op:Paramecia ; opx:hasFruitSubtype op:Special_Paramecia .

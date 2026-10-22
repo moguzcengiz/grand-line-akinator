@@ -46,7 +46,32 @@ def load_ext(base: Graph) -> Graph:
         ext.parse(str(config.ROOT / f), format="turtle")
     for t in classify_affiliations(base):
         ext.add(t)
+    for t in closed_enumerations(base + ext):
+        ext.add(t)
     return ext
+
+
+def closed_enumerations(g: Graph) -> Graph:
+    """owl:differentFrom between every two members of a class marked opx:ClosedEnumeration (asserted members and owl:oneOf lists of an
+    equivalent class).  Pairwise, because owlrl's owl:AllDifferent skips the pairs with the last list member."""
+    from rdflib.collection import Collection
+    out = Graph()
+    for cls in set(g.subjects(RDF.type, OPX.ClosedEnumeration)):
+        members = {m for m in g.subjects(RDF.type, cls) if isinstance(m, URIRef)}
+        for eq in g.objects(cls, OWL.equivalentClass):
+            for lst in g.objects(eq, OWL.oneOf):
+                members |= {m for m in Collection(g, lst) if isinstance(m, URIRef)}
+        ms = sorted(members)
+        for i, a in enumerate(ms):
+            for b in ms[i + 1:]:
+                out.add((a, OWL.differentFrom, b))
+    return out
+
+
+def clashes(inferred: Graph) -> list[str]:
+    """Contradictions owlrl found (disjoint classes sharing an individual, two different values of a functional property ...).
+    owlrl reports them as error triples on blank nodes, which is_domain_triple() drops: they must be collected here."""
+    return sorted(str(o) for o in inferred.objects(None, owlrl.Namespaces.ERRNS.error))
 
 
 def load_sources():
