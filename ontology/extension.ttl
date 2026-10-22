@@ -37,6 +37,9 @@ opx:CaptainCharacter a owl:Class ; rdfs:subClassOf op:Character ; rdfs:label "Ca
 # make them one fact.  pirate crew member <=> occupation Pirate (OWL RL cls-hv1 / cls-hv2).
 opx:PirateAffiliatedCharacter rdfs:subClassOf [ a owl:Restriction ; owl:onProperty op:occupation ; owl:hasValue op:Pirate ] .
 [ a owl:Restriction ; owl:onProperty op:occupation ; owl:hasValue op:Pirate ] rdfs:subClassOf opx:PirateAffiliatedCharacter .
+# a captain who is a pirate is a pirate captain ("captain of a pirate crew?" and "Pirate Captain?" are the same question; OWL RL cls-int1 + cls-hv2)
+[ a owl:Class ; owl:intersectionOf ( opx:CaptainCharacter opx:PirateAffiliatedCharacter ) ] rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty op:occupation ; owl:hasValue op:Pirate_Captain ] .
 
 # ---- Devil Fruit ownership: base ontology declares op:hasDevilFruit but data only has the inverse ----
 op:DevilFruitCurrentUser owl:inverseOf op:hasDevilFruit .

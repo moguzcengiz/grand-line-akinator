@@ -15,7 +15,7 @@ from pathlib import Path
 import numpy as np
 
 from . import config, service
-from .questions import concepts, omission_prone
+from .questions import omission_prone
 
 # name -> (mode, strategy, exploration).  "rule"/"ig" = the old deterministic information-gain policy (baseline).
 STRATEGIES = {"random": ("rule", "random", "off"), "rule": ("rule", "info_gain", "off"), "ig": ("rule", "info_gain", "off"),
@@ -49,10 +49,11 @@ def play(kb, target_idx: int, mode: str, strategy: str, rng: random.Random, nois
             q = kb.bank.questions[best["index"]]
             truth = int(kb.bank.truth[best["index"], target_idx])
             if truth == 0 and omission and omission_prone(q) and kb.entities[target_idx]["category"] in {p.start for p in q.spec.paths}:
-                # a missing fact is missing for every re-wording of it: one draw per (target, concept), so "captain?" and "captain of a pirate
-                # crew?" agree.  ponytail: a combination counts as omitted if any part is; questions without a concept draw on their own.
-                keys = sorted(concepts(q)) or [q.id]
-                truth = int(any(random.Random(f"{target_idx}|{k}").random() < omission for k in keys))
+                # a missing fact is missing for every re-wording of it: one draw per (target, group of questions the ontology says are the
+                # same, implications.same), so "Pirate?" and "affiliated with a pirate crew?" agree
+                imp = kb.bank.imp
+                key = min(imp.ctx[None].same[best["index"]] | {best["index"]}) if imp is not None else best["index"]
+                truth = int(random.Random(f"{target_idx}|{key}").random() < omission)
             a = simulated_answer(truth, rng, noise, mismatch)
             answers.append(a)
             service.answer(sess, a, None)

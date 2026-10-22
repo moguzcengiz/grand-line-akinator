@@ -80,8 +80,9 @@ class Bank:
     prior: np.ndarray | None = None          # None = uniform
     families: list = field(default_factory=list)
     topics: list = field(default_factory=list)
-    concepts: list = field(default_factory=list)
     na: np.ndarray = None                    # na[q, e]: question q is about another category than entity e (its FALSE is definite)
+    imp: object = None                       # implications.Implications derived from the ontology (None: no implications, e.g. unit tests)
+    categories: np.ndarray | None = None     # category of every entity ("Character" / "DevilFruit" / "Ship"), for the category filter
 
     def __post_init__(self):
         if self.truth is None:
@@ -92,16 +93,17 @@ class Bank:
     def add(self, question, truth_row: np.ndarray, na_row: np.ndarray | None = None) -> int:
         if question.id in self.index:
             return self.index[question.id]
-        from .questions import concepts, false_reliability, family, topic, unknown_prior_true
+        from .questions import false_reliability, family, topic, unknown_prior_true
         self.false_rel.append(false_reliability(question))
         self.families.append(family(question))
         self.topics.append(topic(question))
-        self.concepts.append(concepts(question))
         self.na = np.vstack([self.na, (np.zeros(len(self.entity_uris), dtype=bool) if na_row is None else na_row.astype(bool))[None, :]])
         self.unknown_prior.append(unknown_prior_true(question))
         self.index[question.id] = len(self.questions)
         self.questions.append(question)
         self.truth = np.vstack([self.truth, truth_row.astype(np.int8)[None, :]])
+        if self.imp is not None:                       # a question added later (LLM proposal) has no derived implications
+            self.imp.empty_for(len(self.questions))
         return self.index[question.id]
 
 
@@ -150,6 +152,11 @@ class GameState:
         self.last_phase = "discovery"                                    # see policy.phase_of (hysteresis)
         self.rejected: list[int] = []                                    # entity indices ruled out by guess feedback
         self.guesses = 0
+        # what the ontology says the hard answers so far imply (implications.py): questions with a known answer, re-wordings of asked
+        # questions, and the categories the hidden entity can still belong to (None = any)
+        self.known: dict[int, bool] = {}
+        self.reworded: set[int] = set()
+        self.allowed: set | None = None
 
     def _L(self, idx):
         if self.L_override is not None:
@@ -162,10 +169,9 @@ class GameState:
         for a in self.asked:
             f = self.bank.families[a["index"]]
             used[f] = used.get(f, 0) + 1
-        covered = self.covered_concepts()
+        pointless = set(self.known) | self.reworded | (self.bank.imp.unsatisfiable if self.bank.imp is not None else set())
         idx = [i for i, q in enumerate(self.bank.questions) if q.id not in self.asked_ids and q.id not in extra_exclude
-               and used.get(self.bank.families[i], 0) < (config.FAMILY_MAX if family_max is None else family_max)
-               and not (self.bank.concepts[i] and self.bank.concepts[i] <= covered)]
+               and used.get(self.bank.families[i], 0) < (config.FAMILY_MAX if family_max is None else family_max) and i not in pointless]
         if not idx:
             return []
         score, ig, cov, pt, pf, pu = expected_info_gain(self.w, self.bank.truth[idx], self._L(idx), config.COVERAGE_GAMMA, self.bank.na[idx])
@@ -175,16 +181,43 @@ class GameState:
         return [{"index": idx[j], "score": float(score[j]), "info_gain": float(ig[j]), "coverage": float(cov[j]),
                  "p_yes": float(pt[j]), "p_no": float(pf[j]), "p_unknown": float(pu[j])} for j in order]
 
-    def covered_concepts(self) -> set:
-        """Concepts already asked about ("captain", "pirate", "haki" ...): a question made only of covered concepts is the same question
-        re-worded and would punish one missing fact again.  A single-concept question covers its concept whatever the answer; a combination
-        ("captain of a pirate crew") covers its parts only when answered yes - a "no" does not tell which part failed."""
-        out = set()
+    def _implied(self):
+        """Re-derive, from every hard answer so far, the categories still possible and what the ontology then says about the other
+        questions (implications.py).  Re-wordings of an asked question are skipped whatever the answer; only yes / no make other
+        questions known ("probably" and "don't know" never do).  Recomputed from scratch: once the category is settled, the earlier
+        answers are read again in that category's context."""
+        imp = self.bank.imp
+        if imp is None:
+            return
+        everything = set(np.unique(self.bank.categories)) if self.bank.categories is not None else set(c for cs in imp.cats_yes if cs for c in cs)
+        allowed = None
         for a in self.asked:
-            c = self.bank.concepts[a["index"]]
-            if len(c) == 1 or a["answer"] in ("yes", "probably"):
-                out |= c
-        return out
+            q, ans = a["index"], a["answer"]
+            if ans == "yes" and imp.cats_yes[q] is not None:
+                allowed = set(imp.cats_yes[q]) if allowed is None else allowed & imp.cats_yes[q]
+            elif ans == "no" and imp.category[q]:
+                allowed = (everything if allowed is None else allowed) - {imp.category[q]}
+        rel = imp.rel(allowed)
+        known, reworded = {g: False for g in rel.impossible}, set()
+        for a in self.asked:
+            q, ans = a["index"], a["answer"]
+            reworded |= rel.same[q]
+            if ans == "yes":
+                known.update({g: True for g in rel.yes_true[q]})
+                known.update({g: False for g in rel.yes_false[q]})
+            elif ans == "no":
+                known.update({g: False for g in rel.no_false[q]})
+        self.known, self.reworded, self.allowed = known, reworded, allowed
+
+    def _category_filter(self):
+        """Entities of a category the answers rule out (a character fact answered yes: no Devil Fruit, no ship) leave the game.
+        Skipped if it would leave nobody (the player contradicted themselves)."""
+        if self.allowed is None or self.bank.categories is None:
+            return
+        m = np.isin(self.bank.categories, list(self.allowed))
+        s = (self.w * m).sum()
+        if s > 0:
+            self.w = self.w * m / s
 
     def pick(self, strategy: str = "info_gain", ranked: list[dict] | None = None) -> dict | None:
         ranked = ranked if ranked is not None else self.rank()
@@ -212,6 +245,8 @@ class GameState:
         q = self.bank.questions[q_index]
         self.asked.append({"question_id": q.id, "answer": answer, "index": q_index, "factor": factor, "contra": contra})
         self.asked_ids.add(q.id)
+        self._implied()
+        self._category_filter()
         return before
 
     def _discount_correlated_contradictions(self, q_index, a, rows, factor, L):

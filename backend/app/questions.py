@@ -95,28 +95,6 @@ def topic(q: "Question") -> str:
     return _REL_TOPIC.get(p.steps[0].rel, "other")
 
 
-# Questions that ask about the same fact in other words share a concept (see GameState.covered_concepts).  Only exact synonyms: "Pirate Officer"
-# or "Vice Admiral" narrow a concept down and stay askable.
-_LABEL_CONCEPT = {"PirateAffiliatedCharacter": "pirate", "CaptainCharacter": "captain", "HakiUser": "haki", "MarineAffiliatedCharacter": "marine",
-                  "WorldGovernmentAffiliatedCharacter": "world-government", "RevolutionaryAffiliatedCharacter": "revolutionary", "DevilFruitEater": "fruit-eater"}
-_OCCUPATION_CONCEPT = {"Pirate": {"pirate"}, "Captain": {"captain"}, "Pirate_Captain": {"pirate", "captain"}}
-
-
-def concepts(q: "Question") -> frozenset:
-    """Concepts of a question about characters; empty = not comparable (never filtered)."""
-    out = set()
-    for p in q.spec.paths:
-        if p.start != "Character":
-            return frozenset()
-        if not p.steps and p.cond.kind == "label" and p.cond.label in _LABEL_CONCEPT:
-            out.add(_LABEL_CONCEPT[p.cond.label])
-        elif [s.rel for s in p.steps] == ["OCCUPATION"] and p.cond.kind == "uri" and (p.cond.uri or "").rsplit("#", 1)[-1] in _OCCUPATION_CONCEPT:
-            out |= _OCCUPATION_CONCEPT[p.cond.uri.rsplit("#", 1)[-1]]
-        else:
-            return frozenset()
-    return frozenset(out)
-
-
 def complexity(q: "Question") -> float:
     """Reading/graph-traversal burden: hops + alternatives + conjunction + cardinality."""
     return (sum(len(p.steps) for p in q.spec.paths) + 0.5 * (len(q.spec.paths) - 1) + (1.0 if q.spec.mode == "all" else 0.0)

@@ -294,19 +294,26 @@ def test_a_rejected_listed_fact_is_costly_but_not_fatal():
     assert 0.1 < st.w[0] / st.w[1] < 0.5
 
 
-def test_reworded_questions_are_not_asked_again():
-    from app.questions import Cond, Path, QuerySpec, Question, Step
-    mk_ = lambda i, *paths: Question(id=f"c{i}", text=f"Concept question {i}?", spec=QuerySpec(paths=list(paths), mode="all" if len(paths) > 1 else "any"))
-    lab = lambda l: Path(start="Character", cond=Cond(kind="label", label=l), scope="rel:OCCUPATION")
-    role = lambda r: Path(start="Character", steps=[Step(rel="OCCUPATION")], cond=Cond(kind="uri", uri=config.OP + r), scope="rel:OCCUPATION")
-    qs = [mk_(0, lab("CaptainCharacter")), mk_(1, lab("CaptainCharacter"), lab("PirateAffiliatedCharacter")), mk_(2, role("Pirate_Captain")),
-          mk_(3, lab("PirateAffiliatedCharacter")), mk_(4, role("Pirate_Officer"))]
-    rng = np.random.default_rng(2)
-    b = Bank([f"e{j}" for j in range(60)])
-    for x in qs:
-        b.add(x, rng.integers(0, 2, size=60).astype(np.int8))
+def test_implied_and_reworded_questions_are_skipped_and_other_categories_leave():
+    from app.implications import Implications
+    # q0 "pirate captain?"  q1 "pirate?" (implied by q0)  q2 "affiliated with a pirate crew?" (re-wording of q1)  q3 "is it a Devil Fruit?"
+    b = make_bank([[1, 0, 0, 0], [1, 1, 0, 0], [1, 1, 0, 0], [0, 0, 1, 1]])
+    b.categories = np.array(["Character", "Character", "DevilFruit", "DevilFruit"])
+    imp = Implications(); imp.empty_for(4)
+    r = imp.ctx[None]
+    r.yes_true[0] = {1, 2}; r.yes_false[0] = {3}; r.no_false[1] = {0}; r.same[1] = {2}; r.same[2] = {1}
+    imp.category[3] = "DevilFruit"
+    imp.cats_yes = [{"Character"}, {"Character"}, {"Character"}, {"DevilFruit"}]
+    b.imp = imp
     st = GameState(b)
-    st.answer(1, "no")                                        # "captain of a pirate crew?" no: still unclear which part failed
-    assert {r["index"] for r in st.rank()} == {0, 2, 3, 4}
-    st.answer(0, "yes"); st.answer(3, "yes")                  # captain and pirate both answered
-    assert {r["index"] for r in st.rank()} == {4}, "Pirate Captain is a re-wording now; Pirate Officer is a refinement"
+    st.answer(0, "yes")
+    assert [r["index"] for r in st.rank()] == [], "everything else is implied by 'pirate captain? yes'"
+    assert st.w[2] == 0 and st.w[3] == 0, "a character fact answered yes: the Devil Fruits leave the game"
+    st2 = GameState(b)
+    st2.answer(1, "dont_know")
+    assert {r["index"] for r in st2.rank()} == {0, 3}, "a re-wording is not asked again, but 'don't know' implies nothing"
+    assert st2.w[2] > 0
+    st3 = GameState(b)
+    st3.answer(3, "no")
+    assert st3.w[2] == 0 and st3.w[3] == 0 and st3.w[0] > 0, "'is it a Devil Fruit? no' removes the fruits"
+

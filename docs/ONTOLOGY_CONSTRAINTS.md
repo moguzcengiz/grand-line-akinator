@@ -1,6 +1,8 @@
 # Ontology constraints: what is missing, what the data allows, and what the guessing engine can derive
 
-> **Status (2026-10-22):** C1 and C2 data fixes are applied. `patches/split-merged-characters` splits all 13 URIs that merged two wiki pages (X and X_; checked against the wiki infoboxes), `patches/ship-twins` makes Going Merry / Queen Mama Chanter ships only (state -> `opx:shipStatus`), `patches/fruit-subtypes` makes SMILE a Zoan and Mochi-Mochi a Paramecia subtype. After reasoning: 0 characters with two statuses, 0 entities in two categories, 0 fruits with two types. The debut patch now covers only Minatomo. The axioms themselves are not added yet.
+> **Status (2026-10-22):** C1 and C2 data fixes are applied. `patches/split-merged-characters` splits all 13 URIs that merged two wiki pages (X and X_; checked against the wiki infoboxes), `patches/ship-twins` makes Going Merry / Queen Mama Chanter ships only (state -> `opx:shipStatus`), `patches/fruit-subtypes` makes SMILE a Zoan and Mochi-Mochi a Paramecia subtype. After reasoning: 0 characters with two statuses, 0 entities in two categories, 0 fruits with two types. The debut patch now covers only Minatomo.
+>
+> **Status (2026-10-22, later):** C1-C8 and C10 are in `ontology/extension.ttl` (pairwise `owl:differentFrom` generated from `opx:ClosedEnumeration`), the SHACL shapes are in `ontology/shapes.ttl`, ingestion fails on any owlrl contradiction (§2.11), the typo and Teach patches are applied, and captain AND pirate => Pirate Captain is added. §3 is implemented in `backend/app/implications.py` (one closure for the whole bank, per-category contexts) and replaces the concept tags. C9 (curated Marine ranks) is still open.
 
 
 Read-only audit (no `.ttl` or code changed). Every number below was measured with the script in [§5](#5-reproduction-script), on

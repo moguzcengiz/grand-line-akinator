@@ -29,6 +29,14 @@ flowchart LR
 4. Guess when top probability ≥ 0.80 (after ≥3 questions), after 30 questions, or when nothing informative remains. A wrong guess zeroes that candidate and play continues (max 5 guesses).
 5. **AI-assisted**: one Together AI call per turn receives the live schema, top candidates with their graph facts and the 4 best IG questions. It returns JSON (`LLMReply` pydantic model): paraphrases + ≤3 new `QuerySpec`s. Specs are rejected unless every relationship/label/URI exists in the imported graph; accepted ones are evaluated and compete on information gain. The model never emits SPARQL. Any error / no key → rule-based fallback for that turn (`llm.fallback_reason`).
 
+## Implications from the ontology
+`app/implications.py` turns every bank question into a fact pattern about a fresh individual and runs ONE OWL RL closure of the TBox
+(Fuseki graph `urn:akinator:tbox`: upstream schema + extension rules and constraints + curated facts) over all of them at bank build (about
+1.5 s). From it: what a "yes" entails, what a "yes" excludes (disjoint classes, two different values of a functional property, disjoint
+properties), what a "no" excludes, and which questions are re-wordings of each other, per category context. During a game only hard yes / no
+answers apply them: questions with a known answer and re-wordings are not asked, and once the answers settle the category, the entities of
+the other categories leave the game. No per-question code: a new relation or class gets its implications from its axioms.
+
 ## Safety of generated queries
 Identifiers (labels, relationship types, property names) are validated by regex *and* against the live schema and only then embedded in the query; every value (`uri`, thresholds) is substituted by `graph.run` as an escaped literal / validated IRI. See `tests/test_questions.py`.
 

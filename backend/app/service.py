@@ -45,7 +45,23 @@ class KB:
             seen_rows[row.tobytes()] = q.id
             self.bank.add(q, row, self.na_row(q.spec))
         self.rule_questions = [q for q in self.rule_questions if q.id in self.bank.index]
+        self.bank.categories = np.array([e["category"] for e in self.entities])
+        self.bank.imp = self.implications()
         self.build_seconds = round(time.time() - t0, 1)
+
+    def implications(self):
+        """What each answer implies about the other questions, derived from the ontology (implications.py)."""
+        from rdflib import OWL, RDF, RDFS, URIRef
+        from .implications import derive
+        tb = graph.graph_of("tbox")
+        rel_preds: dict[str, set] = {}
+        for r in graph.run("SELECT DISTINCT ?p ?rel WHERE { ?p g:relType ?rel }"):
+            rel_preds.setdefault(r["rel"], set()).add(URIRef(r["p"]))
+        classes = {}
+        for c in sorted(set(tb.subjects(RDF.type, OWL.Class)) | set(tb.subjects(RDFS.subClassOf, None)) | set(tb.objects(None, RDF.type))):
+            if isinstance(c, URIRef):
+                classes.setdefault(graph.label_name(str(c)), c)
+        return derive(self.bank.questions, tb, rel_preds, classes)
 
     def truth_row(self, spec: Q.QuerySpec) -> np.ndarray:
         t = Q.evaluate(spec, self.uris, self.cats)

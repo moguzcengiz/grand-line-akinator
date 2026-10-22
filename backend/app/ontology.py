@@ -114,6 +114,20 @@ def materialize(union: Graph, drop_all_functional: bool = False, guard: bool = T
     return inferred, unresolved
 
 
+def tbox(ext: Graph) -> Graph:
+    """What the game reasons with about hypothetical answers (implications.py): the upstream schema (patched) plus our extension layer
+    (rules, constraints, curated facts such as the occupation hierarchy, affiliation typing, generated owl:differentFrom pairs).
+    No upstream character data."""
+    from .patching import load_patch
+    g = Graph().parse(str(config.ROOT / config.BASE_FILES[0]), format="turtle")
+    removed, _ = load_patch()
+    for t in removed:
+        g.remove(t)
+    for t in ext:
+        g.add(t)
+    return g
+
+
 def nonreflexive_same_as(g: Graph) -> list[tuple]:
     return [(s, o) for s, _, o in g.triples((None, OWL.sameAs, None)) if s != o]
 

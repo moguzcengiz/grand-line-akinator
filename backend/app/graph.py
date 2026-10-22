@@ -2,6 +2,7 @@
 
 The store holds the reasoned One Piece graph in named graphs (see ingestion.py):
   urn:akinator:explicit | curated | inferred   RDF edges + rdf:type triples; the graph a triple lives in IS its provenance
+  urn:akinator:tbox                            schema + extension rules / constraints + curated facts: what implications.py reasons with
   urn:akinator:game                            per-node game data (g:name, g:category, g:label, g:popularity ...) and the
                                                relation name of every edge predicate (op:occupation g:relType "OCCUPATION")
 The default graph is the union of the named graphs (tdb2:unionDefaultGraph), so plain queries see everything.
@@ -15,7 +16,7 @@ from rdflib import Literal, URIRef
 from . import config
 
 G = "http://kalnassag.com/akinator#"
-GRAPHS = {p: f"urn:akinator:{p}" for p in ("explicit", "curated", "inferred", "game")}
+GRAPHS = {p: f"urn:akinator:{p}" for p in ("explicit", "curated", "inferred", "game", "tbox")}
 PREFIXES = f"PREFIX g: <{G}>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
 _BAD_IRI = re.compile(r"[<>\"{}|^`\\\s]")
 _PARAM = re.compile(r"\$([A-Za-z_][A-Za-z0-9_]*)")
@@ -78,6 +79,15 @@ def run(query: str, **params) -> list[dict]:
         return [{"ask": d["boolean"]}]
     names = d["head"]["vars"]
     return [{v: (_value(row[v]) if v in row else None) for v in names} for row in d["results"]["bindings"]]
+
+
+def graph_of(name: str):
+    """The triples of one named graph as an rdflib Graph."""
+    from rdflib import Graph
+    r = client().post(f"/{config.FUSEKI_DATASET}/sparql", data={"query": f"CONSTRUCT {{ ?s ?p ?o }} WHERE {{ GRAPH <{GRAPHS[name]}> {{ ?s ?p ?o }} }}"},
+                      headers={"Accept": "application/n-triples"})
+    r.raise_for_status()
+    return Graph().parse(data=r.text, format="nt")
 
 
 def put_graph(name: str, ntriples: str):

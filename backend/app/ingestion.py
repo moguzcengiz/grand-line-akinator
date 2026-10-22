@@ -13,7 +13,7 @@ from collections import Counter
 from rdflib import Graph, URIRef, Literal, Namespace, RDF, RDFS, OWL
 
 from . import config, graph
-from .ontology import clashes, load_sources, materialize, is_domain_triple, nonreflexive_same_as, OP, OPX
+from .ontology import clashes, load_sources, materialize, is_domain_triple, nonreflexive_same_as, tbox, OP, OPX
 from .validation import shacl_report
 
 NUMERIC = {"height", "age", "ageAtDeath", "bountyAmount"}
@@ -151,7 +151,7 @@ def add_popularity(nodes: dict, edges):
 
 
 def to_graphs(nodes: dict, edges, types) -> dict[str, Graph]:
-    """The four named graphs.  Node properties keep their python type (int / float / bool / str)."""
+    """The named graphs of graph.GRAPHS (the tbox one is filled by main).  Node properties keep their python type (int / float / bool / str)."""
     g = Namespace(graph.G)
     out = {k: Graph() for k in graph.GRAPHS}
     for e in edges:
@@ -219,6 +219,7 @@ def main():
     graph.wait_ready()
     nodes, edges, types, report = build_model()
     graphs = to_graphs(nodes, edges, types)
+    graphs["tbox"] = tbox(load_sources()[1])
     report["finished_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     report["store"] = {"engine": "Apache Jena Fuseki (TDB2)", "triples_by_graph": {k: len(v) for k, v in graphs.items()}}
     graphs["game"].add((URIRef(RUN), URIRef(graph.G + "report"), Literal(json.dumps(report))))
