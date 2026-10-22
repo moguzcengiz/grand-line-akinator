@@ -4,6 +4,9 @@ Patches live in ontology/patches/<name>.remove.ttl (triples removed) + <name>.ad
   debut          generated here  - single-valued debut properties (below)
   uri-reconcile  generated here  - links to untyped URIs that differ only by punctuation from a real Character (Monkey_D._Luffy)
   schema-increw  hand-written    - swapped domain/range of op:inCrew
+  (more hand-written ones: curated-shanks, split-merged-characters, ship-twins, fruit-subtypes; each file says why)
+The generated patches are computed on the upstream data AFTER the hand-written removals, so a conflict that a hand-written patch resolves
+(e.g. the two debuts of two merged characters) is not "fixed" a second time.
 
 Finding (debut) (see docs/ONTOLOGY_AUDIT.md): op:mangaDebut / op:animeDebut are declared owl:FunctionalProperty, which is the right
 model ("first appearance" is unique), but 23 characters carry two values - the second one is a LATER appearance
@@ -29,6 +32,7 @@ DEBUT_PROPS = {
     OP.animeDebut: ("debut_episode", OPX.laterAnimeAppearance),
 }
 PATCH_DIR = "ontology/patches"
+GENERATED = {"debut", "uri-reconcile"}
 
 
 def functional_conflicts(g: Graph) -> dict[URIRef, dict[URIRef, set]]:
@@ -123,6 +127,10 @@ if __name__ == "__main__":
     ap.add_argument("--upstream", default="ontology-src")
     a = ap.parse_args()
     up = load_upstream()
+    for f in sorted((config.ROOT / PATCH_DIR).glob("*.remove.ttl")):
+        if f.name.split(".")[0] not in GENERATED:
+            for t in Graph().parse(str(f), format="turtle"):
+                up.remove(t)
     decisions, rm, add = decide(up, Path(a.upstream))
     for d in decisions:
         print(f"{d['subject']:<22}{d['property']:<12}{d['values']}  keep={d['kept']:<14} json={d['json']}  ({d['reason']})")

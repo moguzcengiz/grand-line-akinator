@@ -40,8 +40,12 @@ def test_patch_files_are_consistent_with_upstream(up):
     rm, add = load_patch()
     assert all(t in up for t in rm if t[1] not in (RDFS.domain, RDFS.range)), "a patch removes a triple that is not in upstream"
     later = {(s, v) for s, p, v in add if str(p).endswith(("laterMangaAppearance", "laterAnimeAppearance"))}
+    moved = {v for s, p, v in add if str(p).endswith(("mangaDebut", "animeDebut"))}          # debut of the second character of a merged URI
+    ships = {s for s, p, v in add if str(p).endswith("shipStatus")}                          # ships upstream typed as characters: no debut
     removed_debuts = {(s, v) for s, p, v in rm if str(p).endswith(("mangaDebut", "animeDebut"))}
-    assert later == removed_debuts, "every demoted debut must reappear as a later appearance (nothing is lost)"
+    lost = {(s, v) for s, v in removed_debuts if (s, v) not in later and v not in moved and s not in ships}
+    assert not lost, f"a removed debut must reappear as a later appearance or as the debut of the split character: {lost}"
+    assert later <= removed_debuts
 
 
 def test_dotted_uri_links_are_reconciled(patched):

@@ -50,6 +50,9 @@ opx:hasFruitSubtype a owl:ObjectProperty ; rdfs:domain op:DevilFruit ; rdfs:rang
 opx:subtypeOf a owl:ObjectProperty ; rdfs:domain op:DevilFruitType ; rdfs:range op:DevilFruitType .
 opx:AncientZoan opx:subtypeOf op:Zoan .
 opx:MythicalZoan opx:subtypeOf op:Zoan .
+# upstream values that are subtypes, not types (patches/fruit-subtypes): every SMILE is a Zoan, the Mochi-Mochi Fruit a Paramecia
+op:Artificial_Zoan a op:DevilFruitType ; rdfs:label "Artificial Zoan"@en ; opx:subtypeOf op:Zoan .
+op:Special_Paramecia a op:DevilFruitType ; rdfs:label "Special Paramecia"@en ; opx:subtypeOf op:Paramecia .
 op:hasFruitType owl:propertyChainAxiom ( opx:hasFruitSubtype opx:subtypeOf ) .
 
 # ---- Haki ----
@@ -72,6 +75,12 @@ opx:builtBy a owl:ObjectProperty ; rdfs:domain opx:Ship ; rdfs:range op:Characte
 # Owning a ship makes you a ship owner (hasValue-free: use domain of ownsShip via restriction)
 opx:ShipOwner a owl:Class ; rdfs:subClassOf op:Character ; rdfs:label "Ship owner"@en .
 [ a owl:Restriction ; owl:onProperty opx:ownsShip ; owl:someValuesFrom opx:Ship ] rdfs:subClassOf opx:ShipOwner .
+# state of a ship (Destroyed / Active); upstream recorded it as a character status (patches/ship-twins)
+opx:shipStatus a owl:ObjectProperty ; rdfs:domain opx:Ship ; rdfs:label "ship status"@en .
+# a crew member sails on the ships their crew operates: "which ship is Nami usually on?" (OWL RL prp-inv + prp-spo2)
+opx:operates a owl:ObjectProperty ; owl:inverseOf opx:operatedBy .
+opx:sailsOn a owl:ObjectProperty ; rdfs:domain op:Character ; rdfs:range opx:Ship ; rdfs:label "sails on"@en ;
+    owl:propertyChainAxiom ( op:affiliatesWith opx:operates ) .
 
 # ---- Debut data patch: later appearances demoted from op:mangaDebut / op:animeDebut (ontology/patches/*.ttl) ----
 opx:laterMangaAppearance a owl:ObjectProperty ; rdfs:domain op:Character ; rdfs:range op:MangaIssue ;

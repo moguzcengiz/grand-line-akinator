@@ -1,0 +1,6 @@
+# Patch 'ship-twins' (triples ADDED in their place). Hand-written, see the .remove file.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+
+op:Going_Merry opx:shipStatus op:Destroyed .
+op:Queen_Mama_Chanter opx:shipStatus op:Active .

@@ -1,5 +1,8 @@
 # Ontology constraints: what is missing, what the data allows, and what the guessing engine can derive
 
+> **Status (2026-10-22):** C1 and C2 data fixes are applied. `patches/split-merged-characters` splits all 13 URIs that merged two wiki pages (X and X_; checked against the wiki infoboxes), `patches/ship-twins` makes Going Merry / Queen Mama Chanter ships only (state -> `opx:shipStatus`), `patches/fruit-subtypes` makes SMILE a Zoan and Mochi-Mochi a Paramecia subtype. After reasoning: 0 characters with two statuses, 0 entities in two categories, 0 fruits with two types. The debut patch now covers only Minatomo. The axioms themselves are not added yet.
+
+
 Read-only audit (no `.ttl` or code changed). Every number below was measured with the script in [§5](#5-reproduction-script), on
 upstream + `ontology/extension.ttl` + `ontology/curated.ttl` + the patch layer (`ontology/patches/*`). This is the same loading path as ingestion (`app.ontology.load_sources()`, then `materialize()`).
 The union has 34,717 triples, 75,445 after OWL RL. Tools: rdflib, owlrl 7.6.2, pyshacl.

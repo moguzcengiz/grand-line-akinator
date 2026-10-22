@@ -40,13 +40,13 @@ opx:Zou_Zou_no_Mi_Model_Mammoth a op:DevilFruit ; rdfs:label "Elephant-Elephant 
 # ---- Ships ----
 opx:Caravel a opx:ShipType ; rdfs:label "Caravel"@en .
 opx:Submarine a opx:ShipType ; rdfs:label "Submarine"@en .
-opx:Going_Merry a opx:Ship ; rdfs:label "Going Merry"@en ; opx:operatedBy op:Straw_Hat_Pirates ; opx:shipOwner op:Monkey_D_Luffy ; opx:shipType opx:Caravel .
+op:Going_Merry a opx:Ship ; rdfs:label "Going Merry"@en ; opx:operatedBy op:Straw_Hat_Pirates ; opx:shipOwner op:Monkey_D_Luffy ; opx:shipType opx:Caravel .
 opx:Thousand_Sunny a opx:Ship ; rdfs:label "Thousand Sunny"@en ; opx:operatedBy op:Straw_Hat_Pirates ; opx:shipOwner op:Monkey_D_Luffy ; opx:builtBy op:Franky .
 opx:Moby_Dick a opx:Ship ; rdfs:label "Moby Dick"@en ; opx:operatedBy op:Whitebeard_Pirates ; opx:shipOwner op:Edward_Newgate .
 opx:Red_Force a opx:Ship ; rdfs:label "Red Force"@en ; opx:operatedBy op:Red_Hair_Pirates ; opx:shipOwner op:Shanks .
 opx:Polar_Tang a opx:Ship ; rdfs:label "Polar Tang"@en ; opx:operatedBy op:Heart_Pirates ; opx:shipOwner op:Trafalgar_D_Water_Law ; opx:shipType opx:Submarine .
 opx:Oro_Jackson a opx:Ship ; rdfs:label "Oro Jackson"@en ; opx:operatedBy op:Roger_Pirates ; opx:shipOwner op:Gol_D_Roger ; opx:builtBy op:Tom .
-opx:Queen_Mama_Chanter a opx:Ship ; rdfs:label "Queen Mama Chanter"@en ; opx:operatedBy op:Big_Mom_Pirates ; opx:shipOwner op:Charlotte_Linlin .
+op:Queen_Mama_Chanter a opx:Ship ; rdfs:label "Queen Mama Chanter"@en ; opx:operatedBy op:Big_Mom_Pirates ; opx:shipOwner op:Charlotte_Linlin .
 opx:Victoria_Punk a opx:Ship ; rdfs:label "Victoria Punk"@en ; opx:operatedBy op:Kid_Pirates ; opx:shipOwner op:Eustass_Kid .
 opx:Thriller_Bark_Ship a opx:Ship ; rdfs:label "Thriller Bark"@en ; opx:operatedBy op:Thriller_Bark_Pirates ; opx:shipOwner op:Gecko_Moria .
 

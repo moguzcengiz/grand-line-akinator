@@ -1,0 +1,7 @@
+# Patch 'fruit-subtypes' (triples REMOVED from the upstream data). Hand-written.
+# A Devil Fruit has exactly one of the three types.  Upstream gives SMILE the type "Artificial Zoan" and the Mochi-Mochi Fruit "Special
+# Paramecia": both are SUBTYPES (SMILEs are Zoan, Mochi-Mochi is a Paramecia).  They become opx:hasFruitSubtype; extension.ttl derives the type.
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:SMILE op:hasFruitType op:Artificial_Zoan .
+op:Mochi_Mochi_no_Mi op:hasFruitType op:Special_Paramecia .

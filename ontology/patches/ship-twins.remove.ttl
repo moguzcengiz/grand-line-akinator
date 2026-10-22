@@ -1,0 +1,10 @@
+# Patch 'ship-twins' (triples REMOVED from the upstream data). Hand-written.
+# Upstream types the ships Going Merry and Queen Mama Chanter as op:Character with a ship state as character status, so the game had a
+# character AND a ship of the same name.  The op: URIs become the ships (curated.ttl describes them); the state moves to opx:shipStatus.
+# Wiki (2026-10-22): Going Merry - Straw Hat Pirates, Ship Box status 2 = destroyed; Queen Mama Chanter - Big Mom Pirates, in service.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+op:Going_Merry a op:Character ; rdfs:label "Going Merry Merry Go SS Merry Go"@en ; op:statusOfCharacter op:Destroyed ;
+    op:mangaDebut op:Chapter_41 ; op:animeDebut op:Episode_17 ; op:height 1100 .
+op:Queen_Mama_Chanter a op:Character ; op:statusOfCharacter op:Active ; op:mangaDebut op:Chapter_730 ; op:animeDebut op:Episode_662 .

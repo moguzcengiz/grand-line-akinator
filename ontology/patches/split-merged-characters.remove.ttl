@@ -1,0 +1,41 @@
+# Patch 'split-merged-characters' (triples REMOVED from the upstream data). Hand-written.
+# The scraper merged two wiki pages into one URI for 7 characters: /wiki/X and the disambiguated page (e.g. "Hack (Archaeologist)"),
+# whose URL it saved as /wiki/X_.  Result: two statuses, two debuts, mixed affiliations.  The URI keeps the /wiki/X character; the facts of
+# the second page move to a new opx: individual (split-merged-characters.add.ttl).  Checked against the wiki infoboxes on 2026-10-22
+# (Char Box status: missing = Alive, 1 = Unknown, 2 = Deceased).
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Cerberus = Thriller Bark wild zombie (Deceased).  Moves: Cerberus (Sword), Figarland Shamrock's sword (Alive).
+op:Cerberus op:affiliatesWith op:Knights_of_God ; op:occupation op:Figarland_Shamrockssword ; op:mangaDebut op:Chapter_1137 ; op:statusOfCharacter op:Alive .
+# Hack = Fish-Man karate master, Revolutionary Army (Alive).  Moves: Huck (Archaeologist), Ohara (Deceased).
+op:Hack rdfs:label "Huck"@en ; op:affiliatesWith op:Ohara_Archaeologists ; op:occupation op:Archaeologist ;
+    op:mangaDebut op:Chapter_391 ; op:animeDebut op:Episode_275 ; op:statusOfCharacter op:Deceased .
+# Mr. 7 = the successor, sniper (Alive).  Moves: Mr. 7 (Previous), killed by Zoro (Deceased).
+op:Mr_7 op:mangaDebut op:Chapter_190 ; op:animeDebut op:Episode_116 ; op:statusOfCharacter op:Deceased ; op:liveActionPortrayedBy op:Rebaone_Ben_Kgosimore .
+# Risky Brothers = Rolling Pirates (Alive).  Moves: Risky Brothers (Zombies), Thriller Bark (Deceased).
+op:Risky_Brothers op:affiliatesWith op:Perona, op:Thriller_Bark_Pirates ; op:occupation op:Wild_Zombies ;
+    op:mangaDebut op:Chapter_451 ; op:animeDebut op:Episode_344 ; op:statusOfCharacter op:Deceased .
+# Ganryu = Spade Pirates (Alive).  Moves: Ganryu (Roger Pirates) (Unknown).
+op:Ganryu op:affiliatesWith op:Roger_Pirates ; op:mangaDebut op:Chapter_966 ; op:animeDebut op:Episode_968 ; op:statusOfCharacter op:Unknown .
+# Hera = Big Mom's thundercloud homie (Unknown).  Moves: Hera (Gladiator), Corrida Colosseum (Alive).
+op:Hera op:affiliatesWith op:Corrida_Colosseum ; op:occupation op:Gladiator ; op:gladiatorNumber 421 ; op:height 212 ;
+    op:mangaDebut op:Chapter_703 ; op:animeDebut op:Episode_633 ; op:statusOfCharacter op:Alive .
+# Ikkaku = Heart Pirates (Unknown).  Moves: Ikkaku (Wano), announcer in Bakura Town (Alive).
+op:Ikkaku op:occupation op:Announcer ; op:residence op:Bakura_Town ; op:mangaDebut op:Chapter_915 ; op:animeDebut op:Episode_902 ; op:statusOfCharacter op:Alive .
+
+# The other 6 merged URIs (same scraper bug; both statuses happened to be Alive, so the status check did not see them).
+# Bjorn = Walrus School student.  The crew labels of the Giant Warrior Pirates were attached to him; moves: Bjorn (Pirate).
+op:Bjorn rdfs:label "Giant Pirates"@en, "巨兵海賊団"@ja, "Kyo Hei Kaizoku-dan"@ja-latn ; op:romanizedName "Kyo Hei Kaizoku-dan"^^<http://www.w3.org/2001/XMLSchema#string> ;
+    skos:altLabel "Giant Pirate Crew"@en, "Giant Pirate Warrior Band / Pirate Giants"@en, "Giant Warrior Pirates"@en .
+# Bomba = Tontatta pirate.  Moves: Bomba (Marine), G-5.
+op:Bomba op:affiliatesWith op:G-5, op:Marines ; op:occupation op:Marine_Officer ; op:residence op:G-5 ; op:mangaDebut op:Chapter_652 ; op:animeDebut op:Episode_589 .
+# Hanji = pawn shop owner in the Flower Capital.  Moves: Hanji (Prisoner).
+op:Hanji op:affiliatesWith op:Ninja-Pirate-Mink-Samurai_Alliance ; op:occupation op:Prisoner ; op:mangaDebut op:Chapter_949 ; op:animeDebut op:Episode_947 .
+# Kaku = CP9 / CP0.  Moves: Kaku (Wano), Kyoshiro Family.
+op:Kaku op:affiliatesWith op:Kyoshiro_Family ; op:mangaDebut op:Chapter_927 ; op:animeDebut op:Episode_919 .
+# Macro = captain of the Macro Pirates.  Moves: Macro (Automaton), a colonel of the Automata.
+op:Macro op:affiliatesWith op:Automata ; op:occupation op:Colonel ; op:mangaDebut op:Chapter_437 .
+# Sora = Mermaid Cafe dancer.  Moves: Sora (fictional), the hero of the comic strip "Sora, Warrior of the Sea".
+op:Sora op:mangaDebut op:Chapter_825 ; op:animeDebut op:Episode_783 .

@@ -1,0 +1,31 @@
+# Patch 'split-merged-characters' (triples ADDED in their place). Hand-written: the second character of each merged pair, see the .remove file.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+opx:Cerberus_Sword a op:Character ; rdfs:label "Cerberus (Sword)"@en ; op:affiliatesWith op:Knights_of_God ; op:occupation op:Figarland_Shamrockssword ;
+    op:mangaDebut op:Chapter_1137 ; op:statusOfCharacter op:Alive .
+opx:Huck_Archaeologist a op:Character ; rdfs:label "Huck (Archaeologist)"@en ; op:affiliatesWith op:Ohara_Archaeologists ; op:occupation op:Archaeologist ;
+    op:mangaDebut op:Chapter_391 ; op:animeDebut op:Episode_275 ; op:statusOfCharacter op:Deceased .
+opx:Mr_7_Previous a op:Character ; rdfs:label "Mr. 7 (Previous)"@en ; op:affiliatesWith op:Baroque_Works ; op:occupation op:Frontier_Agent ;
+    op:mangaDebut op:Chapter_190 ; op:animeDebut op:Episode_116 ; op:statusOfCharacter op:Deceased ; op:liveActionPortrayedBy op:Rebaone_Ben_Kgosimore .
+opx:Risky_Brothers_Zombies a op:Character ; rdfs:label "Risky Brothers (Zombies)"@en ; op:affiliatesWith op:Perona, op:Thriller_Bark_Pirates ;
+    op:occupation op:Wild_Zombies ; op:mangaDebut op:Chapter_451 ; op:animeDebut op:Episode_344 ; op:statusOfCharacter op:Deceased .
+opx:Ganryu_Roger_Pirates a op:Character ; rdfs:label "Ganryu (Roger Pirates)"@en ; op:affiliatesWith op:Roger_Pirates ; op:occupation op:Pirate ;
+    op:mangaDebut op:Chapter_966 ; op:animeDebut op:Episode_968 ; op:statusOfCharacter op:Unknown .
+opx:Hera_Gladiator a op:Character ; rdfs:label "Hera (Gladiator)"@en ; op:affiliatesWith op:Corrida_Colosseum ; op:occupation op:Gladiator ;
+    op:gladiatorNumber 421 ; op:height 212 ; op:mangaDebut op:Chapter_703 ; op:animeDebut op:Episode_633 ; op:statusOfCharacter op:Alive .
+opx:Ikkaku_Wano a op:Character ; rdfs:label "Ikkaku (Wano)"@en ; op:occupation op:Announcer ; op:residence op:Bakura_Town ;
+    op:mangaDebut op:Chapter_915 ; op:animeDebut op:Episode_902 ; op:statusOfCharacter op:Alive .
+
+opx:Bjorn_Pirate a op:Character ; rdfs:label "Bjorn (Pirate)"@en ; op:affiliatesWith op:Giant_Warrior_Pirates ; op:occupation op:Pirate ;
+    op:residence op:Elbaph ; op:mangaDebut op:Chapter_1118 ; op:statusOfCharacter op:Alive .
+opx:Bomba_Marine a op:Character ; rdfs:label "Bomba (Marine)"@en ; op:affiliatesWith op:G-5, op:Marines ; op:occupation op:Marine_Officer ;
+    op:residence op:G-5 ; op:mangaDebut op:Chapter_652 ; op:animeDebut op:Episode_589 ; op:statusOfCharacter op:Alive .
+opx:Hanji_Prisoner a op:Character ; rdfs:label "Hanji (Prisoner)"@en ; op:affiliatesWith op:Ninja-Pirate-Mink-Samurai_Alliance ; op:occupation op:Prisoner ;
+    op:mangaDebut op:Chapter_949 ; op:animeDebut op:Episode_947 ; op:statusOfCharacter op:Alive .
+opx:Kaku_Wano a op:Character ; rdfs:label "Kaku (Wano)"@en ; op:affiliatesWith op:Kyoshiro_Family ;
+    op:mangaDebut op:Chapter_927 ; op:animeDebut op:Episode_919 ; op:statusOfCharacter op:Alive .
+opx:Macro_Automaton a op:Character ; rdfs:label "Macro (Automaton)"@en ; op:affiliatesWith op:Automata ; op:occupation op:Colonel ;
+    op:mangaDebut op:Chapter_437 ; op:statusOfCharacter op:Alive .
+opx:Sora_Comic a op:Character ; rdfs:label "Sora (comic hero)"@en ; op:mangaDebut op:Chapter_825 ; op:animeDebut op:Episode_783 .

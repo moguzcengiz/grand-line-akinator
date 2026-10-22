@@ -87,3 +87,8 @@ Summary: 50 relationship types, 18 used, 32 ignored.
 * `ENGLISH_/JAPANESE_VOICE_ACTOR` edges to Status / Affiliation nodes: scraper column shift. Harmless because voice actors are not asked about.
 * `AFFILIATES_WITH -> Location` (Impel Down, Ryugu Kingdom, ...) and `-> Character` (Caesar Clown, ...): the organisation question only takes organisation-typed targets, so these never become questions.
 * `RACE`: only 10 edges, so "Is it of the Human race?" is UNKNOWN for almost everyone.
+
+## Added 2026-10-22
+
+* `SAILS_ON` (opx:sailsOn, inferred): a crew member sails on the ships their crew operates (`affiliatesWith` o `operates`, extension.ttl). Asked as "Does it sail on the X?"; known exactly where the character has an affiliation.
+* `SHIP_STATUS` (opx:shipStatus): Destroyed / Active, moved off `statusOfCharacter` by patches/ship-twins.

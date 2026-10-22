@@ -80,7 +80,7 @@ _LABEL_TOPIC = {"DevilFruitUser": "fruit", "DevilFruitEater": "fruit", "HakiUser
 _REL_TOPIC = {"STATUS_OF_CHARACTER": "status", "AFFILIATES_WITH": "affiliation", "OPERATED_BY": "affiliation", "OCCUPATION": "role",
               "PLACE_OF_ORIGIN": "origin", "RESIDENCE": "origin", "RACE": "race", "HAS_HAKI": "haki", "HAS_FRUIT_TYPE": "fruit",
               "HAS_FRUIT_SUBTYPE": "fruit", "HAS_DEVIL_FRUIT": "fruit", "DEVIL_FRUIT_PREVIOUS_USER": "fruit", "DEVIL_FRUIT_CURRENT_USER": "fruit-user",
-              "SHIP_OWNER": "ship", "OWNS_SHIP": "ship", "SHIP_TYPE": "ship", "BUILT_BY": "ship"}
+              "SHIP_OWNER": "ship", "OWNS_SHIP": "ship", "SHIP_TYPE": "ship", "BUILT_BY": "ship", "SAILS_ON": "ship", "SHIP_STATUS": "ship"}
 
 
 def topic(q: "Question") -> str:
@@ -362,14 +362,18 @@ REL_TEXT = {
     "SHIP_TYPE": "Is it a {t}?",
     "SHIP_OWNER": "Is it owned by {t}?",
     "BUILT_BY": "Was it built by {t}?",
+    "SAILS_ON": "Does it sail on the {t}?",
+    "SHIP_STATUS": "Is the ship's status \"{t}\"?",
 }
 # relations whose absence means "unknown" rather than "false"
 OPEN_RELS = {"BUILT_BY", "SHIP_TYPE", "AFFILIATES_WITH", "OCCUPATION", "STATUS_OF_CHARACTER", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "HAS_BLOOD_TYPE",
-             "JAPANESE_VOICE_ACTOR", "ENGLISH_VOICE_ACTOR"}
+             "JAPANESE_VOICE_ACTOR", "ENGLISH_VOICE_ACTOR", "SHIP_STATUS"}
+# relations derived from another one (extension.ttl property chains): known exactly where the source relation is (sailsOn = affiliatesWith o operates)
+KNOWN_VIA = {"SAILS_ON": "AFFILIATES_WITH"}
 REL_MIN_SUPPORT = {"RESIDENCE": 15, "PLACE_OF_ORIGIN": 15, "OCCUPATION": 12}   # obscure relations need broader support
 # the ONLY relations the generic relation->target sweep may turn into questions (whitelist: a new relation in the data is never asked
 # about by accident).  Fruit, affiliation, Haki and ship-ownership relations get dedicated questions below.  Full list: docs/CONNECTIONS.md
-SWEEP_RELS = ["STATUS_OF_CHARACTER", "OCCUPATION", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "SHIP_OWNER", "SHIP_TYPE", "BUILT_BY"]
+SWEEP_RELS = ["STATUS_OF_CHARACTER", "OCCUPATION", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "SHIP_OWNER", "SHIP_TYPE", "BUILT_BY", "SAILS_ON", "SHIP_STATUS"]
 # umbrella organisations already asked through the OWL-inferred class questions below (would be near-duplicates)
 UMBRELLA_ORGS = {"Marines", "Revolutionary_Army", "World_Government"}
 # OWL-RL-derived classes (see ontology/extension.ttl) -> (question, start category, completeness scope)
@@ -422,10 +426,12 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
         name = r["name"].replace("_", " ")
         if r["rel"] == "STATUS_OF_CHARACTER" and name in ("Alive", "Deceased"):
             text = f"Is it a {'living' if name == 'Alive' else 'deceased'} character?"
+        elif r["rel"] == "SHIP_STATUS" and name in ("Destroyed", "Active"):
+            text = "Has the ship been destroyed?" if name == "Destroyed" else "Is the ship still sailing?"
         else:
             text = REL_TEXT.get(r["rel"], "Is it related to {t}?").format(t=name)
         add(_mk(text, [Path(start=r["cat"], steps=[Step(rel=r["rel"])], cond=Cond(kind="uri", uri=r["uri"]),
-                            scope="status" if r["rel"] == "STATUS_OF_CHARACTER" else (f"rel:{r['rel']}" if r["rel"] in OPEN_RELS else "closed"))]))
+                            scope="status" if r["rel"] == "STATUS_OF_CHARACTER" else (f"rel:{KNOWN_VIA.get(r['rel'], r['rel'])}" if r["rel"] in OPEN_RELS | set(KNOWN_VIA) else "closed"))]))
 
     # fruit type: fruits directly, characters through their fruit (one question, two paths)
     for t in graph.run('SELECT ?uri ?name (COUNT(DISTINCT ?f) AS ?n) WHERE { ?f g:category "DevilFruit" . ?f ?p ?uri . ?p g:relType "HAS_FRUIT_TYPE" . ?uri g:name ?name } '
