@@ -1,0 +1,140 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+op:Sterry op:affiliatesWith op:Goa_Kingdom .
+op:Tacos op:affiliatesWith op:Shishano_Kingdom .
+op:Sukoshiba_Kanishitoru op:affiliatesWith op:Impel_Down .
+op:Tamachibi op:affiliatesWith op:Sakura_Kingdom ;
+    op:placeOfOrigin op:Cocoa_Weed .
+
+op:Sakura_Kingdom rdfs:label "Sakura Kingdom"@en, "サクラ王国"@ja .
+op:Shishano_Kingdom a op:Affiliation ;
+    rdfs:label "Shishano Kingdom"@en, "シシャノ王国"@ja .
+op:Cocoa_Weed a op:Location ;
+    rdfs:label "Cocoa Weed"@en, "ココアウィード"@ja .
+
+op:Hotel_Employee a op:Occupation ;
+    rdfs:label "Hotel employee"@en, "ホテル従業員"@ja .
+op:Spector op:occupation op:Hotel_Employee .
+
+op:Splash_and_Splatter rdfs:label "スプラッシュ＆スプラッタ"@ja .
+
+opx:evidenceCampaign026SterryGoa a rdf:Statement ;
+    rdf:subject op:Sterry ; rdf:predicate op:affiliatesWith ; rdf:object op:Goa_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Stelly/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Sterry as the current king of Goa Kingdom; his existing king occupation, residence, and March 12 birthday are already represented." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026TacoShishano a rdf:Statement ;
+    rdf:subject op:Tacos ; rdf:predicate op:affiliatesWith ; rdf:object op:Shishano_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/King_Tacos/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies King Tacos as king of Shishano Kingdom; his existing king occupation, residence, and December 9 birthday are already represented." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026ShishanoType a rdf:Statement ;
+    rdf:subject op:Shishano_Kingdom ; rdf:predicate rdf:type ; rdf:object op:Affiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/King_Tacos/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile identifies Shishano as a kingdom and its king; typed here as an affiliation for the sourced membership edge." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026ShishanoEnglishLabel a rdf:Statement ;
+    rdf:subject op:Shishano_Kingdom ; rdf:predicate rdfs:label ; rdf:object "Shishano Kingdom"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/King_Tacos/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Official English rendering of the kingdom name." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026ShishanoJapaneseLabel a rdf:Statement ;
+    rdf:subject op:Shishano_Kingdom ; rdf:predicate rdfs:label ; rdf:object "シシャノ王国"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/King_Tacos/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Official Japanese spelling of the kingdom name." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026SukoshibaImpelDown a rdf:Statement ;
+    rdf:subject op:Sukoshiba_Kanishitoru ; rdf:predicate op:affiliatesWith ; rdf:object op:Impel_Down ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=S&page=6&sort=asc> ;
+    opx:sourceType "official character directory" ;
+    opx:sourceReference "The official S-entry directory lists Sukoshiba Kanishitoru under Impel Down; his existing guard occupation is consistent with this affiliation." ;
+    opx:confidence "high" ; opx:temporalScope "official directory snapshot" .
+
+opx:evidenceCampaign026TamachibiSakura a rdf:Statement ;
+    rdf:subject op:Tamachibi ; rdf:predicate op:affiliatesWith ; rdf:object op:Sakura_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tamachibi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile places Tamachibi under Sakura Kingdom; his June 17 birthday is already represented." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026TamachibiOrigin a rdf:Statement ;
+    rdf:subject op:Tamachibi ; rdf:predicate op:placeOfOrigin ; rdf:object op:Cocoa_Weed ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tamachibi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile lists Tamachibi's place of origin as Cocoa Weed on Drum Island. The existing unlabelled compound residence URI is retained pending identity review." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026SakuraEnglishLabel a rdf:Statement ;
+    rdf:subject op:Sakura_Kingdom ; rdf:predicate rdfs:label ; rdf:object "Sakura Kingdom"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tamachibi/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Official English rendering of the kingdom name." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026SakuraJapaneseLabel a rdf:Statement ;
+    rdf:subject op:Sakura_Kingdom ; rdf:predicate rdfs:label ; rdf:object "サクラ王国"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tamachibi/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Official Japanese spelling of the kingdom name." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026CocoaWeedType a rdf:Statement ;
+    rdf:subject op:Cocoa_Weed ; rdf:predicate rdf:type ; rdf:object op:Location ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tamachibi/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Official profile identifies Cocoa Weed on Drum Island as a place of origin." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026CocoaWeedEnglishLabel a rdf:Statement ;
+    rdf:subject op:Cocoa_Weed ; rdf:predicate rdfs:label ; rdf:object "Cocoa Weed"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tamachibi/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Official English rendering of the place name." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026CocoaWeedJapaneseLabel a rdf:Statement ;
+    rdf:subject op:Cocoa_Weed ; rdf:predicate rdfs:label ; rdf:object "ココアウィード"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tamachibi/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Official Japanese spelling of the place name." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026HotelEmployeeType a rdf:Statement ;
+    rdf:subject op:Hotel_Employee ; rdf:predicate rdf:type ; rdf:object op:Occupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Spectre/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile describes Spector as an employee of the Tropical Hotel, supporting a hotel-employee occupation rather than hotel ownership." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026HotelEmployeeEnglishLabel a rdf:Statement ;
+    rdf:subject op:Hotel_Employee ; rdf:predicate rdfs:label ; rdf:object "Hotel employee"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Spectre/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "English label for the occupation explicitly described in the official profile." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026HotelEmployeeJapaneseLabel a rdf:Statement ;
+    rdf:subject op:Hotel_Employee ; rdf:predicate rdfs:label ; rdf:object "ホテル従業員"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Spectre/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Japanese label for the occupation explicitly described in the official profile." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026SpectorOccupation a rdf:Statement ;
+    rdf:subject op:Spector ; rdf:predicate op:occupation ; rdf:object op:Hotel_Employee ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Spectre/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Spector as a Tropical Hotel employee." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign026SplashJapaneseLabel a rdf:Statement ;
+    rdf:subject op:Splash_and_Splatter ; rdf:predicate rdfs:label ; rdf:object "スプラッシュ＆スプラッタ"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Splash_Splatter/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official character profile spells the twin pirates' joint name with an ampersand; the existing January 18 birthday and combined character entity remain unchanged." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .

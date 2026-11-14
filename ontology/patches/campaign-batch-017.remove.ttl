@@ -1,0 +1,10 @@
+# Campaign batch 017: remove misapplied affiliation class assertions for characters confirmed by official profiles.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Wanda rdf:type op:Affiliation .
+op:Yosaku rdf:type op:Affiliation .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Official profile gives Zunesha's age as more than 1,000 years, not exactly 1,000.
+op:Zunesha op:age "1000"^^xsd:integer .

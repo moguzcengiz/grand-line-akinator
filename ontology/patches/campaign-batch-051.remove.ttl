@@ -1,0 +1,29 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Per-removal justification and source references are in work/research/batch-051-removal-reasons.json.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+op:Kasagoba rdfs:label "KasagonKasagoba"@en .
+
+op:Kashii op:affiliatesWith op:World_GovernmentGiant_Warrior_Pirates ;
+    op:occupation op:PirateGate_Guardian ;
+    op:residence op:ElbaphEnies_LobbyWater_7 .
+
+op:Kawamatsu op:occupation op:Daimyo .
+
+op:Kiev op:occupation op:DismantlerBounty_Hunter .
+
+op:Killer op:affiliatesWith op:Kurozumi_Orochi .
+
+op:PirateGate_Guardian a op:Occupation ;
+    rdfs:comment "former"@en .
+
+op:World_GovernmentGiant_Warrior_Pirates a op:Affiliation ;
+    rdfs:comment "defected"@en .
+

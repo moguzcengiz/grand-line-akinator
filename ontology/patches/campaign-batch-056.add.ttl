@@ -1,0 +1,13 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Meadows op:affiliatesWith op:Dressrosa .
+opx:evidenceCampaign056001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The exact-match official Meadows profile has primary heading context ドレスローザ王国 (Kingdom of Dressrosa). It supports the existing Dressrosa polity node, already modeled as an affiliation and location. The separate Corrida_Colosseum relation is retained." ;
+    opx:sourceType "official character profile with exact Japanese title match" ;
+    opx:temporalScope "Official character profile snapshot" ;
+    rdf:subject op:Meadows ; rdf:predicate op:affiliatesWith ; rdf:object op:Dressrosa ;
+    prov:wasDerivedFrom <https://one-piece.com/character/meadows/index.html> .

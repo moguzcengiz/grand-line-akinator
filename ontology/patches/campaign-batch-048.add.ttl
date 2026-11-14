@@ -1,0 +1,400 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign048001 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The chapter-referenced profile identifies Ideaman as the Krieg Pirates' Staff Officer of Planning; replace the malformed concatenated occupation URI with a clean occupation term." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "character role" ;
+    rdf:object op:Staff_Officer_of_Planning ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ideaman ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ideaman> .
+
+opx:evidenceCampaign048002 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The sourced Staff Officer of Planning term is modeled as an occupation." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "occupation vocabulary term" ;
+    rdf:object op:Occupation ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Staff_Officer_of_Planning ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ideaman> .
+
+opx:evidenceCampaign048003 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "English label for Ideaman's documented Krieg Pirates role." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "occupation vocabulary term" ;
+    rdf:object "Staff Officer of Planning"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Staff_Officer_of_Planning ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ideaman> .
+
+opx:evidenceCampaign048004 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The Numbers are identified as a named group within the Beasts Pirates." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Wano arc group" ;
+    rdf:object op:Affiliation ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Numbers ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Inbi> .
+
+opx:evidenceCampaign048005 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "English name of the Beasts Pirates' Numbers group." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Wano arc group" ;
+    rdf:object "Numbers"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Numbers ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Inbi> .
+
+opx:evidenceCampaign048006 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Inbi is one of the Beasts Pirates' Numbers; add the narrower subgroup affiliation alongside the existing crew affiliation." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "Wano arc" ;
+    rdf:object op:Numbers ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Inbi ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Inbi> .
+
+opx:evidenceCampaign048007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Wano sumo announcer is a separate person from the Heart Pirates member called Ikkaku." ;
+    opx:sourceType "manga chapter; official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc" ;
+    rdf:object op:Character ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://one-piece.com/character/ikkaku/index.html>,
+        <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-915/chapter/16843> .
+
+opx:evidenceCampaign048008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Disambiguating English label for the Wano announcer, distinct from the Heart Pirates member." ;
+    opx:sourceType "manga chapter; official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc" ;
+    rdf:object "Ikkaku (Wano)"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-915/chapter/16843> .
+
+opx:evidenceCampaign048009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter-referenced profile gives the Wano announcer's written name; separate it from the Heart Pirates member's イッカク." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc" ;
+    rdf:object "一鶴"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Romanized name for the Wano announcer." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc" ;
+    rdf:object "Ikkaku"@ja-latn ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Romanized name for the Wano announcer." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc" ;
+    rdf:object "Ikkaku" ;
+    rdf:predicate op:romanizedName ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 915 depicts the separate Ikkaku as the Wano sumo-match announcer." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc" ;
+    rdf:object op:Announcer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-915/chapter/16843> .
+
+opx:evidenceCampaign048013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Wano announcer works in Bakura Town during chapter 915." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc" ;
+    rdf:object op:Bakura_Town ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-915/chapter/16843> .
+
+opx:evidenceCampaign048014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 915 is the Wano announcer's debut; the Heart Pirates member debuted earlier in chapter 810." ;
+    opx:sourceType "manga chapter; official chapter listing; chapter-referenced character profile" ;
+    opx:temporalScope "debut" ;
+    rdf:object op:Chapter_915 ;
+    rdf:predicate op:mangaDebut ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-915/chapter/16843> .
+
+opx:evidenceCampaign048015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Episode 902 adapts the Wano sumo scene and is the Wano announcer's anime debut." ;
+    opx:sourceType "anime episode; chapter-referenced character profile" ;
+    opx:temporalScope "debut" ;
+    rdf:object op:Episode_902 ;
+    rdf:predicate op:animeDebut ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/index.html?category=landofwano&page=1&sort=asc>,
+        <https://onepiece.fandom.com/wiki/Episode_902> .
+
+opx:evidenceCampaign048016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Hiromu Miyazaki voices the Wano announcer; Karin Takahashi voices the Heart Pirates member." ;
+    opx:sourceType "official anime voice cast; chapter-referenced character profile" ;
+    opx:temporalScope "anime portrayal" ;
+    rdf:object op:Hiromu_Miyazaki ;
+    rdf:predicate op:japaneseVoiceActor ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048017 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Ryan Seale voices the Wano announcer; Carli Mosier voices the Heart Pirates member." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "English dub portrayal" ;
+    rdf:object op:Ryan_Seale ;
+    rdf:predicate op:englishVoiceActor ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048018 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The Wano announcer is shown alive in his debut scene; retain the source's Wano-arc snapshot." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "Wano Country arc snapshot" ;
+    rdf:object op:Alive ;
+    rdf:predicate op:statusOfCharacter ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048019 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Source identifier for the separately modeled Wano announcer." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "source identity metadata" ;
+    rdf:object "Ikkaku (Wano)"^^xsd:string ;
+    rdf:predicate op:opwikiID ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048020 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Source URL for the separately modeled Wano announcer." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "source identity metadata" ;
+    rdf:object "https://onepiece.fandom.com/wiki/Ikkaku_(Wano)"^^xsd:anyURI ;
+    rdf:predicate op:opwikiurl ;
+    rdf:subject op:Ikkaku_Wano ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ikkaku_(Wano)> .
+
+opx:evidenceCampaign048021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The alliance including the Heart Pirates is identified as disbanded after the Wano raid; scope this affiliation as Historical." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "after alliance dissolution" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign048T021 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_1057>,
+        <https://onepiece.fandom.com/wiki/Ikkaku> .
+
+opx:evidenceCampaign048022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Igaram infiltrated Baroque Works while secretly serving as Alabasta's Royal Guard captain; the covert affiliation ended when his role was exposed." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "historical; undercover service before Alabasta resolution" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign048T022 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Igaram/index.html>,
+        <https://onepiece.fandom.com/wiki/Igaram> .
+
+opx:evidenceCampaign048023 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Igaram's Frontier Agent role was his undercover Baroque Works position and is historical." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "historical; before Baroque Works was dismantled" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign048T023 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Igaram/index.html>,
+        <https://onepiece.fandom.com/wiki/Igaram> .
+
+opx:evidenceCampaign048024 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Igaram's bounty-hunter role was part of his Whisky Peak cover; qualify it as historical." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; undercover period" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign048T024 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Igaram> .
+
+opx:evidenceCampaign048025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Roger Pirates disbanded after reaching the final island; scope Jacksonbanner's crew association as Historical." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; before crew dissolution" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign048T025 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_968>,
+        <https://onepiece.fandom.com/wiki/Jacksonbanner> .
+
+opx:evidenceCampaign048026 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Jacksonbanner's Pirate occupation belongs to the disbanded Roger Pirates period." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; before crew dissolution" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign048T026 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_968>,
+        <https://onepiece.fandom.com/wiki/Jacksonbanner> .
+
+opx:evidenceCampaign048027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Volume 112 SBS identifies Jacksonbanner as the Roger Pirates' musician; the crew later disbanded." ;
+    opx:sourceType "SBS volume 112; manga chapter" ;
+    opx:temporalScope "historical; during Roger Pirates service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign048T027 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_968>,
+        <https://onepiece.fandom.com/wiki/Jacksonbanner> .
+
+opx:evidenceCampaign048028 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Replace the concatenated label with the recognized English name; official profile confirms Inuppe is the revived penguin carrying Sanji's shadow." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "Thriller Bark arc identity" ;
+    rdf:object "Dog Penguin"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Inuppe ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Inuppe/index.html>,
+        <https://onepiece.fandom.com/wiki/Inuppe> .
+
+opx:evidenceCampaign048029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "SBS Volume 65 identifies Ishilly among the Mermaid Café's top dancers; add the missing occupation." ;
+    opx:sourceType "SBS volume 65; chapter-referenced profile" ;
+    opx:temporalScope "profile fact" ;
+    rdf:object op:Dancer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ishilly ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ishilly>,
+        <https://www.grandlinearchives.com/characters/ishilly> .
+
+opx:evidenceCampaign048030 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The official profile and canonical Chapter 0 establish Indigo's historical story but do not establish present-day survival; do not carry an affirmative Alive status from the non-manga Strong World continuation. Preserve the current status as Unknown." ;
+    opx:sourceType "official character profile; canonical manga chapter; continuity review" ;
+    opx:temporalScope "current canon status unresolved; historical appearance in Chapter 0" ;
+    rdf:object op:Unknown ;
+    rdf:predicate op:statusOfCharacter ;
+    rdf:subject op:Indigo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Indigo/index.html>,
+        <https://onepiece.fandom.com/wiki/Canon>,
+        <https://www.viz.com/blog/posts/special-one-piece-one-shot-1744> .
+
+op:Ideaman op:occupation op:Staff_Officer_of_Planning .
+
+op:Inbi op:affiliatesWith op:Numbers .
+
+op:Indigo op:statusOfCharacter op:Unknown .
+
+op:Inuppe rdfs:label "Dog Penguin"@en .
+
+op:Ishilly op:occupation op:Dancer .
+
+opx:evidenceCampaign048T021 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Ikkaku .
+
+opx:evidenceCampaign048T022 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Baroque_Works ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Igaram .
+
+opx:evidenceCampaign048T023 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Frontier_Agent ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Igaram .
+
+opx:evidenceCampaign048T024 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Bounty_Hunter ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Igaram .
+
+opx:evidenceCampaign048T025 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Roger_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jacksonbanner .
+
+opx:evidenceCampaign048T026 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jacksonbanner .
+
+opx:evidenceCampaign048T027 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Musician ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jacksonbanner .
+
+op:Numbers a op:Affiliation ;
+    rdfs:label "Numbers"@en .
+
+op:Staff_Officer_of_Planning a op:Occupation ;
+    rdfs:label "Staff Officer of Planning"@en .
+
+op:Ikkaku_Wano a op:Character ;
+    rdfs:label "Ikkaku (Wano)"@en,
+        "一鶴"@ja,
+        "Ikkaku"@ja-latn ;
+    op:animeDebut op:Episode_902 ;
+    op:englishVoiceActor op:Ryan_Seale ;
+    op:japaneseVoiceActor op:Hiromu_Miyazaki ;
+    op:mangaDebut op:Chapter_915 ;
+    op:occupation op:Announcer ;
+    op:opwikiID "Ikkaku (Wano)"^^xsd:string ;
+    op:opwikiurl "https://onepiece.fandom.com/wiki/Ikkaku_(Wano)"^^xsd:anyURI ;
+    op:residence op:Bakura_Town ;
+    op:romanizedName "Ikkaku" ;
+    op:statusOfCharacter op:Alive .
+

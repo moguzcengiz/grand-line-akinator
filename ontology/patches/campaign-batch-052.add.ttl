@@ -1,0 +1,462 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign052001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Momonosuke as eight years old." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile-listed age" ;
+    rdf:object 8 ;
+    rdf:predicate op:age ;
+    rdf:subject op:Kouzuki_Momonosuke ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kouduki_momonosuke/index.html> .
+
+opx:evidenceCampaign052002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Wano Country as Momonosuke’s origin." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "birthplace/origin" ;
+    rdf:object op:Wano_Country ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Kouzuki_Momonosuke ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kouduki_momonosuke/index.html> .
+
+opx:evidenceCampaign052004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The alliance was disbanded after the Onigashima raid; retain the relation as historical." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; alliance disbanded after the Wano raid" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052003 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kouzuki_Momonosuke> .
+
+opx:evidenceCampaign052005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Kong as the World Government Commander-in-Chief." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current World Government role" ;
+    rdf:object op:Commander-in-Chief ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kong ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kong/index.html> .
+
+opx:evidenceCampaign052007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Kong as World Government Commander-in-Chief; the chapter-referenced profile marks his Marine affiliation as former." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "historical; before promotion to World Government Commander-in-Chief" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052006 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kong/index.html>,
+        <https://onepiece.fandom.com/wiki/Kong> .
+
+opx:evidenceCampaign052009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The chapter-referenced profile lists Admiral as a former rank before promotion to Fleet Admiral." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; before Fleet Admiral" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052008 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kong> .
+
+opx:evidenceCampaign052011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Kong’s current World Government command; the chapter-referenced profile lists Fleet Admiral as former." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "historical; before promotion to Commander-in-Chief" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052010 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kong/index.html>,
+        <https://onepiece.fandom.com/wiki/Kong> .
+
+opx:evidenceCampaign052013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Sukiyaki as former shogun of Wano." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before Orochi’s usurpation" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052012 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kozuki_Sukiyaki/>,
+        <https://onepiece.fandom.com/wiki/Kouzuki_Sukiyaki> .
+
+opx:evidenceCampaign052015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The alliance was disbanded after the Onigashima raid." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; alliance disbanded after the Wano raid" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052014 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kouzuki_Sukiyaki> .
+
+opx:evidenceCampaign052016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile separates Amigasa Village from the former Flower Capital residence." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "listed residence after escaping imprisonment" ;
+    rdf:object op:Amigasa_Village ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kouzuki_Sukiyaki ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kouzuki_Sukiyaki> .
+
+opx:evidenceCampaign052017 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile lists Flower Capital as his former residence." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "former residence" ;
+    rdf:object op:Flower_Capital ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kouzuki_Sukiyaki ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kouzuki_Sukiyaki> .
+
+opx:evidenceCampaign052019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile marks Flower Capital as his former residence." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; before residence in Amigasa Village" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052018 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kouzuki_Sukiyaki> .
+
+opx:evidenceCampaign052021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kumashi’s Thriller Bark crew affiliation ended when Usopp purified him." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; before purification" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052020 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kumashi> .
+
+opx:evidenceCampaign052023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kumashi served Perona before being purified." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; before purification" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052022 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kumashi> .
+
+opx:evidenceCampaign052025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kumashi commanded the Wild Zombies before being purified." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "historical; before purification" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052024 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kumashi> .
+
+opx:evidenceCampaign052027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kinga served as a Whitebeard subordinate captain; the Whitebeard Pirates disbanded after the Payback War." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; before the Whitebeard Pirates disbanded" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052026 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kinga>,
+        <https://onepiece.fandom.com/wiki/Payback_War>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign052029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kingdew was the 11th division commander; the Whitebeard Pirates disbanded after the Payback War." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; before the Whitebeard Pirates disbanded" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052028 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kingdew>,
+        <https://onepiece.fandom.com/wiki/Payback_War>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign052031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kingdew’s division-command role ended when the Whitebeard Pirates disbanded." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; before the Whitebeard Pirates disbanded" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052030 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kingdew>,
+        <https://onepiece.fandom.com/wiki/Payback_War>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign052033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The alliance officially disbanded after Kaido’s defeat and the liberation of Wano." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; alliance disbanded after the Wano raid" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052032 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kojuro>,
+        <https://onepiece.fandom.com/wiki/Ninja-Pirate-Mink-Samurai_Alliance> .
+
+opx:evidenceCampaign052035 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Komane’s Lulusia affiliation ended when its people overthrew the royal family and the kingdom was destroyed." ;
+    opx:sourceType "chapter-referenced character and location profiles" ;
+    opx:temporalScope "historical; before Lulusia’s destruction" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052034 ;
+    prov:wasDerivedFrom <https://daddyjim.ai/one-piece/character/Komane>,
+        <https://www.grandlinearchives.com/locations/lulusia> .
+
+opx:evidenceCampaign052037 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Komane was dethroned before the destruction of Lulusia." ;
+    opx:sourceType "chapter-referenced character and location profiles" ;
+    opx:temporalScope "historical; before the royal family was overthrown" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052036 ;
+    prov:wasDerivedFrom <https://daddyjim.ai/one-piece/character/Komane>,
+        <https://www.grandlinearchives.com/locations/lulusia> .
+
+opx:evidenceCampaign052039 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Spade Pirates were absorbed into the Whitebeard Pirates, which later disbanded after the Payback War." ;
+    opx:sourceType "chapter-referenced organization profile" ;
+    opx:temporalScope "historical; before integration into the Whitebeard Pirates" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052038 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Payback_War>,
+        <https://onepiece.fandom.com/wiki/Spade_Pirates>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign052040 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The entire Spade Pirates crew was integrated into the Whitebeard Pirates." ;
+    opx:sourceType "chapter-referenced organization profile" ;
+    opx:temporalScope "historical; before the Whitebeard Pirates disbanded" ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kotatsu ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Spade_Pirates> .
+
+opx:evidenceCampaign052042 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Whitebeard Pirates disbanded after the Payback War." ;
+    opx:sourceType "chapter-referenced organization profiles" ;
+    opx:temporalScope "historical; before the Whitebeard Pirates disbanded" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052041 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Payback_War>,
+        <https://onepiece.fandom.com/wiki/Spade_Pirates>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign052044 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Spade Pirates were absorbed into the Whitebeard Pirates, which later disbanded after the Payback War." ;
+    opx:sourceType "chapter-referenced organization profile" ;
+    opx:temporalScope "historical; before integration into the Whitebeard Pirates" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052043 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Payback_War>,
+        <https://onepiece.fandom.com/wiki/Spade_Pirates>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign052045 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The entire Spade Pirates crew was integrated into the Whitebeard Pirates." ;
+    opx:sourceType "chapter-referenced organization profile" ;
+    opx:temporalScope "historical; before the Whitebeard Pirates disbanded" ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kukai ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Spade_Pirates> .
+
+opx:evidenceCampaign052047 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Whitebeard Pirates disbanded after the Payback War." ;
+    opx:sourceType "chapter-referenced organization profiles" ;
+    opx:temporalScope "historical; before the Whitebeard Pirates disbanded" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052046 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Payback_War>,
+        <https://onepiece.fandom.com/wiki/Spade_Pirates>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign052049 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Beasts Pirates were defeated in Wano and ceased to operate as a crew." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; before the Beasts Pirates’ defeat" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052048 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Koshi_Falcon> .
+
+opx:evidenceCampaign052051 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "His Gifter role was within the defeated Beasts Pirates." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; before the Beasts Pirates’ defeat" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign052050 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Koshi_Falcon> .
+
+opx:evidenceCampaign052003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kouzuki_Momonosuke .
+
+opx:evidenceCampaign052006 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Marines ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kong .
+
+opx:evidenceCampaign052008 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kong .
+
+opx:evidenceCampaign052010 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Fleet_Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kong .
+
+opx:evidenceCampaign052012 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Shogun ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kouzuki_Sukiyaki .
+
+opx:evidenceCampaign052014 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kouzuki_Sukiyaki .
+
+opx:evidenceCampaign052018 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Flower_Capital ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kouzuki_Sukiyaki .
+
+opx:evidenceCampaign052020 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Thriller_Bark_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kumashi .
+
+opx:evidenceCampaign052022 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Peronas_servant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kumashi .
+
+opx:evidenceCampaign052024 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Wild_Zombie_Commander-in-Chief ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kumashi .
+
+opx:evidenceCampaign052026 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kinga .
+
+opx:evidenceCampaign052028 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kingdew .
+
+opx:evidenceCampaign052030 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:11th_Division_Commander ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kingdew .
+
+opx:evidenceCampaign052032 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kojuro .
+
+opx:evidenceCampaign052034 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Lulusia_Kingdom ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Komane .
+
+opx:evidenceCampaign052036 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Princess ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Komane .
+
+opx:evidenceCampaign052038 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Spade_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kotatsu .
+
+opx:evidenceCampaign052041 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kotatsu .
+
+opx:evidenceCampaign052043 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Spade_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kukai .
+
+opx:evidenceCampaign052046 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kukai .
+
+opx:evidenceCampaign052048 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Beasts_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Koshi_Falcon .
+
+opx:evidenceCampaign052050 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Gifter ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Koshi_Falcon .
+
+op:Kotatsu op:affiliatesWith op:Whitebeard_Pirates .
+
+op:Kouzuki_Momonosuke op:age 8 ;
+    op:placeOfOrigin op:Wano_Country .
+
+op:Kukai op:affiliatesWith op:Whitebeard_Pirates .
+
+op:Kong op:occupation op:Commander-in-Chief .
+
+op:Kouzuki_Sukiyaki op:residence op:Amigasa_Village,
+        op:Flower_Capital .
+

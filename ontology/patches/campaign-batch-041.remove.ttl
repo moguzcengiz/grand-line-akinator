@@ -1,0 +1,8 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Official profiles classify both as Whitebeard allied pirates, not direct Whitebeard Pirates crew members.
+op:Elmy op:affiliatesWith op:Subordinate_of_theWhitebeard_Pirates .
+op:Epoida op:affiliatesWith op:Whitebeard_Pirates .
+
+# The source graph's combined local name is malformed; separate official roster affiliations are asserted in the add patch.
+op:Farul op:affiliatesWith op:Beautiful_PiratesStraw_Hat_Grand_Fleet .

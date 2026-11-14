@@ -1,0 +1,12 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Malformed merged values replaced by discrete, source-supported values.
+op:Maidy op:occupation op:Ladys_maid .
+op:Maidy op:residence op:AlubarnaArabasta .
+op:AlubarnaArabasta rdf:type op:Location .
+op:Manboshi op:occupation op:Princeof_the_Ryugu_Kingdom .
+
+# Chapter 1069 identifies Lu Feld as the MADS sponsor, not as a research-team member.
+# Sponsorship cannot currently be represented with a dedicated predicate.
+op:Lu_Feld op:affiliatesWith op:MADS .

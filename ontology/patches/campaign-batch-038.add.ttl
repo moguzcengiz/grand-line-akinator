@@ -1,0 +1,107 @@
+# Source-backed enrichment; every added factual triple has an rdf:Statement provenance record.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign038CoribouBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Coribou profile lists a 190,000,000 berry bounty. The profile does not mark the amount current or former." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Coribou_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Coribou ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Coribou/index.html> .
+
+opx:evidenceCampaign038CoribouBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Coribou profile lists a 190,000,000 berry bounty." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object 190000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Coribou_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Coribou/index.html> .
+
+opx:evidenceCampaign038CoribouBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists this bounty for Coribou; represented as a named Bounty record for him." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Coribou ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Coribou_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Coribou/index.html> .
+
+opx:evidenceCampaign038CoribouBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile presents the amount as Coribou's bounty; typed with the ontology's Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Coribou_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Coribou/index.html> .
+
+opx:evidenceCampaign038CurlyDadanBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Curly Dadan profile lists a 7,800,000 berry bounty. The profile does not mark the amount current or former." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Curly_Dadan_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Curly_Dadan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Curry_Dadan/index.html> .
+
+opx:evidenceCampaign038CurlyDadanBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Curly Dadan profile lists a 7,800,000 berry bounty." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object 7800000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Curly_Dadan_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Curry_Dadan/index.html> .
+
+opx:evidenceCampaign038CurlyDadanBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists this bounty for Curly Dadan; represented as a named Bounty record for her." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Curly_Dadan ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Curly_Dadan_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Curry_Dadan/index.html> .
+
+opx:evidenceCampaign038CurlyDadanBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile presents the amount as Curly Dadan's bounty; typed with the ontology's Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Curly_Dadan_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Curry_Dadan/index.html> .
+
+opx:evidenceCampaign038CosmosOrigin a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Cosmos profile lists Amazon Lily as her place of origin. Add the specific island origin while retaining the existing broader Calm Belt region value." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Amazon_Lily ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Cosmos ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Cosmos/index.html> .
+
+op:Coribou op:hasBounty op:Coribou_Bounty_Profile .
+op:Coribou_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 190000000 ;
+    op:givenTo op:Coribou .
+
+op:Curly_Dadan op:hasBounty op:Curly_Dadan_Bounty_Profile .
+op:Curly_Dadan_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 7800000 ;
+    op:givenTo op:Curly_Dadan .
+
+op:Cosmos op:placeOfOrigin op:Amazon_Lily .

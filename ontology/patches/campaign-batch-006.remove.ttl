@@ -1,0 +1,11 @@
+# Batch 006 removals: explicit VIZ editorial/localization labels were misclassified as in-world aliases or epithets.
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Mikita op:temporaryAlias "VIZ/4Kids: \"Ms. Valentine\""@ja-latn .
+
+op:Pekoms op:temporaryAlias "Viz: \"Mystoms\""@ja-latn .
+
+op:Tsuru op:epithet "Viz: \"Great Advisor\""@ja-latn .
+
+op:X_Drake op:temporaryAlias "English version: Drie"@ja-latn .
+

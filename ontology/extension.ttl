@@ -68,6 +68,12 @@ opx:ObservationHaki a opx:HakiType ; rdfs:label "Observation Haki"@en .
 opx:ConquerorsHaki a opx:HakiType ; rdfs:label "Conqueror's Haki"@en .
 opx:hasHaki a owl:ObjectProperty ; rdfs:domain op:Character ; rdfs:range opx:HakiType .
 
+# Provenance metadata used by evidence records in enrichment patches.
+opx:sourceType a owl:DatatypeProperty .
+opx:sourceReference a owl:DatatypeProperty .
+opx:confidence a owl:DatatypeProperty .
+opx:temporalScope a owl:DatatypeProperty .
+
 # ---- Ships ----
 opx:Ship a owl:Class ; rdfs:label "Ship"@en .
 opx:PirateShip a owl:Class ; rdfs:subClassOf opx:Ship ; rdfs:label "Ship used by a pirate crew"@en .

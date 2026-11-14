@@ -1,0 +1,10 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+op:Kouzuki_Momonosuke op:age 1 ;
+    op:placeOfOrigin op:Grand_Line .
+
+op:Kouzuki_Sukiyaki op:residence op:Amigasa_Village_formerlyFlower_Capital .
+
+op:Kumadori_Yamanbako op:affiliatesWith op:Kumadori .
+

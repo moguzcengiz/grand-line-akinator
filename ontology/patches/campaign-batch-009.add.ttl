@@ -1,0 +1,29 @@
+# Batch 009: verified fruit-user review, plus two corrected official Japanese model-name labels.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://kalnassag.com/onepiece/Neko_Neko_no_Mi,_Model:_Leopard> rdfs:label "ネコネコの実 モデル 〝豹（レオパルド）〟"@ja .
+<http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Bison> rdfs:label "ウシウシの実 モデル 〝野牛（バイソン）〟"@ja .
+
+opx:evidenceCampaign00901 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Rob Lucci's fruit as Neko Neko no Mi, Model Leopard, and supplies the complete Japanese name." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "canonical fruit name; time-invariant" ;
+    rdf:object "ネコネコの実 モデル 〝豹（レオパルド）〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece/Neko_Neko_no_Mi,_Model:_Leopard> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rob_Lucci/index.html> .
+
+opx:evidenceCampaign00902 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Dalton's fruit as Ushi Ushi no Mi, Model Bison, and supplies the complete Japanese name." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "canonical fruit name; time-invariant" ;
+    rdf:object "ウシウシの実 モデル 〝野牛（バイソン）〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Bison> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Dalton/index.html> .

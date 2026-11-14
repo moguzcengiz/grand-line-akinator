@@ -1,0 +1,15 @@
+# Batch 074: Yama's official profile explicitly marks the Divine Soldiers role former.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:temporalCampaign07401 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Yama ; rdf:predicate op:occupation ; rdf:object op:Commander_of_the_Divine_Soldiers .
+opx:evidenceCampaign07401 a rdf:Statement ;
+    rdf:subject op:Yama ; rdf:predicate op:occupation ; rdf:object op:Commander_of_the_Divine_Soldiers ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Yama/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元神兵長, explicitly marking Yama's Commander of the Divine Soldiers role as former. The existing graph occupation is retained with a Historical temporal qualifier. Cached document SHA-256: d1c1723e228457ac753154b02b754d0fb00111cb5cdb9e32d690537def1531fb." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

@@ -1,0 +1,484 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+opx:evidenceCampaign014BaldimoreLabel a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Japanese profile names the place バルジモア." ;
+    opx:sourceType "official character profile" ;
+    rdf:object "バルジモア"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Baldimore ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kittonn/index.html> .
+
+opx:evidenceCampaign014BaldimoreType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Kitton profile identifies Baldimore as the place where he lives; model it as a Location." ;
+    opx:sourceType "official character profile" ;
+    rdf:object op:Location ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Baldimore ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kittonn/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentEnvironmentalMinister01 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the Alabasta Kingdom environmental minister." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign014KozaCurrentEnvironmentalMinister ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentEnvironmentalMinister02 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the Alabasta Kingdom environmental minister." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign014KozaCurrentEnvironmentalMinister ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentEnvironmentalMinister03 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the Alabasta Kingdom environmental minister." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Koza ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign014KozaCurrentEnvironmentalMinister ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentEnvironmentalMinister04 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the Alabasta Kingdom environmental minister." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign014KozaCurrentEnvironmentalMinister ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentEnvironmentalMinister05 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the Alabasta Kingdom environmental minister." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Environmental_Minister ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign014KozaCurrentEnvironmentalMinister ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentSandSandLeader01 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the leader of the Sand-Sand Clan." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign014KozaCurrentSandSandLeader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentSandSandLeader02 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the leader of the Sand-Sand Clan." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign014KozaCurrentSandSandLeader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentSandSandLeader03 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the leader of the Sand-Sand Clan." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Koza ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign014KozaCurrentSandSandLeader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentSandSandLeader04 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the leader of the Sand-Sand Clan." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign014KozaCurrentSandSandLeader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaCurrentSandSandLeader05 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile header lists Koza as the leader of the Sand-Sand Clan." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Sand-Sand_Clan_leader ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign014KozaCurrentSandSandLeader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelAffiliation01 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile characterizes Koza as the former rebel leader; the source describes his rebellion in the past." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelAffiliation02 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile characterizes Koza as the former rebel leader; the source describes his rebellion in the past." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelAffiliation03 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile characterizes Koza as the former rebel leader; the source describes his rebellion in the past." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Koza ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelAffiliation04 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile characterizes Koza as the former rebel leader; the source describes his rebellion in the past." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelAffiliation05 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile characterizes Koza as the former rebel leader; the source describes his rebellion in the past." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Rebel_Army ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelLeadership01 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile describes Koza as the leader of the rebellion against the king; the role is historical at the profile snapshot." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelLeadership ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelLeadership02 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile describes Koza as the leader of the rebellion against the king; the role is historical at the profile snapshot." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelLeadership ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelLeadership03 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile describes Koza as the leader of the rebellion against the king; the role is historical at the profile snapshot." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Koza ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelLeadership ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelLeadership04 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile describes Koza as the leader of the rebellion against the king; the role is historical at the profile snapshot." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelLeadership ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KozaHistoricalRebelLeadership05 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile describes Koza as the leader of the rebellion against the king; the role is historical at the profile snapshot." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Rebel_Army_leader ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign014KozaHistoricalRebelLeadership ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Koza/index.html> .
+
+opx:evidenceCampaign014Campaign014KumadoriHistoricalCP901 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kumadori 元CP9 (former CP9)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign014KumadoriHistoricalCP9 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kumadori/index.html> .
+
+opx:evidenceCampaign014Campaign014KumadoriHistoricalCP902 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kumadori 元CP9 (former CP9)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign014KumadoriHistoricalCP9 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kumadori/index.html> .
+
+opx:evidenceCampaign014Campaign014KumadoriHistoricalCP903 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kumadori 元CP9 (former CP9)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:Kumadori ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign014KumadoriHistoricalCP9 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kumadori/index.html> .
+
+opx:evidenceCampaign014Campaign014KumadoriHistoricalCP904 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kumadori 元CP9 (former CP9)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign014KumadoriHistoricalCP9 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kumadori/index.html> .
+
+opx:evidenceCampaign014Campaign014KumadoriHistoricalCP905 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kumadori 元CP9 (former CP9)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "at the official profile snapshot; role period not bounded by chapters" ;
+    rdf:object op:CP9 ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign014KumadoriHistoricalCP9 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kumadori/index.html> .
+
+opx:evidenceCampaign014KittonResidence a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile says Kitton lives in Baldimore (未来国バルジモア)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Baldimore ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kitton ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kittonn/index.html> .
+
+opx:evidenceCampaign014KokoroSecretaryObject a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile says Kokoro formerly served as Tom's secretary." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical role; exact dates unspecified" ;
+    rdf:object op:Lovely_secretary_of_Tom ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign014KokoroHistoricalSecretary ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroSecretaryPredicate a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile says Kokoro formerly served as Tom's secretary." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical role; exact dates unspecified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign014KokoroHistoricalSecretary ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroSecretaryStatus a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile says Kokoro formerly served as Tom's secretary." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical role; exact dates unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign014KokoroHistoricalSecretary ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroSecretarySubject a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile says Kokoro formerly served as Tom's secretary." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical role; exact dates unspecified" ;
+    rdf:object op:Kokoro ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign014KokoroHistoricalSecretary ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroSecretaryType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile says Kokoro formerly served as Tom's secretary." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical role; exact dates unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign014KokoroHistoricalSecretary ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroStationmasterObject a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Kokoro as Shift Station stationmaster." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Stationmaster ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign014KokoroCurrentStationmaster ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroStationmasterPredicate a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Kokoro as Shift Station stationmaster." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign014KokoroCurrentStationmaster ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroStationmasterStatus a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Kokoro as Shift Station stationmaster." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign014KokoroCurrentStationmaster ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroStationmasterSubject a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Kokoro as Shift Station stationmaster." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Kokoro ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign014KokoroCurrentStationmaster ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014KokoroStationmasterType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Kokoro as Shift Station stationmaster." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign014KokoroCurrentStationmaster ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kokoro/index.html> .
+
+opx:evidenceCampaign014OrochiFruitLabel a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile gives the Japanese fruit/model name as Hebi Hebi no Mi, Mythical Zoan, Model Yamata no Orochi." ;
+    opx:sourceType "official character profile" ;
+    rdf:object "ヘビヘビの実 幻獣種 モデル 〝八岐大蛇〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_Yamata_no_Orochi> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kurozumi_Orochi/index.html> .
+
+opx:evidenceCampaign014OrochiFruitSubtype a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly classifies the fruit as Mythical Zoan (幻獣種)." ;
+    opx:sourceType "official character profile" ;
+    rdf:object opx:MythicalZoan ;
+    rdf:predicate opx:hasFruitSubtype ;
+    rdf:subject <http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_Yamata_no_Orochi> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kurozumi_Orochi/index.html> .
+
+opx:evidenceCampaign014OrochiFruitType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile names the fruit under Kurozumi Orochi's Devil Fruit information." ;
+    opx:sourceType "official character profile" ;
+    rdf:object op:DevilFruit ;
+    rdf:predicate rdf:type ;
+    rdf:subject <http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_Yamata_no_Orochi> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kurozumi_Orochi/index.html> .
+
+opx:evidenceCampaign014OrochiFruitTypeClass a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile classifies the fruit as a Zoan and identifies its Mythical Zoan model." ;
+    opx:sourceType "official character profile" ;
+    rdf:object op:Zoan ;
+    rdf:predicate op:hasFruitType ;
+    rdf:subject <http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_Yamata_no_Orochi> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kurozumi_Orochi/index.html> .
+
+opx:evidenceCampaign014OrochiFruitUser a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this Devil Fruit. The existing ontology classifies Orochi as deceased, so the holder edge is modeled as a previous user; no current successor is asserted." ;
+    opx:sourceType "official profile plus modeled temporal inference" ;
+    opx:temporalScope "previous holder inferred from the sourced Devil Fruit profile and existing deceased status; successor unspecified" ;
+    rdf:object op:Kurozumi_Orochi ;
+    rdf:predicate op:DevilFruitPreviousUser ;
+    rdf:subject <http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_Yamata_no_Orochi> ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/63686/index.html>,
+        <https://one-piece.com/character/Kurozumi_Orochi/index.html> .
+
+op:Kitton op:residence op:Baldimore .
+
+op:Baldimore a op:Location ;
+    rdfs:label "バルジモア"@ja .
+
+opx:Campaign014KokoroCurrentStationmaster a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Stationmaster ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kokoro .
+
+opx:Campaign014KokoroHistoricalSecretary a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Lovely_secretary_of_Tom ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kokoro .
+
+opx:Campaign014KozaCurrentEnvironmentalMinister a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Environmental_Minister ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Koza .
+
+opx:Campaign014KozaCurrentSandSandLeader a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Sand-Sand_Clan_leader ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Koza .
+
+opx:Campaign014KozaHistoricalRebelAffiliation a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel_Army ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Koza .
+
+opx:Campaign014KozaHistoricalRebelLeadership a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel_Army_leader ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Koza .
+
+opx:Campaign014KumadoriHistoricalCP9 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:CP9 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kumadori .
+
+<http://kalnassag.com/onepiece/Hebi_Hebi_no_Mi,_Model:_Yamata_no_Orochi> a op:DevilFruit ;
+    rdfs:label "ヘビヘビの実 幻獣種 モデル 〝八岐大蛇〟"@ja ;
+    op:DevilFruitPreviousUser op:Kurozumi_Orochi ;
+    op:hasFruitType op:Zoan ;
+    opx:hasFruitSubtype opx:MythicalZoan .
+

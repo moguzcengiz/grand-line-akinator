@@ -1,0 +1,379 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign040001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Doll profile identifies her as the head of Marine Headquarters G-14. Add a distinct G-14 base leader occupation while retaining her Marine Vice Admiral rank, G-14 affiliation, and residence." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Occupation ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:G14_Base_Leader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Doll/index.html> .
+
+opx:evidenceCampaign040002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Doll profile identifies her as the head of Marine Headquarters G-14. Add a distinct G-14 base leader occupation while retaining her Marine Vice Admiral rank, G-14 affiliation, and residence." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object "G-14 Base Leader"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:G14_Base_Leader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Doll/index.html> .
+
+opx:evidenceCampaign040003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Doll profile identifies her as the head of Marine Headquarters G-14. Add a distinct G-14 base leader occupation while retaining her Marine Vice Admiral rank, G-14 affiliation, and residence." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object "G-14基地長"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:G14_Base_Leader ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Doll/index.html> .
+
+opx:evidenceCampaign040004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Doll profile identifies her as the head of Marine Headquarters G-14. Add a distinct G-14 base leader occupation while retaining her Marine Vice Admiral rank, G-14 affiliation, and residence." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:G14_Base_Leader ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Doll ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Doll/index.html> .
+
+opx:evidenceCampaign040005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile lists a former bounty of 480,000,000 berries; represented as a named Bounty record for him." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Edward_Weevil_Former_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Edward_Weevil ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile lists a former bounty of 480,000,000 berries; represented as a named Bounty record for him. Typed with the ontology Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Edward_Weevil_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile lists a former bounty of 480,000,000 berries; represented as a named Bounty record for him." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object 480000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Edward_Weevil_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile lists a former bounty of 480,000,000 berries; represented as a named Bounty record for him." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Edward_Weevil ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Edward_Weevil_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and left Mary Geoise to live as an ordinary human; mark the existing World Government affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign040HomingFormerWorldGovernment ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and left Mary Geoise to live as an ordinary human; mark the existing World Government affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign040HomingFormerWorldGovernment ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and left Mary Geoise to live as an ordinary human; mark the existing World Government affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Donquixote_Homing ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign040HomingFormerWorldGovernment ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and left Mary Geoise to live as an ordinary human; mark the existing World Government affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign040HomingFormerWorldGovernment ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and left Mary Geoise to live as an ordinary human; mark the existing World Government affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:World_Government ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign040HomingFormerWorldGovernment ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and chose to live as an ordinary human; mark the World Noble occupation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign040HomingFormerWorldNoble ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and chose to live as an ordinary human; mark the World Noble occupation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign040HomingFormerWorldNoble ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and chose to live as an ordinary human; mark the World Noble occupation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Donquixote_Homing ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign040HomingFormerWorldNoble ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040017 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and chose to live as an ordinary human; mark the World Noble occupation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign040HomingFormerWorldNoble ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 702 states that Homing gave up his Celestial Dragon status and chose to live as an ordinary human; mark the World Noble occupation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:World_Noble ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign040HomingFormerWorldNoble ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2797/index.html> .
+
+opx:evidenceCampaign040019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Bellamy profile lists Eddy under the former Bellamy Pirates roster; mark the affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign040EddyFormerBellamyPirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bellamy/index.html> .
+
+opx:evidenceCampaign040020 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Bellamy profile lists Eddy under the former Bellamy Pirates roster; mark the affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign040EddyFormerBellamyPirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bellamy/index.html> .
+
+opx:evidenceCampaign040021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Bellamy profile lists Eddy under the former Bellamy Pirates roster; mark the affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Eddy ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign040EddyFormerBellamyPirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bellamy/index.html> .
+
+opx:evidenceCampaign040022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Bellamy profile lists Eddy under the former Bellamy Pirates roster; mark the affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign040EddyFormerBellamyPirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bellamy/index.html> .
+
+opx:evidenceCampaign040023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Bellamy profile lists Eddy under the former Bellamy Pirates roster; mark the affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Bellamy_Pirates ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign040EddyFormerBellamyPirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bellamy/index.html> .
+
+opx:evidenceCampaign040024 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile explicitly labels his 480,000,000 berry bounty former; annotate the bounty relationship Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign040WeevilFormerBounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile explicitly labels his 480,000,000 berry bounty former; annotate the bounty relationship Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign040WeevilFormerBounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040026 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile explicitly labels his 480,000,000 berry bounty former; annotate the bounty relationship Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Edward_Weevil ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign040WeevilFormerBounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile explicitly labels his 480,000,000 berry bounty former; annotate the bounty relationship Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:hasBounty ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign040WeevilFormerBounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040028 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile explicitly labels his 480,000,000 berry bounty former; annotate the bounty relationship Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Edward_Weevil_Former_Bounty_Profile ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign040WeevilFormerBounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile describes him as a former Warlord of the Sea; annotate the Warlords affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign040WeevilFormerWarlord ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040030 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile describes him as a former Warlord of the Sea; annotate the Warlords affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign040WeevilFormerWarlord ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile describes him as a former Warlord of the Sea; annotate the Warlords affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Edward_Weevil ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign040WeevilFormerWarlord ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040032 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile describes him as a former Warlord of the Sea; annotate the Warlords affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign040WeevilFormerWarlord ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+opx:evidenceCampaign040033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Edward Weevil profile describes him as a former Warlord of the Sea; annotate the Warlords affiliation Historical. The annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Seven_Warlords_of_the_Sea ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign040WeevilFormerWarlord ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Edward_Weevil/index.html> .
+
+op:Doll op:occupation op:G14_Base_Leader .
+
+op:G14_Base_Leader a op:Occupation ;
+    rdfs:label "G-14 Base Leader"@en,
+        "G-14基地長"@ja .
+
+opx:Campaign040EddyFormerBellamyPirates a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Bellamy_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Eddy .
+
+opx:Campaign040HomingFormerWorldGovernment a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:World_Government ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Donquixote_Homing .
+
+opx:Campaign040HomingFormerWorldNoble a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:World_Noble ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Donquixote_Homing .
+
+opx:Campaign040WeevilFormerBounty a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Edward_Weevil_Former_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Edward_Weevil .
+
+opx:Campaign040WeevilFormerWarlord a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Seven_Warlords_of_the_Sea ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Edward_Weevil .
+
+op:Edward_Weevil op:hasBounty op:Edward_Weevil_Former_Bounty_Profile .
+
+op:Edward_Weevil_Former_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 480000000 ;
+    op:givenTo op:Edward_Weevil .
+

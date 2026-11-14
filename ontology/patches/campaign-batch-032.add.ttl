@@ -1,0 +1,52 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign032BountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile states Brogy’s bounty is 100 million berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object 100000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Brogy_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Broggy/index.html> .
+
+opx:evidenceCampaign032BountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The listed bounty is given to Brogy." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Brogy ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Brogy_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Broggy/index.html> .
+
+opx:evidenceCampaign032BountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this as Brogy’s bounty; typed with the ontology’s Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Brogy_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Broggy/index.html> .
+
+opx:evidenceCampaign032HasBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Brogy’s bounty as 100 million berries; represented as a named Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Brogy_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Brogy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Broggy/index.html> .
+
+op:Brogy op:hasBounty op:Brogy_Bounty_Profile .
+
+op:Brogy_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 100000000 ;
+    op:givenTo op:Brogy .
+

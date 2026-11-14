@@ -1,0 +1,4 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Forliewbs is documented among Whitebeard's allied captains; remove the incorrect core-crew categorization.
+op:Forliewbs op:affiliatesWith op:Whitebeard_Pirates .

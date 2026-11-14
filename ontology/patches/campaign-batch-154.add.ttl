@@ -1,0 +1,37 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign154001 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile heading: ワノ国 / 鈴後大名. This supports the existing occupation edge; the profile is undated and does not establish whether the role is current or former. Cached document SHA-256: 9a8d0fd31169805fad8495d4fd872c4ac39cad8eb204df3beca71f748e2836f5." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Daimyoof_Ringo ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Shimotsuki_Ushimaru ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shimotsuki_Ushimaru/index.html> .
+
+opx:evidenceCampaign154002 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile heading: ワノ国 / 兎丼大名. This supports the existing occupation edge; the profile is undated and does not establish whether the role is current or former. Cached document SHA-256: 36e559843dada1da40eec9d95ff321266775b853b649cb805030344e28acfc47." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Daimyoof_Udon ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Uzuki_Tempura ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Uzuki_Tempura/index.html> .
+
+opx:temporalCampaign154001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Daimyoof_Ringo ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Shimotsuki_Ushimaru .
+
+opx:temporalCampaign154002 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Daimyoof_Udon ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Uzuki_Tempura .
+

@@ -1,0 +1,165 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign152001 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: クリーク海賊団 / 戦闘総隊長. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: 4bf6a681fb14bc0c90b7caae14ae08ad1f9b87d5e38d06d26df1a65b9d71613a." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combat_Commander ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Gin ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gin/index.html> .
+
+opx:evidenceCampaign152002 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: クリーク海賊団 / インストラクター. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: e08eb8a20307908446e227a72f3ee9ac86821581c111f129d414bf5b7f461a4e." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combat_Instructor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hustle ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hassuru/index.html> .
+
+opx:evidenceCampaign152003 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: フォクシー海賊団 / 戦闘員. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: d86430d39cd930c29f36c58a954bf99ba5260319a6d9066bd65f9d48208451cf." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Big_Pan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Big_Pan/index.html> .
+
+opx:evidenceCampaign152004 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: フォクシー海賊団 / 戦闘員. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: af280657634078ce5d48c9a08f13cd74f7f784ec35e91ff074934b5b2cbb41d4." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Capote ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Capote/index.html> .
+
+opx:evidenceCampaign152005 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: フォクシー海賊団 / 戦闘員. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: 22f7b093747a32a3c371e96671d57184584d85a66293da64d35ea5904bb46e82." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hamburg ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hamburg/index.html> .
+
+opx:evidenceCampaign152006 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: 元ベラミー海賊団 / 戦闘員. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: 1b742666683dbeb8fd4589423c0b64490c8c392937adedfa1a43c108ab7fe352." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Mani ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mani/index.html> .
+
+opx:evidenceCampaign152007 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: フォクシー海賊団 / 戦闘員. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: f53af60bd6d1ac9247de3d8ad7730b933f90c233619c9a3af48d5ab53de3deeb." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Pickles ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pickles/index.html> .
+
+opx:evidenceCampaign152008 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: フォクシー海賊団 / 戦闘員. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: 83cce88d3b6c893bccff612fa0c6ffcb983ed84792e8f919d253fa38ab79e60d." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Porche ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Porche/index.html> .
+
+opx:evidenceCampaign152009 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: キッド海賊団 / 戦闘員. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: 92b7d57e5d6a5308e752e55f8d1816584d694412c5e9f7fef8357cc40ccf3dc3." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Killer ;
+    prov:wasDerivedFrom <https://one-piece.com/character/killer/index.html> .
+
+opx:evidenceCampaign152010 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official profile heading: クリーク海賊団 / 第2部隊隊長. This supports the existing ontology edge; the profile does not establish a time interval. Cached document SHA-256: 0a187a7ea335e1d54ac8046d2680feb3dded613af50e3d4dcccc25cb86d9d777." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Commanderof_the_Krieg_Pirates_second_unit ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Pearl ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pearl/index.html> .
+
+opx:temporalCampaign152001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combat_Commander ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Gin .
+
+opx:temporalCampaign152002 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combat_Instructor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hustle .
+
+opx:temporalCampaign152003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Big_Pan .
+
+opx:temporalCampaign152004 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Capote .
+
+opx:temporalCampaign152005 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hamburg .
+
+opx:temporalCampaign152006 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Mani .
+
+opx:temporalCampaign152007 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Pickles .
+
+opx:temporalCampaign152008 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Porche .
+
+opx:temporalCampaign152009 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Killer .
+
+opx:temporalCampaign152010 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Commanderof_the_Krieg_Pirates_second_unit ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Pearl .
+

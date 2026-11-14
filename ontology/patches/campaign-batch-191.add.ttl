@@ -1,0 +1,45 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Zeff op:occupation op:Head_Chef .
+opx:evidenceCampaign191001 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official profile heading: 海上レストランバラティエ / 料理長. This supports Zeff occupation Head_Chef. Cached document SHA-256: 53f0dbf32dd017ce88d449bbf4425f2e4492338e4e63689a76e74be9ee7ee128. Profile snapshot; exact role duration unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact role duration unspecified" ;
+    rdf:object op:Head_Chef ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Zeff ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Zeff/index.html> .
+
+opx:evidenceCampaign191002 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile heading: インペルダウン / 副看守長. This supports Domino occupation Vice_Head_Jailer. Cached document SHA-256: a29278bd5d4b0dc121de34984c9e22c8e3701b7f3ecaa44b1c0f2b4c26693f10. Profile snapshot; exact role duration unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact role duration unspecified" ;
+    rdf:object op:Vice_Head_Jailer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Domino ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Domino/index.html> .
+
+opx:evidenceCampaign191003 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official profile heading: アーロン一味 / 宴会部長. This supports Shioyaki occupation Head_of_Banquets. Cached document SHA-256: eb303e757aa1e44305ed3af65fccba97edf13d4a6d5c4a71f1e149ffac5f7c9c. Profile snapshot; exact role duration unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact role duration unspecified" ;
+    rdf:object op:Head_of_Banquets ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Shioyaki ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shioyaki/index.html> .
+
+opx:evidenceCampaign191004 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: 麦わらの一味 / 操舵手. This supports Jinbe’s existing occupation → Helmsman edge. Cached document SHA-256: 3dbed672384480e028402f9d60a3f9b3272f98e4c576b3d006436b4c3c614026. The profile snapshot does not specify the role’s duration or start date." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact role duration unspecified" ;
+    rdf:object op:Helmsman ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jinbe ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jinbe/index.html> .

@@ -1,0 +1,120 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+opx:evidenceCampaign050002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile labels Jorul a former Giant Warrior Pirates member and former captain." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; prior to the crew relinquishing its captaincy" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign050001 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jorul/index.html> .
+
+opx:evidenceCampaign050004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile labels Jorul a former captain." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; former Giant Warrior Pirates captain" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign050003 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jorul/index.html> .
+
+opx:evidenceCampaign050005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 1122 reveals Joy Boy sealed a portion of his Supreme King (Conqueror’s) Haki in Emet for later release." ;
+    opx:sourceType "manga chapter; chapter-referenced summary" ;
+    opx:temporalScope "historical; Void Century ability, stored in Emet" ;
+    rdf:object opx:ConquerorsHaki ;
+    rdf:predicate opx:hasHaki ;
+    rdf:subject op:Joy_Boy ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_1122>,
+        <https://viz.com/shonenjump/one-piece-chapter-1122/chapter/43818> .
+
+opx:evidenceCampaign050006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Juki as one of the Beast Pirates Numbers." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Wano arc profile" ;
+    rdf:object op:Numbers ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Juki ;
+    prov:wasDerivedFrom <https://one-piece.com/character/juki/index.html> .
+
+opx:evidenceCampaign050007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Kadar is a Marine Headquarters marine and formerly served at the G-2 branch." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current Marine affiliation" ;
+    rdf:object op:Marines ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kadar ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kadal/index.html> .
+
+opx:evidenceCampaign050008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Kadar as a Marine Headquarters marine who previously served at the G-2 branch." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; prior G-2 branch service" ;
+    rdf:object op:G-2 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kadar ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kadal/index.html> .
+
+opx:evidenceCampaign050010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies the G-2 affiliation as past service; replaces malformed MarinesG-2 organization token." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; prior G-2 branch service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign050009 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kadal/index.html> .
+
+opx:evidenceCampaign050011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies the character as Kalgara; replace a concatenated malformed English label." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "identity label" ;
+    rdf:object "Kalgara"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Kalgara ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kalgara/index.html> .
+
+op:Joy_Boy opx:hasHaki opx:ConquerorsHaki .
+
+op:Juki op:affiliatesWith op:Numbers .
+
+op:Kalgara rdfs:label "Kalgara"@en .
+
+opx:evidenceCampaign050001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Giant_Warrior_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jorul .
+
+opx:evidenceCampaign050003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate_Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jorul .
+
+opx:evidenceCampaign050009 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:G-2 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kadar .
+
+op:Kadar op:affiliatesWith op:G-2,
+        op:Marines .
+

@@ -1,0 +1,14 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign187001 a rdf:Statement ;
+    opx:confidence "0.95" ;
+    opx:sourceReference "Exact official profile heading: 〝偉大なる航路軍〟 / 軍隊長. This supports Emporio_Ivankov’s existing G_Army_Commander_of_the_Revolutionary_Army occupation edge. Cached document SHA-256: 0db391c00d0ddc2e7fc509994d457b93b410ed425897e563292ff67c47e7ec36. The profile heading has no former qualifier; exact start date is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact start date unspecified" ;
+    rdf:object op:G_Army_Commander_of_the_Revolutionary_Army ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Emporio_Ivankov ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Emporio_Ivankov/index.html> .

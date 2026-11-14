@@ -1,0 +1,13 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Hoe's concatenated occupation is replaced by Pet; King Neptune is an owner, not an organizational affiliation (no petOf relation exists).
+op:Hoe op:occupation op:Neptunes_transportation_andpet ; op:affiliatesWith op:KingNeptune .
+
+# Holedem's residence IRI concatenated Bakura Town and Wano Country.
+op:Holedem op:residence op:Bakura_TownWano_Country .
+
+# Hyougoro's residence IRI concatenated Udon and Wano Country; English-tagged text is source metadata.
+op:Hyougoro op:residence op:UdonWano_Country ; op:epithet "English: \"Hyogoro the Flower\""@ja-latn .
+
+# Ida's combined occupation and unknown status are replaced with separately sourced roles and her confirmed status.
+op:Ida op:occupation op:Bartender_Circus_Performer ; op:statusOfCharacter op:Unknown .

@@ -1,0 +1,45 @@
+# Batch 065: source-backed kingdom affiliation and Marine rank, plus explicit historical roles.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Ryuboshi op:affiliatesWith op:Ryugu_Kingdom .
+op:Rokkaku op:occupation op:Marine_Lieutenant .
+
+opx:temporalCampaign06501 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:subject op:Rokkaku ; rdf:predicate op:occupation ; rdf:object op:Marine_Lieutenant .
+opx:evidenceCampaign06501 a rdf:Statement ;
+    rdf:subject op:Rokkaku ; rdf:predicate op:occupation ; rdf:object op:Marine_Lieutenant ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rokkaku/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile heading states 海軍第153支部 / 支部中尉 (Marine 153rd Branch / branch lieutenant). The profile gives the rank as a current profile role; the existing Junior Grade assertion is retained pending historical reconciliation. Cached document SHA-256: d8268e639533e1886b0b7c894861f47c747fef90f127213333dbdf5a55847b55." ;
+    opx:confidence "high" ; opx:temporalScope "current at official profile snapshot" .
+
+opx:temporalCampaign06502 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Robson ; rdf:predicate op:affiliatesWith ; rdf:object op:Drum_Kingdom .
+opx:evidenceCampaign06502 a rdf:Statement ;
+    rdf:subject op:Robson ; rdf:predicate op:affiliatesWith ; rdf:object op:Drum_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Robson/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile heading says 元ドラム王国 (former Drum Kingdom); record the relationship as historical. Cached document SHA-256: e321e40608209306f950dfd7f7404430bbc47e06b03014cf624e95aded8d3c21." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .
+
+opx:temporalCampaign06503 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Rocks_D_Xebec ; rdf:predicate op:affiliatesWith ; rdf:object op:Rocks_Pirates .
+opx:evidenceCampaign06503 a rdf:Statement ;
+    rdf:subject op:Rocks_D_Xebec ; rdf:predicate op:affiliatesWith ; rdf:object op:Rocks_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rocks_D_Xebec/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile heading says 元ロックス海賊団 / 船長 (former Rocks Pirates / captain); record the affiliation as historical. Cached document SHA-256: ce97a1bc3074bac4956fdba709b9a2a4f5259aeaa4a9842e64901714ac759fe6." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .
+
+opx:evidenceCampaign06504 a rdf:Statement ;
+    rdf:subject op:Ryuboshi ; rdf:predicate op:affiliatesWith ; rdf:object op:Ryugu_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ryuboshi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile heading states リュウグウ王国 / 王子 (Ryugu Kingdom / prince); the existing Ryugu_Kingdom URI is typed as both Affiliation and Location. Cached document SHA-256: 5d7628465da5402f6cf964f804e0c66663fdeaecc3a92961807d0d19af54d13c." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .

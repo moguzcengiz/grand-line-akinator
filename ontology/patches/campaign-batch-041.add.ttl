@@ -1,0 +1,379 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign041001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Elmy profile calls her a Whitebeard allied pirate; correct the organization category from direct/subordinate crew member to allied pirate." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Elmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Elmy/index.html> .
+
+opx:evidenceCampaign041002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Epoida profile calls him a Whitebeard allied pirate; correct the organization category from direct crew membership to allied pirate." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Epoida ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Epoida/index.html> .
+
+opx:evidenceCampaign041003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Farul profile lists both Beautiful Pirates and Straw Hat Grand Fleet; split malformed combined organization URI into two edges." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Beautiful_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Farul ;
+    prov:wasDerivedFrom <https://one-piece.com/character/farul/index.html> .
+
+opx:evidenceCampaign041004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Farul profile lists both Beautiful Pirates and Straw Hat Grand Fleet; split malformed combined organization URI into two edges." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Straw_Hat_Grand_Fleet ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Farul ;
+    prov:wasDerivedFrom <https://one-piece.com/character/farul/index.html> .
+
+opx:evidenceCampaign041005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile lists a 230,000,000 berry bounty; represent the amount as a named Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Fisher_Tiger_Former_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Fisher_Tiger ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile lists a 230,000,000 berry bounty; typed as a Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Fisher_Tiger_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile lists a 230,000,000 berry bounty." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object 230000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Fisher_Tiger_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile lists a 230,000,000 berry bounty; connect the record to Fisher Tiger." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Fisher_Tiger ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Fisher_Tiger_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile says he had previously been captured and enslaved at Mary Geoise. Keep the occupation assertion and annotate it as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign041FisherTigerFormerSlave ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile says he had previously been captured and enslaved at Mary Geoise. Keep the occupation assertion and annotate it as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign041FisherTigerFormerSlave ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile says he had previously been captured and enslaved at Mary Geoise. Keep the occupation assertion and annotate it as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Fisher_Tiger ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign041FisherTigerFormerSlave ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile says he had previously been captured and enslaved at Mary Geoise. Keep the occupation assertion and annotate it as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign041FisherTigerFormerSlave ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Fisher Tiger profile says he had previously been captured and enslaved at Mary Geoise. Keep the occupation assertion and annotate it as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Slave ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign041FisherTigerFormerSlave ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fisher_Tiger/index.html> .
+
+opx:evidenceCampaign041014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign041FarafraFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign041FarafraFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Farafra ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign041FarafraFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041017 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign041FarafraFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Rebel_Army ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign041FarafraFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign041FarafraFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041020 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign041FarafraFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Farafra ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign041FarafraFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign041FarafraFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Rebel ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign041FarafraFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Falafra/index.html> .
+
+opx:evidenceCampaign041024 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign041ErikFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign041ErikFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041026 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Erik ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign041ErikFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign041ErikFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041028 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel Army affiliation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Rebel_Army ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign041ErikFormerRebelArmy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign041ErikFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041030 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign041ErikFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Erik ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign041ErikFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041032 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign041ErikFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+opx:evidenceCampaign041033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies this character as a former Arabasta rebel; annotate the existing Rebel occupation as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Rebel ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign041ErikFormerRebelOccupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Eric/index.html> .
+
+op:Elmy op:affiliatesWith op:Ally_of_theWhitebeard_Pirates .
+
+op:Epoida op:affiliatesWith op:Ally_of_theWhitebeard_Pirates .
+
+op:Farul op:affiliatesWith op:Beautiful_Pirates,
+        op:Straw_Hat_Grand_Fleet .
+
+op:Fisher_Tiger op:hasBounty op:Fisher_Tiger_Former_Bounty_Profile .
+
+op:Fisher_Tiger_Former_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 230000000 ;
+    op:givenTo op:Fisher_Tiger .
+
+opx:Campaign041ErikFormerRebelArmy a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel_Army ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Erik .
+
+opx:Campaign041ErikFormerRebelOccupation a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Erik .
+
+opx:Campaign041FarafraFormerRebelArmy a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel_Army ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Farafra .
+
+opx:Campaign041FarafraFormerRebelOccupation a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Farafra .
+
+opx:Campaign041FisherTigerFormerSlave a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Slave ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Fisher_Tiger .
+

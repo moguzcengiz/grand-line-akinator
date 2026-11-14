@@ -1,0 +1,2 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+op:Thalassa_Lucas op:affiliatesWith op:Ilisia_Kingdom .

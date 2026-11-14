@@ -1,0 +1,21 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Tonjit op:residence op:Long_Ring_Long_Land .
+op:Urashima op:affiliatesWith op:Wano .
+
+opx:evidenceCampaign027TonjitResidence a rdf:Statement ;
+    rdf:subject op:Tonjit ; rdf:predicate op:residence ; rdf:object op:Long_Ring_Long_Land ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Tonjit/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile places Tonjit in the Long Ring Long Land character grouping and says he was left behind from his nomadic companions after ten years on stilts; modeled as his documented residence." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign027UrashimaWano a rdf:Statement ;
+    rdf:subject op:Urashima ; rdf:predicate op:affiliatesWith ; rdf:object op:Wano ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Urashima/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Urashima as a Wano Country sumo yokozuna and member of its warrior nobility; the country-level affiliation complements the existing Flower Capital residence." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .

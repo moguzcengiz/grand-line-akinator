@@ -1,0 +1,591 @@
+# Batch 007: official-profile bounty facts, Luffy fruit classification correction, and additive time qualifiers.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign00701 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a bounty of 35,000,000 berries for Zala." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Zala_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Zala ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Doublefinger/index.html> .
+
+opx:evidenceCampaign00702 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Zala_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Doublefinger/index.html> .
+
+opx:evidenceCampaign00703 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 35,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object 35000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Zala_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Doublefinger/index.html> .
+
+opx:evidenceCampaign00704 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Zala as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Zala ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Zala_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Doublefinger/index.html> .
+
+opx:evidenceCampaign00705 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a bounty of 5,046,000,000 berries for Edward_Newgate." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Edward_Newgate_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Edward_Newgate ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00706 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Edward_Newgate_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00707 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 5,046,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object 5046000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Edward_Newgate_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00708 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Edward_Newgate as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Edward_Newgate ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Edward_Newgate_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00709 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a bounty of 4,611,100,000 berries for Kaidou." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Kaidou_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Kaidou ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaido/index.html> .
+
+opx:evidenceCampaign00710 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Kaidou_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaido/index.html> .
+
+opx:evidenceCampaign00711 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 4,611,100,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object 4611100000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Kaidou_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaido/index.html> .
+
+opx:evidenceCampaign00712 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Kaidou as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Kaidou ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Kaidou_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaido/index.html> .
+
+opx:evidenceCampaign00713 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a bounty of 3,996,000,000 berries for Marshall_D_Teach." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Marshall_D_Teach_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Marshall_D_Teach ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00714 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Marshall_D_Teach_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00715 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 3,996,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object 3996000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Marshall_D_Teach_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00716 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Marshall_D_Teach as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Marshall_D_Teach ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Marshall_D_Teach_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00717 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a bounty of 3,000,000,000 berries for Trafalgar_D_Water_Law." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Trafalgar_D_Water_Law_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Trafalgar_D_Water_Law ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00718 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Trafalgar_D_Water_Law_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00719 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 3,000,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object 3000000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Trafalgar_D_Water_Law_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00720 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Trafalgar_D_Water_Law as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Trafalgar_D_Water_Law ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Trafalgar_D_Water_Law_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00721 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Luffy profile lists the fruit as Hito Hito no Mi, Mythical Zoan, Model Nika; the existing Gomu Gomu fruit is the same fruit." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object op:Zoan ;
+    rdf:predicate op:hasFruitType ;
+    rdf:subject op:Gomu_Gomu_no_Mi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/luffy/index.html> .
+
+opx:evidenceCampaign00722 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Luffy profile explicitly identifies the fruit as a Mythical Zoan, Model Nika." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object opx:MythicalZoan ;
+    rdf:predicate opx:hasFruitSubtype ;
+    rdf:subject op:Gomu_Gomu_no_Mi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/luffy/index.html> .
+
+opx:evidenceCampaign00723 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists ヒトヒトの実 幻獣種 モデル〝ニカ〟 as the disclosed true name/model of Luffy’s existing Gomu Gomu fruit." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official character profile value; precise interval unspecified" ;
+    rdf:object "ヒトヒトの実 幻獣種 モデル〝ニカ〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Gomu_Gomu_no_Mi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/luffy/index.html> .
+
+opx:evidenceCampaign00725 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile places Zala at New Spiders Cafe at the profile snapshot." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00724 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Doublefinger/index.html> .
+
+opx:evidenceCampaign00727 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile explicitly marks her Baroque Works affiliation as former (元)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00726 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Doublefinger/index.html> .
+
+opx:evidenceCampaign00729 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Borsalino as a Marine Admiral." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00728 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Borsalino/index.html> .
+
+opx:evidenceCampaign00731 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Whitebeard as captain of the Whitebeard Pirates and records his death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00730 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00733 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Whitebeard profile and official retrospective describe him as one of the Four Emperors during his life." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00732 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00735 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Whitebeard as a former/living Emperor and records his death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00734 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00737 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Whitebeard as captain of his pirate crew; he is deceased." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00736 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/edward_newgate/index.html> .
+
+opx:evidenceCampaign00739 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Teach as the current Blackbeard Pirates leader." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00738 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00741 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile states Teach was formerly a Whitebeard Pirates crew member." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00740 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00743 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Teach’s earlier Warlord of the Sea status." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00742 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00745 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile’s current character record identifies Teach among the Four Emperors." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00744 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marshall_D_Teech/index.html> .
+
+opx:evidenceCampaign00747 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Luffy as the captain of the Straw Hat Pirates." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00746 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/luffy/index.html> .
+
+opx:evidenceCampaign00749 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Luffy as one of the Four Emperors." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00748 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/luffy/index.html> .
+
+opx:evidenceCampaign00751 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Luffy as one of the Four Emperors." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00750 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/luffy/index.html> .
+
+opx:evidenceCampaign00753 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Luffy as Straw Hat Pirates captain." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00752 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/luffy/index.html> .
+
+opx:evidenceCampaign00755 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Sakazuki as the current Fleet Admiral." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00754 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sakazuki/index.html> .
+
+opx:evidenceCampaign00757 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile says Sakazuki was formerly a Marine Admiral before becoming Fleet Admiral." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00756 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sakazuki/index.html> .
+
+opx:evidenceCampaign00759 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Law as captain of the Heart Pirates." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00758 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00761 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Law as a pirate captain." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00760 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00763 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Law’s earlier Warlord of the Sea status." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00762 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00724 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:New_Spiders_Cafe ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Zala .
+
+opx:evidenceCampaign00726 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Baroque_Works ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Zala .
+
+opx:evidenceCampaign00728 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Borsalino .
+
+opx:evidenceCampaign00730 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Edward_Newgate .
+
+opx:evidenceCampaign00732 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Four_Emperors ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Edward_Newgate .
+
+opx:evidenceCampaign00734 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Emperor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Edward_Newgate .
+
+opx:evidenceCampaign00736 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate_Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Edward_Newgate .
+
+opx:evidenceCampaign00738 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Blackbeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Marshall_D_Teach .
+
+opx:evidenceCampaign00740 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Whitebeard_Pirates2nd_Division ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Marshall_D_Teach .
+
+opx:evidenceCampaign00742 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Warlord_of_the_Sea ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Marshall_D_Teach .
+
+opx:evidenceCampaign00744 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Emperor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Marshall_D_Teach .
+
+opx:evidenceCampaign00746 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Straw_Hat_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Monkey_D_Luffy .
+
+opx:evidenceCampaign00748 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Four_Emperors ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Monkey_D_Luffy .
+
+opx:evidenceCampaign00750 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Emperor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Monkey_D_Luffy .
+
+opx:evidenceCampaign00752 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Pirate_Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Monkey_D_Luffy .
+
+opx:evidenceCampaign00754 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Fleet_Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Sakazuki .
+
+opx:evidenceCampaign00756 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Sakazuki .
+
+opx:evidenceCampaign00758 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Heart_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Trafalgar_D_Water_Law .
+
+opx:evidenceCampaign00760 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Pirate_Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Trafalgar_D_Water_Law .
+
+opx:evidenceCampaign00762 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Warlord_of_the_Sea ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Trafalgar_D_Water_Law .
+
+op:Gomu_Gomu_no_Mi rdfs:label "ヒトヒトの実 幻獣種 モデル〝ニカ〟"@ja ;
+    op:hasFruitType op:Zoan ;
+    opx:hasFruitSubtype opx:MythicalZoan .
+
+op:Kaidou op:hasBounty op:Kaidou_Bounty_Profile .
+
+op:Edward_Newgate_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 5046000000 ;
+    op:givenTo op:Edward_Newgate .
+
+op:Kaidou_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 4611100000 ;
+    op:givenTo op:Kaidou .
+
+op:Marshall_D_Teach_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 3996000000 ;
+    op:givenTo op:Marshall_D_Teach .
+
+op:Trafalgar_D_Water_Law_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 3000000000 ;
+    op:givenTo op:Trafalgar_D_Water_Law .
+
+op:Zala op:hasBounty op:Zala_Bounty_Profile .
+
+op:Zala_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 35000000 ;
+    op:givenTo op:Zala .
+
+op:Trafalgar_D_Water_Law op:hasBounty op:Trafalgar_D_Water_Law_Bounty_Profile .
+
+op:Edward_Newgate op:hasBounty op:Edward_Newgate_Bounty_Profile .
+
+op:Marshall_D_Teach op:hasBounty op:Marshall_D_Teach_Bounty_Profile .

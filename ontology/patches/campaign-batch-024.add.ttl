@@ -1,0 +1,85 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Pagaya's official profile lists Skypiea and identifies him as an Angel Beach resident.
+op:Pagaya op:affiliatesWith op:Skypiea ; op:residence op:Angel_Beach .
+op:Angel_Beach a op:Location ; rdfs:label "Angel Beach"@en, "エンジェルビーチ"@ja .
+
+# Pound and Rouge's official profiles identify historical places of residence/context.
+op:Pound op:residence op:Totto_Land .
+op:Portgas_D_Rouge op:affiliatesWith op:Baterilla .
+opx:Campaign024PoundHistoricalResidence a opx:TemporalStatement ;
+    rdf:subject op:Pound ; rdf:predicate op:residence ; rdf:object op:Totto_Land ;
+    opx:temporalStatus opx:Historical .
+
+# Late official-directory discoveries for previously reviewed individuals.
+op:Mornin op:affiliatesWith op:Syrup_Village .
+<http://kalnassag.com/onepiece/Ryu_Ryu_no_Mi,_Model:_Kirin> a op:DevilFruit ;
+    rdfs:label "Ryu Ryu no Mi, Model: Kirin"@en ;
+    rdfs:label "リュウリュウの実 幻獣種 モデル 〝麒麟〟"@ja ;
+    op:DevilFruitCurrentUser op:Rimoshifu_Killingham ;
+    op:hasFruitType op:Zoan ;
+    opx:hasFruitSubtype opx:MythicalZoan .
+
+# Provenance for all factual assertions introduced above.
+opx:evidenceCampaign024AngelBeachType a rdf:Statement ; rdf:subject op:Angel_Beach ; rdf:predicate rdf:type ; rdf:object op:Location ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pagaya/index.html> ; opx:sourceType "official character profile" ;
+    opx:sourceReference "The official Pagaya profile identifies Angel Beach as a named place in Skypiea where Pagaya lives." ; opx:confidence "high" .
+opx:evidenceCampaign024AngelBeachLabelEn a rdf:Statement ; rdf:subject op:Angel_Beach ; rdf:predicate rdfs:label ; rdf:object "Angel Beach"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pagaya/index.html> ; opx:sourceType "official character profile" ;
+    opx:sourceReference "The official English rendering of the place named in Pagaya's profile is Angel Beach." ; opx:confidence "high" .
+opx:evidenceCampaign024AngelBeachLabelJa a rdf:Statement ; rdf:subject op:Angel_Beach ; rdf:predicate rdfs:label ; rdf:object "エンジェルビーチ"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pagaya/index.html> ; opx:sourceType "official Japanese character profile" ;
+    opx:sourceReference "The official Japanese profile names the place エンジェルビーチ." ; opx:confidence "high" .
+opx:evidenceCampaign024PagayaAffiliation a rdf:Statement ; rdf:subject op:Pagaya ; rdf:predicate op:affiliatesWith ; rdf:object op:Skypiea ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pagaya/index.html> ; opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile header places Pagaya under Skypiea." ; opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+opx:evidenceCampaign024PagayaResidence a rdf:Statement ; rdf:subject op:Pagaya ; rdf:predicate op:residence ; rdf:object op:Angel_Beach ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pagaya/index.html> ; opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile describes Pagaya as an Angel Beach resident in Skypiea." ; opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign024PoundResidence a rdf:Statement ; rdf:subject op:Pound ; rdf:predicate op:residence ; rdf:object op:Totto_Land ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pound/index.html> ; opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Pound remained on Whole Cake Island after Linlin abandoned him and spent years in the Seducing Woods before reuniting with his daughters; this residence is historical." ;
+    opx:confidence "high" ; opx:temporalScope "after his abandonment and before his reunion with his daughters" .
+opx:evidenceCampaign024PoundTemporalType a rdf:Statement ; rdf:subject opx:Campaign024PoundHistoricalResidence ; rdf:predicate rdf:type ; rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pound/index.html> ; opx:sourceType "official character profile" ; opx:sourceReference "Residence is explicitly limited to Pound's past period before reuniting with his daughters." ; opx:confidence "high" .
+opx:evidenceCampaign024PoundTemporalStatus a rdf:Statement ; rdf:subject opx:Campaign024PoundHistoricalResidence ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pound/index.html> ; opx:sourceType "official character profile" ; opx:sourceReference "Residence is explicitly limited to Pound's past period before reuniting with his daughters." ; opx:confidence "high" .
+opx:evidenceCampaign024PoundTemporalSubject a rdf:Statement ; rdf:subject opx:Campaign024PoundHistoricalResidence ; rdf:predicate rdf:subject ; rdf:object op:Pound ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pound/index.html> ; opx:sourceType "official character profile" ; opx:sourceReference "Official profile describes Pound's past residence in Totto Land." ; opx:confidence "high" .
+opx:evidenceCampaign024PoundTemporalPredicate a rdf:Statement ; rdf:subject opx:Campaign024PoundHistoricalResidence ; rdf:predicate rdf:predicate ; rdf:object op:residence ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pound/index.html> ; opx:sourceType "official character profile" ; opx:sourceReference "Official profile describes Pound's past residence in Totto Land." ; opx:confidence "high" .
+opx:evidenceCampaign024PoundTemporalObject a rdf:Statement ; rdf:subject opx:Campaign024PoundHistoricalResidence ; rdf:predicate rdf:object ; rdf:object op:Totto_Land ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pound/index.html> ; opx:sourceType "official character profile" ; opx:sourceReference "Official profile describes Pound's past residence in Totto Land." ; opx:confidence "high" .
+
+opx:evidenceCampaign024RougeBaterilla a rdf:Statement ; rdf:subject op:Portgas_D_Rouge ; rdf:predicate op:affiliatesWith ; rdf:object op:Baterilla ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Portgaz_D_Rouge/index.html> ; opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile lists Baterilla as Rouge's associated place and describes her pregnancy and death after giving birth; the profile does not specify a time interval for the association." ;
+    opx:confidence "high" ; opx:temporalScope "official profile context; interval unspecified" .
+
+opx:evidenceCampaign024MorninAffiliation a rdf:Statement ; rdf:subject op:Mornin ; rdf:predicate op:affiliatesWith ; rdf:object op:Syrup_Village ;
+    prov:wasDerivedFrom <https://one-piece.com/character/mornin/index.html> ; opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile header identifies Mornin with Syrup Village and confirms October 15 birthday, already present in the graph." ; opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign024KirinFruitType a rdf:Statement ; rdf:subject <http://kalnassag.com/onepiece/Ryu_Ryu_no_Mi,_Model:_Kirin> ; rdf:predicate rdf:type ; rdf:object op:DevilFruit ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=R&page=2&sort=asc> ; opx:sourceType "official character directory" ;
+    opx:sourceReference "Official R-section character directory lists the Ryu Ryu no Mi, Mythical Zoan, Model: Kirin for Rimoshifu Killingham." ; opx:confidence "high" .
+opx:evidenceCampaign024KirinLabelEn a rdf:Statement ; rdf:subject <http://kalnassag.com/onepiece/Ryu_Ryu_no_Mi,_Model:_Kirin> ; rdf:predicate rdfs:label ; rdf:object "Ryu Ryu no Mi, Model: Kirin"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=R&page=2&sort=asc> ; opx:sourceType "official character directory" ;
+    opx:sourceReference "English transliteration of the official directory's named model fruit." ; opx:confidence "high" .
+opx:evidenceCampaign024KirinLabelJa a rdf:Statement ; rdf:subject <http://kalnassag.com/onepiece/Ryu_Ryu_no_Mi,_Model:_Kirin> ; rdf:predicate rdfs:label ; rdf:object "リュウリュウの実 幻獣種 モデル 〝麒麟〟"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=R&page=2&sort=asc> ; opx:sourceType "official Japanese character directory" ;
+    opx:sourceReference "Official directory names リュウリュウの実 幻獣種 モデル 〝麒麟〟." ; opx:confidence "high" .
+opx:evidenceCampaign024KirinCurrentUser a rdf:Statement ; rdf:subject <http://kalnassag.com/onepiece/Ryu_Ryu_no_Mi,_Model:_Kirin> ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Rimoshifu_Killingham ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=R&page=2&sort=asc> ; opx:sourceType "official character directory" ;
+    opx:sourceReference "The fruit is listed under Rimoshifu Killingham's official character entry." ; opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+opx:evidenceCampaign024KirinFruitTypeZoan a rdf:Statement ; rdf:subject <http://kalnassag.com/onepiece/Ryu_Ryu_no_Mi,_Model:_Kirin> ; rdf:predicate op:hasFruitType ; rdf:object op:Zoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=R&page=2&sort=asc> ; opx:sourceType "official character directory" ;
+    opx:sourceReference "The official directory classifies the fruit under Ryu Ryu no Mi, a Zoan line." ; opx:confidence "high" .
+opx:evidenceCampaign024KirinSubtype a rdf:Statement ; rdf:subject <http://kalnassag.com/onepiece/Ryu_Ryu_no_Mi,_Model:_Kirin> ; rdf:predicate opx:hasFruitSubtype ; rdf:object opx:MythicalZoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=R&page=2&sort=asc> ; opx:sourceType "official character directory" ;
+    opx:sourceReference "Official directory explicitly classifies the Kirin model as Mythical Zoan." ; opx:confidence "high" .

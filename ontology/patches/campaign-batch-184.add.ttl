@@ -1,0 +1,20 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign184001 a rdf:Statement ;
+    opx:confidence "0.92" ;
+    opx:sourceReference "Exact official profile heading: ビッグ・マム海賊団 / 総料理長. This supports Streusen’s existing Executive_Chef occupation edge. Cached document SHA-256: 472cd99c9ab545d1c78390570e43db4e00cf3ff41196223a7c021c2ea020cb53. Profile snapshot is undated; role duration is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal duration unspecified" ;
+    rdf:object op:Executive_Chef ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Streusen ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Streusen/index.html> .
+
+opx:temporalCampaign184001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Executive_Chef ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Streusen .

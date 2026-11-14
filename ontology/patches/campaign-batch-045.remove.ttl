@@ -1,0 +1,12 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Hack's combined occupation and residence IRIs conflate several distinct values; the source-backed replacement terms are in the add patch.
+op:Hack op:occupation op:Revolutionary_Army_member_Fish-Man_Karate_Instructor_Fish-Man_Jujutsu_Martial_Artist ;
+  op:residence op:Ryugu_KingdomBaltigoMomoiro_Island ;
+  op:epithet "VIZ: Hundredth-Degree Hack"@ja-latn .
+
+# Harald's concatenated occupation IRI conflates kingship and Devoted Blade service.
+op:Harald op:occupation op:Kingof_the_Warland_Kingdom_Devoted_Blades_of_God .
+
+# Hattori only posed as an employee of Galley-La during Lucci's undercover identity; this is not an actual affiliation.
+op:Hattori op:affiliatesWith op:Galley-La .

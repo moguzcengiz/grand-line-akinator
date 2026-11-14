@@ -1,0 +1,4 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Remove the single malformed object URI that incorrectly combines Kuma and S-Bear as the Nikyu Nikyu no Mi current user.
+op:Nikyu_Nikyu_no_Mi op:DevilFruitCurrentUser <http://kalnassag.com/onepiece/Bartholomew_Kuma;_S-Bear> .

@@ -1,0 +1,145 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Buku_Buku_no_Mi op:DevilFruitCurrentUser op:Charlotte_Mont-dOr .
+
+op:Charlotte_Mont-dOr op:hasBounty op:Charlotte_Mont-dOr_Bounty_Profile .
+op:Charlotte_Mont-dOr_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 120000000 ;
+    op:givenTo op:Charlotte_Mont-dOr .
+
+# Additive historical qualifier; preserve the pre-existing timeless role assertion.
+opx:Campaign036SnackFormerSweetCommander a opx:TemporalStatement ;
+    rdf:subject op:Charlotte_Snack ;
+    rdf:predicate op:occupation ;
+    rdf:object op:Sweet_Commander ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceCampaign036MontdorFruitUser a rdf:Statement ;
+    rdf:subject op:Buku_Buku_no_Mi ;
+    rdf:predicate op:DevilFruitCurrentUser ;
+    rdf:object op:Charlotte_Mont-dOr ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Montdor/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile identifies Charlotte Mont-d'Or as the Buku Buku no Mi user; the upstream fruit link used a malformed slash-namespace URI." ;
+    opx:confidence "high" ;
+    opx:temporalScope "profile snapshot; current user as listed" .
+
+opx:evidenceCampaign036MontdorBountyLink a rdf:Statement ;
+    rdf:subject op:Charlotte_Mont-dOr ; rdf:predicate op:hasBounty ;
+    rdf:object op:Charlotte_Mont-dOr_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Montdor/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile lists a 120,000,000-berry bounty for Charlotte Mont-d'Or; represented as a named bounty record." ;
+    opx:confidence "high" ;
+    opx:temporalScope "profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036MontdorBountyType a rdf:Statement ;
+    rdf:subject op:Charlotte_Mont-dOr_Bounty_Profile ; rdf:predicate rdf:type ;
+    rdf:object op:Bounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Montdor/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile lists a bounty for Charlotte Mont-d'Or, represented with the ontology's Bounty class." ;
+    opx:confidence "high" ;
+    opx:temporalScope "profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036MontdorBountyAmount a rdf:Statement ;
+    rdf:subject op:Charlotte_Mont-dOr_Bounty_Profile ; rdf:predicate op:bountyAmount ;
+    rdf:object 120000000 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Montdor/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile lists 1億2000万ベリー (120,000,000 berries)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036MontdorBountyRecipient a rdf:Statement ;
+    rdf:subject op:Charlotte_Mont-dOr_Bounty_Profile ; rdf:predicate op:givenTo ;
+    rdf:object op:Charlotte_Mont-dOr ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Montdor/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The profile's listed bounty is for Charlotte Mont-d'Or." ;
+    opx:confidence "high" ;
+    opx:temporalScope "profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036SnackBountyLink a rdf:Statement ;
+    rdf:subject op:Charlotte_Snack ; rdf:predicate op:hasBounty ;
+    rdf:object op:Charlotte_Snack_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/CharlotteLinlin/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official Big Mom Pirates profile list shows Charlotte Snack's bounty as 600,000,000 berries; represented as a named bounty record." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036SnackBountyType a rdf:Statement ;
+    rdf:subject op:Charlotte_Snack_Bounty_Profile ; rdf:predicate rdf:type ;
+    rdf:object op:Bounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/CharlotteLinlin/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile lists a bounty for Charlotte Snack, represented with the ontology's Bounty class." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036SnackBountyAmount a rdf:Statement ;
+    rdf:subject op:Charlotte_Snack_Bounty_Profile ; rdf:predicate op:bountyAmount ;
+    rdf:object 600000000 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/CharlotteLinlin/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile lists 6億ベリー (600,000,000 berries)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036SnackBountyRecipient a rdf:Statement ;
+    rdf:subject op:Charlotte_Snack_Bounty_Profile ; rdf:predicate op:givenTo ;
+    rdf:object op:Charlotte_Snack ;
+    prov:wasDerivedFrom <https://one-piece.com/character/CharlotteLinlin/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The profile's listed bounty is for Charlotte Snack." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" .
+
+opx:evidenceCampaign036SnackFormerRoleType a rdf:Statement ;
+    rdf:subject opx:Campaign036SnackFormerSweetCommander ; rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20180730_0897/index.html> ;
+    opx:sourceType "official editorial" ;
+    opx:sourceReference "The official family roundup explicitly labels Snack a former Sweet Commander; the additive temporal record qualifies the existing occupation as historical." ;
+    opx:confidence "high" ; opx:temporalScope "historical role; official 2018 editorial snapshot" .
+
+opx:evidenceCampaign036SnackFormerRoleSubject a rdf:Statement ;
+    rdf:subject opx:Campaign036SnackFormerSweetCommander ; rdf:predicate rdf:subject ;
+    rdf:object op:Charlotte_Snack ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20180730_0897/index.html> ;
+    opx:sourceType "official editorial" ;
+    opx:sourceReference "The official family roundup identifies Charlotte Snack as the former commander." ;
+    opx:confidence "high" ; opx:temporalScope "historical role; official 2018 editorial snapshot" .
+
+opx:evidenceCampaign036SnackFormerRolePredicate a rdf:Statement ;
+    rdf:subject opx:Campaign036SnackFormerSweetCommander ; rdf:predicate rdf:predicate ;
+    rdf:object op:occupation ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20180730_0897/index.html> ;
+    opx:sourceType "official editorial" ;
+    opx:sourceReference "The official family roundup labels Snack's Sweet Commander occupation former." ;
+    opx:confidence "high" ; opx:temporalScope "historical role; official 2018 editorial snapshot" .
+
+opx:evidenceCampaign036SnackFormerRoleObject a rdf:Statement ;
+    rdf:subject opx:Campaign036SnackFormerSweetCommander ; rdf:predicate rdf:object ;
+    rdf:object op:Sweet_Commander ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20180730_0897/index.html> ;
+    opx:sourceType "official editorial" ;
+    opx:sourceReference "The official family roundup identifies Sweet Commander as Snack's former occupation." ;
+    opx:confidence "high" ; opx:temporalScope "historical role; official 2018 editorial snapshot" .
+
+opx:evidenceCampaign036SnackFormerRoleStatus a rdf:Statement ;
+    rdf:subject opx:Campaign036SnackFormerSweetCommander ; rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20180730_0897/index.html> ;
+    opx:sourceType "official editorial" ;
+    opx:sourceReference "The official family roundup explicitly labels Snack a former Sweet Commander." ;
+    opx:confidence "high" ; opx:temporalScope "historical role; official 2018 editorial snapshot" .
+
+op:Charlotte_Snack op:hasBounty op:Charlotte_Snack_Bounty_Profile .
+op:Charlotte_Snack_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 600000000 ;
+    op:givenTo op:Charlotte_Snack .

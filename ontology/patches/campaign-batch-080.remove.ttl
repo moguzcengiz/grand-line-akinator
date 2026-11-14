@@ -1,0 +1,2 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+<http://kalnassag.com/onepiece#Fuku_Fuku_no_Mi> op:DevilFruitCurrentUser <http://kalnassag.com/onepiece/Kin'emon> .

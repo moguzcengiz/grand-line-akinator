@@ -1,0 +1,1 @@
+@prefix op: <http://kalnassag.com/onepiece#> .

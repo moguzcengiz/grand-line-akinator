@@ -1,0 +1,5 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Remove an import-mangled English label; the official Japanese joint label is added in the companion patch.
+op:Splash_and_Splatter rdfs:label "Splash and SplattaSplash and Splatter"@en .

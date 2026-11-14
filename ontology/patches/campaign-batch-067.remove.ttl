@@ -1,0 +1,4 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Sui_Sui_no_Mi op:DevilFruitCurrentUser <http://kalnassag.com/onepiece/Senor_Pink;_S-Shark> .
+op:Scopper_Gaban op:affiliatesWith op:Roger_Pirates .

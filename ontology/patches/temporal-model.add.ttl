@@ -1,0 +1,26 @@
+# Additive temporal assertion vocabulary. It does not reinterpret or replace any
+# existing timeless membership, occupation, or ownership predicate.
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:TemporalStatement a owl:Class ;
+  rdfs:subClassOf rdf:Statement ;
+  rdfs:label "temporally qualified fact"@en ;
+  rdfs:comment "Reifies a fact whose validity is current, historical, or not specified. The record never entails the corresponding unqualified triple."@en .
+
+opx:TemporalStatus a owl:Class ; rdfs:label "temporal status"@en .
+opx:Current a opx:TemporalStatus ; rdfs:label "current at the ontology snapshot"@en ;
+  owl:differentFrom opx:Historical, opx:TimeUnspecified .
+opx:Historical a opx:TemporalStatus ; rdfs:label "historical"@en ;
+  owl:differentFrom opx:TimeUnspecified .
+opx:TimeUnspecified a opx:TemporalStatus ; rdfs:label "time unspecified"@en .
+
+opx:temporalStatus a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:domain opx:TemporalStatement ; rdfs:range opx:TemporalStatus .
+opx:validFromChapter a owl:DatatypeProperty ;
+  rdfs:domain opx:TemporalStatement ; rdfs:range xsd:positiveInteger .
+opx:validThroughChapter a owl:DatatypeProperty ;
+  rdfs:domain opx:TemporalStatement ; rdfs:range xsd:positiveInteger .

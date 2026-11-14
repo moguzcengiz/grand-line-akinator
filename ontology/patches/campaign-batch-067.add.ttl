@@ -1,0 +1,27 @@
+# Batch 067: source-backed Senor Pink fruit ownership and historical Roger Pirates membership.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Sui_Sui_no_Mi op:DevilFruitCurrentUser op:Senor_Pink .
+
+opx:temporalCampaign06701 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:subject op:Sui_Sui_no_Mi ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Senor_Pink .
+opx:evidenceCampaign06701 a rdf:Statement ;
+    rdf:subject op:Sui_Sui_no_Mi ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Senor_Pink ;
+    prov:wasDerivedFrom <https://one-piece.com/character/senor_pink/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile identifies セニョール・ピンク and states 悪魔の実: スイスイの実. The existing Sui_Sui_no_Mi URI matches exactly; the living character is listed as its current user at the profile snapshot. Cached document SHA-256: 0d802f7646544b10516dec10c2aaf4b920baaca7a363532c16ff1ac01fb4c294." ;
+    opx:confidence "high" ; opx:temporalScope "current at official profile snapshot" .
+
+opx:temporalCampaign06702 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Scopper_Gaban ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates .
+opx:evidenceCampaign06702 a rdf:Statement ;
+    rdf:subject op:Scopper_Gaban ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Scopper_Gaban/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元ロジャー海賊団 (former Roger Pirates), so preserve the already asserted membership as historical. Cached document SHA-256: e00d6fc79410f799107c70b64d0541e0bae0e947d3460e61f6ca4a51a01b0bcb." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

@@ -133,7 +133,12 @@ def main():
     ap.add_argument("--modes", default="random,rule,ai")
     ap.add_argument("--out", default="eval_results/results.json")
     args = ap.parse_args()
+    import time
+    from .perf import record as perf_record
+    setup_started = time.perf_counter()
     kb = service.get_kb()
+    perf_record("evaluation_setup", time.perf_counter() - setup_started,
+                entities=len(kb.uris), questions=len(kb.rule_questions))
     results = {"args": vars(args), "kb": {"entities": len(kb.uris), "questions": len(kb.rule_questions)}, "patches_applied": config.APPLY_PATCHES}
     for name in args.modes.split(","):
         mode, strategy, exploration = STRATEGIES[name]
@@ -148,6 +153,7 @@ def main():
             Path(args.save_targets).write_text(json.dumps([kb.entities[t]["name"] for t in targets]))
         t0 = time.time()
         games = [play(kb, t, mode, strategy, random.Random(args.seed + i), args.noise, seed=args.seed + i, exploration=exploration, mismatch=args.mismatch, omission=args.omission) for i, t in enumerate(targets)]
+        perf_record("evaluation_simulation", time.time() - t0, mode=name, games=len(games), seed=args.seed)
         results[name] = {**summarize(games), **meta, "wall_seconds": round(time.time() - t0, 1), "sample": [{k: v for k, v in g.items() if k != "asked"} for g in games[:5]]}
         print(name, json.dumps({k: v for k, v in results[name].items() if k != "sample"}))
     out = Path(args.out)

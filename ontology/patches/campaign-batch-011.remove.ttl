@@ -1,0 +1,17 @@
+# Batch 011 corrections based on official profiles: these three source subjects are
+# individuals/weapons, not organizations. The duck troop entity is an Affiliation,
+# not an individual character. Cowboy's accidentally copied group names are removed.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+op:Chimney rdf:type op:Affiliation .
+op:Chouchou rdf:type op:Affiliation .
+op:Pacifista rdf:type op:Affiliation .
+op:Super_Spot-Billed_Duck_Troops rdf:type op:Character .
+
+op:Cowboy op:romanizedName "Chō Karugamo Butai"^^xsd:string .
+op:Cowboy rdfs:label "Chō Karugamo Butai"@ja-latn .
+op:Cowboy rdfs:label "超カルガモ部隊"@ja .
+op:Cowboy rdfs:label "Supersonic Duck SquadronSuper Spot-Billed Duck Troops"@en .

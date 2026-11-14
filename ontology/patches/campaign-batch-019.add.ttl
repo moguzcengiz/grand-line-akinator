@@ -1,0 +1,64 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Charlotte_Gala op:affiliatesWith op:Big_Mom_Pirates .
+op:Chicken op:temporaryAlias "チキンおばさん" .
+op:Conney op:affiliatesWith op:Sorbet_Kingdom .
+
+opx:Campaign019ClappHistoricalEnslavement a opx:TemporalStatement ;
+    rdf:subject op:Clapp ;
+    rdf:predicate op:occupation ;
+    rdf:object op:Slave ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceCampaign019GalaBigMomPirates a rdf:Statement ;
+    rdf:subject op:Charlotte_Gala ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Big_Mom_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Gala/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile places Charlotte Gala under Big Mom Pirates; the existing Charlotte Family affiliation is distinct." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign019ChickenAlias a rdf:Statement ;
+    rdf:subject op:Chicken ;
+    rdf:predicate op:temporaryAlias ;
+    rdf:object "チキンおばさん" ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Madam_Chicken/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies the Foosha Village fish-shop owner's wife as Chicken Aunt (チキンおばさん) and confirms her February 8 birthday, matching the queued URI's Foosha context and birthday." ;
+    opx:confidence "high" ;
+    opx:temporalScope "time-unspecified name" .
+
+opx:evidenceCampaign019ConneySorbet a rdf:Statement ;
+    rdf:subject op:Conney ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Sorbet_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Conney/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Conney as Sorbet Kingdom queen dowager and lists the kingdom as her organization." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign019ClappHistoricalEnslavementType a rdf:Statement ;
+    rdf:subject opx:Campaign019ClappHistoricalEnslavement ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Clapp/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Clapp and his family became Celestial Dragon slaves after Kuma's birth; the existing Slave occupation is historical." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical; after Kuma's birth, no chapter interval encoded" .
+
+opx:evidenceCampaign019ClappHistoricalEnslavementStatus a rdf:Statement ;
+    rdf:subject opx:Campaign019ClappHistoricalEnslavement ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Clapp/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Clapp and his family became Celestial Dragon slaves after Kuma's birth; the existing Slave occupation is historical." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical; after Kuma's birth, no chapter interval encoded" .

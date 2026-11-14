@@ -1,0 +1,14 @@
+# Batch 013: source-backed cleanup of character/affiliation typing and a misused relation.
+# Official character profiles/listings identify all four subjects below as individual characters.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Helmeppo rdf:type op:Affiliation .
+op:Hocker rdf:type op:Affiliation .
+op:Iceburg rdf:type op:Affiliation .
+op:Johnny rdf:type op:Affiliation .
+
+# Hocker's source-confirmed ownership of Chouchou is not organizational affiliation;
+# the ontology has no general person-to-pet ownership predicate, so retain it as an unresolved modeling item.
+op:Hocker op:affiliatesWith op:Chouchou .
+op:Chouchou op:affiliatesWith op:Hocker .

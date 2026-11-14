@@ -1,0 +1,21 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign153001 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: 麦わらの一味 / 戦闘員. This supports the existing ontology edge. The profile is undated and does not establish whether the role is current or former. Cached document SHA-256: 71924a0f6d79885f8ed6f99533dc273591baa50e4b5991ed9b1b8622efdd8c65." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Crew_Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Roronoa_Zoro ;
+    prov:wasDerivedFrom <https://one-piece.com/character/zoro/index.html> .
+
+opx:temporalCampaign153001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Crew_Combatant ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Roronoa_Zoro .
+

@@ -1,0 +1,7 @@
+# Batch 004 correction: remove one malformed scraped user URI.
+# The raw source joined “Boa Hancock; S-Snake (Artificial)” as if it were one entity. Official profiles
+# identify Hancock as Mero Mero no Mi user and explain that S-Snake uses the copied power through Green Blood.
+# The replacement Hancock edge is in campaign-batch-004.add.ttl; S-Snake copied-power semantics remain open.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+op:Mero_Mero_no_Mi op:DevilFruitCurrentUser <http://kalnassag.com/onepiece/Boa_Hancock;_S-Snake> .

@@ -1,0 +1,4 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Robson op:affiliatesWith op:Drum_Kingdom .
+op:Rocks_D_Xebec op:affiliatesWith op:Rocks_Pirates .

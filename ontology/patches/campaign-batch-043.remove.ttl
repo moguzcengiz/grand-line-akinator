@@ -1,0 +1,7 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Gerotini captains the subordinate Puddle Pirates; the chapter identifies him with the Red Hair allied fleet, not the core Red Hair Pirates crew.
+op:Gerotini op:affiliatesWith op:Red_Hair_Pirates .
+
+# “Frog-Toes Ribbitini” is explicitly identified as the VIZ translation rendering, not an in-world epithet. The Japanese title “Ball Fingers” is retained.
+op:Gerotini op:epithet "Viz: \"Frog-Toes Ribbitini\""@ja-latn .

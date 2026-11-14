@@ -1,0 +1,25 @@
+# Remove malformed and identity-conflated assertions; additions and provenance are in campaign-batch-048.add.ttl.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+op:Ideaman op:occupation op:Staff_Officerof_Planning .
+
+op:Ikkaku rdfs:label "一鶴"@ja ;
+    op:animeDebut op:Episode_902 ;
+    op:englishVoiceActor op:Ryan_Seale ;
+    op:japaneseVoiceActor op:Hiromu_Miyazaki ;
+    op:mangaDebut op:Chapter_915 ;
+    op:occupation op:Announcer ;
+    op:opwikiID "Ikkaku_"^^xsd:string ;
+    op:opwikiurl "https://onepiece.fandom.com/wiki/Ikkaku_"^^xsd:anyURI ;
+    op:residence op:Bakura_Town ;
+    op:statusOfCharacter op:Alive .
+
+op:Indigo op:statusOfCharacter op:Alive .
+
+op:Inuppe rdfs:label "Dog PenguinInuppe"@en .
+
+
+# Retire the unreferenced malformed occupation term after reassigning Ideaman to the corrected clean term.
+op:Staff_Officerof_Planning a op:Occupation .

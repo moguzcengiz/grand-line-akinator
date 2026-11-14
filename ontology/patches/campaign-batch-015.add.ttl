@@ -1,0 +1,29 @@
+@prefix ns1: <http://kalnassag.com/onepiece-ext#> .
+@prefix ns2: <http://kalnassag.com/onepiece#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ns1:evidenceCampaign015MuginnElbaph a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official syllabary directory lists Muginn with 組織 エルバフ (organization Elbaf). The graph already types Elbaph as an affiliation; this supports the existing character-to-organization predicate." ;
+    ns1:sourceType "official character directory" ;
+    ns1:temporalScope "current at official directory snapshot; chapter interval unspecified" ;
+    rdf:object ns2:Elbaph ;
+    rdf:predicate ns2:affiliatesWith ;
+    rdf:subject ns2:Muginn ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=M&page=3&sort=asc> .
+
+ns1:evidenceCampaign015PiperNewGiantWarriorPirates a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "Official syllabary listing associates Piper with the New Giant Warrior Pirates (新巨兵海賊団)." ;
+    ns1:sourceType "official character directory" ;
+    ns1:temporalScope "current at official directory snapshot; chapter interval unspecified" ;
+    rdf:object ns2:New_Giant_Warrior_Pirates ;
+    rdf:predicate ns2:affiliatesWith ;
+    rdf:subject ns2:Piper ;
+    prov:wasDerivedFrom <https://one-piece.com/character/syllabary/index.html?category=H&page=15&sort=desc> .
+
+ns2:Muginn ns2:affiliatesWith ns2:Elbaph .
+
+ns2:Piper ns2:affiliatesWith ns2:New_Giant_Warrior_Pirates .
+

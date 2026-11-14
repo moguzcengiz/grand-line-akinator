@@ -1,0 +1,4 @@
+# Campaign batch 016: official episode recap shows Ryunosuke returning to the drawing after its role, not dying.
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Ryunosuke op:statusOfCharacter op:Deceased .

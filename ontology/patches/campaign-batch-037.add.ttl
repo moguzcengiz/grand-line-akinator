@@ -1,0 +1,618 @@
+# Source-backed enrichment; every added factual triple has an rdf:Statement provenance record.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign037Fact001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; Bliking Pirates listed without former qualifier" ;
+    rdf:object op:Bliking_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Chess ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical affiliation; official profile explicitly says former Drum Kingdom" ;
+    rdf:object op:Drum_Kingdom ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Chess ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037ChessBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:Chess ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037ChessBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037ChessBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:Bliking_Pirates ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037ChessBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037ChessBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037ChessDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object op:Chess ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037ChessDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037ChessDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object op:Drum_Kingdom ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037ChessDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Chess profile lists the Bliking Pirates and identifies Chess as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037ChessDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chess/index.html> .
+
+opx:evidenceCampaign037Fact013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; Bliking Pirates listed without former qualifier" ;
+    rdf:object op:Bliking_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuromarimo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical affiliation; official profile explicitly says former Drum Kingdom" ;
+    rdf:object op:Drum_Kingdom ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuromarimo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037KuromarimoBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:Kuromarimo ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037KuromarimoBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact017 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037KuromarimoBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:Bliking_Pirates ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037KuromarimoBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037KuromarimoBlikingCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact020 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037KuromarimoDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object op:Kuromarimo ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037KuromarimoDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037KuromarimoDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object op:Drum_Kingdom ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037KuromarimoDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact024 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Kuromarimo profile lists the Bliking Pirates and identifies Kuromarimo as a former Drum Kingdom official." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile says former Drum Kingdom" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037KuromarimoDrumHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kuromarimo/index.html> .
+
+opx:evidenceCampaign037Fact025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists a 5,500,000-berry bounty and says Chew was in the Sun Pirates before their dissolution, then acted with Arlong." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" ;
+    rdf:object op:Chew_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Chew ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact026 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile lists a bounty for Chew, represented with the ontology Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Chew_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 550万ベリー (5,500,000 berries)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" ;
+    rdf:object 5500000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Chew_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact028 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The listed bounty is for Chew." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no current/former bounty qualifier stated" ;
+    rdf:object op:Chew ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Chew_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists a 5,500,000-berry bounty and says Chew was in the Sun Pirates before their dissolution, then acted with Arlong." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile states membership preceded dissolution of the Sun Pirates" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037ChewSunPiratesHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact030 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists a 5,500,000-berry bounty and says Chew was in the Sun Pirates before their dissolution, then acted with Arlong." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile states membership preceded dissolution of the Sun Pirates" ;
+    rdf:object op:Chew ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037ChewSunPiratesHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists a 5,500,000-berry bounty and says Chew was in the Sun Pirates before their dissolution, then acted with Arlong." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile states membership preceded dissolution of the Sun Pirates" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037ChewSunPiratesHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact032 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists a 5,500,000-berry bounty and says Chew was in the Sun Pirates before their dissolution, then acted with Arlong." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile states membership preceded dissolution of the Sun Pirates" ;
+    rdf:object op:Sun_Pirates ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037ChewSunPiratesHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists a 5,500,000-berry bounty and says Chew was in the Sun Pirates before their dissolution, then acted with Arlong." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile states membership preceded dissolution of the Sun Pirates" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037ChewSunPiratesHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choo/index.html> .
+
+opx:evidenceCampaign037Fact034 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The episode places the town where the Choco Police act in Chocolat Town." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "official episode 786" ;
+    rdf:object op:Location ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Chocolat_Town ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o3105/index.html> .
+
+opx:evidenceCampaign037Fact035 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official English rendering of ショコラタウン." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "official episode 786" ;
+    rdf:object "Chocolat Town"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Chocolat_Town ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o3105/index.html> .
+
+opx:evidenceCampaign037Fact036 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Japanese town name shown in the official episode synopsis." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "official episode 786" ;
+    rdf:object "ショコラタウン"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Chocolat_Town ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o3105/index.html> .
+
+opx:evidenceCampaign037Fact037 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 786 summary describes the Choco Police questioning Luffy and Chopper in Chocolat Town on Cacao Island." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "official episode 786" ;
+    rdf:object op:Chocolat_Town ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Choco_Police ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o3105/index.html> .
+
+opx:evidenceCampaign037Fact038 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile describes Choi as a Whitebeard-affiliated pirate and places his charge with Luffy during the Summit War." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037ChoiWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choi/index.html> .
+
+opx:evidenceCampaign037Fact039 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile describes Choi as a Whitebeard-affiliated pirate and places his charge with Luffy during the Summit War." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object op:Choi ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037ChoiWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choi/index.html> .
+
+opx:evidenceCampaign037Fact040 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile describes Choi as a Whitebeard-affiliated pirate and places his charge with Luffy during the Summit War." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037ChoiWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choi/index.html> .
+
+opx:evidenceCampaign037Fact041 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile describes Choi as a Whitebeard-affiliated pirate and places his charge with Luffy during the Summit War." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037ChoiWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choi/index.html> .
+
+opx:evidenceCampaign037Fact042 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile describes Choi as a Whitebeard-affiliated pirate and places his charge with Luffy during the Summit War." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037ChoiWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Choi/index.html> .
+
+opx:evidenceCampaign037Fact043 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile classifies Colscon as a Whitebeard-affiliated pirate and places him at the Summit War, where he witnessed Ace’s death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical affiliation; profile describes Summit War participation" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Colscon ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Collscon/index.html> .
+
+opx:evidenceCampaign037Fact044 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile classifies Colscon as a Whitebeard-affiliated pirate and places him at the Summit War, where he witnessed Ace’s death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037ColsconWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Collscon/index.html> .
+
+opx:evidenceCampaign037Fact045 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile classifies Colscon as a Whitebeard-affiliated pirate and places him at the Summit War, where he witnessed Ace’s death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object op:Colscon ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037ColsconWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Collscon/index.html> .
+
+opx:evidenceCampaign037Fact046 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile classifies Colscon as a Whitebeard-affiliated pirate and places him at the Summit War, where he witnessed Ace’s death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037ColsconWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Collscon/index.html> .
+
+opx:evidenceCampaign037Fact047 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile classifies Colscon as a Whitebeard-affiliated pirate and places him at the Summit War, where he witnessed Ace’s death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037ColsconWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Collscon/index.html> .
+
+opx:evidenceCampaign037Fact048 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile classifies Colscon as a Whitebeard-affiliated pirate and places him at the Summit War, where he witnessed Ace’s death." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; source situates affiliation at the Summit War" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037ColsconWhitebeardAllyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Collscon/index.html> .
+
+opx:evidenceCampaign037Fact049 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Concelot as an Inuarashi Musketeer Squad member serving the Mokomo Dukedom." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:Inuarashi_Musketeer_Squad ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Concelot ;
+    prov:wasDerivedFrom <https://one-piece.com/character/konsrot/index.html> .
+
+opx:evidenceCampaign037Fact050 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Concelot as an Inuarashi Musketeer Squad member serving the Mokomo Dukedom." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign037ConcelotMusketeerCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/konsrot/index.html> .
+
+opx:evidenceCampaign037Fact051 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Concelot as an Inuarashi Musketeer Squad member serving the Mokomo Dukedom." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:Concelot ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign037ConcelotMusketeerCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/konsrot/index.html> .
+
+opx:evidenceCampaign037Fact052 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Concelot as an Inuarashi Musketeer Squad member serving the Mokomo Dukedom." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign037ConcelotMusketeerCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/konsrot/index.html> .
+
+opx:evidenceCampaign037Fact053 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Concelot as an Inuarashi Musketeer Squad member serving the Mokomo Dukedom." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object op:Inuarashi_Musketeer_Squad ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign037ConcelotMusketeerCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/konsrot/index.html> .
+
+opx:evidenceCampaign037Fact054 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Concelot as an Inuarashi Musketeer Squad member serving the Mokomo Dukedom." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign037ConcelotMusketeerCurrent ;
+    prov:wasDerivedFrom <https://one-piece.com/character/konsrot/index.html> .
+
+op:Choco_Police op:residence op:Chocolat_Town .
+
+op:Colscon op:affiliatesWith op:Ally_of_theWhitebeard_Pirates .
+
+op:Concelot op:affiliatesWith op:Inuarashi_Musketeer_Squad .
+
+op:Chew op:hasBounty op:Chew_Bounty_Profile .
+
+op:Chew_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 5500000 ;
+    op:givenTo op:Chew .
+
+op:Chocolat_Town a op:Location ;
+    rdfs:label "Chocolat Town"@en,
+        "ショコラタウン"@ja .
+
+opx:Campaign037ChessBlikingCurrent a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Bliking_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Chess .
+
+opx:Campaign037ChessDrumHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Drum_Kingdom ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Chess .
+
+opx:Campaign037ChewSunPiratesHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Sun_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Chew .
+
+opx:Campaign037ChoiWhitebeardAllyHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Choi .
+
+opx:Campaign037ColsconWhitebeardAllyHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Colscon .
+
+opx:Campaign037ConcelotMusketeerCurrent a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Inuarashi_Musketeer_Squad ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Concelot .
+
+opx:Campaign037KuromarimoBlikingCurrent a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Bliking_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuromarimo .
+
+opx:Campaign037KuromarimoDrumHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Drum_Kingdom ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuromarimo .
+
+op:Chess op:affiliatesWith op:Bliking_Pirates,
+        op:Drum_Kingdom .
+
+op:Kuromarimo op:affiliatesWith op:Bliking_Pirates,
+        op:Drum_Kingdom .
+

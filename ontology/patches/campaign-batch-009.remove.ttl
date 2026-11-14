@@ -1,0 +1,7 @@
+# Batch 009 correction: remove incomplete scraped Japanese model-name labels.
+# The official Rob Lucci and Dalton profiles provide the complete canonical fruit names.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://kalnassag.com/onepiece/Neko_Neko_no_Mi,_Model:_Leopard> rdfs:label "ネコネコの実 モデル“”"@ja .
+<http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Bison> rdfs:label "ウシウシの実 モデル"@ja .

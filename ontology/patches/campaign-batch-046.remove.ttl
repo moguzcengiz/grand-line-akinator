@@ -1,0 +1,4 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Hihimaru's source residence was concatenated into one invalid URI; separate Kuri and Wano Country are in the add patch.
+op:Hihimaru op:residence op:KuriWano_Country .

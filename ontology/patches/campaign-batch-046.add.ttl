@@ -1,0 +1,98 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Official profiles list Higuma's 8,000,000-berry bounty and Hibari's approximate 200,000,000-berry Cross Guild bounty.
+op:Higuma op:hasBounty op:Higuma_Bounty_Profile .
+op:Higuma_Bounty_Profile a op:Bounty ; op:bountyAmount 8000000 ; op:givenTo op:Higuma .
+opx:evidenceCampaign046001 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official Higuma profile lists an 8,000,000-berry bounty; represent it as a named Bounty record." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+  rdf:subject op:Higuma ; rdf:predicate op:hasBounty ; rdf:object op:Higuma_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Higuma/index.html> .
+opx:evidenceCampaign046002 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The named record models Higuma's profile-listed bounty." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+  rdf:subject op:Higuma_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Higuma/index.html> .
+opx:evidenceCampaign046003 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official Higuma profile lists 8,000,000 berries." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+  rdf:subject op:Higuma_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object 8000000 ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Higuma/index.html> .
+opx:evidenceCampaign046004 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official profile identifies Higuma as the bounty recipient." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+  rdf:subject op:Higuma_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Higuma ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Higuma/index.html> .
+
+op:Hibari op:hasBounty op:Hibari_Cross_Guild_Bounty_Profile .
+op:Hibari_Cross_Guild_Bounty_Profile a op:Bounty ; op:bountyAmount 200000000 ; op:givenTo op:Hibari .
+opx:evidenceCampaign046005 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official Hibari profile displays an approximate 200,000,000-berry Cross Guild bounty; preserve it as a named estimate rather than a Government-issued bounty." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "approximate Cross Guild bounty estimate; profile snapshot" ;
+  rdf:subject op:Hibari ; rdf:predicate op:hasBounty ; rdf:object op:Hibari_Cross_Guild_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hibari/index.html> .
+opx:evidenceCampaign046006 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The named record preserves the Cross Guild qualifier in Hibari's official profile estimate." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "approximate Cross Guild bounty estimate; profile snapshot" ;
+  rdf:subject op:Hibari_Cross_Guild_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hibari/index.html> .
+opx:evidenceCampaign046007 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The official profile states 約2億ベリー (approximately 200,000,000 berries), a Cross Guild bounty." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "approximate Cross Guild bounty estimate; profile snapshot" ;
+  rdf:subject op:Hibari_Cross_Guild_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object 200000000 ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hibari/index.html> .
+opx:evidenceCampaign046008 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official profile identifies Hibari as the recipient of the approximate Cross Guild bounty." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "approximate Cross Guild bounty estimate; profile snapshot" ;
+  rdf:subject op:Hibari_Cross_Guild_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Hibari ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hibari/index.html> .
+
+# Hihimaru's residence value concatenated Kuri and Wano Country; the official profile and chapter 911 identify both scopes.
+op:Hihimaru op:residence op:Kuri, op:Wano_Country .
+opx:evidenceCampaign046009 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 911 places Hihimaru in Kuri; split this from the malformed combined residence URI." ;
+  opx:sourceType "manga chapter; chapter-referenced profile" ; opx:temporalScope "Wano Country arc" ;
+  rdf:subject op:Hihimaru ; rdf:predicate op:residence ; rdf:object op:Kuri ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hihimaru>, <https://onepiece.fandom.com/wiki/Chapter_911> .
+opx:evidenceCampaign046010 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The official profile identifies Hihimaru with Wano Country; preserve the broader region alongside the specific Kuri location." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "profile identity fact" ;
+  rdf:subject op:Hihimaru ; rdf:predicate op:residence ; rdf:object op:Wano_Country ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hihimaru/index.html> .
+
+# These crew relations are explicitly former: the baboon left the Beast Pirates after Tama tamed it, and the alliance later disbanded.
+opx:evidenceCampaign046011 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hihimaru ; rdf:predicate op:affiliatesWith ; rdf:object op:Beasts_Pirates .
+opx:evidenceCampaign046012 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter-referenced profile describes Hihimaru as a former Beast Pirates guard, tamed by Tama; qualify the existing crew relation Historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before Tama tamed Hihimaru" ;
+  rdf:subject opx:evidenceCampaign046011 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hihimaru>, <https://onepiece.fandom.com/wiki/Chapter_911> .
+opx:evidenceCampaign046013 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hihimaru ; rdf:predicate op:affiliatesWith ; rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance .
+opx:evidenceCampaign046014 a rdf:Statement ; opx:confidence "medium" ;
+  opx:sourceReference "The cited profile lists the Ninja-Pirate-Mink-Samurai Alliance as disbanded; keep Hihimaru's existing relation as a historical association." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; alliance later disbanded" ;
+  rdf:subject opx:evidenceCampaign046013 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hihimaru> .
+
+# Himuro's Mimawarigumi / Kurozumi Family service predates the Beasts Pirates.
+opx:evidenceCampaign046015 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Himuro ; rdf:predicate op:affiliatesWith ; rdf:object op:Kurozumi_Family .
+opx:evidenceCampaign046016 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 951 and 986 sources identify Himuro's former Mimawarigumi service before joining the Beasts Pirates; qualify the existing Kurozumi Family relation Historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Beasts Pirates membership" ;
+  rdf:subject opx:evidenceCampaign046015 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Himuro> .
+
+# Hitsugisukan's rulership preceded Inuarashi and Nekomamushi.
+opx:evidenceCampaign046017 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hitsugisukan ; rdf:predicate op:occupation ; rdf:object op:Ruler_of_Mokomo_Dukedom .
+opx:evidenceCampaign046018 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter-referenced profile identifies Hitsugisukan as the former ruler of Mokomo Dukedom; qualify the existing ruler occupation Historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Inuarashi and Nekomamushi" ;
+  rdf:subject opx:evidenceCampaign046017 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://www.grandlinearchives.com/characters/hitsugisukan>, <https://onepiece.fandom.com/wiki/Mokomo_Dukedom> .

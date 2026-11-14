@@ -1,0 +1,208 @@
+# Batch 003: source-backed facts from official character profiles.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Izou op:hasBounty op:Izou_Bounty_Profile .
+op:Izou_Bounty_Profile rdf:type op:Bounty .
+op:Izou_Bounty_Profile op:bountyAmount "510000000"^^xsd:integer .
+op:Izou_Bounty_Profile op:givenTo op:Izou .
+op:Kuro op:hasBounty op:Kuro_Bounty_Profile .
+op:Kuro_Bounty_Profile rdf:type op:Bounty .
+op:Kuro_Bounty_Profile op:bountyAmount "16000000"^^xsd:integer .
+op:Kuro_Bounty_Profile op:givenTo op:Kuro .
+op:Laffitte op:hasBounty op:Laffitte_Bounty_Profile .
+op:Laffitte_Bounty_Profile rdf:type op:Bounty .
+op:Laffitte_Bounty_Profile op:bountyAmount "42200000"^^xsd:integer .
+op:Laffitte_Bounty_Profile op:givenTo op:Laffitte .
+op:Mont_Blanc_Cricket op:hasBounty op:Mont_Blanc_Cricket_Bounty_Profile .
+op:Mont_Blanc_Cricket_Bounty_Profile rdf:type op:Bounty .
+op:Mont_Blanc_Cricket_Bounty_Profile op:bountyAmount "25000000"^^xsd:integer .
+op:Mont_Blanc_Cricket_Bounty_Profile op:givenTo op:Mont_Blanc_Cricket .
+op:Nami op:hasBounty op:Nami_Bounty_Profile .
+op:Nami_Bounty_Profile rdf:type op:Bounty .
+op:Nami_Bounty_Profile op:bountyAmount "366000000"^^xsd:integer .
+op:Nami_Bounty_Profile op:givenTo op:Nami .
+<http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> rdf:type op:DevilFruit .
+<http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> rdfs:label "リュウリュウの実 古代種 モデル 〝プテラノドン〟"@ja .
+<http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> op:DevilFruitCurrentUser op:King .
+<http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> op:hasFruitType op:Zoan .
+<http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> opx:hasFruitSubtype opx:AncientZoan .
+
+opx:evidenceCampaign00301 a rdf:Statement ;
+  rdf:subject op:Izou ; rdf:predicate op:hasBounty ; rdf:object op:Izou_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/izo/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Izou bounty as 510,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00302 a rdf:Statement ;
+  rdf:subject op:Izou_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/izo/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile bounty as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00303 a rdf:Statement ;
+  rdf:subject op:Izou_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "510000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/izo/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 510,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00304 a rdf:Statement ;
+  rdf:subject op:Izou_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Izou ;
+  prov:wasDerivedFrom <https://one-piece.com/character/izo/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies the bounty recipient as Izou." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00305 a rdf:Statement ;
+  rdf:subject op:Kuro ; rdf:predicate op:hasBounty ; rdf:object op:Kuro_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Kuro/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Kuro bounty as 16,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00306 a rdf:Statement ;
+  rdf:subject op:Kuro_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Kuro/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile bounty as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00307 a rdf:Statement ;
+  rdf:subject op:Kuro_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "16000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Kuro/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 16,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00308 a rdf:Statement ;
+  rdf:subject op:Kuro_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Kuro ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Kuro/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies the bounty recipient as Kuro." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00309 a rdf:Statement ;
+  rdf:subject op:Laffitte ; rdf:predicate op:hasBounty ; rdf:object op:Laffitte_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Lafitte/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Laffitte bounty as 42,200,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile states amount at the time of the Summit War" .
+
+opx:evidenceCampaign00310 a rdf:Statement ;
+  rdf:subject op:Laffitte_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Lafitte/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile bounty as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile states amount at the time of the Summit War" .
+
+opx:evidenceCampaign00311 a rdf:Statement ;
+  rdf:subject op:Laffitte_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "42200000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Lafitte/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 42,200,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile states amount at the time of the Summit War" .
+
+opx:evidenceCampaign00312 a rdf:Statement ;
+  rdf:subject op:Laffitte_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Laffitte ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Lafitte/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies the bounty recipient as Laffitte." ;
+  opx:confidence "high" ; opx:temporalScope "profile states amount at the time of the Summit War" .
+
+opx:evidenceCampaign00313 a rdf:Statement ;
+  rdf:subject op:Mont_Blanc_Cricket ; rdf:predicate op:hasBounty ; rdf:object op:Mont_Blanc_Cricket_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/MontBlanc_Cricket/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Mont_Blanc_Cricket bounty as 25,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00314 a rdf:Statement ;
+  rdf:subject op:Mont_Blanc_Cricket_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/MontBlanc_Cricket/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile bounty as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00315 a rdf:Statement ;
+  rdf:subject op:Mont_Blanc_Cricket_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "25000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/MontBlanc_Cricket/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 25,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00316 a rdf:Statement ;
+  rdf:subject op:Mont_Blanc_Cricket_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Mont_Blanc_Cricket ;
+  prov:wasDerivedFrom <https://one-piece.com/character/MontBlanc_Cricket/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies the bounty recipient as Mont_Blanc_Cricket." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00317 a rdf:Statement ;
+  rdf:subject op:Nami ; rdf:predicate op:hasBounty ; rdf:object op:Nami_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/nami/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Nami bounty as 366,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00318 a rdf:Statement ;
+  rdf:subject op:Nami_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/nami/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile bounty as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00319 a rdf:Statement ;
+  rdf:subject op:Nami_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "366000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/nami/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 366,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00320 a rdf:Statement ;
+  rdf:subject op:Nami_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Nami ;
+  prov:wasDerivedFrom <https://one-piece.com/character/nami/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies the bounty recipient as Nami." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00321 a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> ; rdf:predicate rdf:type ; rdf:object op:DevilFruit ;
+  prov:wasDerivedFrom <https://one-piece.com/character/King/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "Official profile identifies King’s Devil Fruit." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00322 a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> ; rdf:predicate rdfs:label ; rdf:object "リュウリュウの実 古代種 モデル 〝プテラノドン〟"@ja ;
+  prov:wasDerivedFrom <https://one-piece.com/character/King/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "Official Japanese profile names the fruit." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00323 a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:King ;
+  prov:wasDerivedFrom <https://one-piece.com/character/King/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "Official profile lists this fruit for King." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00324 a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> ; rdf:predicate op:hasFruitType ; rdf:object op:Zoan ;
+  prov:wasDerivedFrom <https://one-piece.com/character/King/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "Official profile classifies the fruit as Zoan." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00325 a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Pteranodon> ; rdf:predicate opx:hasFruitSubtype ; rdf:object opx:AncientZoan ;
+  prov:wasDerivedFrom <https://one-piece.com/character/King/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "Official profile classifies the fruit as Ancient Zoan." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .

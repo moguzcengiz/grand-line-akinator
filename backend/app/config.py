@@ -36,6 +36,7 @@ POPULARITY_ALPHA = float(os.environ.get("POPULARITY_ALPHA", "1.5"))
 FAMILY_DECAY = float(os.environ.get("FAMILY_DECAY", "0.7"))  # score multiplier per earlier question of the same family
 FAMILY_MAX = int(os.environ.get("FAMILY_MAX", "3"))               # hard cap of questions per family per game
 APPLY_PATCHES = os.environ.get("APPLY_PATCHES", "1") == "1"       # "0" only for the before/after evaluation
+SKIP_PATCHES = {name.strip() for name in os.environ.get("SKIP_PATCHES", "").split(",") if name.strip()}
 POSITIVE_UNKNOWN_PRIOR = float(os.environ.get("POSITIVE_UNKNOWN_PRIOR", "0.05"))
 STRICT_UNKNOWN = os.environ.get("STRICT_UNKNOWN", "1") == "1"        # "0" restores the old closed-world scopes (ablation only)
 

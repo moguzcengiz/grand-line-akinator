@@ -1,0 +1,98 @@
+# Batch 002: three reviewed, source-backed deltas from official ONE PIECE.com profiles.
+# The fruit is a new individual because no matching fruit record exists in the source graph.
+# Each added fact has a separate source record. No missing edges are treated as negative facts.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Clou_D_Clover op:occupation op:Chief_Librarian .
+
+op:Dorry op:hasBounty op:Dorry_Bounty .
+op:Dorry_Bounty a op:Bounty ;
+  op:bountyAmount 100000000 ;
+  op:givenTo op:Dorry .
+
+<http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Kyubi_no_Kitsune>
+  a op:DevilFruit ;
+  rdfs:label "イヌイヌの実 幻獣種 モデル 〝九尾の狐〟"@ja ;
+  op:DevilFruitCurrentUser op:Catarina_Devon ;
+  op:hasFruitType op:Zoan ;
+  opx:hasFruitSubtype opx:MythicalZoan .
+
+opx:evidenceCampaign002CloverRole a rdf:Statement ;
+  rdf:subject op:Clou_D_Clover ; rdf:predicate op:occupation ; rdf:object op:Chief_Librarian ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Clover/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile identifies Clover as the head/director (館長) of the Ohara Library. Chief_Librarian is the closest existing occupation term; no Ohara Library affiliation was added because that place/entity is not modeled." ;
+  opx:confidence "high" ; opx:temporalScope "profile role; exact dates unspecified" .
+
+opx:evidenceCampaign002DorryHasBounty a rdf:Statement ;
+  rdf:subject op:Dorry ; rdf:predicate op:hasBounty ; rdf:object op:Dorry_Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Dorry/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Dorry's bounty as 1億ベリー (100,000,000 berries). The profile does not date the amount; no historical interval was inferred." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign002DorryBountyType a rdf:Statement ;
+  rdf:subject op:Dorry_Bounty ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Dorry/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "A named bounty record is required by the existing hasBounty range and bounty data model." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign002DorryBountyAmount a rdf:Statement ;
+  rdf:subject op:Dorry_Bounty ; rdf:predicate op:bountyAmount ; rdf:object "100000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Dorry/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Dorry's bounty as 1億ベリー (100,000,000 berries)." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign002DorryGivenTo a rdf:Statement ;
+  rdf:subject op:Dorry_Bounty ; rdf:predicate op:givenTo ; rdf:object op:Dorry ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Dorry/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile's bounty is for Dorry; the existing Bounty model links records to their recipient with givenTo." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign002FruitType a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Kyubi_no_Kitsune> ;
+  rdf:predicate rdf:type ; rdf:object op:DevilFruit ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Catalina_Devon/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies this Devil Fruit for Catarina Devon." ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time unspecified" .
+
+opx:evidenceCampaign002FruitLabel a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Kyubi_no_Kitsune> ;
+  rdf:predicate rdfs:label ; rdf:object "イヌイヌの実 幻獣種 モデル 〝九尾の狐〟"@ja ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Catalina_Devon/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile names the fruit in Japanese as Inu Inu no Mi, Mythical Zoan, Model: Nine-Tailed Fox." ;
+  opx:confidence "high" ; opx:temporalScope "canon name; time unspecified" .
+
+opx:evidenceCampaign002FruitUser a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Kyubi_no_Kitsune> ;
+  rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Catarina_Devon ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Catalina_Devon/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile for Catarina Devon lists the Inu Inu no Mi, Mythical Zoan, Model: Nine-Tailed Fox under Devil Fruit." ;
+  opx:confidence "high" ; opx:temporalScope "current user in the profile; time unspecified" .
+
+opx:evidenceCampaign002FruitZoan a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Kyubi_no_Kitsune> ;
+  rdf:predicate op:hasFruitType ; rdf:object op:Zoan ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Catalina_Devon/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile classifies the fruit as Zoan (動物系)." ;
+  opx:confidence "high" ; opx:temporalScope "canon type; time unspecified" .
+
+opx:evidenceCampaign002FruitMythical a rdf:Statement ;
+  rdf:subject <http://kalnassag.com/onepiece/Inu_Inu_no_Mi,_Model:_Kyubi_no_Kitsune> ;
+  rdf:predicate opx:hasFruitSubtype ; rdf:object opx:MythicalZoan ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Catalina_Devon/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile classifies the fruit as Mythical Zoan (幻獣種)." ;
+  opx:confidence "high" ; opx:temporalScope "canon subtype; time unspecified" .

@@ -1,0 +1,52 @@
+# Batch 011: correct Cowboy's Japanese identity and model his troop membership;
+# source-backed Aswa affiliation; statement provenance is recorded below.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Aswa op:affiliatesWith op:Arabasta_Kingdom .
+op:Banchina op:affiliatesWith op:Syrup_Village .
+op:Cowboy op:affiliatesWith op:Super_Spot-Billed_Duck_Troops .
+op:Cowboy rdfs:label "カウボーイ"@ja .
+
+opx:evidenceCampaign01101 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Aswa profile places her in the Arabasta Kingdom and identifies her as Koza's mother; the kingdom affiliation is directly supported by the profile header." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile affiliation; time unspecified" ;
+    rdf:object op:Arabasta_Kingdom ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Aswa ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Asuwa/index.html> .
+
+opx:evidenceCampaign01102 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Cowboy profile labels the entity カウボーイ and places it under Arabasta Kingdom / Super Spot-Billed Duck Troops; the troop membership is represented with the existing affiliation relation." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile affiliation; time unspecified" ;
+    rdf:object op:Super_Spot-Billed_Duck_Troops ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Cowboy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Cowboy/index.html> .
+
+opx:evidenceCampaign01104 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Banchina profile identifies Syrup Village in its heading; the graph already models her as a character and lists that place as an affiliation." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile affiliation; time unspecified" ;
+    rdf:object op:Syrup_Village ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Banchina ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Banchina/index.html> .
+
+opx:evidenceCampaign01103 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile names this entity カウボーイ; the entity already has the English label Cowboy." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "canonical Japanese name; time-invariant" ;
+    rdf:object "カウボーイ"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Cowboy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Cowboy/index.html> .

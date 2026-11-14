@@ -1,0 +1,169 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Hoe is Neptune's pet and ride. Keep the supported Pet role, not a concatenated occupation; owner and mount need their own relation.
+op:Hoe op:occupation op:Pet .
+opx:evidenceCampaign047001 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Hoe is described as King Neptune's pet whale; keep the existing Pet occupation after removing the malformed concatenated occupation URI." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "profile snapshot" ;
+  rdf:subject op:Hoe ; rdf:predicate op:occupation ; rdf:object op:Pet ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hoe> .
+
+# Holedem's residence combines Bakura Town and Wano Country in one malformed URI.
+op:Holedem op:residence op:Bakura_Town, op:Wano_Country .
+opx:evidenceCampaign047002 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official episode synopsis places Holedem's residence and activity in Bakura Town; split the specific town from the malformed value." ;
+  opx:sourceType "official anime episode synopsis" ; opx:temporalScope "Wano Country arc" ;
+  rdf:subject op:Holedem ; rdf:predicate op:residence ; rdf:object op:Bakura_Town ;
+  prov:wasDerivedFrom <https://one-piece.com/anime/o5163/index.html> .
+opx:evidenceCampaign047003 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official Holedem profile places him in Wano Country; retain the broader country alongside Bakura Town." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "Wano Country arc" ;
+  rdf:subject op:Holedem ; rdf:predicate op:residence ; rdf:object op:Wano_Country ;
+  prov:wasDerivedFrom <https://one-piece.com/character/holdem/index.html> .
+
+# Hyougoro's combined Udon/Wano residence is split, and the English-tagged epithet is source metadata rather than an epithet.
+op:Hyougoro op:residence op:Udon, op:Wano_Country .
+opx:evidenceCampaign047004 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official profile identifies Hyougoro as an Udon Prisoner Mine inmate; replace the malformed concatenated residence with Udon." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "historical; during imprisonment" ;
+  rdf:subject op:Hyougoro ; rdf:predicate op:residence ; rdf:object op:Udon ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hyougoro/index.html> .
+opx:evidenceCampaign047005 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official profile identifies Hyougoro as living in Wano Country; preserve the broad country alongside Udon." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "profile identity fact" ;
+  rdf:subject op:Hyougoro ; rdf:predicate op:residence ; rdf:object op:Wano_Country ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hyougoro/index.html> .
+opx:evidenceCampaign047006 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hyougoro ; rdf:predicate op:residence ; rdf:object op:Udon .
+opx:evidenceCampaign047007 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter-referenced sources identify Udon as Hyougoro's former residence; he was freed from the prisoner mine." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before liberation" ;
+  rdf:subject opx:evidenceCampaign047006 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hyougoro> .
+opx:evidenceCampaign047008 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hyougoro ; rdf:predicate op:occupation ; rdf:object op:Prisoner .
+opx:evidenceCampaign047009 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Hyougoro was imprisoned in Udon and freed by Luffy; qualify the existing Prisoner occupation as Historical." ;
+  opx:sourceType "official character profile; chapter-referenced character profile" ; opx:temporalScope "historical; before liberation" ;
+  rdf:subject opx:evidenceCampaign047008 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hyougoro/index.html>, <https://onepiece.fandom.com/wiki/Hyougoro> .
+opx:evidenceCampaign047010 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hyougoro ; rdf:predicate op:occupation ; rdf:object op:Yakuza_Boss .
+opx:evidenceCampaign047011 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Official profile says Hyougoro held the Flower Capital underworld position 20 years earlier; qualify Yakuza Boss as Historical." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "historical; before imprisonment" ;
+  rdf:subject opx:evidenceCampaign047010 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hyougoro/index.html> .
+opx:evidenceCampaign047012 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hyougoro ; rdf:predicate op:affiliatesWith ; rdf:object op:Hyougoro_Family .
+opx:evidenceCampaign047013 a rdf:Statement ; opx:confidence "medium" ;
+  opx:sourceReference "Chapter-referenced profile marks the Hyougoro Family affiliation former; qualify the existing relation Historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; exact interval unspecified" ;
+  rdf:subject opx:evidenceCampaign047012 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hyougoro> .
+opx:evidenceCampaign047014 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hyougoro ; rdf:predicate op:affiliatesWith ; rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance .
+opx:evidenceCampaign047015 a rdf:Statement ; opx:confidence "medium" ;
+  opx:sourceReference "The chapter-referenced profile marks the Ninja-Pirate-Mink-Samurai Alliance disbanded; qualify Hyougoro's existing alliance link Historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; alliance later disbanded" ;
+  rdf:subject opx:evidenceCampaign047014 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hyougoro> .
+
+# Hotei's service under the Kurozumi shogunate and as Mimawarigumi captain ended when he transferred to Kaido.
+opx:evidenceCampaign047016 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hotei ; rdf:predicate op:affiliatesWith ; rdf:object op:Kurozumi_Family .
+opx:evidenceCampaign047017 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 986 shows Hotei transferring the Mimawarigumi to Kaido after Orochi's fall; the source identifies the Kurozumi Family link as former." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Beasts Pirates allegiance" ;
+  rdf:subject opx:evidenceCampaign047016 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hotei>, <https://onepiece.fandom.com/wiki/Chapter_986> .
+opx:evidenceCampaign047018 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hotei ; rdf:predicate op:occupation ; rdf:object op:Captain_of_the_Mimawarigumi .
+opx:evidenceCampaign047019 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Hotei is identified as former captain of the Mimawarigumi; qualify the existing captain occupation Historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before allegiance transfer to Kaido" ;
+  rdf:subject opx:evidenceCampaign047018 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hotei>, <https://www.grandlinearchives.com/characters/hotei> .
+
+# The Spade Pirates were absorbed into Whitebeard's crew after Ace joined; retain both affiliations with historical scope for the former crew.
+op:Hublot op:affiliatesWith op:Whitebeard_Pirates .
+opx:evidenceCampaign047020 a rdf:Statement ; opx:confidence "medium" ;
+  opx:sourceReference "Chapter-referenced profile states that Hublot and the Spade Pirates joined the Whitebeard Pirates after Ace's defeat; add the later crew affiliation." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "later affiliation after Spade Pirates dissolution" ;
+  rdf:subject op:Hublot ; rdf:predicate op:affiliatesWith ; rdf:object op:Whitebeard_Pirates ;
+  prov:wasDerivedFrom <https://daddyjim.com/one-piece/character/Hublot>, <https://one-piece.com/character/ace/> .
+opx:evidenceCampaign047021 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hublot ; rdf:predicate op:affiliatesWith ; rdf:object op:Spade_Pirates .
+opx:evidenceCampaign047022 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The Spade Pirates dissolved and its members entered Whitebeard's crew; qualify Hublot's existing Spade Pirates link Historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Whitebeard Pirates membership" ;
+  rdf:subject opx:evidenceCampaign047021 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://daddyjim.com/one-piece/character/Hublot>, <https://one-piece.com/character/ace/> .
+
+# Ida's occupation URI conflates bartender and former circus performer; the sources identify her specific birthplace and death.
+op:Ida op:placeOfOrigin op:Samuwanai_Island ;
+  op:occupation op:Bartender, op:Circus_Performer ;
+  op:statusOfCharacter op:Deceased .
+op:Circus_Performer a op:Occupation ; rdfs:label "Circus Performer"@en .
+opx:evidenceCampaign047023 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 1153 identifies Samuwanai Island as Ida's place of origin; add it alongside the South Blue region." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "identity fact" ;
+  rdf:subject op:Ida ; rdf:predicate op:placeOfOrigin ; rdf:object op:Samuwanai_Island ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida>, <https://onepiece.fandom.com/wiki/Chapter_1153> .
+opx:evidenceCampaign047024 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 1154 shows Ida running a bar in Elbaph; the bar occupation is a distinct role from her former circus work." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "later occupation; until illness and death" ;
+  rdf:subject op:Ida ; rdf:predicate op:occupation ; rdf:object op:Bartender ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida>, <https://onepiece.fandom.com/wiki/Chapter_1154> .
+opx:evidenceCampaign047025 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 1153 identifies Ida's former circus performer work in the Bunt Kingdom; create the distinct occupation term." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Elbaph bar occupation" ;
+  rdf:subject op:Ida ; rdf:predicate op:occupation ; rdf:object op:Circus_Performer ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida>, <https://onepiece.fandom.com/wiki/Chapter_1153> .
+opx:evidenceCampaign047026 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The source-backed Circus Performer term is an occupation individual in the ontology." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "occupation vocabulary term" ;
+  rdf:subject op:Circus_Performer ; rdf:predicate rdf:type ; rdf:object op:Occupation ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida> .
+opx:evidenceCampaign047027 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "English label for Ida's documented former circus occupation." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "occupation vocabulary term" ;
+  rdf:subject op:Circus_Performer ; rdf:predicate rdfs:label ; rdf:object "Circus Performer"@en ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida> .
+opx:evidenceCampaign047028 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 1168 establishes that Ida died after succumbing to her illness; correct Unknown to Deceased." ;
+  opx:sourceType "manga chapter; chapter-referenced chapter summary" ; opx:temporalScope "status at death; chapter 1168" ;
+  rdf:subject op:Ida ; rdf:predicate op:statusOfCharacter ; rdf:object op:Deceased ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_1168>, <https://onepiece.fandom.com/wiki/Ida> .
+opx:evidenceCampaign047029 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Ida ; rdf:predicate op:occupation ; rdf:object op:Circus_Performer .
+opx:evidenceCampaign047030 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The chapter-referenced profile marks Ida's circus performer role former; qualify it as Historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Elbaph bar occupation" ;
+  rdf:subject opx:evidenceCampaign047029 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida> .
+opx:evidenceCampaign047031 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Ida ; rdf:predicate op:occupation ; rdf:object op:Bartender .
+opx:evidenceCampaign047032 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Ida's bartender work ended with her death; keep the role as historical in the present-day ontology." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; ended at death" ;
+  rdf:subject opx:evidenceCampaign047031 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida>, <https://onepiece.fandom.com/wiki/Chapter_1168> .
+opx:evidenceCampaign047033 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Ida ; rdf:predicate op:residence ; rdf:object op:Samuwanai_Island .
+opx:evidenceCampaign047034 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Samuwanai Island is listed as Ida's former residence after she left her birthplace; qualify the existing residence Historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before residence in Bunt Kingdom and Elbaph" ;
+  rdf:subject opx:evidenceCampaign047033 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida>, <https://onepiece.fandom.com/wiki/Chapter_1153> .
+opx:evidenceCampaign047035 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Ida ; rdf:predicate op:residence ; rdf:object op:Bunt_Kingdom .
+opx:evidenceCampaign047036 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Ida's Bunt Kingdom residence belonged to her circus performer period before she moved to Elbaph; qualify it Historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Elbaph residence" ;
+  rdf:subject opx:evidenceCampaign047035 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Ida>, <https://onepiece.fandom.com/wiki/Chapter_1153> .

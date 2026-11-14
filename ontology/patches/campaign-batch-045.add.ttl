@@ -1,0 +1,140 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Hack: retain distinct, source-supported role terms and the current Revolutionary Army base.
+op:Hack op:occupation op:Instructor, op:Martial_Artist ; op:residence op:Momoiro_Island .
+opx:evidenceCampaign045001 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The official profile calls Hack a Fish-Man Karate instructor and says he uses Fish-Man Jujutsu; retain the existing Instructor and Martial Artist role terms rather than a concatenated URI." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "profile snapshot" ;
+  rdf:subject op:Hack ; rdf:predicate op:occupation ; rdf:object op:Instructor ;
+  prov:wasDerivedFrom <https://one-piece.com/character/hack/index.html> .
+opx:evidenceCampaign045002 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The official profile describes Hack as a practitioner of Fish-Man Karate and Fish-Man Jujutsu; the existing Martial Artist occupation is the closest supported schema term." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "profile snapshot" ;
+  rdf:subject op:Hack ; rdf:predicate op:occupation ; rdf:object op:Martial_Artist ;
+  prov:wasDerivedFrom <https://one-piece.com/character/hack/index.html> .
+opx:evidenceCampaign045003 a rdf:Statement ; opx:confidence "medium" ;
+  opx:sourceReference "Hack appears with the Revolutionary Army on Momoiro Island in the Levely and Egghead material; split the malformed multi-place residence URI and retain this documented later residence." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "later residence; exact interval unspecified" ;
+  rdf:subject op:Hack ; rdf:predicate op:residence ; rdf:object op:Momoiro_Island ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hack> .
+
+# Hajrudin's specific Elbaph origin and prior Buggy's Delivery service / mercenary work.
+op:Hajrudin op:placeOfOrigin op:Elbaph .
+opx:evidenceCampaign045004 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The official Hajrudin profile identifies him as a warrior from Elbaph; add the specific origin alongside the existing Grand Line region." ;
+  opx:sourceType "official character profile" ; opx:temporalScope "profile identity fact" ;
+  rdf:subject op:Hajrudin ; rdf:predicate op:placeOfOrigin ; rdf:object op:Elbaph ;
+  prov:wasDerivedFrom <https://one-piece.com/character/hajrudin/index.html> .
+opx:evidenceCampaign045005 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hajrudin ; rdf:predicate op:affiliatesWith ; rdf:object op:Buggys_Delivery .
+opx:evidenceCampaign045006 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 803 identifies Hajrudin among Buggy's Delivery's S-class mercenaries and shows the giants quitting to follow Luffy; qualify the existing affiliation as historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Straw Hat Grand Fleet service" ;
+  rdf:subject opx:evidenceCampaign045005 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hajrudin>, <https://onepiece.fandom.com/wiki/Chapter_803> .
+opx:evidenceCampaign045007 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hajrudin ; rdf:predicate op:occupation ; rdf:object op:Mercenary .
+opx:evidenceCampaign045008 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter-referenced material identifies Hajrudin's mercenary work with Buggy's Delivery before he quit; qualify the existing role as historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; exact interval unspecified" ;
+  rdf:subject opx:evidenceCampaign045007 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hajrudin>, <https://onepiece.fandom.com/wiki/Chapter_803> .
+
+# Hannyabal's Vice Warden role preceded the current Chief Warden role.
+opx:evidenceCampaign045009 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hannyabal ; rdf:predicate op:occupation ; rdf:object op:Vice_Warden .
+opx:evidenceCampaign045010 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The official profile identifies Hannyabal as Impel Down's Chief Warden; chapter-referenced profile identifies his earlier Vice Warden position. Qualify only the earlier role as historical." ;
+  opx:sourceType "official profile; chapter-referenced character profile" ; opx:temporalScope "historical; before promotion to Chief Warden" ;
+  rdf:subject opx:evidenceCampaign045009 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Hannyabal/index.html>, <https://onepiece.fandom.com/wiki/Hannyabal> .
+
+# Hatchan's crew service and officer role predate his Takoyaki 8 business.
+opx:evidenceCampaign045011 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hatchan ; rdf:predicate op:affiliatesWith ; rdf:object op:Sun_Pirates .
+opx:evidenceCampaign045012 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter-referenced profile identifies Hatchan as a former Sun Pirates member; qualify the existing crew link as historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before Arlong Pirates service" ;
+  rdf:subject opx:evidenceCampaign045011 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hatchan> .
+opx:evidenceCampaign045013 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hatchan ; rdf:predicate op:affiliatesWith ; rdf:object op:Arlong_Pirates .
+opx:evidenceCampaign045014 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter-referenced profile identifies Hatchan's Arlong Pirates service as former; qualify the existing crew link as historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before Takoyaki 8 business" ;
+  rdf:subject opx:evidenceCampaign045013 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hatchan> .
+opx:evidenceCampaign045015 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hatchan ; rdf:predicate op:occupation ; rdf:object op:Pirate_Officer .
+opx:evidenceCampaign045016 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The source distinguishes Hatchan's former Pirate Officer role from his current takoyaki seller role; qualify the officer occupation as historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before Takoyaki 8 business" ;
+  rdf:subject opx:evidenceCampaign045015 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hatchan> .
+opx:evidenceCampaign045017 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hatchan ; rdf:predicate op:residence ; rdf:object op:Fish-Man_District .
+opx:evidenceCampaign045018 a rdf:Statement ; opx:confidence "medium" ;
+  opx:sourceReference "Chapter-referenced profile marks Fish-Man District residence as former; qualify the existing residence assertion as historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before Takoyaki 8 business" ;
+  rdf:subject opx:evidenceCampaign045017 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hatchan> .
+opx:evidenceCampaign045019 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hatchan ; rdf:predicate op:residence ; rdf:object op:Arlong_Park .
+opx:evidenceCampaign045020 a rdf:Statement ; opx:confidence "medium" ;
+  opx:sourceReference "Chapter-referenced profile marks Arlong Park residence as former; qualify the existing residence assertion as historical." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before Takoyaki 8 business" ;
+  rdf:subject opx:evidenceCampaign045019 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hatchan> .
+
+# Hattori's CP9 service preceded his CP0 affiliation. The Galley-La link is removed in the companion patch because it was undercover presentation, not membership.
+opx:evidenceCampaign045023 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Hattori ; rdf:predicate op:affiliatesWith ; rdf:object op:CP9 .
+opx:evidenceCampaign045024 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The source identifies CP9 as Hattori's former affiliation and CP0 as his later/current affiliation; retain the existing CP9 edge with a historical qualifier." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "historical; before CP0" ;
+  rdf:subject opx:evidenceCampaign045023 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Hattori> .
+
+# Harald's combined occupation IRI is split into the two distinct documented roles.
+op:Harald op:occupation op:King_of_Elbaph, op:Devoted_Blade_of_God .
+op:King_of_Elbaph a op:Occupation ; rdfs:label "King of Elbaph"@en .
+opx:evidenceCampaign045025 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Harald is identified as Elbaph's king in the chapter-referenced profile; use a distinct occupation term rather than the malformed concatenated role URI." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before death" ;
+  rdf:subject op:Harald ; rdf:predicate op:occupation ; rdf:object op:King_of_Elbaph ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Harald> .
+opx:evidenceCampaign045026 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter 1167 identifies Harald as a Devoted Blade of God; retain this distinct role from the concatenated source value." ;
+  opx:sourceType "manga chapter; chapter-referenced chapter summary" ; opx:temporalScope "historical; before full Knight of God status and death" ;
+  rdf:subject op:Harald ; rdf:predicate op:occupation ; rdf:object op:Devoted_Blade_of_God ;
+  prov:wasDerivedFrom <https://www.grandlinearchives.com/chapters/1167> .
+
+# Harald's kingship and Devoted Blade service were historical roles ending before his death.
+opx:evidenceCampaign045027 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Harald ; rdf:predicate op:occupation ; rdf:object op:King_of_Elbaph .
+opx:evidenceCampaign045028 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Chapter-referenced sources establish Harald as king before his death; qualify the occupation as historical." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; ended at death" ;
+  rdf:subject opx:evidenceCampaign045027 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Harald> .
+opx:evidenceCampaign045029 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+  rdf:subject op:Harald ; rdf:predicate op:occupation ; rdf:object op:Devoted_Blade_of_God .
+opx:evidenceCampaign045030 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "Harald later advanced from Devoted Blade to full Knight of God before his death; qualify the Devoted Blade role as historical." ;
+  opx:sourceType "manga chapter; chapter-referenced chapter summary" ; opx:temporalScope "historical; before full Knight of God status" ;
+  rdf:subject opx:evidenceCampaign045029 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+  prov:wasDerivedFrom <https://www.grandlinearchives.com/chapters/1167>, <https://www.grandlinearchives.com/chapters/1168> .
+opx:evidenceCampaign045031 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "The chapter-referenced source identifies Harald as king; this type assertion defines the newly introduced occupation term." ;
+  opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "occupation vocabulary term" ;
+  rdf:subject op:King_of_Elbaph ; rdf:predicate rdf:type ; rdf:object op:Occupation ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Harald> .
+opx:evidenceCampaign045032 a rdf:Statement ; opx:confidence "high" ;
+  opx:sourceReference "English role label for the Elbaph kingship documented for Harald." ;
+  opx:sourceType "chapter-referenced character profile" ; opx:temporalScope "occupation vocabulary term" ;
+  rdf:subject op:King_of_Elbaph ; rdf:predicate rdfs:label ; rdf:object "King of Elbaph"@en ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Harald> .

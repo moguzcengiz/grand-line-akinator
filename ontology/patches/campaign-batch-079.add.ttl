@@ -1,0 +1,25 @@
+# Batch 079: two official profiles explicitly mark existing pirate affiliations former.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:temporalCampaign07901 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Silvers_Rayleigh ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates .
+opx:evidenceCampaign07901 a rdf:Statement ;
+    rdf:subject op:Silvers_Rayleigh ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Silvers_Rayleigh/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元ロジャー海賊団 / 副船長, explicitly marking Silvers Rayleigh's Roger Pirates affiliation as former. Cached document SHA-256: 756be1bb4d2704c9af75b1b002bf486bada7fad1480b66daad53890e4e4b6717." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .
+
+opx:temporalCampaign07902 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Crocodile ; rdf:predicate op:affiliatesWith ; rdf:object op:Baroque_Works .
+opx:evidenceCampaign07902 a rdf:Statement ;
+    rdf:subject op:Crocodile ; rdf:predicate op:affiliatesWith ; rdf:object op:Baroque_Works ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Crocodile/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元Ｂ・Ｗ（バロックワークス）, explicitly marking the Baroque Works affiliation as former. Cached document SHA-256: 0f7de8848dda875f8edb1b195ad8486e7e703b7e1b36b5f0e014014851726805." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

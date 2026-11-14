@@ -1,0 +1,418 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Aisa opx:hasHaki opx:ObservationHaki .
+op:Akehende op:affiliatesWith op:Marines .
+
+opx:Campaign018AkumaiHistoricalBaroqueWorks a opx:TemporalStatement ;
+    rdf:subject op:Akumai ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Baroque_Works ;
+    opx:temporalStatus opx:Historical .
+
+opx:Campaign018BekoriHistoricalKingship a opx:TemporalStatement ;
+    rdf:subject op:Bekori ;
+    rdf:predicate op:occupation ;
+    rdf:object op:King ;
+    opx:temporalStatus opx:Historical .
+
+opx:Campaign018BekoriHistoricalSorbetAffiliation a opx:TemporalStatement ;
+    rdf:subject op:Bekori ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Sorbet_Kingdom ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceCampaign018AisaObservationHaki a rdf:Statement ;
+    rdf:subject op:Aisa ;
+    rdf:predicate opx:hasHaki ;
+    rdf:object opx:ObservationHaki ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Aisa/index.html> ;
+    opx:sourceType "official character profile and canon terminology" ;
+    opx:sourceReference "The official profile states Aisa has Mantra (心綱) and can sense people's presences. Mantra is the Skypiean term for Observation Haki in canon." ;
+    opx:confidence "high" ;
+    opx:temporalScope "canon ability; time-unspecified" .
+
+opx:evidenceCampaign018AkehendeMarines a rdf:Statement ;
+    rdf:subject op:Akehende ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Marines ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Akehende/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile classifies Akehende as a Navy Headquarters Rear Admiral; the graph already records the matching Marine Rear Admiral occupation." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BekoriSorbetAffiliation a rdf:Statement ;
+    rdf:subject op:Bekori ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Sorbet_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bekori/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Bekori as former King of Sorbet Kingdom and says he was exiled after his schemes were stopped by Kuma." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical affiliation; no chapter interval provided" .
+
+opx:evidenceCampaign018AkumaiHistoricalBaroqueWorks a rdf:Statement ;
+    rdf:subject opx:Campaign018AkumaiHistoricalBaroqueWorks ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Akumai/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile labels Akumai former Baroque Works (元B・W)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018AkumaiHistoricalBaroqueWorksStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018AkumaiHistoricalBaroqueWorks ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Akumai/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile labels Akumai former Baroque Works (元B・W)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BekoriHistoricalKingship a rdf:Statement ;
+    rdf:subject opx:Campaign018BekoriHistoricalKingship ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bekori/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls Bekori the former king of Sorbet Kingdom (ソルベ王国元国王)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BekoriHistoricalKingshipStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018BekoriHistoricalKingship ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bekori/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls Bekori the former king of Sorbet Kingdom (ソルベ王国元国王)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BekoriHistoricalSorbetAffiliation a rdf:Statement ;
+    rdf:subject opx:Campaign018BekoriHistoricalSorbetAffiliation ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bekori/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile's former-king title and Sorbet Kingdom header support this historical affiliation." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BekoriHistoricalSorbetAffiliationStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018BekoriHistoricalSorbetAffiliation ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bekori/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile's former-king title and Sorbet Kingdom header support this historical affiliation." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:Campaign018BingoPriestHistoricalRole a opx:TemporalStatement ;
+    rdf:subject op:Bingo ;
+    rdf:predicate op:occupation ;
+    rdf:object op:Priest ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceBingoPriestHistoricalRoleType a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoPriestHistoricalRole ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoPriestHistoricalRoleSubject a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoPriestHistoricalRole ;
+    rdf:predicate rdf:subject ;
+    rdf:object op:Bingo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoPriestHistoricalRolePredicate a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoPriestHistoricalRole ;
+    rdf:predicate rdf:predicate ;
+    rdf:object op:occupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoPriestHistoricalRoleObject a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoPriestHistoricalRole ;
+    rdf:predicate rdf:object ;
+    rdf:object op:Priest ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoPriestHistoricalRoleStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoPriestHistoricalRole ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:Campaign018BingoCooperHistoricalRole a opx:TemporalStatement ;
+    rdf:subject op:Bingo ;
+    rdf:predicate op:occupation ;
+    rdf:object op:Cooper ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceBingoCooperHistoricalRoleType a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoCooperHistoricalRole ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoCooperHistoricalRoleSubject a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoCooperHistoricalRole ;
+    rdf:predicate rdf:subject ;
+    rdf:object op:Bingo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoCooperHistoricalRolePredicate a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoCooperHistoricalRole ;
+    rdf:predicate rdf:predicate ;
+    rdf:object op:occupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoCooperHistoricalRoleObject a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoCooperHistoricalRole ;
+    rdf:predicate rdf:object ;
+    rdf:object op:Cooper ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBingoCooperHistoricalRoleStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018BingoCooperHistoricalRole ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bingou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bingo was a former priest and cooper/barrel-maker." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:Campaign018BongoLumberDealerHistoricalRole a opx:TemporalStatement ;
+    rdf:subject op:Bongo ;
+    rdf:predicate op:occupation ;
+    rdf:object op:Lumber_Dealer ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceBongoLumberDealerHistoricalRoleType a rdf:Statement ;
+    rdf:subject opx:Campaign018BongoLumberDealerHistoricalRole ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bongou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bongo was a former lumber dealer." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBongoLumberDealerHistoricalRoleSubject a rdf:Statement ;
+    rdf:subject opx:Campaign018BongoLumberDealerHistoricalRole ;
+    rdf:predicate rdf:subject ;
+    rdf:object op:Bongo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bongou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bongo was a former lumber dealer." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBongoLumberDealerHistoricalRolePredicate a rdf:Statement ;
+    rdf:subject opx:Campaign018BongoLumberDealerHistoricalRole ;
+    rdf:predicate rdf:predicate ;
+    rdf:object op:occupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bongou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bongo was a former lumber dealer." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBongoLumberDealerHistoricalRoleObject a rdf:Statement ;
+    rdf:subject opx:Campaign018BongoLumberDealerHistoricalRole ;
+    rdf:predicate rdf:object ;
+    rdf:object op:Lumber_Dealer ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bongou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bongo was a former lumber dealer." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBongoLumberDealerHistoricalRoleStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018BongoLumberDealerHistoricalRole ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bongou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile says Bongo was a former lumber dealer." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+op:Bogard op:affiliatesWith op:Marines .
+
+opx:evidenceCampaign018BogardMarines a rdf:Statement ;
+    rdf:subject op:Bogard ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Marines ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bogard/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile places Bogard in Navy Headquarters; the graph already records a commissioned Marine officer occupation." ;
+    opx:confidence "high" ;
+    opx:temporalScope "official profile snapshot; chapter interval unspecified" .
+
+opx:Campaign018BungoArsonistHistoricalRole a opx:TemporalStatement ;
+    rdf:subject op:Bungo ;
+    rdf:predicate op:occupation ;
+    rdf:object op:Arsonist ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceBungoArsonistHistoricalRoleType a rdf:Statement ;
+    rdf:subject opx:Campaign018BungoArsonistHistoricalRole ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bungou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls Bungo a former arsonist (元放火魔)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBungoArsonistHistoricalRoleSubject a rdf:Statement ;
+    rdf:subject opx:Campaign018BungoArsonistHistoricalRole ;
+    rdf:predicate rdf:subject ;
+    rdf:object op:Bungo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bungou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls Bungo a former arsonist (元放火魔)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBungoArsonistHistoricalRolePredicate a rdf:Statement ;
+    rdf:subject opx:Campaign018BungoArsonistHistoricalRole ;
+    rdf:predicate rdf:predicate ;
+    rdf:object op:occupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bungou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls Bungo a former arsonist (元放火魔)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBungoArsonistHistoricalRoleObject a rdf:Statement ;
+    rdf:subject opx:Campaign018BungoArsonistHistoricalRole ;
+    rdf:predicate rdf:object ;
+    rdf:object op:Arsonist ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bungou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls Bungo a former arsonist (元放火魔)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceBungoArsonistHistoricalRoleStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018BungoArsonistHistoricalRole ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bungou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls Bungo a former arsonist (元放火魔)." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+
+opx:Campaign018BulldogHistoricalKing a opx:TemporalStatement ;
+    rdf:subject op:Bulldog ;
+    rdf:predicate op:occupation ;
+    rdf:object op:King ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceCampaign018BulldogHistoricalKingType a rdf:Statement ;
+    rdf:subject opx:Campaign018BulldogHistoricalKing ;
+    rdf:predicate rdf:type ;
+    rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bulldog/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Bulldog as former king of Sorbet Kingdom and predecessor of Bekori." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BulldogHistoricalKingSubject a rdf:Statement ;
+    rdf:subject opx:Campaign018BulldogHistoricalKing ;
+    rdf:predicate rdf:subject ;
+    rdf:object op:Bulldog ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bulldog/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Bulldog as former king of Sorbet Kingdom and predecessor of Bekori." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BulldogHistoricalKingPredicate a rdf:Statement ;
+    rdf:subject opx:Campaign018BulldogHistoricalKing ;
+    rdf:predicate rdf:predicate ;
+    rdf:object op:occupation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bulldog/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Bulldog as former king of Sorbet Kingdom and predecessor of Bekori." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BulldogHistoricalKingObject a rdf:Statement ;
+    rdf:subject opx:Campaign018BulldogHistoricalKing ;
+    rdf:predicate rdf:object ;
+    rdf:object op:King ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bulldog/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Bulldog as former king of Sorbet Kingdom and predecessor of Bekori." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BulldogHistoricalKingStatus a rdf:Statement ;
+    rdf:subject opx:Campaign018BulldogHistoricalKing ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bulldog/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Bulldog as former king of Sorbet Kingdom and predecessor of Bekori." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical at official profile snapshot; chapter interval unspecified" .
+
+opx:evidenceCampaign018BulldogSorbetAffiliation a rdf:Statement ;
+    rdf:subject op:Bulldog ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:object op:Sorbet_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bulldog/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile header places Bulldog in Sorbet Kingdom and calls him a former king." ;
+    opx:confidence "high" ;
+    opx:temporalScope "historical affiliation; chapter interval unspecified" .

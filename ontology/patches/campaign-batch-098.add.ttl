@@ -1,0 +1,15 @@
+# Wicca's exact profile heading names the Tontatta Tribe and scouting unit; the tribe edge was missing.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:Campaign098WiccaCurrentTontattaTribe a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:subject op:Wicca ; rdf:predicate op:affiliatesWith ; rdf:object op:Tontatta_Tribe .
+opx:evidenceCampaign09801 a rdf:Statement ;
+    rdf:subject op:Wicca ; rdf:predicate op:affiliatesWith ; rdf:object op:Tontatta_Tribe ;
+    prov:wasDerivedFrom <https://one-piece.com/character/wicca/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact profile heading says トンタッタ族 / 偵察部隊 (Tontatta Tribe / scouting unit), directly supporting tribe membership. The existing scouting-unit relation is separate. Cached document SHA-256: 2d8d7743f12cbdb6ac5b5b8d25bca28ded67bb881e2c88774dc81920710c658b." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot; no former qualifier stated" .

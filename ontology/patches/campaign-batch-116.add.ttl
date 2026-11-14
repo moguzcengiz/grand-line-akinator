@@ -1,0 +1,16 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Negikuma_Maria op:placeOfOrigin op:Bighorn .
+
+opx:evidenceCampaign116001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Japanese profile lists 出身地 as ドラム島ビッグホーン (Drum Island, Bighorn); add the specific place of origin alongside the broader existing Grand Line value." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile identity fact; no time interval stated" ;
+    rdf:subject op:Negikuma_Maria ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:object op:Bighorn ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Negi_Kuma_Maria/index.html> .

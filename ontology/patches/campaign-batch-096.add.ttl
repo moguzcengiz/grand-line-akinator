@@ -1,0 +1,25 @@
+# Koby and X Drake's official profile headings explicitly identify their SWORD membership.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:Campaign096KobyCurrentSword a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:subject op:Koby ; rdf:predicate op:affiliatesWith ; rdf:object op:SWORD .
+opx:evidenceCampaign09601 a rdf:Statement ;
+    rdf:subject op:Koby ; rdf:predicate op:affiliatesWith ; rdf:object op:SWORD ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Coby/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact profile heading says 海軍本部機密特殊部隊「SWORD」 / 隊員 (Marine Headquarters classified special unit SWORD / member). Cached document SHA-256: bca93de6d498225419ea6f437b12b790893852dddd17815e2e489ee238659423." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot; no former qualifier stated" .
+
+opx:Campaign096XDrakeCurrentSword a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:subject op:X_Drake ; rdf:predicate op:affiliatesWith ; rdf:object op:SWORD .
+opx:evidenceCampaign09602 a rdf:Statement ;
+    rdf:subject op:X_Drake ; rdf:predicate op:affiliatesWith ; rdf:object op:SWORD ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact profile heading says 海軍本部機密特殊部隊「SWORD」 / 隊長 (Marine Headquarters classified special unit SWORD / captain). Cached document SHA-256: 258c29bc6e23a09122897eb749d38c84b6aeee173b128aa7911938099f6f05c9." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot; no former qualifier stated" .

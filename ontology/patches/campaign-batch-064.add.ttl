@@ -1,0 +1,34 @@
+# Batch 064: source-backed Road affiliation and role corrections.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Road op:affiliatesWith op:New_Giant_Warrior_Pirates, op:Straw_Hat_Grand_Fleet .
+
+opx:evidenceCampaign06401 a rdf:Statement ;
+    rdf:subject op:Road ; rdf:predicate op:affiliatesWith ; rdf:object op:New_Giant_Warrior_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Road/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile heading states 新巨兵海賊団 / 航海士 (New Giant Warrior Pirates / navigator). Cached document SHA-256: 1612f09f9f9e5edca914ae83bc2b6bf218263368b2098a41d65f9925a6560ce5." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign06402 a rdf:Statement ;
+    rdf:subject op:Road ; rdf:predicate op:affiliatesWith ; rdf:object op:Straw_Hat_Grand_Fleet ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Road/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile separately lists 麦わら大船団 (Straw Hat Grand Fleet) in Road's profile headings. Cached document SHA-256: 1612f09f9f9e5edca914ae83bc2b6bf218263368b2098a41d65f9925a6560ce5." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+
+# Rivers' official profile explicitly qualifies this affiliation as former.
+opx:temporalCampaign06401 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Rivers ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates .
+
+opx:evidenceCampaign06404 a rdf:Statement ;
+    rdf:subject op:Rivers ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rivers/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile heading explicitly states 元ベラミー海賊団 (former Bellamy Pirates). The assertion is therefore recorded as historical. Cached document SHA-256: 066bdbca1283888f00b6e16e1362bee4224482b524018bc444213e7ac93e311e." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

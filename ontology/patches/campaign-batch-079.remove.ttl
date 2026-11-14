@@ -1,0 +1,3 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+op:Silvers_Rayleigh op:affiliatesWith op:Roger_Pirates .
+op:Crocodile op:affiliatesWith op:Baroque_Works .

@@ -1,0 +1,82 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# The Red Hair subordinate crew is an allied affiliation, not the core crew.
+op:Ally_of_theRed_Hair_Pirates a op:Affiliation ;
+    rdfs:label "Allied crews of the Red Hair Pirates"@en .
+op:Gerotini op:affiliatesWith op:Ally_of_theRed_Hair_Pirates .
+
+opx:evidenceCampaign043001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 1079 identifies Gerotini as captain of the Puddle Pirates, one of the Red Hair allied crews. Model the Red Hair relationship as an allied affiliation rather than core-crew membership." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "allied crew at Elbaph in chapter 1079" ;
+    rdf:object op:Ally_of_theRed_Hair_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Gerotini ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Gerotini>, <https://onepiece.fandom.com/wiki/Chapter_1079> .
+
+opx:evidenceCampaign043002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing affiliation category is represented as an Affiliation individual, consistent with the ontology's Whitebeard allied-pirate category." ;
+    opx:sourceType "modeled from source-backed relationship" ;
+    opx:temporalScope "current category definition" ;
+    rdf:object op:Affiliation ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Ally_of_theRed_Hair_Pirates ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Gerotini>, <https://onepiece.fandom.com/wiki/Chapter_1079> .
+
+opx:evidenceCampaign043003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "English label describes the affiliation category used for Red Hair allied crews." ;
+    opx:sourceType "modeled label for source-backed relationship category" ;
+    opx:temporalScope "current category definition" ;
+    rdf:object "Allied crews of the Red Hair Pirates"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Ally_of_theRed_Hair_Pirates ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Gerotini>, <https://onepiece.fandom.com/wiki/Chapter_1079> .
+
+# Official Gerd profile specifies Elbaph as her origin while the graph records only Grand Line.
+op:Gerd op:placeOfOrigin op:Elbaph .
+opx:evidenceCampaign043004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile specifies Elbaph within the Grand Line as Gerd's origin; add the specific location while retaining the existing broad region." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile identity fact" ;
+    rdf:object op:Elbaph ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Gerd ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gerd/index.html> .
+
+opx:evidenceCampaign043005 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Buggys_Delivery ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Gerd .
+opx:evidenceCampaign043006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Gerd's profile and the chapter 803/cover-story record place her Buggy's Delivery service before her later New Giant Warrior Pirates role; qualify the existing affiliation Historical." ;
+    opx:sourceType "official character profile; chapter-referenced cover-story record" ;
+    opx:temporalScope "historical; before New Giant Warrior Pirates; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign043005 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gerd/index.html>, <https://onepiece.fandom.com/wiki/Gerd> .
+
+opx:evidenceCampaign043007 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Mercenary ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Gerd .
+opx:evidenceCampaign043008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Gerd profile states that she worked as a mercenary before her present New Giant Warrior Pirates role; qualify the existing Mercenary occupation Historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign043007 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gerd/index.html> .

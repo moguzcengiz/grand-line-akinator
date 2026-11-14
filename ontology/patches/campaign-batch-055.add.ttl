@@ -1,0 +1,15 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# The official profile slug identifies Manmayer Gunko; its Japanese title
+# contains the existing label 軍子宮 for the ontology entity.
+op:Manmayer_Gunko op:hasDevilFruit op:Aro_Aro_no_Mi .
+opx:evidenceCampaign055001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Manmayer Gunko character profile lists the Devil Fruit field (悪魔の実) as アロアロの実. Identity crosswalk reviewed against the exact Manmayer_Gunko identifier in the profile URL and the entity's Japanese label 軍子宮 in the profile title." ;
+    opx:sourceType "official character profile with reviewed identity crosswalk" ;
+    opx:temporalScope "Official character profile snapshot" ;
+    rdf:subject op:Manmayer_Gunko ; rdf:predicate op:hasDevilFruit ; rdf:object op:Aro_Aro_no_Mi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Saint_Manmayer_Gunko/index.html> .

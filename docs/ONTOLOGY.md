@@ -29,7 +29,7 @@ Properties with real data: `affiliatesWith` (1.9k), `occupation` (2k), `statusOf
 * `Marines`, `Marine_Headquarters`, `*_Marine_Base` → Marine; `Revolutionary_Army`, `Freedom_Fighters` → Revolutionary; `World_Government`, `CP0`, `CP9`, `Seven_Warlords_of_the_Sea`, … → World Government. (Rules are heuristics; false negatives become *unknown*, never *false* – see §5.)
 
 ### Manually curated facts (`ontology/curated.ttl`) – the only hand-added lore
-* **Haki** for 21 well-known characters (Luffy, Zoro, Shanks, Whitebeard, Big Mom, Kaido, Rayleigh, Roger, Sanji, Katakuri, Sakazuki, Borsalino, Garp, Doflamingo, Hancock, Law, Mihawk, Kid, Blackbeard, Crocodile, Jinbe, Kuzan). Only characters listed have a *known* Haki profile; everyone else is **unknown** (`haki_known` marker).
+* **Haki** for 22 characters in the original curated graph. A separate evidence-backed patch adds profiles for Koby, Usopp, and Yamato and Katakuri's Conqueror's Haki. Only characters with a recorded profile have a *known* Haki profile; everyone else is **unknown** (`haki_known` marker). See [the enrichment sources](ONTOLOGY_ENRICHMENT_SOURCES.md).
 * **7 Ancient/Mythical Zoan fruits** (Phoenix, Daibutsu, Seiryu, Okuchi no Makami, Allosaurus, Brachiosaurus, Mammoth) with current users.
 * **9 ships** (Going Merry, Thousand Sunny, Moby Dick, Red Force, Polar Tang, Oro Jackson, Queen Mama Chanter, Victoria Punk, Thriller Bark) with crew and owner; ship type only for Merry (caravel) and Polar Tang (submarine); builder only for Sunny (Franky) and Oro Jackson (Tom). Unrecorded facts stay absent = unknown.
 

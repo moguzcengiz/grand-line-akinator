@@ -1,0 +1,15 @@
+# Hewitt's official character profile explicitly marks his Bellamy Pirates affiliation as former.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:temporalCampaign08401 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Hewitt ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates .
+opx:evidenceCampaign08401 a rdf:Statement ;
+    rdf:subject op:Hewitt ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hewitt/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元ベラミー海賊団 / コック (former Bellamy Pirates / cook); qualify the existing affiliation as historical. Cached document SHA-256: 4ea06950d75501229f80e89117b0f509bd6f01a3c3d0476c0fa8e813e513c62f." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

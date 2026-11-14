@@ -1,0 +1,15 @@
+# Gol D. Roger's official profile explicitly marks his Roger Pirates affiliation as former.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:temporalCampaign08601 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Gol_D_Roger ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates .
+opx:evidenceCampaign08601 a rdf:Statement ;
+    rdf:subject op:Gol_D_Roger ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gold_Roger/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元ロジャー海賊団 / 船長 (former Roger Pirates / captain); qualify this existing affiliation as historical. Cached document SHA-256: 23cae8d768da3f152a4edd0836a6a8c69df90f9f556c4af065689ac30d52595e." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

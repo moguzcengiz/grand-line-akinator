@@ -1,0 +1,95 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign033CavendishBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile lists Cavendish's bounty as 330 million berries. It does not label this amount current or former, so no temporal status is asserted." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Cavendish_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Cavendish ;
+    prov:wasDerivedFrom <https://one-piece.com/character/cavendish/index.html> .
+
+opx:evidenceCampaign033CavendishBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile lists Cavendish's bounty as 330 million berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object 330000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Cavendish_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/cavendish/index.html> .
+
+opx:evidenceCampaign033CavendishBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Cavendish's bounty, represented as a named record for Cavendish." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Cavendish ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Cavendish_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/cavendish/index.html> .
+
+opx:evidenceCampaign033CavendishBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this as Cavendish's bounty; typed with the ontology's Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Cavendish_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/cavendish/index.html> .
+
+opx:evidenceCampaign033ChadrosBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile lists Chadros Higelyges (Brownbeard)'s bounty as 80.06 million berries. It does not label this amount current or former, so no temporal status is asserted." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Chadros_Higelyges_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Chadros_Higelyges ;
+    prov:wasDerivedFrom <https://one-piece.com/character/brownbeard/index.html> .
+
+opx:evidenceCampaign033ChadrosBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile lists Chadros Higelyges (Brownbeard)'s bounty as 80.06 million berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object 80060000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Chadros_Higelyges_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/brownbeard/index.html> .
+
+opx:evidenceCampaign033ChadrosBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Chadros Higelyges's bounty, represented as a named record for Chadros Higelyges." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Chadros_Higelyges ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Chadros_Higelyges_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/brownbeard/index.html> .
+
+opx:evidenceCampaign033ChadrosBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this as Chadros Higelyges's bounty; typed with the ontology's Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Chadros_Higelyges_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/brownbeard/index.html> .
+
+op:Cavendish op:hasBounty op:Cavendish_Bounty_Profile .
+op:Cavendish_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 330000000 ;
+    op:givenTo op:Cavendish .
+
+op:Chadros_Higelyges op:hasBounty op:Chadros_Higelyges_Bounty_Profile .
+op:Chadros_Higelyges_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 80060000 ;
+    op:givenTo op:Chadros_Higelyges .

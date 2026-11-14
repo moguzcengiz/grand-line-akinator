@@ -1,0 +1,4 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Road op:affiliatesWith op:Straw_Hat_Grand_FleetLand_of_GodsBuggys_Delivery .
+op:Rivers op:affiliatesWith op:Bellamy_Pirates .

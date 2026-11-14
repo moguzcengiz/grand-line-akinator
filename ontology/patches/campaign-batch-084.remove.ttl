@@ -1,0 +1,2 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+op:Hewitt op:affiliatesWith op:Bellamy_Pirates .

@@ -1,6 +1,6 @@
 """Guards for the documented upstream inconsistencies (see docs/ONTOLOGY_AUDIT.md). No Fuseki needed."""
 import pytest
-from rdflib import RDF, RDFS, URIRef
+from rdflib import RDF, RDFS, Literal, URIRef
 
 from app import ontology as o
 from app.patching import functional_conflicts, load_patch
@@ -117,3 +117,121 @@ def test_contradictions_are_reported_not_dropped(patched):
     bad.add((URIRef(o.OP + "Marco"), o.OP.statusOfCharacter, o.OP.Deceased))                        # Marco holds the Phoenix fruit
     found = " ".join(o.clashes(o.materialize(bad)[0]))
     assert "Nami" in found and "DeceasedCharacter" in found and "Marco" in found
+
+
+def test_haki_enrichment_is_positive_and_has_statement_provenance(patched):
+    from rdflib import Namespace
+    from app.patching import load_patch
+
+    base, ext = patched
+    graph = base + ext
+    prov = Namespace("http://www.w3.org/ns/prov#")
+    expected = {
+        (o.OP.Usopp, o.OPX.hasHaki, o.OPX.ObservationHaki),
+        (o.OP.Koby, o.OPX.hasHaki, o.OPX.ArmamentHaki),
+        (o.OP.Koby, o.OPX.hasHaki, o.OPX.ObservationHaki),
+        (o.OP.Yamato, o.OPX.hasHaki, o.OPX.ArmamentHaki),
+        (o.OP.Yamato, o.OPX.hasHaki, o.OPX.ObservationHaki),
+        (o.OP.Yamato, o.OPX.hasHaki, o.OPX.ConquerorsHaki),
+        (o.OP.Charlotte_Katakuri, o.OPX.hasHaki, o.OPX.ConquerorsHaki),
+    }
+    assert expected <= set(graph)
+    assert all((c, RDF.type, o.OP.Character) in graph for c in (o.OP.Usopp, o.OP.Koby, o.OP.Yamato))
+    for s, p, value in expected:
+        statements = [st for st in graph.subjects(RDF.subject, s)
+                      if (st, RDF.predicate, p) in graph and (st, RDF.object, value) in graph]
+        assert statements
+        for statement in statements:
+            assert (statement, prov.wasDerivedFrom, None) in graph
+            assert graph.value(statement, o.OPX.sourceReference)
+            assert str(graph.value(statement, o.OPX.confidence)) == "high"
+    assert len([t for t in load_patch()[1] if t[1] == o.OPX.hasHaki]) >= len(expected)
+
+
+def test_enrichment_patch_can_be_isolated_for_paired_evaluation(monkeypatch):
+    monkeypatch.setattr(o.config, "SKIP_PATCHES", {"haki", "campaign-batch-001", "campaign-batch-006", "campaign-batch-018", "campaign-batch-050"})
+    removed, added = load_patch()
+    assert not any(p == o.OPX.hasHaki for _, p, _ in added)
+    assert (o.OP.inCrew, RDFS.domain, o.OP.PirateCrew) in removed
+    assert (o.OP.Gomu_Gomu_no_Mi, o.OP.DevilFruitCurrentUser, o.OP.Monkey_D_Luffy) in added
+
+
+def test_temporal_statement_preserves_legacy_predicate_semantics():
+    from rdflib import Graph, BNode, Namespace, Literal, XSD
+    from app.ontology import materialize, clashes, nonreflexive_same_as
+
+    g = Graph().parse(str(o.config.ROOT / "ontology/patches/temporal-model.add.ttl"), format="turtle")
+    subject = o.OP["TemporalModelRegressionCharacter"]
+    predicate = o.OP.occupation
+    value = o.OP["Marine_Captain"]
+    statement = BNode()
+    g.add((statement, RDF.type, o.OPX.TemporalStatement))
+    g.add((statement, RDF.subject, subject))
+    g.add((statement, RDF.predicate, predicate))
+    g.add((statement, RDF.object, value))
+    g.add((statement, o.OPX.temporalStatus, o.OPX.Historical))
+    g.add((statement, o.OPX.validFromChapter, Literal(100, datatype=XSD.positiveInteger)))
+    g.add((statement, o.OPX.validThroughChapter, Literal(200, datatype=XSD.positiveInteger)))
+
+    inferred, _ = materialize(g)
+    assert (subject, predicate, value) not in g
+    assert (subject, predicate, value) not in inferred
+    assert (statement, o.OPX.temporalStatus, o.OPX.Historical) in g
+    assert clashes(inferred) == []
+    assert nonreflexive_same_as(inferred) == []
+    from app.validation import shacl_report
+    assert shacl_report(g)["violations"] == 0
+
+    invalid = Graph()
+    for triple in g:
+        invalid.add(triple)
+    invalid.add((BNode("missing-fields"), RDF.type, o.OPX.TemporalStatement))
+    assert shacl_report(invalid)["violations"] > 0
+
+
+def test_campaign_041_relationship_and_bounty_fixes_have_provenance(patched):
+    from rdflib import Namespace
+
+    base, ext = patched
+    graph = base + ext
+    prov = Namespace("http://www.w3.org/ns/prov#")
+    expected = {
+        (o.OP.Elmy, o.OP.affiliatesWith, o.OP.Ally_of_theWhitebeard_Pirates),
+        (o.OP.Epoida, o.OP.affiliatesWith, o.OP.Ally_of_theWhitebeard_Pirates),
+        (o.OP.Farul, o.OP.affiliatesWith, o.OP.Beautiful_Pirates),
+        (o.OP.Farul, o.OP.affiliatesWith, o.OP.Straw_Hat_Grand_Fleet),
+        (o.OP.Fisher_Tiger, o.OP.hasBounty, o.OP.Fisher_Tiger_Former_Bounty_Profile),
+        (o.OP.Fisher_Tiger_Former_Bounty_Profile, RDF.type, o.OP.Bounty),
+        (o.OP.Fisher_Tiger_Former_Bounty_Profile, o.OP.bountyAmount, Literal(230000000)),
+        (o.OP.Fisher_Tiger_Former_Bounty_Profile, o.OP.givenTo, o.OP.Fisher_Tiger),
+    }
+    assert expected <= set(graph)
+    assert (o.OP.Elmy, o.OP.affiliatesWith, o.OP.Subordinate_of_theWhitebeard_Pirates) not in graph
+    assert (o.OP.Epoida, o.OP.affiliatesWith, o.OP.Whitebeard_Pirates) not in graph
+    assert (o.OP.Farul, o.OP.affiliatesWith, o.OP.Beautiful_PiratesStraw_Hat_Grand_Fleet) not in graph
+
+    for subject, predicate, value in expected:
+        statements = [statement for statement in graph.subjects(RDF.subject, subject)
+                      if (statement, RDF.predicate, predicate) in graph
+                      and (statement, RDF.object, value) in graph]
+        assert statements
+        assert all((statement, prov.wasDerivedFrom, None) in graph for statement in statements)
+
+
+def test_campaign_041_temporal_annotations_preserve_assertions(patched):
+    base, ext = patched
+    graph = base + ext
+    expected = {
+        o.OPX.Campaign041FisherTigerFormerSlave: (o.OP.Fisher_Tiger, o.OP.occupation, o.OP.Slave),
+        o.OPX.Campaign041FarafraFormerRebelArmy: (o.OP.Farafra, o.OP.affiliatesWith, o.OP.Rebel_Army),
+        o.OPX.Campaign041FarafraFormerRebelOccupation: (o.OP.Farafra, o.OP.occupation, o.OP.Rebel),
+        o.OPX.Campaign041ErikFormerRebelArmy: (o.OP.Erik, o.OP.affiliatesWith, o.OP.Rebel_Army),
+        o.OPX.Campaign041ErikFormerRebelOccupation: (o.OP.Erik, o.OP.occupation, o.OP.Rebel),
+    }
+    for statement, (subject, predicate, value) in expected.items():
+        assert (subject, predicate, value) in graph
+        assert (statement, RDF.type, o.OPX.TemporalStatement) in graph
+        assert (statement, RDF.subject, subject) in graph
+        assert (statement, RDF.predicate, predicate) in graph
+        assert (statement, RDF.object, value) in graph
+        assert (statement, o.OPX.temporalStatus, o.OPX.Historical) in graph

@@ -1,0 +1,604 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign049001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Manga chapter 1134 depicts Saul teaching history at Walrus School; official profile identifies his former Marine service." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "current; Walrus School role" ;
+    rdf:object op:Teacher ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jaguar_D_Saul ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jaguar_D_Saul/index.html>,
+        <https://one-piece.com/comics/75896/index.html> .
+
+opx:evidenceCampaign049002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Saul as a former Marine Headquarters vice admiral; retain the role with historical scope." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before dismissal" ;
+    rdf:object op:Vice_Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jaguar_D_Saul ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jaguar_D_Saul/index.html> .
+
+opx:evidenceCampaign049004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Saul as a former Marine Headquarters vice admiral." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before dismissal" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049003 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jaguar_D_Saul/index.html> .
+
+opx:evidenceCampaign049006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Saul was removed from the Marines after helping Olvia." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before dismissal" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049005 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jaguar_D_Saul/index.html> .
+
+opx:evidenceCampaign049008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile states he served as first mate and became captain of the Black Cat Pirates before joining the Marines." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before Marine enlistment" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049007 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile describes Jango as Black Cat Pirates first mate and later captain before Marine enlistment." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before Marine enlistment" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049009 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile states that Jango took command of the Black Cat Pirates after Kuro left." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; after Kuro left and before Marine enlistment" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049011 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile states that Jango was the Black Cat Pirates first mate." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before taking command" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049013 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile states that Jango enlisted in the Marines after leaving the pirate crew." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; initial Marine rank" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049015 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter-referenced character profile records Jango’s former dancer role." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before his current Marine service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049017 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Jango’s former bounty as 9,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact period unspecified" ;
+    rdf:object "Jango_Bounty_Profile" ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Jango ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049020 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Model the official profile’s former 9,000,000-berry bounty as a named bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact period unspecified" ;
+    rdf:object "Bounty" ;
+    rdf:predicate op:type ;
+    rdf:subject op:Jango_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "English label for Jango’s sourced former bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty record" ;
+    rdf:object "Jango former bounty" ;
+    rdf:predicate op:label ;
+    rdf:subject op:Jango_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies the 9,000,000-berry bounty as Jango’s former bounty." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact period unspecified" ;
+    rdf:object "Jango" ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Jango_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Jango’s former bounty as 9,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact period unspecified" ;
+    rdf:object 9000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Jango_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Django/index.html> .
+
+opx:evidenceCampaign049025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Jarul profile identifies him as former Giant Warrior Pirates and former captain." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; former crew service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049024 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jarul/index.html> .
+
+opx:evidenceCampaign049027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Jarul profile identifies him as former Giant Warrior Pirates and former captain." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; former crew service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049026 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jarul/index.html> .
+
+opx:evidenceCampaign049029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Jarul profile identifies him as former Giant Warrior Pirates and former captain." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; former crew service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049028 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jarul/index.html> .
+
+opx:evidenceCampaign049031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 1125 depicts Imu killing Saturn and Garling assuming his Five Elders science-and-defense position; qualify the prior roles as historical." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "historical; ended at Saturn’s death" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049030 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/St_Jaygarcia_Saturn/index.html>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-1125/chapter/44012> .
+
+opx:evidenceCampaign049033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 1125 depicts Imu killing Saturn and Garling assuming his Five Elders science-and-defense position; qualify the prior roles as historical." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "historical; ended at Saturn’s death" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049032 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/St_Jaygarcia_Saturn/index.html>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-1125/chapter/44012> .
+
+opx:evidenceCampaign049035 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 1125 depicts Imu killing Saturn and Garling assuming his Five Elders science-and-defense position; qualify the prior roles as historical." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "historical; ended at Saturn’s death" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049034 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/St_Jaygarcia_Saturn/index.html>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-1125/chapter/44012> .
+
+opx:evidenceCampaign049037 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 1125 depicts Imu killing Saturn and Garling assuming his Five Elders science-and-defense position; qualify the prior roles as historical." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "historical; ended at Saturn’s death" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049036 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/St_Jaygarcia_Saturn/index.html>,
+        <https://www.viz.com/shonenjump/one-piece-chapter-1125/chapter/44012> .
+
+opx:evidenceCampaign049039 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Heart Pirates were part of the Wano alliance, which concluded after the raid." ;
+    opx:sourceType "official character profile; manga chapter; chapter-referenced organization history" ;
+    opx:temporalScope "historical; Wano alliance" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049038 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jean_Bart/index.html>,
+        <https://onepiece.fandom.com/wiki/Pirate_Alliance> .
+
+opx:evidenceCampaign049041 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Jean Bart had been captain of a notable pirate crew before enslavement." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before enslavement" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049040 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jean_Bart/index.html> .
+
+opx:evidenceCampaign049043 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies his former pirate crew service." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before enslavement" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049042 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jean_Bart/index.html> .
+
+opx:evidenceCampaign049045 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Jean Bart became Roswald’s slave before his release and recruitment by Law." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before liberation" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049044 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jean_Bart/index.html> .
+
+opx:evidenceCampaign049047 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile identifies Noueilles as a New Fish-Man Pirates commander; that crew was disbanded after its defeat." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Fish-Man Island arc" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049046 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jean_Noueilles> .
+
+opx:evidenceCampaign049049 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile identifies Noueilles as a New Fish-Man Pirates commander; that crew was disbanded after its defeat." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Fish-Man Island arc" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049048 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jean_Noueilles> .
+
+opx:evidenceCampaign049051 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile identifies Noueilles as a New Fish-Man Pirates commander; that crew was disbanded after its defeat." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Fish-Man Island arc" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049050 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jean_Noueilles> .
+
+opx:evidenceCampaign049052 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Jaki as one of the Beasts Pirates Numbers." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Wano arc profile" ;
+    rdf:object op:Numbers ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jaki ;
+    prov:wasDerivedFrom <https://one-piece.com/character/jaki/index.html> .
+
+opx:evidenceCampaign049054 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile places Benten in the Orochi Oniwabanshu; chapter 986 shows its transfer to the Beasts Pirates, whose regime fell at Wano’s end." ;
+    opx:sourceType "official character profile; manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Wano Country arc" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049053 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jigoku_Benten/index.html>,
+        <https://onepiece.fandom.com/wiki/Jigoku_Benten> .
+
+opx:evidenceCampaign049056 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile places Benten in the Orochi Oniwabanshu; chapter 986 shows its transfer to the Beasts Pirates, whose regime fell at Wano’s end." ;
+    opx:sourceType "official character profile; manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Wano Country arc" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049055 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jigoku_Benten/index.html>,
+        <https://onepiece.fandom.com/wiki/Jigoku_Benten> .
+
+opx:evidenceCampaign049058 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile places Benten in the Orochi Oniwabanshu; chapter 986 shows its transfer to the Beasts Pirates, whose regime fell at Wano’s end." ;
+    opx:sourceType "official character profile; manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Wano Country arc" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049057 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jigoku_Benten/index.html>,
+        <https://onepiece.fandom.com/wiki/Jigoku_Benten> .
+
+opx:evidenceCampaign049060 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile identifies Jigoro as one of Moria’s General Zombies on Thriller Bark." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Thriller Bark arc" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049059 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jigoro> .
+
+opx:evidenceCampaign049062 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile identifies Jigoro’s posthumous body as General Zombie no. 850." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; posthumous zombie role" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049061 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jigoro> .
+
+opx:evidenceCampaign049064 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile records Jigra’s organ-trading role and death during the Whole Cake Island tea party." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; until death at Whole Cake Island" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049063 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jigra> .
+
+opx:evidenceCampaign049066 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile records Jigra’s organ-trading role and death during the Whole Cake Island tea party." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; until death at Whole Cake Island" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049065 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jigra> .
+
+opx:evidenceCampaign049068 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Chapter-referenced profile records Jigra’s organ-trading role and death during the Whole Cake Island tea party." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ;
+    opx:temporalScope "historical; until death at Whole Cake Island" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049067 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Jigra> .
+
+opx:evidenceCampaign049070 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The Revolutionary Army relocated its headquarters from Baltigo to Momoiro Island after the Baltigo incident; retain Baltigo as a historical residence." ;
+    opx:sourceType "official character profile; manga chapter; chapter-referenced organization history" ;
+    opx:temporalScope "historical; before relocation" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign049069 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jiron/index.html>,
+        <https://onepiece.fandom.com/wiki/Revolutionary_Army> .
+
+op:Jaki op:affiliatesWith op:Numbers .
+
+opx:evidenceCampaign049003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Vice_Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jaguar_D_Saul .
+
+opx:evidenceCampaign049005 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Marines ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jaguar_D_Saul .
+
+opx:evidenceCampaign049007 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Black_Cat_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jango .
+
+opx:evidenceCampaign049009 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jango .
+
+opx:evidenceCampaign049011 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jango .
+
+opx:evidenceCampaign049013 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:First_Mate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jango .
+
+opx:evidenceCampaign049015 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Marine_Seaman_Recruit ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jango .
+
+opx:evidenceCampaign049017 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Dancer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jango .
+
+opx:evidenceCampaign049024 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Giant_Warrior_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jarul .
+
+opx:evidenceCampaign049026 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jarul .
+
+opx:evidenceCampaign049028 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jarul .
+
+opx:evidenceCampaign049030 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Five_Elders ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jaygarcia_Saturn .
+
+opx:evidenceCampaign049032 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:World_Nobles ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jaygarcia_Saturn .
+
+opx:evidenceCampaign049034 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Warrior_God_of_Science_and_Defense ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jaygarcia_Saturn .
+
+opx:evidenceCampaign049036 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Scientist ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jaygarcia_Saturn .
+
+opx:evidenceCampaign049038 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jean_Bart .
+
+opx:evidenceCampaign049040 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jean_Bart .
+
+opx:evidenceCampaign049042 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jean_Bart .
+
+opx:evidenceCampaign049044 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Slave ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jean_Bart .
+
+opx:evidenceCampaign049046 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:New_Fish-Man_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jean_Noueilles .
+
+opx:evidenceCampaign049048 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jean_Noueilles .
+
+opx:evidenceCampaign049050 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Sea_Urchin_Armor_Spine_Squad_Commander ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jean_Noueilles .
+
+opx:evidenceCampaign049053 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Beasts_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jigoku_Benten .
+
+opx:evidenceCampaign049055 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Kurozumi_Family ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jigoku_Benten .
+
+opx:evidenceCampaign049057 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Orochi_Oniwabanshu ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jigoku_Benten .
+
+opx:evidenceCampaign049059 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Thriller_Bark_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jigoro .
+
+opx:evidenceCampaign049061 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:General_Zombie ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jigoro .
+
+opx:evidenceCampaign049063 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Underworld ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jigra .
+
+opx:evidenceCampaign049065 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Organ_Dealing_Assassination_Group ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Jigra .
+
+opx:evidenceCampaign049067 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Organ_Trader ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Jigra .
+
+opx:evidenceCampaign049069 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Baltigo ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Jiron .
+
+op:Jaguar_D_Saul op:occupation op:Teacher,
+        op:Vice_Admiral .
+
+op:Jango_Bounty_Profile op:bountyAmount 9000000 ;
+    op:givenTo "Jango" ;
+    op:label "Jango former bounty" ;
+    op:type "Bounty" .
+
+op:Jango op:hasBounty "Jango_Bounty_Profile" .
+

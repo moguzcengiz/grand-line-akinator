@@ -1,0 +1,34 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Forliewbs is one of the allied captains, not a member of the core crew.
+op:Forliewbs op:affiliatesWith op:Ally_of_theWhitebeard_Pirates .
+
+opx:evidenceCampaign042001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapters 551 and 566 identify the arriving allied fleet and Forliewbs among the allied captains; align his affiliation with the established Whitebeard ally category." ;
+    opx:sourceType "manga chapter; secondary chapter-referenced character page" ;
+    opx:temporalScope "historical alliance at Marineford; exact interval unspecified" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Forliewbs ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Forliewbs>, <https://onepiece.fandom.com/wiki/Chapter_566> .
+
+# Official profile calls Fukurou a former CP9 member; preserve the legacy edge and qualify it additively.
+opx:evidenceCampaign042002 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:CP9 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Fukurou .
+
+opx:evidenceCampaign042003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly calls Fukurou a former CP9 member (元CP9); annotate the existing CP9 affiliation as historical without deleting the timeless assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign042002 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fukuro/index.html> .

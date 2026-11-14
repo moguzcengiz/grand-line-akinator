@@ -1,0 +1,3 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Spandine op:affiliatesWith op:CP9 .

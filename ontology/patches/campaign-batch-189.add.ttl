@@ -1,0 +1,155 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign189001 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile heading: 世界政府 / 役人. This supports Corgi existing occupation Government_official edge. Cached document SHA-256: a5ba2ab693f0efc12ba66aadb567a15477dc8a1ee9f3a4a44afb19aeb5607b67. Profile snapshot; role duration unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact occupation duration unspecified" ;
+    rdf:object op:Government_official ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Corgi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Corgy/index.html> .
+
+opx:evidenceCampaign189002 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official profile heading: 百獣海賊団 / 総督. This supports Kaidou existing occupation Governor-General edge. Cached document SHA-256: cb549077b32d8b8b94dcdf23a82a951805033a243c23ed300b70843c527abf38. Profile snapshot; role duration unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact occupation duration unspecified" ;
+    rdf:object op:Governor-General ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kaidou ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaido/index.html> .
+
+opx:evidenceCampaign189003 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）. This supports Akumai placeOfOrigin Grand_Line. Cached document SHA-256: 06a330f8984a404bfa52db73b6581ad651f475944529811a1d2e9a9164e04517. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Akumai ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Akumai/index.html> .
+
+opx:evidenceCampaign189004 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）. This supports Candy placeOfOrigin Grand_Line. Cached document SHA-256: 564dfbc5c88f1cf89c2f79a23ed3b2565a056b9422c3d42e859109e63ee8c435. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Candy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Candy/index.html> .
+
+op:Cowboy op:placeOfOrigin op:Grand_Line .
+opx:evidenceCampaign189005 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路(グランドライン)アラバスタ王国. This supports Cowboy placeOfOrigin Grand_Line. Cached document SHA-256: 3a2e67a3dccf7d40f0c65fe1c76bdf18ca330bd342208a303a19451d280b342a. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Cowboy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Cowboy/index.html> .
+
+opx:evidenceCampaign189006 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）エルバフ. This supports Gerd placeOfOrigin Grand_Line. Cached document SHA-256: d494c4abc579f12eb366504776dc89c8373b898cbfb7ca8d89e710c34bca8952. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Gerd ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gerd/index.html> .
+
+opx:evidenceCampaign189007 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）リトルガーデン沿岸. This supports Island_Eater placeOfOrigin Grand_Line. Cached document SHA-256: f6625201c58ecdcab750f5363bd805e2c3223341400888393502c08cdd4988c7. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Island_Eater ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Island_Eater/index.html> .
+
+opx:evidenceCampaign189008 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）シャボンディ諸島. This supports Judy placeOfOrigin Grand_Line. Cached document SHA-256: 1cbd263cd2779a24f06960420286c5ca1345ec37d8de6ee27d5312cb21401bc6. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Judy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Judy/index.html> .
+
+opx:evidenceCampaign189009 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）シャボンディ諸島. This supports Marie placeOfOrigin Grand_Line. Cached document SHA-256: d5f385edc8ad757655e8b340f752410f762e598b7d7b079e139e623714a9b1d0. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Marie ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marie/index.html> .
+
+opx:evidenceCampaign189010 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）シャボンディ諸島. This supports Marin placeOfOrigin Grand_Line. Cached document SHA-256: 95552301c90e68d1c03ef89c5c0a4ae384bbd1fd4c99235f0699134f95f3dfe2. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Marin ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Marin/index.html> .
+
+opx:evidenceCampaign189011 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）. This supports Mr_11 placeOfOrigin Grand_Line. Cached document SHA-256: 1dceeb90af2a8c874790b5870a29099bd1baecc7398bc4bd2d0ca8e253d8c06d. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Mr_11 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_11/index.html> .
+
+opx:evidenceCampaign189012 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）. This supports Mr_Beans placeOfOrigin Grand_Line. Cached document SHA-256: ace0c9b88e41895e2042640452dc5c0f942c05e6827b7c4e6e262afdf6a97feb. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Mr_Beans ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_Beans/index.html> .
+
+opx:evidenceCampaign189013 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）. This supports Mr_Shimizu placeOfOrigin Grand_Line. Cached document SHA-256: 9432b0f674940a2a19afc79cb081c9c1e49637bd6d8b8f07b2a7dba3c6d82d68. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Mr_Shimizu ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_Shimizu/index.html> .
+
+opx:evidenceCampaign189014 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）. This supports Stalker placeOfOrigin Grand_Line. Cached document SHA-256: 73b722a1018e32e0a7f6b3c8054e4073bca3524b8d56d70f6df4bdb7339a17db. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Stalker ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Stalker/index.html> .
+
+opx:evidenceCampaign189015 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Exact official 出身地 field: 偉大なる航路（グランドライン）とある島. This supports Yuki placeOfOrigin Grand_Line. Cached document SHA-256: 10853d335fab827beb8ea3b595cb47a1da533a1b5bec918db95b643e80990ecf. Profile snapshot; no temporal qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; no temporal qualifier" ;
+    rdf:object op:Grand_Line ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Yuki ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Yuki/index.html> .

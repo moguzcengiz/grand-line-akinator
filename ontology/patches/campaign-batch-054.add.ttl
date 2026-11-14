@@ -1,0 +1,109 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Maidy's upstream role and residence were concatenated into malformed values.
+op:Maidy op:occupation op:Maid .
+opx:evidenceCampaign054001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile identifies Maidy as a maid of Alubarna Palace; chapter 215 depicts her serving Vivi." ;
+    opx:sourceType "official character profile and manga chapter" ;
+    opx:temporalScope "current role; chapter 215 and the official profile" ;
+    rdf:subject op:Maidy ; rdf:predicate op:occupation ; rdf:object op:Maid ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Maidy/index.html>, <https://www.viz.com/shonenjump/one-piece-chapter-215/chapter/> .
+
+op:Maidy op:residence op:Alubarna .
+opx:evidenceCampaign054002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile says Maidy serves as a maid in Alubarna Palace." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current or time-unspecified residence" ;
+    rdf:subject op:Maidy ; rdf:predicate op:residence ; rdf:object op:Alubarna ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Maidy/index.html> .
+
+op:Maidy op:residence op:Arabasta_Kingdom .
+opx:evidenceCampaign054003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile places Maidy under the Arabasta Kingdom; the official Vivre Card revision confirms her Arabasta Kingdom affiliation." ;
+    opx:sourceType "official character profile and official Vivre Card revision" ;
+    opx:temporalScope "current or time-unspecified residence" ;
+    rdf:subject op:Maidy ; rdf:predicate op:residence ; rdf:object op:Arabasta_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Maidy/index.html>, <https://one-piece.com/vivre/revision/index.html> .
+
+# The upstream occupation token concatenated a role with its jurisdiction.
+op:Manboshi op:occupation op:Prince .
+opx:evidenceCampaign054004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile identifies Manboshi as a prince of the Ryugu Kingdom." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current role" ;
+    rdf:subject op:Manboshi ; rdf:predicate op:occupation ; rdf:object op:Prince ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Manboshi/index.html> .
+
+# These organization and role assertions are true only in their documented past settings.
+opx:temporalCampaign054001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Lola ; rdf:predicate op:affiliatesWith ; rdf:object op:Thriller_Bark_Pirates .
+opx:evidenceCampaign054005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lola here is the Wild Zombie animated by Charlotte Lola's shadow; she served on Thriller Bark until Moria removed the shadow in chapter 481, leaving the corpse lifeless." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Historical; Thriller Bark zombie period, ending when Moria removed the shadow in chapter 481" ;
+    rdf:subject op:Lola ; rdf:predicate op:affiliatesWith ; rdf:object op:Thriller_Bark_Pirates ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lola_%28Zombie%29> .
+
+opx:temporalCampaign054002 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Lola ; rdf:predicate op:occupation ; rdf:object op:Wild_Zombie .
+opx:evidenceCampaign054006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lola was a Wild Zombie animated by Charlotte Lola's shadow; Moria removed the shadow in chapter 481 and the corpse became lifeless again." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Historical; zombie state ended when Moria removed the shadow in chapter 481" ;
+    rdf:subject op:Lola ; rdf:predicate op:occupation ; rdf:object op:Wild_Zombie ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lola_%28Zombie%29> .
+
+opx:temporalCampaign054003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Macro ; rdf:predicate op:affiliatesWith ; rdf:object op:Sun_Pirates .
+opx:evidenceCampaign054007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Macro profile calls him a former Sun Pirate; chapter 624 shows the crew split, after which Macro forms his own crew." ;
+    opx:sourceType "official character profile and chapter-referenced character source" ;
+    opx:temporalScope "Historical; ended when the Sun Pirates split into factions and Macro formed the Macro Pirates" ;
+    rdf:subject op:Macro ; rdf:predicate op:affiliatesWith ; rdf:object op:Sun_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Makuro/>, <https://onepiece.fandom.com/wiki/Chapter_624> .
+
+opx:temporalCampaign054004 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:MAX_Marx ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates .
+opx:evidenceCampaign054008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "MAX Marx sailed with the Roger Pirates; the official anime synopsis for episode 969 states that Roger disbanded the crew." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "Historical; ended when Roger disbanded the crew" ;
+    rdf:subject op:MAX_Marx ; rdf:predicate op:affiliatesWith ; rdf:object op:Roger_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o5725/index.html> .
+
+opx:temporalCampaign054005 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Mani ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates .
+opx:evidenceCampaign054009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Mani was a Bellamy Pirates combatant; Doflamingo dismissed the crew and Bellamy later left its remaining members to serve him directly." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Historical; Bellamy Pirates dissolved after Doflamingo dismissed the crew" ;
+    rdf:subject op:Mani ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Mani>, <https://onepiece.fandom.com/wiki/Bellamy_Pirates> .
+
+opx:temporalCampaign054006 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Manjaro ; rdf:predicate op:affiliatesWith ; rdf:object op:Fake_Straw_Hat_Crew .
+opx:evidenceCampaign054010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Manjaro belonged to the Fake Straw Hat Crew, whose imposture was exposed and group scattered at Sabaody; his later impersonation of a Kid Pirate is distinct from actual membership in that crew." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Historical; Fake Straw Hat operation ended at Sabaody, chapters 601–603" ;
+    rdf:subject op:Manjaro ; rdf:predicate op:affiliatesWith ; rdf:object op:Fake_Straw_Hat_Crew ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Manjaro>, <https://onepiece.fandom.com/wiki/Fake_Straw_Hat_Crew> .

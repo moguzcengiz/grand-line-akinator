@@ -1,0 +1,2 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+op:Galdino op:affiliatesWith op:Baroque_Works .

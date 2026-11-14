@@ -1,0 +1,4 @@
+# Batch 010 correction: remove the incomplete Japanese model label for the Giraffe fruit.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Giraffe> rdfs:label "ウシウシの実 モデル“”"@ja .

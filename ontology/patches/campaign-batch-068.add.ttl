@@ -1,0 +1,15 @@
+# Batch 068: preserve Shura's explicitly former priest role as historical.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:temporalCampaign06801 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Shura ; rdf:predicate op:occupation ; rdf:object op:Priestof_Enel .
+opx:evidenceCampaign06801 a rdf:Statement ;
+    rdf:subject op:Shura ; rdf:predicate op:occupation ; rdf:object op:Priestof_Enel ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shura/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says スカイピア / 元四神官 (Skypiea / former Four Priests). This explicitly qualifies Shura's existing Priestof_Enel occupation as historical; it does not support an unqualified current role. Cached document SHA-256: 4c5c7bc385607b8549bed98f9b321b42b0856fa5c00ab2c4ce72336004a86d2a." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

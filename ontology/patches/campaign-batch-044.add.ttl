@@ -1,0 +1,115 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Goldberg's affiliations were concatenated into an invalid combined individual. Preserve the distinct current crew/fleet links and qualify the former employer.
+op:Goldberg op:affiliatesWith op:Straw_Hat_Grand_Fleet, op:Buggys_Delivery ;
+    op:placeOfOrigin op:Elbaph .
+opx:evidenceCampaign044001 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official profile lists the Straw Hat Grand Fleet; split it from the malformed combined affiliation IRI." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "current profile snapshot" ;
+    rdf:subject op:Goldberg ; rdf:predicate op:affiliatesWith ; rdf:object op:Straw_Hat_Grand_Fleet ;
+    prov:wasDerivedFrom <https://one-piece.com/character/GoldBerg/index.html> .
+opx:evidenceCampaign044002 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Chapter 803 cover-story material identifies the New Giant Warrior crew's former Buggy's Delivery service." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; before Straw Hat Grand Fleet affiliation" ;
+    rdf:subject op:Goldberg ; rdf:predicate op:affiliatesWith ; rdf:object op:Buggys_Delivery ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Goldberg>, <https://onepiece.fandom.com/wiki/Chapter_803> .
+opx:evidenceCampaign044003 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "The official profile specifies Elbaph within the Grand Line as Goldberg's origin; add the specific location alongside the broad region." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "profile identity fact" ;
+    rdf:subject op:Goldberg ; rdf:predicate op:placeOfOrigin ; rdf:object op:Elbaph ;
+    prov:wasDerivedFrom <https://one-piece.com/character/GoldBerg/index.html> .
+opx:evidenceCampaign044004 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+    rdf:subject op:Goldberg ; rdf:predicate op:affiliatesWith ; rdf:object op:Buggys_Delivery .
+opx:evidenceCampaign044005 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "The cited cover-story record places the New Giant Warrior Pirates' Buggy's Delivery service before their Grand Fleet membership; qualify the existing affiliation as Historical." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:subject opx:evidenceCampaign044004 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Goldberg>, <https://onepiece.fandom.com/wiki/Chapter_803> .
+opx:evidenceCampaign044006 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+    rdf:subject op:Goldberg ; rdf:predicate op:occupation ; rdf:object op:Mercenary .
+opx:evidenceCampaign044007 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "The source identifies Goldberg's mercenary work as part of his former Buggy's Delivery service; qualify the existing occupation as Historical." ;
+    opx:sourceType "manga chapter; chapter-referenced character profile" ; opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:subject opx:evidenceCampaign044006 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Goldberg>, <https://onepiece.fandom.com/wiki/Chapter_803> .
+
+# Gotti's old role URI concatenates three occupation terms; normalize only the two supported roles.
+op:Gotti op:occupation op:Assassin, op:Pirate ; op:hasBounty op:Gotti_Bounty_Profile .
+op:Gotti_Bounty_Profile a op:Bounty ; op:bountyAmount 90000000 ; op:givenTo op:Gotti .
+opx:evidenceCampaign044008 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official Gotti profile identifies his Fire Tank Pirates role as assassin; replace the malformed concatenated occupation with Assassin." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gotti ; rdf:predicate op:occupation ; rdf:object op:Assassin ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gotty/index.html> .
+opx:evidenceCampaign044009 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Gotti is a pirate in the Fire Tank Pirates; retain the distinct general Pirate occupation." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gotti ; rdf:predicate op:occupation ; rdf:object op:Pirate ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gotty/index.html> .
+opx:evidenceCampaign044010 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Gotti's bounty as 90,000,000 berries; represent the amount as a named Bounty record." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gotti ; rdf:predicate op:hasBounty ; rdf:object op:Gotti_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gotty/index.html> .
+opx:evidenceCampaign044011 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "The Bounty individual represents Gotti's official profile amount." ; opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ; rdf:subject op:Gotti_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gotty/index.html> .
+opx:evidenceCampaign044012 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official profile lists 90,000,000 berries." ; opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gotti_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object 90000000 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gotty/index.html> .
+opx:evidenceCampaign044013 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official Gotti profile is the source for the named bounty recipient." ; opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gotti_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Gotti ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gotty/index.html> .
+
+# Gyro's crew and his brief New Fish-Man Pirates affiliation were combined in one malformed URI.
+op:Gyro_Pirates a op:Affiliation, op:PirateOrganization ; rdfs:label "Gyro Pirates"@en .
+op:Gyro op:affiliatesWith op:Gyro_Pirates ; op:hasBounty op:Gyro_Bounty_Profile .
+opx:evidenceCampaign044014 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Gyro as captain of the Gyro Pirates; model the crew as a named pirate organization." ; opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gyro_Pirates ; rdf:predicate rdf:type ; rdf:object op:PirateOrganization ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+opx:evidenceCampaign044015 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "English label for the crew named in the official Gyro profile." ; opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gyro_Pirates ; rdf:predicate rdfs:label ; rdf:object "Gyro Pirates"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+opx:evidenceCampaign044016 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Gyro as captain of the named Gyro Pirates." ; opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gyro ; rdf:predicate op:affiliatesWith ; rdf:object op:Gyro_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+opx:evidenceCampaign044017 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official Gyro profile lists his bounty as 73,000,000 berries." ; opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ;
+    rdf:subject op:Gyro ; rdf:predicate op:hasBounty ; rdf:object op:Gyro_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+op:Gyro_Bounty_Profile a op:Bounty ; op:bountyAmount 73000000 ; op:givenTo op:Gyro .
+opx:evidenceCampaign044018 a rdf:Statement ; opx:confidence "high" ; opx:sourceReference "The named Bounty record represents Gyro's official profile amount." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ; rdf:subject op:Gyro_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ; prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+opx:evidenceCampaign044019 a rdf:Statement ; opx:confidence "high" ; opx:sourceReference "Official profile lists Gyro's bounty as 73,000,000 berries." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ; rdf:subject op:Gyro_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object 73000000 ; prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+opx:evidenceCampaign044020 a rdf:Statement ; opx:confidence "high" ; opx:sourceReference "Official profile identifies Gyro as the bounty recipient." ;
+    opx:sourceType "official character profile" ; opx:temporalScope "official profile snapshot" ; rdf:subject op:Gyro_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Gyro ; prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+opx:evidenceCampaign044021 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ;
+    rdf:subject op:Gyro ; rdf:predicate op:affiliatesWith ; rdf:object op:New_Fish-Man_Pirates .
+opx:evidenceCampaign044022 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "The official profile says Gyro joined the New Fish-Man Pirates temporarily before fleeing; qualify that affiliation Historical." ; opx:sourceType "official character profile" ; opx:temporalScope "historical; Fish-Man Island arc" ;
+    rdf:subject opx:evidenceCampaign044021 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .
+
+# Gyaro is explicitly described as a former Sun Pirates member.
+opx:evidenceCampaign044023 a opx:TemporalStatement ; opx:temporalStatus opx:Historical ; rdf:subject op:Gyaro ; rdf:predicate op:affiliatesWith ; rdf:object op:Sun_Pirates .
+opx:evidenceCampaign044024 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "Official profile describes Gyaro as a former Sun Pirates member; annotate the existing Sun Pirates affiliation Historical." ; opx:sourceType "official character profile" ; opx:temporalScope "historical; before Macro Pirates membership" ;
+    rdf:subject opx:evidenceCampaign044023 ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gyaro/index.html> .
+
+opx:evidenceCampaign044025 a rdf:Statement ; opx:confidence "high" ;
+    opx:sourceReference "The crew is the object of an affiliation relation, so type it as an Affiliation as well as a PirateOrganization, consistent with existing crew entities." ;
+    opx:sourceType "modeled from source-backed crew relationship" ; opx:temporalScope "current organization type" ;
+    rdf:subject op:Gyro_Pirates ; rdf:predicate rdf:type ; rdf:object op:Affiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gyro/index.html> .

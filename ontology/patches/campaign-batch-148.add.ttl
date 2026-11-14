@@ -1,0 +1,14 @@
+@prefix ns1: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ns1:evidenceCampaign148001 a rdf:Statement ;
+    ns1:confidence "0.98" ;
+    ns1:sourceReference "Exact official profile heading: 革命軍 / 参謀総長. Cached document SHA-256: 435a889b120dc318251cae07dcb491651742ff40be759dd4b15182a7c0c99855. The role text identifies Sabo as Revolutionary Army / Chief of Staff." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object <http://kalnassag.com/onepiece#Chief_of_Staffof_the_Revolutionary_Army> ;
+    rdf:predicate <http://kalnassag.com/onepiece#occupation> ;
+    rdf:subject <http://kalnassag.com/onepiece#Sabo> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/sabo/index.html> .
+

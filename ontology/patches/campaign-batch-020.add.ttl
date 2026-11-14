@@ -1,0 +1,75 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+op:Den op:affiliatesWith op:Ryugu_Kingdom .
+op:Gol_D_Roger op:hasBounty op:Gol_D_Roger_Bounty_Profile .
+op:Gol_D_Roger_Bounty_Profile rdf:type op:Bounty ;
+    op:bountyAmount "5564800000"^^xsd:integer ;
+    op:givenTo op:Gol_D_Roger .
+
+opx:evidenceCampaign020DenRyugu a rdf:Statement ;
+    rdf:subject op:Den ; rdf:predicate op:affiliatesWith ; rdf:object op:Ryugu_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Den/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile places Den under Ryugu Kingdom; his Sea Forest residence remains a distinct relation." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign020RogerBounty a rdf:Statement ;
+    rdf:subject op:Gol_D_Roger ; rdf:predicate op:hasBounty ; rdf:object op:Gol_D_Roger_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gold_Roger/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile lists Gol D. Roger's bounty as 5,564,800,000 berries." ;
+    opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign020RogerBountyType a rdf:Statement ;
+    rdf:subject op:Gol_D_Roger_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gold_Roger/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile publishes Roger's bounty as a bounty record." ;
+    opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign020RogerBountyAmount a rdf:Statement ;
+    rdf:subject op:Gol_D_Roger_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "5564800000"^^xsd:integer ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gold_Roger/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile lists Roger's bounty as 5,564,800,000 berries." ;
+    opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign020RogerBountyRecipient a rdf:Statement ;
+    rdf:subject op:Gol_D_Roger_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Gol_D_Roger ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gold_Roger/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile lists this bounty for Gol D. Roger." ;
+    opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+op:Fugetsu_Omusubi op:affiliatesWith op:Wano .
+
+opx:Campaign020OmusubiHistoricalKibiDaimyo a opx:TemporalStatement ;
+    rdf:subject op:Fugetsu_Omusubi ;
+    rdf:predicate op:occupation ;
+    rdf:object op:Daimyo_of_Kibi ;
+    opx:temporalStatus opx:Historical .
+
+opx:evidenceCampaign020OmusubiWano a rdf:Statement ;
+    rdf:subject op:Fugetsu_Omusubi ; rdf:predicate op:affiliatesWith ; rdf:object op:Wano ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fugetsu_Omusubi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile places former Kibi daimyo Fugetsu Omusubi under Wano; the existing Kibi residence is distinct." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign020OmusubiHistoricalRoleType a rdf:Statement ;
+    rdf:subject opx:Campaign020OmusubiHistoricalKibiDaimyo ; rdf:predicate rdf:type ; rdf:object opx:TemporalStatement ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fugetsu_Omusubi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls him a former Kibi daimyo 20 years ago." ;
+    opx:confidence "high" ; opx:temporalScope "historical; twenty years before the current story setting" .
+
+opx:evidenceCampaign020OmusubiHistoricalRoleStatus a rdf:Statement ;
+    rdf:subject opx:Campaign020OmusubiHistoricalKibiDaimyo ; rdf:predicate opx:temporalStatus ; rdf:object opx:Historical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fugetsu_Omusubi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile calls him a former Kibi daimyo 20 years ago." ;
+    opx:confidence "high" ; opx:temporalScope "historical; twenty years before the current story setting" .

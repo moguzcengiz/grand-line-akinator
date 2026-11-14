@@ -1,0 +1,52 @@
+# Batch 061: Page One's official profile names the exact Devil Fruit.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Spinosaurus> a op:DevilFruit ;
+    rdfs:label "リュウリュウの実 古代種 モデル 〝スピノサウルス〟"@ja ;
+    op:DevilFruitCurrentUser op:Page_One ;
+    op:hasFruitType op:Zoan ;
+    opx:hasFruitSubtype opx:AncientZoan .
+
+opx:evidenceCampaign06101 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Spinosaurus> ;
+    rdf:predicate rdf:type ; rdf:object op:DevilFruit ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Page_One/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match Page One profile names the Devil Fruit as リュウリュウの実 古代種 モデル 〝スピノサウルス〟; the ontology uses a named individual for each modeled fruit." ;
+    opx:confidence "high" ; opx:temporalScope "identity; time-independent" .
+
+opx:evidenceCampaign06102 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Spinosaurus> ;
+    rdf:predicate rdfs:label ; rdf:object "リュウリュウの実 古代種 モデル 〝スピノサウルス〟"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Page_One/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact profile field 悪魔の実 gives リュウリュウの実 古代種 モデル 〝スピノサウルス〟." ;
+    opx:confidence "high" ; opx:temporalScope "profile wording" .
+
+opx:evidenceCampaign06103 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Spinosaurus> ;
+    rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Page_One ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Page_One/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The Devil Fruit field appears in the exact-match Page One character profile; the ontology's existing fruit model records the named profile owner as current user." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign06104 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Spinosaurus> ;
+    rdf:predicate op:hasFruitType ; rdf:object op:Zoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Page_One/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The profile identifies a Ryu Ryu no Mi, which the ontology's established fruit modeling classifies as Zoan." ;
+    opx:confidence "high" ; opx:temporalScope "classification" .
+
+opx:evidenceCampaign06105 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Ryu_Ryu_no_Mi,_Model:_Spinosaurus> ;
+    rdf:predicate opx:hasFruitSubtype ; rdf:object opx:AncientZoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Page_One/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact profile explicitly labels the fruit 古代種; the ontology represents this as the Ancient Zoan subtype." ;
+    opx:confidence "high" ; opx:temporalScope "classification" .

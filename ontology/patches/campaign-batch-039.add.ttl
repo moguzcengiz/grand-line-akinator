@@ -1,0 +1,609 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign039001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 75,000,000 berry bounty for Daz Bonez." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Daz_Bonez_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Daz_Bonez ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 75,000,000 berry bounty for Daz Bonez. Represented using the ontology Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Daz_Bonez_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 75,000,000 berry bounty for Daz Bonez." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object 75000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Daz_Bonez_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 75,000,000 berry bounty for Daz Bonez. The named record is assigned to this character." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Daz_Bonez ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Daz_Bonez_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 15,000,000 berry bounty for Dellinger. It explicitly labels the bounty former." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Dellinger_Former_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Dellinger ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 15,000,000 berry bounty for Dellinger. It explicitly labels the bounty former. Represented using the ontology Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Dellinger_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 15,000,000 berry bounty for Dellinger. It explicitly labels the bounty former." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object 15000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Dellinger_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 15,000,000 berry bounty for Dellinger. It explicitly labels the bounty former. The named record is assigned to this character." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Dellinger ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Dellinger_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 26,000,000 berry bounty for Demalo Black." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Demalo_Black_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Demalo_Black ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Demalo_Black/index.html> .
+
+opx:evidenceCampaign039010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 26,000,000 berry bounty for Demalo Black. Represented using the ontology Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Demalo_Black_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Demalo_Black/index.html> .
+
+opx:evidenceCampaign039011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 26,000,000 berry bounty for Demalo Black." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object 26000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Demalo_Black_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Demalo_Black/index.html> .
+
+opx:evidenceCampaign039012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 26,000,000 berry bounty for Demalo Black. The named record is assigned to this character." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Demalo_Black ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Demalo_Black_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Demalo_Black/index.html> .
+
+opx:evidenceCampaign039013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 60,000,000 berry bounty for Devil Dias." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Devil_Dias_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Devil_Dias ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 60,000,000 berry bounty for Devil Dias. Represented using the ontology Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Devil_Dias_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 60,000,000 berry bounty for Devil Dias." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object 60000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Devil_Dias_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists a 60,000,000 berry bounty for Devil Dias. The named record is assigned to this character." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot; no explicit current/former qualifier" ;
+    rdf:object op:Devil_Dias ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Devil_Dias_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039017 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Daz Bonez profile identifies him as the Supa Supa no Mi user. S-Hawk is not asserted as a fruit owner; ability replication is distinct from eating the fruit." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Daz_Bonez ;
+    rdf:predicate op:DevilFruitCurrentUser ;
+    rdf:subject op:Supa_Supa_no_Mi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Whitebeard pirate profile lists the Decalvan Brothers among Whitebeard allies; classify the relationship as alliance, not subordination." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Decalvan_Brothers ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Squad/index.html> .
+
+opx:evidenceCampaign039019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Delacuaji profile describes him as a Whitebeard allied pirate involved in the effort to rescue Ace. The alliance is represented as historical." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Delacuaji ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Deluckahe/index.html> .
+
+opx:evidenceCampaign039020 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Disco profile identifies him as the Human Auction MC; add an occupation concept distinct from the auction house owner role." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Occupation ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Auction_MC ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_Disco/index.html> .
+
+opx:evidenceCampaign039021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Disco profile identifies his role as MC of the Human Auction." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object "Human Auction MC"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Auction_MC ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_Disco/index.html> .
+
+opx:evidenceCampaign039022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Japanese label for the Human Auction MC occupation, corresponding to the role identified in the official Disco profile." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object "人間オークション司会者"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Auction_MC ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_Disco/index.html> .
+
+opx:evidenceCampaign039023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Disco profile identifies him as the MC of the Human Auction; retain the separately modeled auction house owner occupation." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Auction_MC ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Disco ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_Disco/index.html> .
+
+opx:evidenceCampaign039024 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Daz Bonez as a former Baroque Works agent. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign039DazBaroqueHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Daz Bonez as a former Baroque Works agent. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign039DazBaroqueHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039026 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Daz Bonez as a former Baroque Works agent. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Daz_Bonez ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign039DazBaroqueHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Daz Bonez as a former Baroque Works agent. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign039DazBaroqueHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039028 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Daz Bonez as a former Baroque Works agent. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Baroque_Works ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign039DazBaroqueHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Daz_Bonez/index.html> .
+
+opx:evidenceCampaign039029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile associates Delacuaji with the Whitebeard alliance during the Ace rescue; mark that affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign039DelacuajiAllianceHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Deluckahe/index.html> .
+
+opx:evidenceCampaign039030 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile associates Delacuaji with the Whitebeard alliance during the Ace rescue; mark that affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign039DelacuajiAllianceHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Deluckahe/index.html> .
+
+opx:evidenceCampaign039031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile associates Delacuaji with the Whitebeard alliance during the Ace rescue; mark that affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Delacuaji ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign039DelacuajiAllianceHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Deluckahe/index.html> .
+
+opx:evidenceCampaign039032 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile associates Delacuaji with the Whitebeard alliance during the Ace rescue; mark that affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign039DelacuajiAllianceHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Deluckahe/index.html> .
+
+opx:evidenceCampaign039033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile associates Delacuaji with the Whitebeard alliance during the Ace rescue; mark that affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign039DelacuajiAllianceHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Deluckahe/index.html> .
+
+opx:evidenceCampaign039034 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly presents Dellinger’s 15,000,000 berry bounty as former. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign039DellingerBountyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039035 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly presents Dellinger’s 15,000,000 berry bounty as former. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign039DellingerBountyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039036 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly presents Dellinger’s 15,000,000 berry bounty as former. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Dellinger ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign039DellingerBountyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039037 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly presents Dellinger’s 15,000,000 berry bounty as former. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:hasBounty ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign039DellingerBountyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039038 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly presents Dellinger’s 15,000,000 berry bounty as former. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Dellinger_Former_Bounty_Profile ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign039DellingerBountyHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/dellinger/index.html> .
+
+opx:evidenceCampaign039039 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Devil Dias as having been enslaved by Celestial Dragons; the slave occupation is historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign039DevilDiasSlaveHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039040 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Devil Dias as having been enslaved by Celestial Dragons; the slave occupation is historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign039DevilDiasSlaveHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039041 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Devil Dias as having been enslaved by Celestial Dragons; the slave occupation is historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Devil_Dias ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign039DevilDiasSlaveHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039042 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Devil Dias as having been enslaved by Celestial Dragons; the slave occupation is historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign039DevilDiasSlaveHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039043 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile describes Devil Dias as having been enslaved by Celestial Dragons; the slave occupation is historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Slave ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign039DevilDiasSlaveHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Devil_Dias/index.html> .
+
+opx:evidenceCampaign039044 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the Marines affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign039DiezBarrelsMarineAffiliationHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039045 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the Marines affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign039DiezBarrelsMarineAffiliationHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039046 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the Marines affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Diez_Barrels ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign039DiezBarrelsMarineAffiliationHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039047 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the Marines affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign039DiezBarrelsMarineAffiliationHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039048 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the Marines affiliation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Marines ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign039DiezBarrelsMarineAffiliationHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039049 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the occupation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign039DiezBarrelsOfficerHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039050 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the occupation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign039DiezBarrelsOfficerHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039051 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the occupation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Diez_Barrels ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign039DiezBarrelsOfficerHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039052 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the occupation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign039DiezBarrelsOfficerHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+opx:evidenceCampaign039053 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official episode 704 synopsis describes Diez Barrels as a former Marine officer; mark the occupation historical. This annotation applies to the matching existing graph assertion." ;
+    opx:sourceType "official anime episode synopsis" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Marine_Officer ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign039DiezBarrelsOfficerHistorical ;
+    prov:wasDerivedFrom <https://one-piece.com/anime/o2801/index.html> .
+
+op:Decalvan_Brothers op:affiliatesWith op:Ally_of_theWhitebeard_Pirates .
+
+op:Disco op:occupation op:Auction_MC .
+
+op:Supa_Supa_no_Mi op:DevilFruitCurrentUser op:Daz_Bonez .
+
+op:Delacuaji op:affiliatesWith op:Ally_of_theWhitebeard_Pirates .
+
+op:Demalo_Black op:hasBounty op:Demalo_Black_Bounty_Profile .
+
+op:Auction_MC a op:Occupation ;
+    rdfs:label "Human Auction MC"@en,
+        "人間オークション司会者"@ja .
+
+op:Daz_Bonez_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 75000000 ;
+    op:givenTo op:Daz_Bonez .
+
+op:Dellinger op:hasBounty op:Dellinger_Former_Bounty_Profile .
+
+op:Demalo_Black_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 26000000 ;
+    op:givenTo op:Demalo_Black .
+
+op:Devil_Dias op:hasBounty op:Devil_Dias_Bounty_Profile .
+
+op:Devil_Dias_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 60000000 ;
+    op:givenTo op:Devil_Dias .
+
+opx:Campaign039DazBaroqueHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Baroque_Works ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Daz_Bonez .
+
+opx:Campaign039DelacuajiAllianceHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ally_of_theWhitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Delacuaji .
+
+opx:Campaign039DellingerBountyHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Dellinger_Former_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Dellinger .
+
+opx:Campaign039DevilDiasSlaveHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Slave ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Devil_Dias .
+
+opx:Campaign039DiezBarrelsMarineAffiliationHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Marines ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Diez_Barrels .
+
+opx:Campaign039DiezBarrelsOfficerHistorical a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Marine_Officer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Diez_Barrels .
+
+op:Daz_Bonez op:hasBounty op:Daz_Bonez_Bounty_Profile .
+
+op:Dellinger_Former_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 15000000 ;
+    op:givenTo op:Dellinger .
+

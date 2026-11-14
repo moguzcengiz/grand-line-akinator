@@ -1,0 +1,9 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# This malformed URI combines Daz Bonez and S-Hawk as one current user. The official Daz profile supports Daz as the fruit user; copied ability is not fruit ownership.
+op:Supa_Supa_no_Mi op:DevilFruitCurrentUser <http://kalnassag.com/onepiece/Daz_Bonez;_S-Hawk> .
+
+# Replace the over-specific subordinate relationship with the official allied-pirate classification.
+op:Decalvan_Brothers op:affiliatesWith op:Subordinates_of_theWhitebeard_Pirates .
+
+op:Delacuaji op:affiliatesWith op:Subordinate_of_theWhitebeard_Pirates .

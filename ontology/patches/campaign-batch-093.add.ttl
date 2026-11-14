@@ -1,0 +1,23 @@
+# Exact profile headings support Rokkaku's branch affiliation and mark Morgan's former branch affiliation.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Rokkaku op:affiliatesWith op:Marine_153rd_Branch .
+opx:evidenceCampaign09301 a rdf:Statement ;
+    rdf:subject op:Rokkaku ; rdf:predicate op:affiliatesWith ; rdf:object op:Marine_153rd_Branch ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rokkaku/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match profile heading says 海軍第153支部 / 支部中尉 (Navy 153rd Branch / branch lieutenant). The graph already identifies the clean branch URI; add the directly supported affiliation. Cached document SHA-256: d8268e639533e1886b0b7c894861f47c747fef90f127213333dbdf5a55847b55." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot; no temporal qualifier stated" .
+
+opx:temporalCampaign09301 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Morgan ; rdf:predicate op:affiliatesWith ; rdf:object op:Marine_153rd_Branch .
+opx:evidenceCampaign09302 a rdf:Statement ;
+    rdf:subject op:Morgan ; rdf:predicate op:affiliatesWith ; rdf:object op:Marine_153rd_Branch ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Morgan/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元海軍第153支部 (former Navy 153rd Branch), supporting a historical affiliation only. Cached document SHA-256: 88e487b8d677885323e8f3da65037a45090d0e402eecf51d1488251c35a86c21." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

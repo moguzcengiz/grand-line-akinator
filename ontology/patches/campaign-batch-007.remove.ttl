@@ -1,0 +1,5 @@
+# Batch 007 correction: remove the previously misclassified Paramecia type for the Gomu Gomu no Mi, whose official disclosed identity is a Mythical Zoan.
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Gomu_Gomu_no_Mi op:hasFruitType op:Paramecia .
+

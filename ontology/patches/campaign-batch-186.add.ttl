@@ -1,0 +1,34 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign186001 a rdf:Statement ;
+    opx:confidence "0.91" ;
+    opx:sourceReference "Exact official profile heading: 元Ｂ・Ｗ（バロックワークス） / フロンティアエージェント. This supports Mr.11’s existing Frontier_Agent occupation edge. Cached document SHA-256: 1dceeb90af2a8c874790b5870a29099bd1baecc7398bc4bd2d0ca8e253d8c06d. The source does not state the occupation end date." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact occupation duration unspecified" ;
+    rdf:object op:Frontier_Agent ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Mr_11 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_11/index.html> .
+
+opx:evidenceCampaign186002 a rdf:Statement ;
+    opx:confidence "0.91" ;
+    opx:sourceReference "Exact official profile heading: 元Ｂ・Ｗ（バロックワークス） / フロンティアエージェント. This supports Mr.7’s existing Frontier_Agent occupation edge. Cached document SHA-256: b30cb9a744898308586e7e017772f305c2367942796443c850f566087deb53f3. The source does not state the occupation end date." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact occupation duration unspecified" ;
+    rdf:object op:Frontier_Agent ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Mr_7 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_7/index.html> .
+
+opx:evidenceCampaign186003 a rdf:Statement ;
+    opx:confidence "0.91" ;
+    opx:sourceReference "Exact official profile heading: 元Ｂ・Ｗ（バロックワークス） / フロンティアエージェント. This supports Mr.9’s existing Frontier_Agent occupation edge. Cached document SHA-256: 0aa6bfbaa53dacc106c62e2e404355d871060f3a31f18fa4199bcabfb5b4590a. The source does not state the occupation end date." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact occupation duration unspecified" ;
+    rdf:object op:Frontier_Agent ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Mr_9 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Mr_9/index.html> .

@@ -1,0 +1,122 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# Verified positive facts; provenance records below reify each added assertion.
+op:Nikyu_Nikyu_no_Mi op:DevilFruitCurrentUser op:Bartholomew_Kuma .
+op:Bartholomew_Kuma op:hasBounty op:Bartholomew_Kuma_Former_Bounty_Profile .
+op:Bartholomew_Kuma_Former_Bounty_Profile a op:Bounty ;
+    op:bountyAmount "296000000"^^xsd:integer ;
+    op:givenTo op:Bartholomew_Kuma .
+
+
+
+opx:evidenceCampaign030KumaFormerBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Kuma's former bounty as 296 million berries; represented as a named Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Bartholomew_Kuma_Former_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Bartholomew_Kuma ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile states Kuma's former bounty was 296 million berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object 296000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Bartholomew_Kuma_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The listed former bounty is given to Bartholomew Kuma." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Bartholomew_Kuma ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Bartholomew_Kuma_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyTemporalObject a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kuma's 296 million berry bounty as former; exact interval is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Bartholomew_Kuma_Former_Bounty_Profile ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign030KumaFormerBountyTemporal ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyTemporalPredicate a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kuma's 296 million berry bounty as former; exact interval is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:hasBounty ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign030KumaFormerBountyTemporal ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyTemporalStatus a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kuma's 296 million berry bounty as former; exact interval is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign030KumaFormerBountyTemporal ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyTemporalSubject a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kuma's 296 million berry bounty as former; exact interval is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object op:Bartholomew_Kuma ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign030KumaFormerBountyTemporal ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyTemporalType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly labels Kuma's 296 million berry bounty as former; exact interval is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; exact interval unspecified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign030KumaFormerBountyTemporal ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030KumaFormerBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this named record as Kuma's bounty; typed using the ontology's Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; exact interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Bartholomew_Kuma_Former_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:evidenceCampaign030NikyuCurrentUser a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Bartholomew Kuma profile lists the Nikyu Nikyu no Mi. Kuma is the named Devil Fruit user; the separate S-Bear profile describes ability use through Green Blood." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bartholomew_Kuma ;
+    rdf:predicate op:DevilFruitCurrentUser ;
+    rdf:subject op:Nikyu_Nikyu_no_Mi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bartholomew_Kuma/index.html> .
+
+opx:Campaign030KumaFormerBountyTemporal a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Bartholomew_Kuma_Former_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Bartholomew_Kuma .
+

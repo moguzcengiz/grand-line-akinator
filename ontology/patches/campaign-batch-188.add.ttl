@@ -1,0 +1,14 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign188001 a rdf:Statement ;
+    opx:confidence "0.93" ;
+    opx:sourceReference "Exact official profile heading: ドレスローザ王国 / コリーダコロシアム剣闘士. This supports Spartan’s existing occupation → Gladiator edge. Cached document SHA-256: a3d3209bbd746184ba1f2022aeccf48607f47374ffca48ef03f8ac8060e74558. The heading does not specify the role end date; the ontology class-level former annotation is not verified by this source." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact occupation duration unspecified" ;
+    rdf:object op:Gladiator ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Spartan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/spartan/index.html> .

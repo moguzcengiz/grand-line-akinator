@@ -1,0 +1,507 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+op:Kurozumi_Higurashi op:affiliatesWith op:Kurozumi_Family .
+opx:evidenceCampaign053001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Higurashi is a descendant of the Kurozumi family." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Kurozumi_Family ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kurozumi_Higurashi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kurozumi_higurashi/index.html> .
+
+op:Kurozumi_Higurashi op:placeOfOrigin op:Wano_Country .
+opx:evidenceCampaign053002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official character profile identifies her with Wano Country." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Wano_Country ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Kurozumi_Higurashi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kurozumi_higurashi/index.html> .
+
+op:Lacroix op:affiliatesWith op:Marines .
+opx:evidenceCampaign053003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lacroix is a Marine Vice Admiral." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Marines ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lacroix ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lacroix> .
+
+op:Lacroix op:affiliatesWith op:Giant_Squad .
+opx:evidenceCampaign053004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lacroix is identified as a member of the Marine Giant Squad." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Giant_Squad ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lacroix ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lacroix> .
+
+op:Lonz op:affiliatesWith op:Marines .
+opx:evidenceCampaign053005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies Lonz with Marine Headquarters." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Marines ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lonz ;
+    prov:wasDerivedFrom <https://one-piecewiki.com/wiki/lonz/> .
+
+op:Lonz op:affiliatesWith op:Giant_Squad .
+opx:evidenceCampaign053006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lonz is identified as a member of the Giant Squad." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Giant_Squad ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lonz ;
+    prov:wasDerivedFrom <https://one-piecewiki.com/wiki/lonz/> .
+
+op:Giant_Squad rdf:type op:Affiliation .
+opx:evidenceCampaign053007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The character profile identifies Giant Squad as an organizational unit." ;
+    opx:sourceType "chapter-referenced organization profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Affiliation ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Giant_Squad ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Giant_Squad> .
+
+op:Lemoncheese op:occupation op:Queen .
+opx:evidenceCampaign053008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile gives Lemoncheese's title as Queen of Bestland Kingdom." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Queen ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lemoncheese ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lemoncheese> .
+
+op:Lemoncheese op:affiliatesWith op:Bestland_Kingdom .
+opx:evidenceCampaign053009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lemoncheese rules Bestland Kingdom as its queen." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Bestland_Kingdom ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lemoncheese ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lemoncheese> .
+
+op:Leonero op:affiliatesWith op:Whitebeard_Pirates .
+opx:evidenceCampaign053010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Spade Pirates were integrated into the Whitebeard Pirates after Ace and his crew were defeated." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current or time-unspecified" ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Leonero ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Leonero> .
+
+opx:temporalCampaign053010 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Leonero .
+
+opx:temporalCampaign053011 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Sun_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuroobi .
+
+opx:evidenceCampaign053011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kuroobi is listed as a former Sun Pirates member, Arlong Pirates officer and former resident of Arlong Park and Fish-Man District; the Arlong crew was defeated and arrested." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "former Sun Pirates member before joining Arlong's crew" ;
+    rdf:object op:Sun_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuroobi ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kuroobi> .
+
+opx:temporalCampaign053012 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Arlong_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuroobi .
+
+opx:evidenceCampaign053012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kuroobi is listed as a former Sun Pirates member, Arlong Pirates officer and former resident of Arlong Park and Fish-Man District; the Arlong crew was defeated and arrested." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Arlong Pirates defeated and arrested" ;
+    rdf:object op:Arlong_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kuroobi ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kuroobi> .
+
+opx:temporalCampaign053013 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate_Officer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kuroobi .
+
+opx:evidenceCampaign053013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kuroobi is listed as a former Sun Pirates member, Arlong Pirates officer and former resident of Arlong Park and Fish-Man District; the Arlong crew was defeated and arrested." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "officer of the defeated Arlong Pirates" ;
+    rdf:object op:Pirate_Officer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kuroobi ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kuroobi> .
+
+opx:temporalCampaign053014 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Arlong_Park ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kuroobi .
+
+opx:evidenceCampaign053014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kuroobi is listed as a former Sun Pirates member, Arlong Pirates officer and former resident of Arlong Park and Fish-Man District; the Arlong crew was defeated and arrested." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "former residence in the disbanded Arlong Pirates' base" ;
+    rdf:object op:Arlong_Park ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kuroobi ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kuroobi> .
+
+opx:temporalCampaign053015 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Fish-Man_District ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kuroobi .
+
+opx:evidenceCampaign053015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kuroobi is listed as a former Sun Pirates member, Arlong Pirates officer and former resident of Arlong Park and Fish-Man District; the Arlong crew was defeated and arrested." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "listed as former residence" ;
+    rdf:object op:Fish-Man_District ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kuroobi ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kuroobi> .
+
+opx:temporalCampaign053016 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kurosawa .
+
+opx:evidenceCampaign053016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kurosawa is a samurai allied with the Kozuki family and joined the raid alliance, which disbanded after the raid." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "alliance disbanded after the raid" ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kurosawa ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kurosawa> .
+
+opx:temporalCampaign053017 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rocks_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kyo .
+
+opx:evidenceCampaign053017 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kyo explicitly describes the Rocks Pirates as dissolved at God Valley; his current status is unknown." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Rocks Pirates dissolved at God Valley" ;
+    rdf:object op:Rocks_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kyo ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kyo> .
+
+opx:temporalCampaign053018 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Corrida_Colosseum ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kyros .
+
+opx:evidenceCampaign053018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile describes Kyros as a Corrida Coliseum gladiator; the chapter-referenced profile records his later service as captain in the Riku Royal Army." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former career as Corrida Coliseum gladiator" ;
+    rdf:object op:Corrida_Colosseum ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kyros ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kyros/index.html> .
+
+opx:temporalCampaign053019 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Gladiator ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kyros .
+
+opx:evidenceCampaign053019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile describes Kyros as a Corrida Coliseum gladiator; the chapter-referenced profile records his later service as captain in the Riku Royal Army." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former career before becoming Riku Royal Army captain" ;
+    rdf:object op:Gladiator ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kyros ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kyros/index.html> .
+
+opx:temporalCampaign053020 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Donquixote_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kyuin .
+
+opx:evidenceCampaign053020 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kyuin's Donquixote Pirates membership and SMILE Factory manager role ended with the crew's defeat and capture; she later escaped." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "crew disbanded after Dressrosa defeat and arrest" ;
+    rdf:object op:Donquixote_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kyuin ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kyuin> .
+
+opx:temporalCampaign053021 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:SMILE_Factory_Manager ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kyuin .
+
+opx:evidenceCampaign053021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kyuin's Donquixote Pirates membership and SMILE Factory manager role ended with the crew's defeat and capture; she later escaped." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "role ended when the Donquixote operation was dismantled" ;
+    rdf:object op:SMILE_Factory_Manager ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kyuin ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kyuin> .
+
+opx:temporalCampaign053022 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rumbar_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Laboon .
+
+opx:evidenceCampaign053022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Laboon was a Rumbar Pirates crew member; Crocus is his caretaker and friend, not an organization affiliation." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "left in Crocus's care after the crew continued its voyage and was lost" ;
+    rdf:object op:Rumbar_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Laboon ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Laboon> .
+
+opx:temporalCampaign053023 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Donquixote_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lao_G .
+
+opx:evidenceCampaign053023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lao G was an officer of the Donquixote Pirates, which disbanded after its defeat and arrest." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "crew disbanded after Dressrosa defeat and arrest" ;
+    rdf:object op:Donquixote_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lao_G ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lao_G> .
+
+opx:temporalCampaign053024 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate_Officer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lao_G .
+
+opx:evidenceCampaign053024 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lao G was an officer of the Donquixote Pirates, which disbanded after its defeat and arrest." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "officer role in the disbanded Donquixote Pirates" ;
+    rdf:object op:Pirate_Officer ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lao_G ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lao_G> .
+
+opx:temporalCampaign053025 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:CP9 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Laskey .
+
+opx:evidenceCampaign053025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Laskey is a former CP9 agent and Cipher Pol agent; current status is unknown." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "former CP9 agent" ;
+    rdf:object op:CP9 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Laskey ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Laskey> .
+
+opx:temporalCampaign053026 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Cipher_Pol_Agent ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Laskey .
+
+opx:evidenceCampaign053026 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Laskey is a former CP9 agent and Cipher Pol agent; current status is unknown." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "Cipher Pol service is documented in his past; current role is unknown" ;
+    rdf:object op:Cipher_Pol_Agent ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Laskey ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Laskey> .
+
+opx:temporalCampaign053027 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Spade_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Leonero .
+
+opx:evidenceCampaign053027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Leonero joined the Whitebeard Pirates when the Spade Pirates were integrated into that crew." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "crew integrated into the Whitebeard Pirates" ;
+    rdf:object op:Spade_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Leonero ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Leonero> .
+
+opx:temporalCampaign053028 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Bellamy_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lily .
+
+opx:evidenceCampaign053028 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lily was a Bellamy Pirates member; the crew later disbanded." ;
+    opx:sourceType "chapter-referenced organization profile" ;
+    opx:temporalScope "crew later disbanded" ;
+    rdf:object op:Bellamy_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lily ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Bellamy_Pirates> .
+
+opx:temporalCampaign053029 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Baltigo ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Lindbergh .
+
+opx:evidenceCampaign053029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The Revolutionary Army moved its headquarters from Baltigo to Momoiro Island; Lindbergh is identified as the current South Army commander." ;
+    opx:sourceType "chapter-referenced organization profile" ;
+    opx:temporalScope "former Revolutionary Army headquarters before relocation" ;
+    rdf:object op:Baltigo ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Lindbergh ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Revolutionary_Army> .
+
+opx:temporalCampaign053030 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Fake_Straw_Hat_Crew ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lip_Doughty .
+
+opx:evidenceCampaign053030 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lip was recruited into the Fake Straw Hat crew, whose operation disbanded; his captaincy of his own crew predates that recruitment." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "the fake crew's operation disbanded" ;
+    rdf:object op:Fake_Straw_Hat_Crew ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lip_Doughty ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lip_Doughty> .
+
+opx:temporalCampaign053031 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:His_own_crew ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lip_Doughty .
+
+opx:evidenceCampaign053031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lip was recruited into the Fake Straw Hat crew, whose operation disbanded; his captaincy of his own crew predates that recruitment." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "his own crew predates his later recruitment into the Fake Straw Hat operation" ;
+    rdf:object op:His_own_crew ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Lip_Doughty ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lip_Doughty> .
+
+opx:temporalCampaign053032 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lip_Doughty .
+
+opx:evidenceCampaign053032 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lip was recruited into the Fake Straw Hat crew, whose operation disbanded; his captaincy of his own crew predates that recruitment." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "captaincy of his own crew predates his later recruitment" ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lip_Doughty ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lip_Doughty> .
+
+opx:temporalCampaign053033 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lacuba .
+
+opx:evidenceCampaign053033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lacuba is a former captain and slave, later freed at Sabaody." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "former captain before capture and enslavement" ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lacuba ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lacuba> .
+
+opx:temporalCampaign053034 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Slave ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lacuba .
+
+opx:evidenceCampaign053034 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Lacuba is a former captain and slave, later freed at Sabaody." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "was freed from slavery at Sabaody" ;
+    rdf:object op:Slave ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Lacuba ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Lacuba> .
+

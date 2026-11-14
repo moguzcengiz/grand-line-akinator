@@ -1,0 +1,4 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+op:Surume op:affiliatesWith op:New_Fish-Man_Pirates .
+op:T_Bone op:occupation op:Marine_Vice_Admiral .

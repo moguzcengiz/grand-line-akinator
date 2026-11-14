@@ -1,0 +1,13 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# Split Goldberg's two distinct organizations; the concatenated URI is malformed.
+op:Goldberg op:affiliatesWith op:Buggys_DeliveryStraw_Hat_Grand_Fleet .
+
+# Replace the concatenated role value with the official separate Assassin and Pirate roles.
+op:Gotti op:occupation op:PirateAssassinCombatant .
+
+# Gyro's current crew and former New Fish-Man Pirates relationship were concatenated.
+op:Gyro op:affiliatesWith op:Gyro_PiratesNew_Fish-Man_Pirates .
+
+# World Top 100 source-tag metadata is not an in-world epithet.
+op:Gode op:epithet "WT100: \"the Wise\""@ja-latn .

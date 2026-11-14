@@ -1,0 +1,85 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign122001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field 'Official profile heading: 麦わら大船団 / 5番船船長'. Cached document SHA-256: be6e1b103ae7dbf53f518624158fa6a5584805391aa9289e3b7164bd752e6bb9." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captain_of_the_Fifth_Ship_of_the_Straw_Hat_Grand_Fleet ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Leo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/leo/index.html> .
+
+opx:evidenceCampaign122002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field 'Official profile heading: 麦わら大船団 / 1番船船長'. Cached document SHA-256: f100c9fbbdb546b76e38396c25e2b475874514f96fdaf92105ea3a577c9eb53d." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captain_of_the_First_Ship_of_the_Straw_Hat_Grand_Fleet ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Cavendish ;
+    prov:wasDerivedFrom <https://one-piece.com/character/cavendish/index.html> .
+
+opx:evidenceCampaign122003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field 'Official profile heading: 麦わら大船団 / 4番船船長'. Cached document SHA-256: dea1fc88c31e7b430b5a1dd511fe67176ef5640f1f654f65be2b10062b47af51." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captain_of_the_Fourth_Ship_of_the_Straw_Hat_Grand_Fleet ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ideo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/ideo/index.html> .
+
+opx:evidenceCampaign122004 a rdf:Statement ;
+    opx:confidence "0.92" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field 'オロチお庭番衆 / 隊長'. Cached document SHA-256: 5a060332c885d344c6b96740e4ac522e8d84517adb6bc98a6d6c1d01ee998985." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captain_of_the_Orochi_Oniwabanshu ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Fukurokuju ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Fukurokuju/index.html> .
+
+opx:evidenceCampaign122005 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field '麦わら大船団 / 2番船船長'. Cached document SHA-256: c4b006a6d44a62ea011ca5256e59446a179c8042906e0dcb05c644fd1937bdeb." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captain_of_the_Second_Ship_of_the_Straw_Hat_Grand_Fleet ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Bartolomeo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bartolomeo/index.html> .
+
+opx:evidenceCampaign122006 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field '麦わら大船団 / 6番船船長'. Cached document SHA-256: 81325268351905e3c25e9b35179e836afd89c599956ee478498a5ec6a2d858a3." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captain_of_the_Sixth_Ship_of_the_Straw_Hat_Grand_Fleet ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hajrudin ;
+    prov:wasDerivedFrom <https://one-piece.com/character/hajrudin/index.html> .
+
+opx:evidenceCampaign122007 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field 'アラバスタ王国 / 超カルガモ部隊隊長'. Cached document SHA-256: e74fa0d1f094bf1aa59ae58ca1ad63d1e0814f484d06b3c8dfee4c8a0000a364." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captain_of_the_Super_Spot-Billed_Duck_Troops ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Karoo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Karoo/index.html> .
+
+opx:evidenceCampaign122008 a rdf:Statement ;
+    opx:confidence "0.98" ;
+    opx:sourceReference "Official character profile evidence: exact profile heading/field '九蛇海賊団 / 船長'. Cached document SHA-256: d3e3b4f2a185e904ff9281ba9a7a9ef6ed5de78cf3a2baf09aa3e96ce4d172ac." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object op:Captainof_the_Kuja_Pirates ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Boa_Hancock ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Boa_Hancock/index.html> .
+

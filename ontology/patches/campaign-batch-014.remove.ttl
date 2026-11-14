@@ -1,0 +1,8 @@
+# Campaign batch 014: remove misapplied affiliation-class assertions where official character profiles identify individuals.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Koza rdf:type op:Affiliation .
+op:Kumadori rdf:type op:Affiliation .
+op:Matsuge rdf:type op:Affiliation .
+op:Kurozumi_Orochi rdf:type op:Affiliation .

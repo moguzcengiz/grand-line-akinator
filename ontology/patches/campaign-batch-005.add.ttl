@@ -1,0 +1,246 @@
+# Batch 005: official profile facts; each addition has statement-level provenance.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Caribou op:hasBounty op:Caribou_Bounty_Profile .
+op:Caribou_Bounty_Profile rdf:type op:Bounty .
+op:Caribou_Bounty_Profile op:bountyAmount "210000000"^^xsd:integer .
+op:Caribou_Bounty_Profile op:givenTo op:Caribou .
+op:Charlotte_Cracker op:hasBounty op:Charlotte_Cracker_Bounty_Profile .
+op:Charlotte_Cracker_Bounty_Profile rdf:type op:Bounty .
+op:Charlotte_Cracker_Bounty_Profile op:bountyAmount "860000000"^^xsd:integer .
+op:Charlotte_Cracker_Bounty_Profile op:givenTo op:Charlotte_Cracker .
+op:Charlotte_Daifuku op:hasBounty op:Charlotte_Daifuku_Bounty_Profile .
+op:Charlotte_Daifuku_Bounty_Profile rdf:type op:Bounty .
+op:Charlotte_Daifuku_Bounty_Profile op:bountyAmount "300000000"^^xsd:integer .
+op:Charlotte_Daifuku_Bounty_Profile op:givenTo op:Charlotte_Daifuku .
+op:Charlotte_Smoothie op:hasBounty op:Charlotte_Smoothie_Bounty_Profile .
+op:Charlotte_Smoothie_Bounty_Profile rdf:type op:Bounty .
+op:Charlotte_Smoothie_Bounty_Profile op:bountyAmount "932000000"^^xsd:integer .
+op:Charlotte_Smoothie_Bounty_Profile op:givenTo op:Charlotte_Smoothie .
+op:Diamante op:hasBounty op:Diamante_Bounty_Former_Profile .
+op:Diamante_Bounty_Former_Profile rdf:type op:Bounty .
+op:Diamante_Bounty_Former_Profile op:bountyAmount "99000000"^^xsd:integer .
+op:Diamante_Bounty_Former_Profile op:givenTo op:Diamante .
+op:Jack op:hasBounty op:Jack_Bounty_Profile .
+op:Jack_Bounty_Profile rdf:type op:Bounty .
+op:Jack_Bounty_Profile op:bountyAmount "1000000000"^^xsd:integer .
+op:Jack_Bounty_Profile op:givenTo op:Jack .
+op:Drophy op:hasBounty op:Drophy_Bounty_Profile .
+op:Drophy_Bounty_Profile rdf:type op:Bounty .
+op:Drophy_Bounty_Profile op:bountyAmount "14000000"^^xsd:integer .
+op:Drophy_Bounty_Profile op:givenTo op:Drophy .
+op:Galdino op:hasBounty op:Galdino_Bounty_Profile .
+op:Galdino_Bounty_Profile rdf:type op:Bounty .
+op:Galdino_Bounty_Profile op:bountyAmount "24000000"^^xsd:integer .
+op:Galdino_Bounty_Profile op:givenTo op:Galdino .
+op:Diamante op:epithet "コロシアムの英雄"@ja .
+
+opx:evidenceCampaign00501 a rdf:Statement ;
+  rdf:subject op:Caribou ; rdf:predicate op:hasBounty ; rdf:object op:Caribou_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Caribou/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Caribou's bounty as 210,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00502 a rdf:Statement ;
+  rdf:subject op:Caribou_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Caribou/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00503 a rdf:Statement ;
+  rdf:subject op:Caribou_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "210000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Caribou/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 210,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00504 a rdf:Statement ;
+  rdf:subject op:Caribou_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Caribou ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Caribou/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Caribou as the bounty recipient." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00505 a rdf:Statement ;
+  rdf:subject op:Charlotte_Cracker ; rdf:predicate op:hasBounty ; rdf:object op:Charlotte_Cracker_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Cracker/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Cracker's bounty as 860,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00506 a rdf:Statement ;
+  rdf:subject op:Charlotte_Cracker_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Cracker/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00507 a rdf:Statement ;
+  rdf:subject op:Charlotte_Cracker_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "860000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Cracker/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 860,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00508 a rdf:Statement ;
+  rdf:subject op:Charlotte_Cracker_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Charlotte_Cracker ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Cracker/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Charlotte Cracker as the bounty recipient." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00509 a rdf:Statement ;
+  rdf:subject op:Charlotte_Daifuku ; rdf:predicate op:hasBounty ; rdf:object op:Charlotte_Daifuku_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Daifuku/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Daifuku's bounty as 300,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00510 a rdf:Statement ;
+  rdf:subject op:Charlotte_Daifuku_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Daifuku/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00511 a rdf:Statement ;
+  rdf:subject op:Charlotte_Daifuku_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "300000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Daifuku/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 300,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00512 a rdf:Statement ;
+  rdf:subject op:Charlotte_Daifuku_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Charlotte_Daifuku ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_Daifuku/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Charlotte Daifuku as the bounty recipient." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00513 a rdf:Statement ;
+  rdf:subject op:Charlotte_Smoothie ; rdf:predicate op:hasBounty ; rdf:object op:Charlotte_Smoothie_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_smoothies/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Smoothie's bounty as 932,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00514 a rdf:Statement ;
+  rdf:subject op:Charlotte_Smoothie_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_smoothies/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00515 a rdf:Statement ;
+  rdf:subject op:Charlotte_Smoothie_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "932000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_smoothies/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 932,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00516 a rdf:Statement ;
+  rdf:subject op:Charlotte_Smoothie_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Charlotte_Smoothie ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Charlotte_smoothies/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Charlotte Smoothie as the bounty recipient." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00517 a rdf:Statement ;
+  rdf:subject op:Diamante ; rdf:predicate op:hasBounty ; rdf:object op:Diamante_Bounty_Former_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/diamante/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile explicitly labels the 99,000,000 berry amount as former (元); record name preserves that qualification." ;
+  opx:confidence "high" ; opx:temporalScope "former bounty; date and interval unspecified" .
+opx:evidenceCampaign00518 a rdf:Statement ;
+  rdf:subject op:Diamante_Bounty_Former_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/diamante/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the official profile's explicitly former amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "former bounty; date and interval unspecified" .
+opx:evidenceCampaign00519 a rdf:Statement ;
+  rdf:subject op:Diamante_Bounty_Former_Profile ; rdf:predicate op:bountyAmount ; rdf:object "99000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/diamante/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists a former bounty of 99,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "former bounty; date and interval unspecified" .
+opx:evidenceCampaign00520 a rdf:Statement ;
+  rdf:subject op:Diamante_Bounty_Former_Profile ; rdf:predicate op:givenTo ; rdf:object op:Diamante ;
+  prov:wasDerivedFrom <https://one-piece.com/character/diamante/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Diamante as the recipient of the explicitly former bounty." ;
+  opx:confidence "high" ; opx:temporalScope "former bounty; date and interval unspecified" .
+opx:evidenceCampaign00521 a rdf:Statement ;
+  rdf:subject op:Diamante ; rdf:predicate op:epithet ; rdf:object "コロシアムの英雄"@ja ;
+  prov:wasDerivedFrom <https://one-piece.com/character/diamante/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile names his epithet as コロシアムの英雄 (Hero of the Colosseum)." ;
+  opx:confidence "high" ; opx:temporalScope "profile description; time unspecified" .
+
+opx:evidenceCampaign00522 a rdf:Statement ;
+  rdf:subject op:Jack ; rdf:predicate op:hasBounty ; rdf:object op:Jack_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Jack/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Jack's bounty as 1,000,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00523 a rdf:Statement ;
+  rdf:subject op:Jack_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Jack/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00524 a rdf:Statement ;
+  rdf:subject op:Jack_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "1000000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Jack/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 1,000,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00525 a rdf:Statement ;
+  rdf:subject op:Jack_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Jack ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Jack/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Jack as the bounty recipient." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00526 a rdf:Statement ;
+  rdf:subject op:Drophy ; rdf:predicate op:hasBounty ; rdf:object op:Drophy_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Ms_Merry_Christmas/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Drophy's bounty as 14,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00527 a rdf:Statement ;
+  rdf:subject op:Drophy_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Ms_Merry_Christmas/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00528 a rdf:Statement ;
+  rdf:subject op:Drophy_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "14000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Ms_Merry_Christmas/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 14,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00529 a rdf:Statement ;
+  rdf:subject op:Drophy_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Drophy ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Ms_Merry_Christmas/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Drophy as the bounty recipient." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+
+opx:evidenceCampaign00530 a rdf:Statement ;
+  rdf:subject op:Galdino ; rdf:predicate op:hasBounty ; rdf:object op:Galdino_Bounty_Profile ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Galdino/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists Galdino's bounty as 24,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00531 a rdf:Statement ;
+  rdf:subject op:Galdino_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Galdino/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The existing Bounty model represents the profile amount as a named record." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00532 a rdf:Statement ;
+  rdf:subject op:Galdino_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "24000000"^^xsd:integer ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Galdino/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The official profile lists 24,000,000 berries." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .
+opx:evidenceCampaign00533 a rdf:Statement ;
+  rdf:subject op:Galdino_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Galdino ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Galdino/index.html> ;
+  opx:sourceType "official character profile" ;
+  opx:sourceReference "The profile identifies Galdino as the bounty recipient." ;
+  opx:confidence "high" ; opx:temporalScope "profile value; time unspecified" .

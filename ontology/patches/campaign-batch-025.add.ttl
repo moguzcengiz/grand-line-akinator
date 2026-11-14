@@ -1,0 +1,53 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+op:Shimotsuki_Ushimaru op:affiliatesWith op:Wano .
+op:Shimotsuki_Yasuie op:affiliatesWith op:Wano .
+op:Shelly op:residence op:Long_Ring_Long_Land .
+op:Long_Ring_Long_Land a op:Location ;
+    rdfs:label "Long Ring Long Land"@en, "ロングリングロングランド"@ja .
+
+opx:evidenceCampaign025UshimaruWano a rdf:Statement ;
+    rdf:subject op:Shimotsuki_Ushimaru ; rdf:predicate op:affiliatesWith ; rdf:object op:Wano ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shimotsuki_Ushimaru/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Shimotsuki Ushimaru as a former daimyo of Ringo in Wano. The affiliation records the country-level association; the existing Ringo residence remains distinct." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign025YasuieWano a rdf:Statement ;
+    rdf:subject op:Shimotsuki_Yasuie ; rdf:predicate op:affiliatesWith ; rdf:object op:Wano ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shimotuki_yasuie/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Yasuie as a former daimyo of Hakumai in Wano. The country-level association complements the existing Hakumai and Ebisu Town residences." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign025ShellyResidence a rdf:Statement ;
+    rdf:subject op:Shelly ; rdf:predicate op:residence ; rdf:object op:Long_Ring_Long_Land ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sherry/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Shelly as an Uma living on Long Ring Long Land and gives her October 31 birthday, which is already represented." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign025LongRingLocationType a rdf:Statement ;
+    rdf:subject op:Long_Ring_Long_Land ; rdf:predicate rdf:type ; rdf:object op:Location ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sherry/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile identifies Long Ring Long Land as the place where Shelly, an Uma, lives; the existing location URI is now typed as a Location." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign025LongRingEnglishLabel a rdf:Statement ;
+    rdf:subject op:Long_Ring_Long_Land ; rdf:predicate rdfs:label ; rdf:object "Long Ring Long Land"@en ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sherry/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "English rendering of the location name as published in the official character profile." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign025LongRingJapaneseLabel a rdf:Statement ;
+    rdf:subject op:Long_Ring_Long_Land ; rdf:predicate rdfs:label ; rdf:object "ロングリングロングランド"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sherry/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Japanese rendering of the location name as published in the official character profile." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .

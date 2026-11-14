@@ -1,0 +1,14 @@
+# Batch 063: official Prince Grus profile explicitly lists SWORD membership.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Prince_Grus op:affiliatesWith op:SWORD .
+
+opx:evidenceCampaign06301 a rdf:Statement ;
+    rdf:subject op:Prince_Grus ; rdf:predicate op:affiliatesWith ; rdf:object op:SWORD ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Prince_Grus/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match profile's primary heading explicitly states 海軍本部機密特殊部隊「SWORD」 / 隊員 (Navy Headquarters Secret Special Forces SWORD / member). Cached document SHA-256: b6e725769c98e2a77e07bacd8a294bbc084fc3b52f95b49661c46974e9b0ef46." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .

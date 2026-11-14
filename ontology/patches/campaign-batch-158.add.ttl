@@ -1,0 +1,103 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign158001 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile field: 革命軍幹部 / 〝東軍〟軍隊長. This supports the ontology edge. Cached document SHA-256: 11661c4728a14ed5a0b480bfc95302da993c0c608d9369d5ebf1973ae2e5d0ce. Temporal scope: profile snapshot undated; temporal status unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:East_Army_Commander_of_the_Revolutionary_Army ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Belo_Betty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Belo_Betty/index.html> .
+
+opx:evidenceCampaign158002 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile field: 革命軍幹部 / 元〝東軍〟軍隊長. This supports the ontology edge. Cached document SHA-256: 9f0bd14c80fb388517d25d9c600f93c1014830ba42eb7863229833a8fddb1bb6. Temporal scope: historical; official profile explicitly says former." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; official profile explicitly says former" ;
+    rdf:object op:East_Army_Commander_of_the_Revolutionary_Army ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ginny ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ginny/index.html> .
+
+opx:evidenceCampaign158003 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile field: 革命軍幹部 / 〝東軍〟副軍隊長. This supports the ontology edge. Cached document SHA-256: 218add226f92d05c16195ef351bc8d7fd62be8d349ff386672a0f44da1871e67. Temporal scope: profile snapshot undated; temporal status unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:East_Army_Deputy_Commander ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ahiru ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ahiru/index.html> .
+
+opx:evidenceCampaign158004 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile field: 東の海（イーストブルー）. This supports the ontology edge. Cached document SHA-256: 978b3e358c0a49f7ee28feea1b15b2acfcbcc7d48b011c5644c2a419e06a7048. Temporal scope: birthplace; time-independent relationship." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "birthplace; time-independent relationship" ;
+    rdf:object op:East_Blue ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Chocolat ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Chocolat/index.html> .
+
+opx:evidenceCampaign158005 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile field: 東の海(イーストブルー)オレンジの町. This supports the ontology edge. Cached document SHA-256: 908efca7c6e63c700031ee04a7a9a8b54f3ee951c3285a05b7859632bb845f0b. Temporal scope: birthplace; time-independent relationship." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "birthplace; time-independent relationship" ;
+    rdf:object op:East_Blue ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Hocker ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hocker/index.html> .
+
+opx:evidenceCampaign158006 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile field: 東の海（イーストブルー）シロップ村. This supports the ontology edge. Cached document SHA-256: 51f5c2997ea96ccd9e9c66ab34d53d8290eb710e223ac7ee011b472138ea0765. Temporal scope: birthplace; time-independent relationship." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "birthplace; time-independent relationship" ;
+    rdf:object op:East_Blue ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Kaya ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaya/index.html> .
+
+opx:temporalCampaign158001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:East_Army_Commander_of_the_Revolutionary_Army ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Belo_Betty .
+
+opx:temporalCampaign158002 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:East_Army_Commander_of_the_Revolutionary_Army ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ginny .
+
+opx:temporalCampaign158003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:East_Army_Deputy_Commander ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Ahiru .
+
+opx:temporalCampaign158004 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:East_Blue ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Chocolat .
+
+opx:temporalCampaign158005 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:East_Blue ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Hocker .
+
+opx:temporalCampaign158006 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:East_Blue ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Kaya .
+
+op:Ginny op:occupation op:East_Army_Commander_of_the_Revolutionary_Army .
+

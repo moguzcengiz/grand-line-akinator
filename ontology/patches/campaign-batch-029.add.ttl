@@ -1,0 +1,172 @@
+@prefix ns1: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ns1:evidenceCampaign029AmazonCurrentTicketSeller1 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile says Amazon became a ticket seller at Wagomuland after Enel’s group left Skypiea. This existing occupation is current in the profile snapshot." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "current at official profile snapshot" ;
+    rdf:object ns1:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject ns1:Campaign029AmazonCurrentTicketSeller ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonCurrentTicketSeller2 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile says Amazon became a ticket seller at Wagomuland after Enel’s group left Skypiea. This existing occupation is current in the profile snapshot." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "current at official profile snapshot" ;
+    rdf:object <http://kalnassag.com/onepiece#Amazon> ;
+    rdf:predicate rdf:subject ;
+    rdf:subject ns1:Campaign029AmazonCurrentTicketSeller ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonCurrentTicketSeller3 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile says Amazon became a ticket seller at Wagomuland after Enel’s group left Skypiea. This existing occupation is current in the profile snapshot." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "current at official profile snapshot" ;
+    rdf:object <http://kalnassag.com/onepiece#occupation> ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject ns1:Campaign029AmazonCurrentTicketSeller ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonCurrentTicketSeller4 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile says Amazon became a ticket seller at Wagomuland after Enel’s group left Skypiea. This existing occupation is current in the profile snapshot." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "current at official profile snapshot" ;
+    rdf:object <http://kalnassag.com/onepiece#Ticket_Saleswoman> ;
+    rdf:predicate rdf:object ;
+    rdf:subject ns1:Campaign029AmazonCurrentTicketSeller ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonCurrentTicketSeller5 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile says Amazon became a ticket seller at Wagomuland after Enel’s group left Skypiea. This existing occupation is current in the profile snapshot." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "current at official profile snapshot" ;
+    rdf:object ns1:Current ;
+    rdf:predicate ns1:temporalStatus ;
+    rdf:subject ns1:Campaign029AmazonCurrentTicketSeller ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonHistoricalGatekeeper1 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile identifies Amazon as a former Heavenly Gate supervisor and says she later became a Wagomuland ticket seller. This existing occupation is historical; exact dates are unspecified." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "historical role; exact interval unspecified" ;
+    rdf:object ns1:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject ns1:Campaign029AmazonHistoricalGatekeeper ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonHistoricalGatekeeper2 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile identifies Amazon as a former Heavenly Gate supervisor and says she later became a Wagomuland ticket seller. This existing occupation is historical; exact dates are unspecified." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "historical role; exact interval unspecified" ;
+    rdf:object <http://kalnassag.com/onepiece#Amazon> ;
+    rdf:predicate rdf:subject ;
+    rdf:subject ns1:Campaign029AmazonHistoricalGatekeeper ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonHistoricalGatekeeper3 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile identifies Amazon as a former Heavenly Gate supervisor and says she later became a Wagomuland ticket seller. This existing occupation is historical; exact dates are unspecified." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "historical role; exact interval unspecified" ;
+    rdf:object <http://kalnassag.com/onepiece#occupation> ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject ns1:Campaign029AmazonHistoricalGatekeeper ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonHistoricalGatekeeper4 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile identifies Amazon as a former Heavenly Gate supervisor and says she later became a Wagomuland ticket seller. This existing occupation is historical; exact dates are unspecified." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "historical role; exact interval unspecified" ;
+    rdf:object <http://kalnassag.com/onepiece#Gatekeeper_of_Skypiea> ;
+    rdf:predicate rdf:object ;
+    rdf:subject ns1:Campaign029AmazonHistoricalGatekeeper ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AmazonHistoricalGatekeeper5 a rdf:Statement ;
+    ns1:confidence "high" ;
+    ns1:sourceReference "The official profile identifies Amazon as a former Heavenly Gate supervisor and says she later became a Wagomuland ticket seller. This existing occupation is historical; exact dates are unspecified." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "historical role; exact interval unspecified" ;
+    rdf:object ns1:Historical ;
+    rdf:predicate ns1:temporalStatus ;
+    rdf:subject ns1:Campaign029AmazonHistoricalGatekeeper ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Amazon/index.html> .
+
+ns1:evidenceCampaign029AttachHistoricalMarineAffiliation1 a rdf:Statement ;
+    ns1:confidence "medium" ;
+    ns1:sourceReference "The official editorial states Attach was dismissed from the Marines after the Paramount War. The existing Marine affiliation is therefore recorded as historical; a later World Economic Journal affiliation is not added because the editorial discusses uncertainty around that identity." ;
+    ns1:sourceType "official editorial" ;
+    ns1:temporalScope "historical affiliation; ended after the Paramount War; exact interval unspecified" ;
+    rdf:object ns1:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject ns1:Campaign029AttachHistoricalMarineAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20190828_1061/index.html> .
+
+ns1:evidenceCampaign029AttachHistoricalMarineAffiliation2 a rdf:Statement ;
+    ns1:confidence "medium" ;
+    ns1:sourceReference "The official editorial states Attach was dismissed from the Marines after the Paramount War. The existing Marine affiliation is therefore recorded as historical; a later World Economic Journal affiliation is not added because the editorial discusses uncertainty around that identity." ;
+    ns1:sourceType "official editorial" ;
+    ns1:temporalScope "historical affiliation; ended after the Paramount War; exact interval unspecified" ;
+    rdf:object <http://kalnassag.com/onepiece#Attach> ;
+    rdf:predicate rdf:subject ;
+    rdf:subject ns1:Campaign029AttachHistoricalMarineAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20190828_1061/index.html> .
+
+ns1:evidenceCampaign029AttachHistoricalMarineAffiliation3 a rdf:Statement ;
+    ns1:confidence "medium" ;
+    ns1:sourceReference "The official editorial states Attach was dismissed from the Marines after the Paramount War. The existing Marine affiliation is therefore recorded as historical; a later World Economic Journal affiliation is not added because the editorial discusses uncertainty around that identity." ;
+    ns1:sourceType "official editorial" ;
+    ns1:temporalScope "historical affiliation; ended after the Paramount War; exact interval unspecified" ;
+    rdf:object <http://kalnassag.com/onepiece#affiliatesWith> ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject ns1:Campaign029AttachHistoricalMarineAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20190828_1061/index.html> .
+
+ns1:evidenceCampaign029AttachHistoricalMarineAffiliation4 a rdf:Statement ;
+    ns1:confidence "medium" ;
+    ns1:sourceReference "The official editorial states Attach was dismissed from the Marines after the Paramount War. The existing Marine affiliation is therefore recorded as historical; a later World Economic Journal affiliation is not added because the editorial discusses uncertainty around that identity." ;
+    ns1:sourceType "official editorial" ;
+    ns1:temporalScope "historical affiliation; ended after the Paramount War; exact interval unspecified" ;
+    rdf:object <http://kalnassag.com/onepiece#Marines> ;
+    rdf:predicate rdf:object ;
+    rdf:subject ns1:Campaign029AttachHistoricalMarineAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20190828_1061/index.html> .
+
+ns1:evidenceCampaign029AttachHistoricalMarineAffiliation5 a rdf:Statement ;
+    ns1:confidence "medium" ;
+    ns1:sourceReference "The official editorial states Attach was dismissed from the Marines after the Paramount War. The existing Marine affiliation is therefore recorded as historical; a later World Economic Journal affiliation is not added because the editorial discusses uncertainty around that identity." ;
+    ns1:sourceType "official editorial" ;
+    ns1:temporalScope "historical affiliation; ended after the Paramount War; exact interval unspecified" ;
+    rdf:object ns1:Historical ;
+    rdf:predicate ns1:temporalStatus ;
+    rdf:subject ns1:Campaign029AttachHistoricalMarineAffiliation ;
+    prov:wasDerivedFrom <https://one-piece.com/greg/o20190828_1061/index.html> .
+
+ns1:Campaign029AmazonCurrentTicketSeller a ns1:TemporalStatement ;
+    ns1:temporalStatus ns1:Current ;
+    rdf:object <http://kalnassag.com/onepiece#Ticket_Saleswoman> ;
+    rdf:predicate <http://kalnassag.com/onepiece#occupation> ;
+    rdf:subject <http://kalnassag.com/onepiece#Amazon> .
+
+ns1:Campaign029AmazonHistoricalGatekeeper a ns1:TemporalStatement ;
+    ns1:temporalStatus ns1:Historical ;
+    rdf:object <http://kalnassag.com/onepiece#Gatekeeper_of_Skypiea> ;
+    rdf:predicate <http://kalnassag.com/onepiece#occupation> ;
+    rdf:subject <http://kalnassag.com/onepiece#Amazon> .
+
+ns1:Campaign029AttachHistoricalMarineAffiliation a ns1:TemporalStatement ;
+    ns1:temporalStatus ns1:Historical ;
+    rdf:object <http://kalnassag.com/onepiece#Marines> ;
+    rdf:predicate <http://kalnassag.com/onepiece#affiliatesWith> ;
+    rdf:subject <http://kalnassag.com/onepiece#Attach> .
+

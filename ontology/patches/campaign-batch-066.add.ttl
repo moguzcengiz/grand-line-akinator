@@ -1,0 +1,27 @@
+# Batch 066: source-backed Saru affiliation and temporal Sarquiss membership.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Saru op:affiliatesWith op:World_Government .
+
+opx:temporalCampaign06601 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:subject op:Saru ; rdf:predicate op:affiliatesWith ; rdf:object op:World_Government .
+opx:evidenceCampaign06601 a rdf:Statement ;
+    rdf:subject op:Saru ; rdf:predicate op:affiliatesWith ; rdf:object op:World_Government ;
+    prov:wasDerivedFrom <https://one-piece.com/character/salou/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile identifies サルウ (Saru) and its primary profile heading is 世界政府 (World Government), directly supporting the existing World_Government affiliation URI. Cached document SHA-256: 5d399fec5bacc6c29c5c881a977fb3dcc89ed40443ca614bfa1340f53af42db4." ;
+    opx:confidence "high" ; opx:temporalScope "current at official profile snapshot" .
+
+opx:temporalCampaign06602 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Sarquiss ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates .
+opx:evidenceCampaign06602 a rdf:Statement ;
+    rdf:subject op:Sarquiss ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sarquiss/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元ベラミー海賊団 / 副船長 (former Bellamy Pirates / first mate); record this existing affiliation as historical. Cached document SHA-256: 6a62d6b3814b8b877586ca1b9124bff9815c33fba4cda4d2dbe3edb987c9aa5a." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

@@ -1,0 +1,247 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign031BepoBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Bepo’s bounty as 1,500 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object 1500 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Bepo_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bepo/index.html> .
+
+opx:evidenceCampaign031BepoBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The listed bounty is assigned to Bepo." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bepo ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Bepo_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bepo/index.html> .
+
+opx:evidenceCampaign031BepoBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this record as Bepo’s bounty; typed with the ontology’s Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Bepo_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bepo/index.html> .
+
+opx:evidenceCampaign031BepoHasBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Bepo’s bounty as 1,500 berries. It is represented as a named Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bepo_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Bepo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bepo/index.html> .
+
+opx:evidenceCampaign031BlackMariaBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Black Maria’s bounty as 480 million berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object 480000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Black_Maria_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The listed bounty is assigned to Black Maria." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Black_Maria ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Black_Maria_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this record as Black Maria’s bounty; typed with the ontology’s Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Black_Maria_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaCurrentFruitUser a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Black Maria profile lists this fruit and describes her as its user." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Black_Maria ;
+    rdf:predicate op:DevilFruitCurrentUser ;
+    rdf:subject <http://kalnassag.com/onepiece/Kumo_Kumo_no_Mi,_Model:_Rosamygale_Grauvogeli> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaFruitLabel a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile gives the Japanese fruit/model name: クモクモの実 古代種 モデル 〝ロサミガレ・グラウボゲリィ〟." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object "クモクモの実 古代種 モデル 〝ロサミガレ・グラウボゲリィ〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece/Kumo_Kumo_no_Mi,_Model:_Rosamygale_Grauvogeli> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaFruitSubtype a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly classifies the fruit as Ancient Zoan." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object opx:AncientZoan ;
+    rdf:predicate opx:hasFruitSubtype ;
+    rdf:subject <http://kalnassag.com/onepiece/Kumo_Kumo_no_Mi,_Model:_Rosamygale_Grauvogeli> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaFruitType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Black Maria’s Kumo Kumo no Mi as a Devil Fruit." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:DevilFruit ;
+    rdf:predicate rdf:type ;
+    rdf:subject <http://kalnassag.com/onepiece/Kumo_Kumo_no_Mi,_Model:_Rosamygale_Grauvogeli> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaFruitTypeZoan a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile specifies an Ancient Zoan fruit; represented with the ontology’s Zoan type and Ancient Zoan subtype." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Zoan ;
+    rdf:predicate op:hasFruitType ;
+    rdf:subject <http://kalnassag.com/onepiece/Kumo_Kumo_no_Mi,_Model:_Rosamygale_Grauvogeli> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BlackMariaHasBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Black Maria’s bounty as 480 million berries. It is represented as a named Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Black_Maria_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Black_Maria ;
+    prov:wasDerivedFrom <https://one-piece.com/character/blackmaria/index.html> .
+
+opx:evidenceCampaign031BluejamBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Bluejam’s bounty as 14.3 million berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object 14300000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Bluejam_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bluegem/index.html> .
+
+opx:evidenceCampaign031BluejamBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The listed bounty is assigned to Bluejam." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bluejam ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Bluejam_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bluegem/index.html> .
+
+opx:evidenceCampaign031BluejamBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this record as Bluejam’s bounty; typed with the ontology’s Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Bluejam_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bluegem/index.html> .
+
+opx:evidenceCampaign031BluejamHasBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Bluejam’s bounty as 14.3 million berries. It is represented as a named Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bluejam_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Bluejam ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Bluegem/index.html> .
+
+opx:evidenceCampaign031BobbyFunkBountyAmount a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Bobby Funk’s bounty as 36 million berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object 36000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Bobby_Funk_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bobby_funk/index.html> .
+
+opx:evidenceCampaign031BobbyFunkBountyRecipient a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The listed bounty is assigned to Bobby Funk." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bobby_Funk ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Bobby_Funk_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bobby_funk/index.html> .
+
+opx:evidenceCampaign031BobbyFunkBountyType a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile identifies this record as Bobby Funk’s bounty; typed with the ontology’s Bounty class." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Bobby_Funk_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bobby_funk/index.html> .
+
+opx:evidenceCampaign031BobbyFunkHasBounty a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists Bobby Funk’s bounty as 36 million berries. It is represented as a named Bounty record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile snapshot" ;
+    rdf:object op:Bobby_Funk_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Bobby_Funk ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bobby_funk/index.html> .
+
+op:Bepo op:hasBounty op:Bepo_Bounty_Profile .
+
+op:Bluejam op:hasBounty op:Bluejam_Bounty_Profile .
+
+op:Bobby_Funk op:hasBounty op:Bobby_Funk_Bounty_Profile .
+
+op:Bepo_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 1500 ;
+    op:givenTo op:Bepo .
+
+op:Black_Maria op:hasBounty op:Black_Maria_Bounty_Profile .
+
+op:Black_Maria_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 480000000 ;
+    op:givenTo op:Black_Maria .
+
+op:Bluejam_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 14300000 ;
+    op:givenTo op:Bluejam .
+
+op:Bobby_Funk_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 36000000 ;
+    op:givenTo op:Bobby_Funk .
+
+<http://kalnassag.com/onepiece/Kumo_Kumo_no_Mi,_Model:_Rosamygale_Grauvogeli> a op:DevilFruit ;
+    rdfs:label "クモクモの実 古代種 モデル 〝ロサミガレ・グラウボゲリィ〟"@ja ;
+    op:DevilFruitCurrentUser op:Black_Maria ;
+    op:hasFruitType op:Zoan ;
+    opx:hasFruitSubtype opx:AncientZoan .
+

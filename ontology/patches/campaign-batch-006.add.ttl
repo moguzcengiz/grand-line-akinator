@@ -1,0 +1,750 @@
+# Batch 006: official profile facts and additive temporal annotations. Temporal records do not entail timeless assertions.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign00601 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 1,374,000,000 berries for Marco; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Marco_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Marco ;
+    prov:wasDerivedFrom <https://one-piece.com/character/marco/index.html> .
+
+opx:evidenceCampaign00602 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Marco_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/marco/index.html> .
+
+opx:evidenceCampaign00603 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 1,374,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object 1374000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Marco_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/marco/index.html> .
+
+opx:evidenceCampaign00604 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Marco as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Marco ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Marco_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/marco/index.html> .
+
+opx:evidenceCampaign00605 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 7,500,000 berries for Mikita; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Mikita_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Mikita ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Valentine/index.html> .
+
+opx:evidenceCampaign00606 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Mikita_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Valentine/index.html> .
+
+opx:evidenceCampaign00607 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 7,500,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object 7500000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Mikita_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Valentine/index.html> .
+
+opx:evidenceCampaign00608 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Mikita as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Mikita ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Mikita_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ms_Valentine/index.html> .
+
+opx:evidenceCampaign00609 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 330,000,000 berries for Pekoms; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Pekoms_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Pekoms ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pekoms/index.html> .
+
+opx:evidenceCampaign00610 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Pekoms_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pekoms/index.html> .
+
+opx:evidenceCampaign00611 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 330,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object 330000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Pekoms_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pekoms/index.html> .
+
+opx:evidenceCampaign00612 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Pekoms as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Pekoms ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Pekoms_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pekoms/index.html> .
+
+opx:evidenceCampaign00613 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 99,000,000 berries for Pica; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object op:Pica_Bounty_Former_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Pica ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pica/index.html> .
+
+opx:evidenceCampaign00614 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Pica_Bounty_Former_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pica/index.html> .
+
+opx:evidenceCampaign00615 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 99,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object 99000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Pica_Bounty_Former_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pica/index.html> .
+
+opx:evidenceCampaign00616 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Pica as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object op:Pica ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Pica_Bounty_Former_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pica/index.html> .
+
+opx:evidenceCampaign00617 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 350,000,000 berries for Scratchmen_Apoo; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Scratchmen_Apoo_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Scratchmen_Apoo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00618 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Scratchmen_Apoo_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00619 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 350,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object 350000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Scratchmen_Apoo_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00620 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Scratchmen_Apoo as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Scratchmen_Apoo ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Scratchmen_Apoo_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/law/index.html> .
+
+opx:evidenceCampaign00621 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 4,048,900,000 berries for Shanks; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Shanks_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Shanks ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00622 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Shanks_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00623 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 4,048,900,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object 4048900000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Shanks_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00624 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Shanks as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Shanks ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Shanks_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00625 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 429,000,000 berries for Tamago; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Tamago_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Tamago ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Baron_Tamago/index.html> .
+
+opx:evidenceCampaign00626 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Tamago_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Baron_Tamago/index.html> .
+
+opx:evidenceCampaign00627 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 429,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object 429000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Tamago_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Baron_Tamago/index.html> .
+
+opx:evidenceCampaign00628 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Tamago as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Tamago ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Tamago_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Baron_Tamago/index.html> .
+
+opx:evidenceCampaign00629 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 99,000,000 berries for Trebol; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object op:Trebol_Bounty_Former_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Trebol ;
+    prov:wasDerivedFrom <https://one-piece.com/character/trebol/index.html> .
+
+opx:evidenceCampaign00630 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Trebol_Bounty_Former_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/trebol/index.html> .
+
+opx:evidenceCampaign00631 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 99,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object 99000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Trebol_Bounty_Former_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/trebol/index.html> .
+
+opx:evidenceCampaign00632 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Trebol as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "former bounty; date and interval unspecified" ;
+    rdf:object op:Trebol ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Trebol_Bounty_Former_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/trebol/index.html> .
+
+opx:evidenceCampaign00633 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 64,000,000 berries for Van_Augur; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "bounty at Summit War; point/date unspecified" ;
+    rdf:object op:Van_Augur_Bounty_Summit_War ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Van_Augur ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Van_Ogre/index.html> .
+
+opx:evidenceCampaign00634 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "bounty at Summit War; point/date unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Van_Augur_Bounty_Summit_War ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Van_Ogre/index.html> .
+
+opx:evidenceCampaign00635 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 64,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "bounty at Summit War; point/date unspecified" ;
+    rdf:object 64000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Van_Augur_Bounty_Summit_War ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Van_Ogre/index.html> .
+
+opx:evidenceCampaign00636 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies Van_Augur as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "bounty at Summit War; point/date unspecified" ;
+    rdf:object op:Van_Augur ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Van_Augur_Bounty_Summit_War ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Van_Ogre/index.html> .
+
+opx:evidenceCampaign00637 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 222,000,000 berries for X_Drake; record identifier preserves the source time qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:X_Drake_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:X_Drake ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00638 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The existing Bounty model represents the official profile amount as a named record." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:X_Drake_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00639 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile lists 222,000,000 berries." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object 222000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:X_Drake_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00640 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile identifies X_Drake as the bounty recipient." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "official profile amount; date/interval unspecified" ;
+    rdf:object op:X_Drake ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:X_Drake_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00641 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile explicitly identifies Pekoms as an Armament Haki user." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile value; time unspecified" ;
+    rdf:object opx:ArmamentHaki ;
+    rdf:predicate opx:hasHaki ;
+    rdf:subject op:Pekoms ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Pekoms/index.html> .
+
+opx:evidenceCampaign00643 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current CP0 affiliation" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00642 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rob_Lucci/index.html> .
+
+opx:evidenceCampaign00645 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former CP9 affiliation" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00644 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rob_Lucci/index.html> .
+
+opx:evidenceCampaign00647 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current Cipher Pol agent role" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00646 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rob_Lucci/index.html> .
+
+opx:evidenceCampaign00649 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former shipwright role at Galley-La" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00648 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rob_Lucci/index.html> .
+
+opx:evidenceCampaign00651 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current Red Hair Pirates affiliation" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00650 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00653 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former Roger Pirates affiliation" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00652 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00655 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current Emperor role" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00654 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00657 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current pirate-captain role" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00656 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Shanks/index.html> .
+
+opx:evidenceCampaign00659 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current Vice Admiral rank" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00658 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/smoker/index.html> .
+
+opx:evidenceCampaign00661 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current G-5 Unit 01 commander role" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00660 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/smoker/index.html> .
+
+opx:evidenceCampaign00663 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former Marine Rear Admiral rank" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00662 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00665 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current SWORD captain role" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00664 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00667 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "current Marine/SWORD affiliation" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00666 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00669 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former Beasts Pirates affiliation" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00668 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00671 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former Shinuchi rank within Beasts Pirates" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00670 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00673 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former Drake Pirates affiliation" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00672 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00675 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "former pirate-captain role" ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign00674 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign00642 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:CP0 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Rob_Lucci .
+
+opx:evidenceCampaign00644 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:CP9 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Rob_Lucci .
+
+opx:evidenceCampaign00646 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Cipher_Pol_Agent ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Rob_Lucci .
+
+opx:evidenceCampaign00648 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Shipwright ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Rob_Lucci .
+
+opx:evidenceCampaign00650 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Red_Hair_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Shanks .
+
+opx:evidenceCampaign00652 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Roger_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Shanks .
+
+opx:evidenceCampaign00654 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Emperor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Shanks .
+
+opx:evidenceCampaign00656 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Pirate_Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Shanks .
+
+opx:evidenceCampaign00658 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Vice_Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Smoker .
+
+opx:evidenceCampaign00660 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Commander_of_G-5_Unit_01 ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Smoker .
+
+opx:evidenceCampaign00662 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Marine_Rear_Admiral ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:X_Drake .
+
+opx:evidenceCampaign00664 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Captain_of_SWORD ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:X_Drake .
+
+opx:evidenceCampaign00666 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Marines ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:X_Drake .
+
+opx:evidenceCampaign00668 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Beasts_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:X_Drake .
+
+opx:evidenceCampaign00670 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Shinuchi ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:X_Drake .
+
+opx:evidenceCampaign00672 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Drake_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:X_Drake .
+
+opx:evidenceCampaign00674 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Captain ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:X_Drake .
+
+op:Marco op:hasBounty op:Marco_Bounty_Profile .
+
+op:Mikita op:hasBounty op:Mikita_Bounty_Profile .
+
+op:Pica op:hasBounty op:Pica_Bounty_Former_Profile .
+
+op:Scratchmen_Apoo op:hasBounty op:Scratchmen_Apoo_Bounty_Profile .
+
+op:Tamago op:hasBounty op:Tamago_Bounty_Profile .
+
+op:Trebol op:hasBounty op:Trebol_Bounty_Former_Profile .
+
+op:Van_Augur op:hasBounty op:Van_Augur_Bounty_Summit_War .
+
+op:Pekoms op:hasBounty op:Pekoms_Bounty_Profile ;
+    opx:hasHaki opx:ArmamentHaki .
+
+op:Marco_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 1374000000 ;
+    op:givenTo op:Marco .
+
+op:Mikita_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 7500000 ;
+    op:givenTo op:Mikita .
+
+op:Pekoms_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 330000000 ;
+    op:givenTo op:Pekoms .
+
+op:Pica_Bounty_Former_Profile a op:Bounty ;
+    op:bountyAmount 99000000 ;
+    op:givenTo op:Pica .
+
+op:Scratchmen_Apoo_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 350000000 ;
+    op:givenTo op:Scratchmen_Apoo .
+
+op:Shanks_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 4048900000 ;
+    op:givenTo op:Shanks .
+
+op:Tamago_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 429000000 ;
+    op:givenTo op:Tamago .
+
+op:Trebol_Bounty_Former_Profile a op:Bounty ;
+    op:bountyAmount 99000000 ;
+    op:givenTo op:Trebol .
+
+op:Van_Augur_Bounty_Summit_War a op:Bounty ;
+    op:bountyAmount 64000000 ;
+    op:givenTo op:Van_Augur .
+
+op:X_Drake_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 222000000 ;
+    op:givenTo op:X_Drake .
+
+op:Shanks op:hasBounty op:Shanks_Bounty_Profile .
+
+op:X_Drake op:hasBounty op:X_Drake_Bounty_Profile .
+

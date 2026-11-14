@@ -39,16 +39,25 @@ def _name(g: Graph, u: URIRef) -> tuple[str, str | None]:
     return name, (ja[0] if ja else None)
 
 
-def build_model():
+def build_model(source_graphs=None):
     """Pure-python part: returns (nodes, edges, types, report). Testable without Fuseki."""
-    base, ext = load_sources()
+    from .perf import record as perf_record
+    t0 = time.perf_counter()
+    base, ext = source_graphs if source_graphs is not None else load_sources()
     union = base + ext
-    t0 = time.time()
+    load_s = time.perf_counter() - t0
+    perf_record("rdf_load", load_s, base_triples=len(base), extension_triples=len(ext))
+    t0 = time.perf_counter()
     inferred, unresolved = materialize(union)
+    owlrl_s = time.perf_counter() - t0
+    t0 = time.perf_counter()
     merged = nonreflexive_same_as(inferred)
     contradictions = clashes(inferred)
+    integrity_s = time.perf_counter() - t0
+    t0 = time.perf_counter()
     shacl = shacl_report(union)
-    reasoning_s = round(time.time() - t0, 1)
+    shacl_s = time.perf_counter() - t0
+    reasoning_s = round(owlrl_s + integrity_s + shacl_s, 1)
     inferred_dom = Graph()
     for t in inferred:
         if is_domain_triple(t):
@@ -114,11 +123,17 @@ def build_model():
         nodes[u]["props"]["haki_known"] = True
     add_popularity(nodes, edges.values())
 
+    perf_record("owlrl", owlrl_s, input_triples=len(union), inferred_triples=len(inferred))
+    perf_record("graph_integrity", integrity_s, same_as_conflicts=len(merged), clashes=len(contradictions))
+    perf_record("shacl", shacl_s, violations=shacl["violations"], warnings=shacl["warnings"])
     report = {
         "source_triples": {"base": len(base), "extension": len(ext)},
         "inferred_triples_total": len(inferred),
         "inferred_triples_domain": len(inferred_dom),
         "reasoning_seconds": reasoning_s,
+        "stage_seconds": {"rdf_load": round(load_s, 6),
+                          "owlrl": round(owlrl_s, 6), "graph_integrity": round(integrity_s, 6),
+                          "shacl": round(shacl_s, 6)},
         "functional_axioms_dropped_for_reasoning": unresolved,
         "owl_sameAs_non_reflexive": len(merged),
         "owl_clashes": {"count": len(contradictions), "examples": contradictions[:10]},
@@ -217,16 +232,30 @@ def validate(nodes, edges, report):
 
 def main():
     graph.wait_ready()
-    nodes, edges, types, report = build_model()
+    stage_started = time.perf_counter()
+    source_graphs = load_sources()
+    perf_record = None
+    from .perf import record as perf_record
+    perf_record("rdf_load_for_ingestion", time.perf_counter() - stage_started,
+                base_triples=len(source_graphs[0]), extension_triples=len(source_graphs[1]))
+    nodes, edges, types, report = build_model(source_graphs=source_graphs)
+    perf_record("model_build", time.perf_counter() - stage_started, nodes=len(nodes), edges=len(edges))
+    stage_started = time.perf_counter()
     graphs = to_graphs(nodes, edges, types)
-    graphs["tbox"] = tbox(load_sources()[1])
+    graphs["tbox"] = tbox(source_graphs[1])
+    perf_record("named_graph_conversion", time.perf_counter() - stage_started, graphs={k: len(v) for k, v in graphs.items()})
     report["finished_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     report["store"] = {"engine": "Apache Jena Fuseki (TDB2)", "triples_by_graph": {k: len(v) for k, v in graphs.items()}}
     graphs["game"].add((URIRef(RUN), URIRef(graph.G + "report"), Literal(json.dumps(report))))
+    stage_started = time.perf_counter()
     load_into_fuseki(graphs)
+    perf_record("fuseki_upload", time.perf_counter() - stage_started, graphs=len(graphs), triples=sum(map(len, graphs.values())))
+    stage_started = time.perf_counter()
     try:
         validate(nodes, edges, report)
     finally:                                                   # the stored report carries the validation outcome (also when it failed)
+        perf_record("fuseki_store_validation", time.perf_counter() - stage_started,
+                    success=all(report.get("validation", {}).values()) if report.get("validation") else False)
         graphs["game"].set((URIRef(RUN), URIRef(graph.G + "report"), Literal(json.dumps(report))))
         graph.put_graph("game", graphs["game"].serialize(format="nt"))
     print(json.dumps(report, indent=2))

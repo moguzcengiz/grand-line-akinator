@@ -1,0 +1,5 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Official profile identifies Gol D. Roger as a character and pirate captain, not an affiliation class individual.
+op:Gol_D_Roger rdf:type op:Affiliation .

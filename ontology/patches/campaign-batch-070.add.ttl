@@ -1,0 +1,42 @@
+# Batch 070: source-backed G-5 affiliation and time-qualified prior roles.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Tashigi op:affiliatesWith op:G-5 .
+opx:evidenceCampaign07001 a rdf:Statement ;
+    rdf:subject op:Tashigi ; rdf:predicate op:affiliatesWith ; rdf:object op:G-5 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/tashigi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match profile heading says 海軍GL（グランドライン）第5支部 / 大佐 (Marine Grand Line Branch 5 / Captain), directly supporting the existing G-5 affiliation URI. The profile's Captain rank is already present. Cached document SHA-256: ea88355aa761d663f9efa14888babd299707635c8770a587129405770325c7cb." ;
+    opx:confidence "high" ; opx:temporalScope "current at official profile snapshot" .
+opx:temporalCampaign07001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:subject op:Tashigi ; rdf:predicate op:affiliatesWith ; rdf:object op:G-5 .
+opx:evidenceCampaign07002 a rdf:Statement ;
+    rdf:subject op:Tashigi ; rdf:predicate op:affiliatesWith ; rdf:object op:G-5 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/tashigi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact current-profile heading explicitly names Marine Grand Line Branch 5, supporting this current-at-snapshot affiliation. Cached document SHA-256: ea88355aa761d663f9efa14888babd299707635c8770a587129405770325c7cb." ;
+    opx:confidence "high" ; opx:temporalScope "current at official profile snapshot" .
+
+opx:temporalCampaign07002 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Surume ; rdf:predicate op:affiliatesWith ; rdf:object op:New_Fish-Man_Pirates .
+opx:evidenceCampaign07003 a rdf:Statement ;
+    rdf:subject op:Surume ; rdf:predicate op:affiliatesWith ; rdf:object op:New_Fish-Man_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Surume/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元新魚人海賊団 (former New Fish-Man Pirates), so preserve the existing membership as Historical. Cached document SHA-256: 2c526a13d6a2adc580c042ae4e9cfef83417865cd4eee23aec0dbf0cf93b1511." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .
+
+opx:temporalCampaign07003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:subject op:T_Bone ; rdf:predicate op:occupation ; rdf:object op:Marine_Vice_Admiral .
+opx:evidenceCampaign07004 a rdf:Statement ;
+    rdf:subject op:T_Bone ; rdf:predicate op:occupation ; rdf:object op:Marine_Vice_Admiral ;
+    prov:wasDerivedFrom <https://one-piece.com/character/T_Bone/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 海軍本部 / 中将 (Marine HQ / Vice Admiral). The page is undated and does not state whether this rank was current or former, so time is left unspecified rather than asserting current status. Cached document SHA-256: 72bdc79bb3930ba843d70048de0cc0fefda0212bd6cc17adbd63dbe1b9d56d88." ;
+    opx:confidence "high" ; opx:temporalScope "profile snapshot undated; temporal status unspecified" .

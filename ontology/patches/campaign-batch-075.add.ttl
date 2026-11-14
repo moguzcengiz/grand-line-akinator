@@ -1,0 +1,16 @@
+# Batch 075: official profile heading adds the specific Germa 66 affiliation for Époni.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Époni op:affiliatesWith op:Germa_66 .
+opx:temporalCampaign07501 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:subject op:Époni ; rdf:predicate op:affiliatesWith ; rdf:object op:Germa_66 .
+opx:evidenceCampaign07501 a rdf:Statement ;
+    rdf:subject op:Époni ; rdf:predicate op:affiliatesWith ; rdf:object op:Germa_66 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Epony/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says ジェルマ66 (Germa 66). The source supports the specific existing Germa_66 affiliation URI, in addition to the existing Germa Kingdom affiliation. Cached document SHA-256: 96b30e018b2f39408455c7723758ee9e385eb92497c9f80b34aec469617cacf0." ;
+    opx:confidence "high" ; opx:temporalScope "profile snapshot is undated; temporal status unspecified" .

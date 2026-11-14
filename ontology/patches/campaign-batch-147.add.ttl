@@ -1,0 +1,34 @@
+@prefix ns1: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ns1:evidenceCampaign147001 a rdf:Statement ;
+    ns1:confidence "0.94" ;
+    ns1:sourceReference "Exact official profile heading: 元ベラミー海賊団 / コック. コック identifies Hewitt as a cook; it maps to the existing Chef occupation URI. 元 (“former”) qualifies Bellamy Pirates membership, not cooking. Cached document SHA-256: 4ea06950d75501229f80e89117b0f509bd6f01a3c3d0476c0fa8e813e513c62f." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object <http://kalnassag.com/onepiece#Chef> ;
+    rdf:predicate <http://kalnassag.com/onepiece#occupation> ;
+    rdf:subject <http://kalnassag.com/onepiece#Hewitt> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hewitt/index.html> .
+
+ns1:evidenceCampaign147002 a rdf:Statement ;
+    ns1:confidence "0.96" ;
+    ns1:sourceReference "Exact official profile heading: インペルダウン / 牢番長. The Japanese role term matches the existing Chief_Guard node gloss 牢番長; this supports Saldeath’s existing occupation edge, not Sadi’s. Cached document SHA-256: 91e231e7641bcc6cc788d3b11bcdd8db872c443c9377a5e67685ee733c430d8a." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object <http://kalnassag.com/onepiece#Chief_Guard> ;
+    rdf:predicate <http://kalnassag.com/onepiece#occupation> ;
+    rdf:subject <http://kalnassag.com/onepiece#Saldeath> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Saldeath/index.html> .
+
+ns1:evidenceCampaign147003 a rdf:Statement ;
+    ns1:confidence "0.94" ;
+    ns1:sourceReference "Exact official profile heading: フクロウの図書館 / 館長. The heading identifies Biblo as head/director of the Owl Library, supporting the existing librarian-chief role mapping. Cached document SHA-256: 055152773149c7f1d08858432b83ebcfa6ace8217267e7781ef8fa896267ee3f." ;
+    ns1:sourceType "official character profile" ;
+    ns1:temporalScope "Profile snapshot; source provides no explicit temporal interval." ;
+    rdf:object <http://kalnassag.com/onepiece#Chief_Librarian> ;
+    rdf:predicate <http://kalnassag.com/onepiece#occupation> ;
+    rdf:subject <http://kalnassag.com/onepiece#Biblo> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Biblo/index.html> .
+

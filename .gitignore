@@ -6,3 +6,4 @@ frontend/dist/
 *.pyc
 eval_results/
 .DS_Store
+work/

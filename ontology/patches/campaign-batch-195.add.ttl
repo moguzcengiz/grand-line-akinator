@@ -1,0 +1,14 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign195001 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: 海軍本部 / 大目付. This supports Sengoku’s existing occupation → Inspector_General edge. Cached document SHA-256: ede54cf6f8aa17a1c117ac7e3ccf482ef159f4c161d440d832d0e1eb5dfd1364. The profile snapshot does not specify a date or tenure." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact tenure unspecified" ;
+    rdf:object op:Inspector_General ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Sengoku ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Sengoku/index.html> .

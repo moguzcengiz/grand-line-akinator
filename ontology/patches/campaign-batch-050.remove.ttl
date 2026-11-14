@@ -1,0 +1,18 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Reasons for removals are listed in work/research/batch-050-removal-reasons.json.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+op:Kadar op:affiliatesWith op:MarinesG-2 .
+
+op:Kairiken op:affiliatesWith op:Sabaody_Archipelago .
+
+op:Kalgara rdfs:label "KalgaraCalgaraKalgala"@en .
+
+op:MarinesG-2 a op:Affiliation .
+

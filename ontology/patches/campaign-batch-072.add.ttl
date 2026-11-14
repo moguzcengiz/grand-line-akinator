@@ -1,0 +1,56 @@
+# Batch 072: source-backed Ukkari branch and Ulti's model-specific Ancient Zoan.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Ukkari op:affiliatesWith op:Marine_153rd_Branch .
+opx:temporalCampaign07201 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:subject op:Ukkari ; rdf:predicate op:affiliatesWith ; rdf:object op:Marine_153rd_Branch .
+opx:evidenceCampaign07201 a rdf:Statement ;
+    rdf:subject op:Ukkari ; rdf:predicate op:affiliatesWith ; rdf:object op:Marine_153rd_Branch ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Ukkari/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match profile heading says 海軍第153支部 / 三等兵 (Marine 153rd Branch / third-class private), explicitly supporting the existing Marine_153rd_Branch affiliation URI. The graph currently has only generic Marines affiliation and a residence relation to 153rd_Branch. The rank wording is not remapped. Cached document SHA-256: ab0b71a23a27830399bbfe156c9a826de645a73ee0112e94fa990ff8948d4075." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot; undated, temporal status unspecified" .
+
+op:Ryu_Ryu_no_Mi_Model_Pachycephalosaurus a op:DevilFruit ;
+    rdfs:label "リュウリュウの実 古代種\nモデル 〝パキケファロサウルス〟"@ja ;
+    op:DevilFruitCurrentUser op:Ulti ;
+    op:hasFruitType op:Zoan ;
+    opx:hasFruitSubtype opx:AncientZoan .
+opx:temporalCampaign07202 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:subject op:Ryu_Ryu_no_Mi_Model_Pachycephalosaurus ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Ulti .
+opx:evidenceCampaign07202 a rdf:Statement ;
+    rdf:subject op:Ryu_Ryu_no_Mi_Model_Pachycephalosaurus ; rdf:predicate rdf:type ; rdf:object op:DevilFruit ;
+    prov:wasDerivedFrom <https://one-piece.com/character/ulti/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match Ulti profile names リュウリュウの実 古代種 / モデル 〝パキケファロサウルス〟. A separate model-specific DevilFruit individual follows the ontology's existing model-specific fruit pattern. Cached document SHA-256: 091f327b6a6b05a357e3002c40665379c13cfc4d1a8919925aab18e171d35087." ;
+    opx:confidence "high" ; opx:temporalScope "fruit identity; time-independent" .
+opx:evidenceCampaign07203 a rdf:Statement ;
+    rdf:subject op:Ryu_Ryu_no_Mi_Model_Pachycephalosaurus ; rdf:predicate rdfs:label ; rdf:object "リュウリュウの実 古代種\nモデル 〝パキケファロサウルス〟"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/ulti/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact profile Devil Fruit field: リュウリュウの実 古代種 / モデル 〝パキケファロサウルス〟. Cached document SHA-256: 091f327b6a6b05a357e3002c40665379c13cfc4d1a8919925aab18e171d35087." ;
+    opx:confidence "high" ; opx:temporalScope "profile wording" .
+opx:evidenceCampaign07204 a rdf:Statement ;
+    rdf:subject op:Ryu_Ryu_no_Mi_Model_Pachycephalosaurus ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Ulti ;
+    prov:wasDerivedFrom <https://one-piece.com/character/ulti/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact profile lists this Devil Fruit under Ulti's character fields. Record Ulti as the user at the undated official profile snapshot; temporal status remains unspecified." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot; undated, temporal status unspecified" .
+opx:evidenceCampaign07205 a rdf:Statement ;
+    rdf:subject op:Ryu_Ryu_no_Mi_Model_Pachycephalosaurus ; rdf:predicate op:hasFruitType ; rdf:object op:Zoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/ulti/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The profile explicitly labels the fruit 古代種 (Ancient Zoan); the established ontology model represents Ancient Zoan fruits as Zoan with opx:AncientZoan subtype." ;
+    opx:confidence "high" ; opx:temporalScope "classification" .
+opx:evidenceCampaign07206 a rdf:Statement ;
+    rdf:subject op:Ryu_Ryu_no_Mi_Model_Pachycephalosaurus ; rdf:predicate opx:hasFruitSubtype ; rdf:object opx:AncientZoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/ulti/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact profile explicitly labels the fruit 古代種 (Ancient Zoan), matching the existing AncientZoan subtype URI. Cached document SHA-256: 091f327b6a6b05a357e3002c40665379c13cfc4d1a8919925aab18e171d35087." ;
+    opx:confidence "high" ; opx:temporalScope "classification" .

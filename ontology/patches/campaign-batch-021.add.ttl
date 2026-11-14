@@ -1,0 +1,29 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Haredas op:affiliatesWith op:Weatheria .
+op:Hiriluk op:affiliatesWith op:Drum_Kingdom .
+op:Heracles op:affiliatesWith op:Boin_Archipelago .
+
+opx:evidenceCampaign021HaredasWeatheria a rdf:Statement ;
+    rdf:subject op:Haredas ; rdf:predicate op:affiliatesWith ; rdf:object op:Weatheria ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Haredasu/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile header identifies Haredas with Weatheria and describes him as its climate scientist; it also says he lives there and teaches Nami weather science." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign021HirilukDrumKingdom a rdf:Statement ;
+    rdf:subject op:Hiriluk ; rdf:predicate op:affiliatesWith ; rdf:object op:Drum_Kingdom ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Dr_Hiriluk/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile places Dr. Hiriluk under Drum Kingdom; this is distinct from his existing residence on Drum Island." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign021HeraclesBoin a rdf:Statement ;
+    rdf:subject op:Heracles ; rdf:predicate op:affiliatesWith ; rdf:object op:Boin_Archipelago ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hercules/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official Japanese profile identifies Heracles with Boin Archipelago and describes him as the forest hero who teaches Usopp to use weapons." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .

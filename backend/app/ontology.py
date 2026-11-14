@@ -12,7 +12,7 @@ OPX = Namespace(config.OPX)
 _NOT_MEMBERSHIP = re.compile(r"^(Ally|Subordinate|Former|Fake|Prisoner|Retainer|Enemy|Member|Allied)")
 MARINE = {"Marines", "Marine_Headquarters", "Loguetown_Marine_Base", "Navy"}
 REVOLUTIONARY = {"Revolutionary_Army", "Freedom_Fighters"}
-WORLD_GOV = {"World_Government", "CP0", "CP9", "Cipher_Pol", "Seven_Warlords_of_the_Sea", "Pacifista", "Cipher_Pol_Aigis_Zero"}
+WORLD_GOV = {"World_Government", "CP0", "CP9", "Cipher_Pol", "Seven_Warlords_of_the_Sea", "Cipher_Pol_Aigis_Zero"}
 
 
 def classify_affiliations(base: Graph) -> Graph:

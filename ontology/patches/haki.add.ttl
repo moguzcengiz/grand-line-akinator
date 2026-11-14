@@ -1,0 +1,62 @@
+# Evidence-backed Haki additions. Source records are in docs/ONTOLOGY_ENRICHMENT_SOURCES.md
+# and represented below as RDF reification records. Each edge is a positive canon fact;
+# absence of an edge remains unknown.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Usopp opx:hasHaki opx:ObservationHaki .
+op:Koby opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki .
+op:Yamato opx:hasHaki opx:ArmamentHaki, opx:ObservationHaki, opx:ConquerorsHaki .
+op:Charlotte_Katakuri opx:hasHaki opx:ConquerorsHaki .
+
+# Reified, queryable provenance for each asserted fact.
+opx:evidenceUsoppObservation a rdf:Statement ;
+  rdf:subject op:Usopp ; rdf:predicate opx:hasHaki ; rdf:object opx:ObservationHaki ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Usopp/Abilities_and_Powers> ;
+  opx:sourceType "secondary reference citing manga" ;
+  opx:sourceReference "Chapter 758 (Dressrosa); Usopp sights auras across the island and targets Sugar" ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time-unspecified" .
+
+opx:evidenceKobyArmament a rdf:Statement ;
+  rdf:subject op:Koby ; rdf:predicate opx:hasHaki ; rdf:object opx:ArmamentHaki ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Koby> ;
+  opx:sourceType "secondary reference citing manga" ;
+  opx:sourceReference "Chapter 1088 (Volume 107), pages 14-15; Honesty Impact destroys Pizarro's manifested stone hand" ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time-unspecified" .
+
+opx:evidenceKobyObservation a rdf:Statement ;
+  rdf:subject op:Koby ; rdf:predicate opx:hasHaki ; rdf:object opx:ObservationHaki ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Koby> ;
+  opx:sourceType "secondary reference citing manga" ;
+  opx:sourceReference "Chapter 579 (Volume 59); Koby senses voices and presences during the Marineford battle; Chapter 594 identifies this as Observation Haki" ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time-unspecified" .
+
+opx:evidenceYamatoArmament a rdf:Statement ;
+  rdf:subject op:Yamato ; rdf:predicate opx:hasHaki ; rdf:object opx:ArmamentHaki ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Yamato> ;
+  opx:sourceType "secondary reference citing manga" ;
+  opx:sourceReference "Chapter 1016 and 1027; the character reference identifies Yamato's Armament Haki use" ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time-unspecified" .
+
+opx:evidenceYamatoObservation a rdf:Statement ;
+  rdf:subject op:Yamato ; rdf:predicate opx:hasHaki ; rdf:object opx:ObservationHaki ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Yamato> ;
+  opx:sourceType "secondary reference citing manga" ;
+  opx:sourceReference "Chapter 1016 and 1027; the character reference identifies Yamato's Observation Haki use" ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time-unspecified" .
+
+opx:evidenceYamatoConquerors a rdf:Statement ;
+  rdf:subject op:Yamato ; rdf:predicate opx:hasHaki ; rdf:object opx:ConquerorsHaki ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Yamato> ;
+  opx:sourceType "secondary reference citing manga" ;
+  opx:sourceReference "Chapter 1024; Yamato clashes with Kaido using Conqueror's Haki" ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time-unspecified" .
+
+opx:evidenceKatakuriConquerors a rdf:Statement ;
+  rdf:subject op:Charlotte_Katakuri ; rdf:predicate opx:hasHaki ; rdf:object opx:ConquerorsHaki ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Charlotte_Katakuri> ;
+  opx:sourceType "secondary reference citing manga" ;
+  opx:sourceReference "Chapter 893 (Volume 89); Katakuri uses Conqueror's Haki against Flampe's group" ;
+  opx:confidence "high" ; opx:temporalScope "canon fact; time-unspecified" .

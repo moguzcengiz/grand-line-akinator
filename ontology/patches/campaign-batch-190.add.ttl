@@ -1,0 +1,24 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign190001 a rdf:Statement ;
+    opx:confidence "0.97" ;
+    opx:sourceReference "Exact official profile heading: 元ベラミー海賊団 / 砲手. This supports Rivers’ existing occupation → Gunner edge. Cached document SHA-256: 066bdbca1283888f00b6e16e1362bee4224482b524018bc444213e7ac93e311e. The crew is marked former; occupation timing is unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; occupation duration unspecified" ;
+    rdf:object op:Gunner ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Rivers ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Rivers/index.html> .
+
+opx:evidenceCampaign190002 a rdf:Statement ;
+    opx:confidence "0.99" ;
+    opx:sourceReference "Exact official profile heading: セイウチの学校 / 体育教師. This supports Wolf’s existing occupation → Gym_Teacher edge. Cached document SHA-256: 44e0d3f3f1316498f0ed79b723b7b3f1c8a5a627085bb82247e5aaca7d2c3505. The profile does not specify the role’s time range." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; role time range unspecified" ;
+    rdf:object op:Gym_Teacher ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Wolf ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Wolf/index.html> .

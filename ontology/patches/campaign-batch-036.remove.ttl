@@ -1,0 +1,5 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+
+# The official Montdor profile identifies Charlotte Mont-d'Or as the Buku Buku no Mi user.
+# Replace this malformed slash-namespace reference with the existing hash-namespace character URI.
+op:Buku_Buku_no_Mi op:DevilFruitCurrentUser <http://kalnassag.com/onepiece/Charlotte_Mont-d'Or> .

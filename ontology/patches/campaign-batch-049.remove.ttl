@@ -1,0 +1,20 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+op:Jaguar_D_Saul op:occupation op:History_Teacher_Vice_Admiral .
+
+op:Jango op:occupation op:CaptainFirst_MateDancer .
+
+op:Jarul op:epithet "VIZ: Beardhill"@ja-latn .
+
+op:Jean_Bart op:affiliatesWith op:his_own_crew .
+
+op:CaptainFirst_MateDancer a op:Occupation ;
+    rdfs:comment "former"@en .
+
+op:History_Teacher_Vice_Admiral a op:Occupation ;
+    rdfs:comment "former"@en .
+
+op:his_own_crew a op:Affiliation ;
+    rdfs:comment "former"@en .
+

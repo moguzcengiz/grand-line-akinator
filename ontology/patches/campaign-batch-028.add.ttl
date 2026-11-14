@@ -1,0 +1,46 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+op:Yoshimoto op:affiliatesWith op:Arabasta .
+op:Albion op:hasBounty op:Albion_Bounty_Profile .
+op:Albion_Bounty_Profile a op:Bounty ;
+    op:bountyAmount "92000000"^^xsd:integer ;
+    op:givenTo op:Albion .
+
+opx:evidenceCampaign028YoshimotoArabasta a rdf:Statement ;
+    rdf:subject op:Yoshimoto ; rdf:predicate op:affiliatesWith ; rdf:object op:Arabasta ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Yoshimoto/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official Yoshimoto-san profile places the restaurant owner at the Spice Bean in Nanohana, Arabasta Kingdom; the ontology's Yoshimoto entity has the corresponding restaurant-owner role and Alabasta story debut." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign028AlbionHasBounty a rdf:Statement ;
+    rdf:subject op:Albion ; rdf:predicate op:hasBounty ; rdf:object op:Albion_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Albion/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile lists Albion's bounty as 92 million berries; represented as a named Bounty record." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign028AlbionBountyType a rdf:Statement ;
+    rdf:subject op:Albion_Bounty_Profile ; rdf:predicate rdf:type ; rdf:object op:Bounty ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Albion/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The official profile identifies the record as Albion's bounty; typed with the ontology's Bounty class." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign028AlbionBountyAmount a rdf:Statement ;
+    rdf:subject op:Albion_Bounty_Profile ; rdf:predicate op:bountyAmount ; rdf:object "92000000"^^xsd:integer ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Albion/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Official profile states 92 million berries." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+
+opx:evidenceCampaign028AlbionBountyRecipient a rdf:Statement ;
+    rdf:subject op:Albion_Bounty_Profile ; rdf:predicate op:givenTo ; rdf:object op:Albion ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Albion/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The listed bounty is Albion's." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .

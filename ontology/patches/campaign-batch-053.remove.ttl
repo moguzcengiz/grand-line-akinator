@@ -1,0 +1,13 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+op:Kurozumi_Higurashi op:placeOfOrigin op:Grand_Line .
+op:Laboon op:affiliatesWith op:Crocus .
+op:Lacroix op:affiliatesWith op:MarinesGiant_Squad .
+op:Lacuba op:affiliatesWith op:NA .
+op:Lemoncheese op:affiliatesWith op:Levely .
+op:Lemoncheese op:occupation op:Queenof_the_Bestland_Kingdom .
+op:Linaria op:affiliatesWith op:Red_Hair_Pirates .
+op:Lonz op:affiliatesWith op:MarinesGiant_Squad .
+op:MarinesGiant_Squad rdf:type op:Affiliation .
+op:Queenof_the_Bestland_Kingdom rdf:type op:Occupation .

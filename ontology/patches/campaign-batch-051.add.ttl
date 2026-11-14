@@ -1,0 +1,455 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+opx:evidenceCampaign051002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter-referenced profile identifies Kaneshiro as a former Sun Pirates member who later joined Arlong." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "before the Sun Pirates split" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051001 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Arlong_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kaneshiro>,
+        <https://onepiece.fandom.com/wiki/Sun_Pirates> .
+
+opx:evidenceCampaign051004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter-referenced profile records the Arlong crew’s defeat and arrest; the crew no longer operates." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; before Arlong Pirates defeat/arrest" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051003 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Arlong_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kaneshiro>,
+        <https://onepiece.fandom.com/wiki/Sun_Pirates> .
+
+opx:evidenceCampaign051006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kaneshiro’s pirate role was with the defeated and arrested Arlong Pirates." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; through the Arlong Park defeat" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051005 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Arlong_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kaneshiro>,
+        <https://onepiece.fandom.com/wiki/Sun_Pirates> .
+
+opx:evidenceCampaign051008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile lists Arlong Park as a former residence." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; during Arlong Pirates service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051007 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Arlong_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kaneshiro>,
+        <https://onepiece.fandom.com/wiki/Sun_Pirates> .
+
+opx:evidenceCampaign051010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile lists Fish-Man District as a former residence." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; before moving to East Blue" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051009 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Arlong_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kaneshiro>,
+        <https://onepiece.fandom.com/wiki/Sun_Pirates> .
+
+opx:evidenceCampaign051011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Kashii as a member of the Giant Warrior Pirates." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current affiliation; returned to the crew" ;
+    rdf:object op:Giant_Warrior_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kashii ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kashii/index.html> .
+
+opx:evidenceCampaign051013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Kashii served as a gate guardian for the World Government for fifty years after being deceived about his captains; he defected when he learned the truth." ;
+    opx:sourceType "official profile; chapter-referenced character profile" ;
+    opx:temporalScope "historical; before Enies Lobby rebellion" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051012 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kashii/index.html>,
+        <https://onepiece.fandom.com/wiki/Kashii> .
+
+opx:evidenceCampaign051014 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Kashii is a member of a pirate crew; split the malformed PirateGate_Guardian value into distinct occupations." ;
+    opx:sourceType "chapter-referenced character profile" ;
+    opx:temporalScope "current pirate role" ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kashii ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kashii>,
+        <https://www.grandlinearchives.com/characters/kashii> .
+
+opx:evidenceCampaign051016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile states that Kashii served as Enies Lobby’s main gate guardian for 50 years before learning the Government had deceived him and rebelling." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; before Enies Lobby rebellion" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051015 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kashii/index.html> .
+
+opx:evidenceCampaign051017 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Split the malformed concatenated residence URI into separately named places; chapter-referenced record supports the Elbaph return and historical Enies Lobby/Water 7 periods." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "current; returned to Elbaph with the Giant Warrior Pirates" ;
+    rdf:object op:Elbaph ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kashii ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kashii>,
+        <https://www.grandlinearchives.com/characters/kashii> .
+
+opx:evidenceCampaign051018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Split the malformed concatenated residence URI into separately named places; chapter-referenced record supports the Elbaph return and historical Enies Lobby/Water 7 periods." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "historical; former gatekeeper residence" ;
+    rdf:object op:Enies_Lobby ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kashii ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kashii/index.html> .
+
+opx:evidenceCampaign051019 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Split the malformed concatenated residence URI into separately named places; chapter-referenced record supports the Elbaph return and historical Enies Lobby/Water 7 periods." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "historical; after leaving Enies Lobby" ;
+    rdf:object op:Water_7 ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kashii ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kashii>,
+        <https://www.grandlinearchives.com/characters/kashii> .
+
+opx:evidenceCampaign051021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 953 describes Kawamatsu collecting grave weapons and fighting robbers under the Gyukimaru alias; this was an arc-bounded role, not his present retainer role." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "historical; before the Kozuki restoration" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051020 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kawamatsu/index.html>,
+        <https://onepiece.fandom.com/wiki/Chapter_953>,
+        <https://onepiece.fandom.com/wiki/Kawamatsu> .
+
+opx:evidenceCampaign051023 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The Beasts Pirates were defeated in the Wano raid and disbanded." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Wano occupation" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051022 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kazekage>,
+        <https://onepiece.fandom.com/wiki/Orochi_Oniwabanshu> .
+
+opx:evidenceCampaign051025 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The Oniwabanshu served Orochi’s fallen regime; the organization ended after the raid." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Orochi regime" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051024 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kazekage>,
+        <https://onepiece.fandom.com/wiki/Orochi_Oniwabanshu> .
+
+opx:evidenceCampaign051027 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Kazekage’s ninja role is recorded in the chapter-referenced Wano profile." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Wano regime service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051026 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kazekage>,
+        <https://onepiece.fandom.com/wiki/Orochi_Oniwabanshu> .
+
+opx:evidenceCampaign051029 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Kazekage’s pirate role is recorded with his Beasts Pirates service." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Beasts Pirates service" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051028 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Beasts_Pirates>,
+        <https://onepiece.fandom.com/wiki/Kazekage>,
+        <https://onepiece.fandom.com/wiki/Orochi_Oniwabanshu> .
+
+opx:evidenceCampaign051031 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Kebi’s listed Rebel Army/Sand-Sand Clan connection belongs to the Alabasta rebellion, which ended when the conflict was resolved." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Alabasta civil war" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051030 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Alabasta_Rebel_Army>,
+        <https://onepiece.fandom.com/wiki/Kebi> .
+
+opx:evidenceCampaign051033 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Kebi’s listed Rebel Army/Sand-Sand Clan connection belongs to the Alabasta rebellion, which ended when the conflict was resolved." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Alabasta civil war" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051032 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Alabasta_Rebel_Army>,
+        <https://onepiece.fandom.com/wiki/Kebi> .
+
+opx:evidenceCampaign051035 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Kebi’s listed Rebel Army/Sand-Sand Clan connection belongs to the Alabasta rebellion, which ended when the conflict was resolved." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Alabasta civil war" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051034 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Alabasta_Rebel_Army>,
+        <https://onepiece.fandom.com/wiki/Kebi> .
+
+opx:evidenceCampaign051037 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Kechatch is identified among Whitebeard’s allied pirate captains; the alliance/fleet relationship ended after Marineford." ;
+    opx:sourceType "chapter-referenced character and organization profiles" ;
+    opx:temporalScope "historical; Whitebeard’s final war and crew dissolution" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051036 ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kechatch>,
+        <https://onepiece.fandom.com/wiki/Whitebeard_Pirates> .
+
+opx:evidenceCampaign051039 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Chapter 1056 records the alliance ending after Kaido’s defeat." ;
+    opx:sourceType "official character profile; manga chapter" ;
+    opx:temporalScope "historical; Wano alliance through its dissolution" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051038 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/killer/index.html>,
+        <https://onepiece.fandom.com/wiki/Chapter_1056>,
+        <https://onepiece.fandom.com/wiki/Killer> .
+
+opx:evidenceCampaign051041 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "The Kamazo identity and assassination role were used during Killer’s time under Orochi in Wano." ;
+    opx:sourceType "official character profile; chapter-referenced character profile" ;
+    opx:temporalScope "historical; Kamazo period" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051040 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/killer/index.html>,
+        <https://onepiece.fandom.com/wiki/Chapter_1056>,
+        <https://onepiece.fandom.com/wiki/Killer> .
+
+opx:evidenceCampaign051042 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The manga and official name is Kasagoba; the combined label incorrectly merges it with the anime rendering Kasagon." ;
+    opx:sourceType "chapter-referenced character profile; manga chapter" ;
+    opx:temporalScope "identity label" ;
+    rdf:object "Kasagoba"@en ;
+    rdf:predicate rdfs:label ;
+    rdf:subject op:Kasagoba ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_607>,
+        <https://onepiece.fandom.com/wiki/Kasagoba> .
+
+opx:evidenceCampaign051043 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile distinguishes anime-only Kasagon from the manga name Kasagoba; preserve the adaptation spelling as an alias." ;
+    opx:sourceType "chapter-referenced character profile; anime episode" ;
+    opx:temporalScope "anime-only alternate spelling" ;
+    rdf:object "Kasagon"@en ;
+    rdf:predicate op:alias ;
+    rdf:subject op:Kasagoba ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_607>,
+        <https://onepiece.fandom.com/wiki/Kasagoba> .
+
+opx:evidenceCampaign051044 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Franky Family members are identified on-page as ship dismantlers and bounty hunters; split the composite DismantlerBounty_Hunter occupation into the two roles." ;
+    opx:sourceType "chapter-referenced crew profile; character profile" ;
+    opx:temporalScope "Water 7 Franky Family role" ;
+    rdf:object op:Dismantler ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kiev ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kiev>,
+        <https://www.grandlinearchives.com/crews/franky-family> .
+
+opx:evidenceCampaign051045 a rdf:Statement ;
+    opx:confidence "medium" ;
+    opx:sourceReference "Franky Family members are identified on-page as ship dismantlers and bounty hunters; split the composite DismantlerBounty_Hunter occupation into the two roles." ;
+    opx:sourceType "chapter-referenced crew profile; character profile" ;
+    opx:temporalScope "Water 7 Franky Family role" ;
+    rdf:object op:Bounty_Hunter ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kiev ;
+    prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Kiev>,
+        <https://www.grandlinearchives.com/crews/franky-family> .
+
+opx:evidenceCampaign051047 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile calls Kinderella a former Miss Universe." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; title before becoming queen" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign051046 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kinderella/index.html> .
+
+opx:evidenceCampaign051001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Sun_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kaneshiro .
+
+opx:evidenceCampaign051003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Arlong_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kaneshiro .
+
+opx:evidenceCampaign051005 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kaneshiro .
+
+opx:evidenceCampaign051007 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Arlong_Park ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kaneshiro .
+
+opx:evidenceCampaign051009 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Fish-Man_District ;
+    rdf:predicate op:residence ;
+    rdf:subject op:Kaneshiro .
+
+opx:evidenceCampaign051012 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:World_Government ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kashii .
+
+opx:evidenceCampaign051015 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Gate_Guardian ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kashii .
+
+opx:evidenceCampaign051020 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Highway_Robber ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kawamatsu .
+
+opx:evidenceCampaign051022 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Beasts_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kazekage .
+
+opx:evidenceCampaign051024 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Orochi_Oniwabanshu ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kazekage .
+
+opx:evidenceCampaign051026 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kazekage .
+
+opx:evidenceCampaign051028 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pirate ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kazekage .
+
+opx:evidenceCampaign051030 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel_Army ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kebi .
+
+opx:evidenceCampaign051032 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Sand-Sand_Clan ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kebi .
+
+opx:evidenceCampaign051034 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Rebel ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kebi .
+
+opx:evidenceCampaign051036 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Whitebeard_Pirates ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Kechatch .
+
+opx:evidenceCampaign051038 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Ninja-Pirate-Mink-Samurai_Alliance ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Killer .
+
+opx:evidenceCampaign051040 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Assassin ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Killer .
+
+opx:evidenceCampaign051046 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Miss_Universe ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Kinderella .
+
+op:Kasagoba rdfs:label "Kasagoba"@en ;
+    op:alias "Kasagon"@en .
+
+op:Kiev op:occupation op:Bounty_Hunter,
+        op:Dismantler .
+
+op:Kashii op:affiliatesWith op:Giant_Warrior_Pirates ;
+    op:occupation op:Pirate ;
+    op:residence op:Elbaph,
+        op:Enies_Lobby,
+        op:Water_7 .
+

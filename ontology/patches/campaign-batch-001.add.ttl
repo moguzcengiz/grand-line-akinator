@@ -1,0 +1,40 @@
+# Batch 001 of the persistent ontology source-review campaign.
+# Only three deltas survived comparison against asserted and OWL-inferred facts:
+# Caesar's chapter-specific temporary alias, and source-confirmed Observation / Conqueror's Haki.
+# Fruit links proposed by the first-pass researchers were already present on fruit subjects and
+# are derived on character subjects by the declared inverse properties; they are not duplicated.
+# Each fact has a separate reified provenance record. Missing facts remain unknown.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Caesar_Clown op:temporaryAlias "Gangster Gastino"@en .
+op:Enel opx:hasHaki opx:ObservationHaki .
+op:Portgas_D_Ace opx:hasHaki opx:ConquerorsHaki .
+
+opx:evidenceCampaign001CaesarAlias a rdf:Statement ;
+  rdf:subject op:Caesar_Clown ; rdf:predicate op:temporaryAlias ; rdf:object "Gangster Gastino"@en ;
+  prov:wasDerivedFrom <https://onepiece.fandom.com/wiki/Chapter_858>,
+    <https://www.viz.com/shonenjump/chapters/one-piece> ;
+  opx:sourceType "secondary chapter guide, checked against official VIZ chapter listing" ;
+  opx:sourceReference "Chapter 858, pages 16–18; Caesar adopts the temporary name Gangster Gastino while disguised among the Fire Tank Pirates. The official VIZ chapter index confirms the chapter listing but does not expose page text." ;
+  opx:confidence "high" ; opx:temporalScope "temporary alias during the Whole Cake Island events" .
+
+opx:evidenceCampaign001EnelObservation a rdf:Statement ;
+  rdf:subject op:Enel ; rdf:predicate opx:hasHaki ; rdf:object opx:ObservationHaki ;
+  prov:wasDerivedFrom <https://one-piece.com/character/Eneru/index.html>,
+    <https://www.viz.com/shonenjump/one-piece-chapter-597/chapter/11724>,
+    <https://onepiece.fandom.com/wiki/Chapter_597> ;
+  opx:sourceType "official character profile plus secondary chapter guide to canon manga" ;
+  opx:sourceReference "The official profile says Enel uses Mantra. Chapter 597, page 13, explicitly identifies Skypiea's Mantra as Observation Haki; VIZ confirms the official chapter record." ;
+  opx:confidence "high" ; opx:temporalScope "canon ability; time-unspecified" .
+
+opx:evidenceCampaign001AceConquerors a rdf:Statement ;
+  rdf:subject op:Portgas_D_Ace ; rdf:predicate opx:hasHaki ; rdf:object opx:ConquerorsHaki ;
+  prov:wasDerivedFrom <https://one-piece.com/character/ace/>,
+    <https://www.viz.com/shonenjump/one-piece-chapter-587/chapter/11713>,
+    <https://onepiece.fandom.com/wiki/Chapter_587> ;
+  opx:sourceType "official character profile and secondary chapter guide to canon manga" ;
+  opx:sourceReference "Chapter 587, volume 60, pages 8–9: child Ace knocks out Bluejam Pirates members while protecting Luffy; the chapter reference identifies the manifestation as Supreme King Haki. The official profile identifies Ace and his epithet; VIZ confirms the official chapter record." ;
+  opx:confidence "high" ; opx:temporalScope "canon ability manifested in childhood; time-unspecified assertion" .

@@ -1,0 +1,15 @@
+# Batch 076: Bellamy's official profile explicitly marks his Bellamy Pirates membership former.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:temporalCampaign07601 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Bellamy ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates .
+opx:evidenceCampaign07601 a rdf:Statement ;
+    rdf:subject op:Bellamy ; rdf:predicate op:affiliatesWith ; rdf:object op:Bellamy_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/bellamy/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元ベラミー海賊団 / 船長 (former Bellamy Pirates / captain); record the existing affiliation as historical. Cached document SHA-256: 752fd60d401e4a8d8a8ed263140aa1f2fdc4933b9eff432c4083d98ed1749fbc." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

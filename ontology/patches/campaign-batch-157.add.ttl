@@ -1,0 +1,101 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+opx:evidenceCampaign157001 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: 元ロジャー海賊団 / 船医. This supports the existing broad Doctor occupation edge. Cached document SHA-256: 4ac4480a9635a6a0e5f8cf1dfe39612981994561cc1bc28be9a09df0e9dbf63a. The profile snapshot is undated; role timing remains unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Crocus ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Crocus/index.html> .
+
+opx:evidenceCampaign157002 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: 黒ひげ海賊団 / 九番船船長兼船医. This supports the existing broad Doctor occupation edge. Cached document SHA-256: 2747ec3e6de89ad753dea03765b8bedaa104107ac0b60370297327687393b91d. The profile snapshot is undated; role timing remains unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Doc_Q ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Doc_Q/index.html> .
+
+opx:evidenceCampaign157003 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: 新巨兵海賊団 / 船医. This supports the existing broad Doctor occupation edge. Cached document SHA-256: d494c4abc579f12eb366504776dc89c8373b898cbfb7ca8d89e710c34bca8952. The profile snapshot is undated; role timing remains unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Gerd ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Gerd/index.html> .
+
+opx:evidenceCampaign157004 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: 赤髪海賊団 / 船医. This supports the existing broad Doctor occupation edge. Cached document SHA-256: 95fe0203149f5f9dd50f95fd722fb900eb63644e65dd42064b87316c1b8d4b49. The profile snapshot is undated; role timing remains unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hongo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hongo/index.html> .
+
+opx:evidenceCampaign157005 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: 白ひげ海賊団 / 1番隊隊長兼船医. This supports the existing broad Doctor occupation edge. Cached document SHA-256: 9cd828644260bdacbd25ca6d82d0742f27039517733e7e2786086a9e5fa49d62. The profile snapshot is undated; role timing remains unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Marco ;
+    prov:wasDerivedFrom <https://one-piece.com/character/marco/index.html> .
+
+opx:evidenceCampaign157006 a rdf:Statement ;
+    opx:confidence "0.96" ;
+    opx:sourceReference "Exact official profile heading: モコモ公国 / 医者. This supports the existing broad Doctor occupation edge. Cached document SHA-256: 895373e3dc60441e90acf70c5bb0008fffb18c5090fce70476d0b10005ea10ff. The profile snapshot is undated; role timing remains unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot undated; temporal status unspecified" ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Miyagi ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Miyagi/index.html> .
+
+opx:temporalCampaign157001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Crocus .
+
+opx:temporalCampaign157002 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Doc_Q .
+
+opx:temporalCampaign157003 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Gerd .
+
+opx:temporalCampaign157004 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hongo .
+
+opx:temporalCampaign157005 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Marco .
+
+opx:temporalCampaign157006 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:object op:Doctor ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Miyagi .
+

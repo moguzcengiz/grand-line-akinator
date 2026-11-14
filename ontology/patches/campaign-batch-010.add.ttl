@@ -1,0 +1,98 @@
+# Batch 010: source-backed Japanese fruit labels and a specific origin location for Judy.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://kalnassag.com/onepiece-ext#Ryu_Ryu_no_Mi_Model_Allosaurus> rdfs:label "リュウリュウの実 古代種 モデル 〝アロサウルス〟"@ja .
+<http://kalnassag.com/onepiece-ext#Tori_Tori_no_Mi_Model_Phoenix> rdfs:label "トリトリの実 幻獣種 モデル 〝不死鳥(フェニックス)〟"@ja .
+<http://kalnassag.com/onepiece-ext#Uo_Uo_no_Mi_Model_Seiryu> rdfs:label "ウオウオの実 幻獣種 モデル 〝青龍〟"@ja .
+<http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Giraffe> rdfs:label "ウシウシの実 モデル 〝麒麟（ジラフ）〟"@ja .
+
+op:Judy op:placeOfOrigin op:Sabaody_Archipelago .
+
+# The official Vivre Card revision records the Straw Hat crew's assigned ship as
+# Going Merry → Thousand Sunny; annotate the existing operator assertions without
+# adding dated intervals or changing the timeless triples.
+opx:evidenceCampaign01006 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Straw_Hat_Pirates ;
+    rdf:predicate opx:operatedBy ;
+    rdf:subject op:Going_Merry .
+
+opx:evidenceCampaign01007 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Straw_Hat_Pirates ;
+    rdf:predicate opx:operatedBy ;
+    rdf:subject opx:Thousand_Sunny .
+
+opx:evidenceCampaign01001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official X Drake profile gives the complete Japanese name リュウリュウの実 古代種 モデル 〝アロサウルス〟; the existing fruit individual and user association are retained." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "canonical fruit name; time-invariant" ;
+    rdf:object "リュウリュウの実 古代種 モデル 〝アロサウルス〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece-ext#Ryu_Ryu_no_Mi_Model_Allosaurus> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/X_Drake/index.html> .
+
+opx:evidenceCampaign01002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Marco profile gives the complete Japanese name トリトリの実 幻獣種 モデル 〝不死鳥(フェニックス)〟; the existing fruit individual and user association are retained." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "canonical fruit name; time-invariant" ;
+    rdf:object "トリトリの実 幻獣種 モデル 〝不死鳥(フェニックス)〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece-ext#Tori_Tori_no_Mi_Model_Phoenix> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/marco/index.html> .
+
+opx:evidenceCampaign01003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Kaido profile gives the complete Japanese name ウオウオの実 幻獣種 モデル 〝青龍〟; the existing fruit individual and user association are retained." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "canonical fruit name; time-invariant" ;
+    rdf:object "ウオウオの実 幻獣種 モデル 〝青龍〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece-ext#Uo_Uo_no_Mi_Model_Seiryu> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaido/index.html> .
+
+opx:evidenceCampaign01004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Kaku profile gives the complete Japanese name ウシウシの実 モデル 〝麒麟（ジラフ）〟; it repairs the incomplete scraped label and retains the existing fruit individual and user association." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "canonical fruit name; time-invariant" ;
+    rdf:object "ウシウシの実 モデル 〝麒麟（ジラフ）〟"@ja ;
+    rdf:predicate rdfs:label ;
+    rdf:subject <http://kalnassag.com/onepiece/Ushi_Ushi_no_Mi,_Model:_Giraffe> ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Kaku/index.html> .
+
+opx:evidenceCampaign01005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Judy profile identifies her place of origin as the Sabaody Archipelago in the Grand Line. This adds the specific location while preserving the existing broader Grand Line assertion." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "biographical origin; time-invariant" ;
+    rdf:object op:Sabaody_Archipelago ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Judy ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Judy/index.html> .
+
+opx:evidenceCampaign01008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Vivre Card revision records the Straw Hat crew's assigned ship sequence as Going Merry → Thousand Sunny. The former is annotated historical and the latter current at the profile snapshot; no chapter bounds are provided." ;
+    opx:sourceType "official Vivre Card profile revision" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign01006 ;
+    prov:wasDerivedFrom <https://one-piece.com/vivre/revision/index.html> .
+
+opx:evidenceCampaign01009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official Vivre Card revision records the Straw Hat crew's assigned ship sequence as Going Merry → Thousand Sunny. The former is annotated historical and the latter current at the profile snapshot; no chapter bounds are provided." ;
+    opx:sourceType "official Vivre Card profile revision" ;
+    opx:temporalScope "current at the official Vivre Card profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:evidenceCampaign01007 ;
+    prov:wasDerivedFrom <https://one-piece.com/vivre/revision/index.html> .

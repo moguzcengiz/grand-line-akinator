@@ -1,0 +1,636 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+opx:evidenceCampaign013001 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile displays an approximate 100,000,000-berry Cross Guild bounty estimate; preserved as a named record and explicitly not characterized as a Government-issued bounty." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Cross Guild bounty estimate on the official profile; approximate amount; profile snapshot" ;
+    rdf:object op:Helmeppo_Cross_Guild_Bounty_Profile ;
+    rdf:predicate op:hasBounty ;
+    rdf:subject op:Helmeppo ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013002 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Named bounty record required by the existing Bounty model; identifier preserves the Cross Guild qualifier." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Cross Guild bounty estimate on the official profile; approximate amount; profile snapshot" ;
+    rdf:object op:Bounty ;
+    rdf:predicate rdf:type ;
+    rdf:subject op:Helmeppo_Cross_Guild_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013003 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The official profile states 約1億ベリー (approximately 100,000,000 berries)." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Cross Guild bounty estimate on the official profile; approximate amount; profile snapshot" ;
+    rdf:object 100000000 ;
+    rdf:predicate op:bountyAmount ;
+    rdf:subject op:Helmeppo_Cross_Guild_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013004 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "The profile lists the Cross Guild bounty estimate for Helmeppo." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "Cross Guild bounty estimate on the official profile; approximate amount; profile snapshot" ;
+    rdf:object op:Helmeppo ;
+    rdf:predicate op:givenTo ;
+    rdf:subject op:Helmeppo_Cross_Guild_Bounty_Profile ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013005 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Japanese profile lists 海軍本部 / 少佐; this corresponds to the existing Marine Lieutenant Commander occupation term." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013HelmeppoCurrentRank ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013006 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Japanese profile lists 海軍本部 / 少佐; this corresponds to the existing Marine Lieutenant Commander occupation term." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013HelmeppoCurrentRank ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013007 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Japanese profile lists 海軍本部 / 少佐; this corresponds to the existing Marine Lieutenant Commander occupation term." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Helmeppo ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013HelmeppoCurrentRank ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013008 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Japanese profile lists 海軍本部 / 少佐; this corresponds to the existing Marine Lieutenant Commander occupation term." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013HelmeppoCurrentRank ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013009 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official Japanese profile lists 海軍本部 / 少佐; this corresponds to the existing Marine Lieutenant Commander occupation term." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Lieutenant_Commander ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013HelmeppoCurrentRank ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013010 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Marine Headquarters." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013HelmeppoCurrentMarineHQ ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013011 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Marine Headquarters." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013HelmeppoCurrentMarineHQ ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013012 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Marine Headquarters." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Helmeppo ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013HelmeppoCurrentMarineHQ ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013013 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Marine Headquarters." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013HelmeppoCurrentMarineHQ ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013014 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Marine Headquarters." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:MarinesHeadquarters ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013HelmeppoCurrentMarineHQ ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013015 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists the Marine Headquarters Special Forces unit SWORD." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013HelmeppoCurrentSword ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013016 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists the Marine Headquarters Special Forces unit SWORD." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013HelmeppoCurrentSword ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013017 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists the Marine Headquarters Special Forces unit SWORD." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Helmeppo ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013HelmeppoCurrentSword ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013018 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists the Marine Headquarters Special Forces unit SWORD." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013HelmeppoCurrentSword ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013019 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists the Marine Headquarters Special Forces unit SWORD." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:SWORD ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013HelmeppoCurrentSword ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Helmeppo/index.html> .
+
+opx:evidenceCampaign013020 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Water Seven mayor." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013IceburgCurrentMayor ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013021 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Water Seven mayor." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013IceburgCurrentMayor ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013022 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Water Seven mayor." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Iceburg ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013IceburgCurrentMayor ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013023 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Water Seven mayor." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013IceburgCurrentMayor ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013024 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Water Seven mayor." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Mayor_of_Water_7 ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013IceburgCurrentMayor ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013025 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Galley-La Company president." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013IceburgCurrentPresident ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013026 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Galley-La Company president." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013IceburgCurrentPresident ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013027 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Galley-La Company president." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Iceburg ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013IceburgCurrentPresident ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013028 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Galley-La Company president." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013IceburgCurrentPresident ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013029 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Iceburg as Galley-La Company president." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:President_of_the_Galley-La_Company ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013IceburgCurrentPresident ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013030 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Water Seven." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013IceburgCurrentWater7 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013031 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Water Seven." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013IceburgCurrentWater7 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013032 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Water Seven." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Iceburg ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013IceburgCurrentWater7 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013033 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Water Seven." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013IceburgCurrentWater7 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013034 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Water Seven." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Water_7 ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013IceburgCurrentWater7 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013035 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Galley-La Company." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013IceburgCurrentGalleyLa ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013036 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Galley-La Company." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013IceburgCurrentGalleyLa ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013037 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Galley-La Company." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Iceburg ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013IceburgCurrentGalleyLa ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013038 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Galley-La Company." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:affiliatesWith ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013IceburgCurrentGalleyLa ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013039 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists Galley-La Company." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Galley-La_Company ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013IceburgCurrentGalleyLa ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Iceberg/index.html> .
+
+opx:evidenceCampaign013040 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny was a bounty hunter before becoming a fisherman; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013JohnnyFormerBountyHunter ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013041 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny was a bounty hunter before becoming a fisherman; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013JohnnyFormerBountyHunter ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013042 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny was a bounty hunter before becoming a fisherman; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object op:Johnny ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013JohnnyFormerBountyHunter ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013043 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny was a bounty hunter before becoming a fisherman; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013JohnnyFormerBountyHunter ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013044 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny was a bounty hunter before becoming a fisherman; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object op:Bounty_Hunter ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013JohnnyFormerBountyHunter ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013045 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny and Yosaku became fishermen after fishing at Cocoyashi Village." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013JohnnyCurrentFisherman ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013046 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny and Yosaku became fishermen after fishing at Cocoyashi Village." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object opx:Current ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013JohnnyCurrentFisherman ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013047 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny and Yosaku became fishermen after fishing at Cocoyashi Village." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Johnny ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013JohnnyCurrentFisherman ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013048 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny and Yosaku became fishermen after fishing at Cocoyashi Village." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013JohnnyCurrentFisherman ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013049 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile says Johnny and Yosaku became fishermen after fishing at Cocoyashi Village." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "current at the official profile snapshot" ;
+    rdf:object op:Fisherman ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013JohnnyCurrentFisherman ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Jonny/index.html> .
+
+opx:evidenceCampaign013050 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Hocker as Chouchou’s pet-food shop owner and says he died three months before Luffy arrived; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:TemporalStatement ;
+    rdf:predicate rdf:type ;
+    rdf:subject opx:Campaign013HockerFormerPetShopOwner ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hocker/index.html> .
+
+opx:evidenceCampaign013051 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Hocker as Chouchou’s pet-food shop owner and says he died three months before Luffy arrived; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object opx:Historical ;
+    rdf:predicate opx:temporalStatus ;
+    rdf:subject opx:Campaign013HockerFormerPetShopOwner ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hocker/index.html> .
+
+opx:evidenceCampaign013052 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Hocker as Chouchou’s pet-food shop owner and says he died three months before Luffy arrived; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object op:Hocker ;
+    rdf:predicate rdf:subject ;
+    rdf:subject opx:Campaign013HockerFormerPetShopOwner ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hocker/index.html> .
+
+opx:evidenceCampaign013053 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Hocker as Chouchou’s pet-food shop owner and says he died three months before Luffy arrived; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object op:occupation ;
+    rdf:predicate rdf:predicate ;
+    rdf:subject opx:Campaign013HockerFormerPetShopOwner ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hocker/index.html> .
+
+opx:evidenceCampaign013054 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile identifies Hocker as Chouchou’s pet-food shop owner and says he died three months before Luffy arrived; interval unspecified." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "historical; interval not specified" ;
+    rdf:object op:Pet_Shop_Owner ;
+    rdf:predicate rdf:object ;
+    rdf:subject opx:Campaign013HockerFormerPetShopOwner ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Hocker/index.html> .
+
+opx:evidenceCampaign013055 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official character profile lists birthday April 21." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact dates unspecified" ;
+    rdf:object "--04-21"^^xsd:gMonthDay ;
+    rdf:predicate schema1:birthDate ;
+    rdf:subject op:Island_Eater ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Island_Eater/index.html> .
+
+opx:evidenceCampaign013056 a rdf:Statement ;
+    opx:confidence "high" ;
+    opx:sourceReference "Official profile lists the Grand Line coast of Little Garden as origin." ;
+    opx:sourceType "official character profile" ;
+    opx:temporalScope "profile snapshot; exact dates unspecified" ;
+    rdf:object op:Little_Garden ;
+    rdf:predicate op:placeOfOrigin ;
+    rdf:subject op:Island_Eater ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Island_Eater/index.html> .
+
+op:Island_Eater op:placeOfOrigin op:Little_Garden ;
+    schema1:birthDate "--04-21"^^xsd:gMonthDay .
+
+op:Helmeppo_Cross_Guild_Bounty_Profile a op:Bounty ;
+    op:bountyAmount 100000000 ;
+    op:givenTo op:Helmeppo .
+
+opx:Campaign013HelmeppoCurrentMarineHQ a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:MarinesHeadquarters ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Helmeppo .
+
+opx:Campaign013HelmeppoCurrentRank a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Lieutenant_Commander ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Helmeppo .
+
+opx:Campaign013HelmeppoCurrentSword a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:SWORD ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Helmeppo .
+
+opx:Campaign013HockerFormerPetShopOwner a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Pet_Shop_Owner ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Hocker .
+
+opx:Campaign013IceburgCurrentGalleyLa a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Galley-La_Company ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Iceburg .
+
+opx:Campaign013IceburgCurrentMayor a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Mayor_of_Water_7 ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Iceburg .
+
+opx:Campaign013IceburgCurrentPresident a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:President_of_the_Galley-La_Company ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Iceburg .
+
+opx:Campaign013IceburgCurrentWater7 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Water_7 ;
+    rdf:predicate op:affiliatesWith ;
+    rdf:subject op:Iceburg .
+
+opx:Campaign013JohnnyCurrentFisherman a opx:TemporalStatement ;
+    opx:temporalStatus opx:Current ;
+    rdf:object op:Fisherman ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Johnny .
+
+opx:Campaign013JohnnyFormerBountyHunter a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:object op:Bounty_Hunter ;
+    rdf:predicate op:occupation ;
+    rdf:subject op:Johnny .
+
+op:Helmeppo op:hasBounty op:Helmeppo_Cross_Guild_Bounty_Profile .
+

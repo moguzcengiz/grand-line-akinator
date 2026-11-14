@@ -1,0 +1,50 @@
+# Batch 069: model Stronger's explicitly named Mythical Zoan Pegasus fruit.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<http://kalnassag.com/onepiece#Uma_Uma_no_Mi,_Model:_Pegasus> a op:DevilFruit ;
+    rdfs:label "ウマウマの実 幻獣種\nモデル 〝ペガサス〟"@ja ;
+    op:DevilFruitCurrentUser op:Stronger ;
+    op:hasFruitType op:Zoan ;
+    opx:hasFruitSubtype opx:MythicalZoan .
+
+opx:evidenceCampaign06901 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Uma_Uma_no_Mi,_Model:_Pegasus> ; rdf:predicate rdf:type ; rdf:object op:DevilFruit ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Strongheart/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "The exact-match Stronger profile names its Devil Fruit as ウマウマの実 幻獣種 / モデル 〝ペガサス〟. A distinct named DevilFruit individual is needed because the existing generic Uma_Uma_no_Mi represents another model. Cached document SHA-256: 7b656d56c7e36c741cd8e5890b5d905d6210a39cd4d33e7026426d14f7a93ba7." ;
+    opx:confidence "high" ; opx:temporalScope "identity; time-independent" .
+opx:evidenceCampaign06902 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Uma_Uma_no_Mi,_Model:_Pegasus> ; rdf:predicate rdfs:label ; rdf:object "ウマウマの実 幻獣種\nモデル 〝ペガサス〟"@ja ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Strongheart/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "Exact profile Devil Fruit field: ウマウマの実 幻獣種 / モデル 〝ペガサス〟. Cached document SHA-256: 7b656d56c7e36c741cd8e5890b5d905d6210a39cd4d33e7026426d14f7a93ba7." ;
+    opx:confidence "high" ; opx:temporalScope "profile wording" .
+opx:evidenceCampaign06903 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Uma_Uma_no_Mi,_Model:_Pegasus> ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Stronger ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Strongheart/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "The exact-match Stronger profile lists the named Devil Fruit in the character's profile; record Stronger as the current user at the official profile snapshot. Cached document SHA-256: 7b656d56c7e36c741cd8e5890b5d905d6210a39cd4d33e7026426d14f7a93ba7." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot" .
+opx:evidenceCampaign06904 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Uma_Uma_no_Mi,_Model:_Pegasus> ; rdf:predicate op:hasFruitType ; rdf:object op:Zoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Strongheart/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "The profile identifies a Uma Uma no Mi, which the ontology's established fruit model classifies as Zoan. Cached document SHA-256: 7b656d56c7e36c741cd8e5890b5d905d6210a39cd4d33e7026426d14f7a93ba7." ;
+    opx:confidence "high" ; opx:temporalScope "classification" .
+opx:evidenceCampaign06905 a rdf:Statement ;
+    rdf:subject <http://kalnassag.com/onepiece#Uma_Uma_no_Mi,_Model:_Pegasus> ; rdf:predicate opx:hasFruitSubtype ; rdf:object opx:MythicalZoan ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Strongheart/index.html> ;
+    opx:sourceType "official character profile" ; opx:sourceReference "The exact profile explicitly labels the fruit 幻獣種 (Mythical Zoan); the ontology represents this as the MythicalZoan subtype. Cached document SHA-256: 7b656d56c7e36c741cd8e5890b5d905d6210a39cd4d33e7026426d14f7a93ba7." ;
+    opx:confidence "high" ; opx:temporalScope "classification" .
+
+# Spandine's exact profile heading marks the CP9 affiliation as former.
+opx:temporalCampaign06906 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Spandine ; rdf:predicate op:affiliatesWith ; rdf:object op:CP9 .
+opx:evidenceCampaign06906 a rdf:Statement ;
+    rdf:subject op:Spandine ; rdf:predicate op:affiliatesWith ; rdf:object op:CP9 ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Spandine/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile heading says 元ＣＰ9（サイファーポール） (former CP9 / Cipher Pol), explicitly making the existing CP9 affiliation historical. The separate CP9_Chief occupation is not changed because this page does not state that role. Cached document SHA-256: ec3c88933d375232652fc56c663d13b53a3856b75fd9fdf87532615ab1cfb99b." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

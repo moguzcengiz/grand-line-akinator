@@ -1,0 +1,2 @@
+@prefix op: <http://kalnassag.com/onepiece#> .
+op:Wadatsumi op:affiliatesWith op:Flying_Pirates .

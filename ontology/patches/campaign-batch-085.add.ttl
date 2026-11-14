@@ -1,0 +1,15 @@
+# Wadatsumi's official profile explicitly labels his Flying Pirates affiliation as former.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+opx:temporalCampaign08501 a opx:TemporalStatement ;
+    opx:temporalStatus opx:Historical ;
+    rdf:subject op:Wadatsumi ; rdf:predicate op:affiliatesWith ; rdf:object op:Flying_Pirates .
+opx:evidenceCampaign08501 a rdf:Statement ;
+    rdf:subject op:Wadatsumi ; rdf:predicate op:affiliatesWith ; rdf:object op:Flying_Pirates ;
+    prov:wasDerivedFrom <https://one-piece.com/character/Wadatsumi/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official profile explicitly lists 元フライング海賊団 (former Flying Pirates), alongside his Sun Pirates affiliation. Qualify only the Flying Pirates edge as historical. Cached document SHA-256: e093c25b5fa3f9918380bd31e7c26ebb747ac212dec09f88054e03948f634633." ;
+    opx:confidence "high" ; opx:temporalScope "historical; profile explicitly says former" .

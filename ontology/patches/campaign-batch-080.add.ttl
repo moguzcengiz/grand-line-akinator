@@ -1,0 +1,16 @@
+# Batch 080: repair Fuku Fuku no Mi current-user URI from the exact official Kin'emon profile.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix opx: <http://kalnassag.com/onepiece-ext#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+op:Fuku_Fuku_no_Mi op:DevilFruitCurrentUser op:Kinemon .
+opx:temporalCampaign08001 a opx:TemporalStatement ;
+    opx:temporalStatus opx:TimeUnspecified ;
+    rdf:subject op:Fuku_Fuku_no_Mi ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Kinemon .
+opx:evidenceCampaign08001 a rdf:Statement ;
+    rdf:subject op:Fuku_Fuku_no_Mi ; rdf:predicate op:DevilFruitCurrentUser ; rdf:object op:Kinemon ;
+    prov:wasDerivedFrom <https://one-piece.com/character/kinemon/index.html> ;
+    opx:sourceType "official character profile" ;
+    opx:sourceReference "Exact-match official Kin'emon profile identifies 錦えもん and lists フクフクの実. The graph's old user object URI was an undefined apostrophe path (`http://kalnassag.com/onepiece/Kin'emon`); replace it with the exact matched character URI #Kinemon. Cached document SHA-256: cc617fcc882251a155a5347dadd213008e08c4330dd4e4801c931f4f3191ee28." ;
+    opx:confidence "high" ; opx:temporalScope "official profile snapshot; undated, temporal status unspecified" .

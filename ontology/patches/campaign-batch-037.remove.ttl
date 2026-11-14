@@ -1,0 +1,27 @@
+# Remove concatenated affiliation/location IRIs and replace them with separately modeled, source-supported resources.
+# Chess and Kuromarimo profiles list Bliking Pirates and former Drum Kingdom independently; Chessmarimo is a fusion form with no direct group-membership profile.
+# Concelot profile confirms the Musketeer Squad; the merged label also included an unsupported Alliance component, which remains unknown.
+# Official episode 786 places the Choco Police in Chocolat Town; Colscon is classified as an ally of Whitebeard rather than core crew.
+@prefix op: <http://kalnassag.com/onepiece#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+op:Chess op:affiliatesWith op:Bliking_PiratesDrum_Kingdom .
+
+op:Chessmarimo op:affiliatesWith op:Bliking_PiratesDrum_Kingdom .
+
+op:Choco_Police op:residence op:Chocolat_Town_Cacao_IslandTotto_Land .
+
+op:Colscon op:affiliatesWith op:Whitebeard_Pirates .
+
+op:Concelot op:affiliatesWith op:Inuarashi_Musketeer_SquadNinja-Pirate-Mink-Samurai_Alliance .
+
+op:Kuromarimo op:affiliatesWith op:Bliking_PiratesDrum_Kingdom .
+
+op:Chocolat_Town_Cacao_IslandTotto_Land a op:Location .
+
+op:Inuarashi_Musketeer_SquadNinja-Pirate-Mink-Samurai_Alliance a op:Affiliation ;
+    rdfs:comment "disbanded"@en .
+
+op:Bliking_PiratesDrum_Kingdom a op:Affiliation ;
+    rdfs:comment "disbanded"@en .
+
