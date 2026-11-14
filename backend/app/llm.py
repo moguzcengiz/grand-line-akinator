@@ -41,11 +41,12 @@ reaction: <= 90 characters, a playful reaction to the player's LAST answer. Neve
 new_questions (0-3): NEW yes/no questions that would split the current candidates, as a spec. Phases: discovery = broad, natural questions on a
   theme not used recently; investigation = specific relationships; deduction = questions that separate the few remaining candidates.
   spec = {"mode":"any|all","paths":[{"start":"Character|DevilFruit|Ship","steps":[{"rel":REL,"dir":"out|in"}],
-    "cond":{"kind":"exists|uri|label|cmp|count","uri":..,"label":..,"prop":..,"op":"<=|>=","value":..},"scope":"closed|positive|rel:REL|prop:P"}]}
+    "cond":{"kind":"exists|uri|label|cmp|count","uri":..,"label":..,"prop":..,"op":"<=|>=","value":..},"scope":"closed|status|positive|path|rel:REL|prop:P|last:rel:REL|last:prop:P"}]}
   operators: label = class membership incl. OWL-inferred classes; uri = relation to a known entity (exact URI, >=1 step); exists = property exists
-  (>=1 step); cmp = numeric property (height, age, number); count = at least N matches (use scope positive, never closed); steps = multi-hop paths
+  (>=1 step); cmp = numeric property (height, age, number); count = at least N matches (a smaller count stays UNKNOWN: use scope positive, never closed); steps = multi-hop paths
   (max 2, dir "in" for inverse relations); mode "all" = conjunction of >=2 paths about the SAME start category; mode "any" = alternatives per category.
-  Use scope "positive" when a missing fact must stay UNKNOWN (open world). Never treat a missing relationship as evidence of FALSE.
+  An unrecorded fact is FALSE: keep the default scope "closed". Exceptions that stay UNKNOWN: Haki questions use scope "prop:haki_known"
+  (or "last:prop:haki_known" when the condition is on the last node); life-status questions use scope "status" (needs >= 1 step).
   Use ONLY relationship types, labels and URIs from the schema / candidate facts. Question text must be one question ending with '?'. Return JSON only."""
 
 
