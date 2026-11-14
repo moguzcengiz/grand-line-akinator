@@ -22,7 +22,7 @@ EXTRACTED = ROOT / "work/wiki-extracted.json"
 PATCH = ROOT / "ontology/patches/wiki-attributes.add.ttl"
 API = "https://onepiece.fandom.com/api.php"
 OPN = "http://kalnassag.com/onepiece#"
-MIN_POP = 12
+MIN_POP = int(__import__("os").environ.get("WIKI_MIN_POP", "0"))      # 0 = every character and Devil Fruit; the first run used 12
 
 
 # ---------------------------------------------------------------- fetch

@@ -25,9 +25,9 @@ Full details: [docs/ONTOLOGY.md](docs/ONTOLOGY.md) · architecture diagram: [doc
 * Gaps found by inspection (no ships, no Haki, `hasDevilFruit` declared but empty, no pirate/marine typing, no Ancient/Mythical Zoan) are filled by `ontology/extension.ttl` (OWL RL-friendly axioms: inverse, someValuesFrom, hasValue, property chain) and clearly-labelled curated data and patches (22 original Haki profiles plus 3 evidence-backed profiles, 7 fruits, 9 ships). See the [enrichment audit](docs/ONTOLOGY_ENRICHMENT_AUDIT.md), [sources](docs/ONTOLOGY_ENRICHMENT_SOURCES.md), and [measured report](docs/ONTOLOGY_ENRICHMENT_REPORT.md).
 * `owlrl` materialises inferences (OWL 2 RL only — **not** full OWL 2 DL). Edges carry `provenance = explicit | curated | inferred`; the game reads the graph closed-world (see Known limitations).
 * Data-quality audit ([docs/ONTOLOGY_AUDIT.md](docs/ONTOLOGY_AUDIT.md)): upstream debut data violates its own `owl:FunctionalProperty` axioms (OWL RL would merge 48 chapter/episode pairs), `op:inCrew` has swapped domain/range, and 5 fruit-user links have near-miss URIs. All fixed in a reviewable patch layer (`ontology/patches/`), axioms kept, SHACL (`ontology/shapes.ttl`) validates at ingestion. `python -m app.audit` reproduces the before/after numbers.
-* **Wiki attributes** (`python -m app.wiki_pipeline fetch|extract|emit`): gender, race, fighting style, titles, bounty tier and *current vs former* affiliation and occupation for 353 popular characters, read from the infobox and categories of the [One Piece Wiki](https://onepiece.fandom.com) (text CC-BY-SA; page URL and revision id are stored per entity). Output: `ontology/patches/wiki-attributes.add.ttl`.
+* **Wiki attributes** (`python -m app.wiki_pipeline fetch|extract|emit`): gender, race, fighting style, titles, bounty tier and *current vs former* affiliation and occupation for 1,402 of the 1,514 characters, read from the infobox and categories of the [One Piece Wiki](https://onepiece.fandom.com) (text CC-BY-SA; page URL and revision id are stored per entity). Output: `ontology/patches/wiki-attributes.add.ttl`.
 * **Story time** (`python -m app.arcs`): debut arc, debut saga and before/after the timeskip for 1,452 characters, derived from the existing debut chapters and a 33-arc / 11-saga table (`ontology/story-arcs.json`, same wiki). Output: `ontology/patches/debut-arc.add.ttl`.
-* Graph: 7.1k nodes, 22.5k edges (13.3k explicit, 8.1k curated, 1.0k inferred), 1,514 characters / 151 Devil Fruits / 9 ships, 290 questions.
+* Graph: 7.2k nodes, 27.4k edges (13.3k explicit, 13.1k curated, 1.0k inferred), 1,514 characters / 151 Devil Fruits / 9 ships, 380 questions.
 
 ## Gameplay
 No two voyages need to start alike: an adaptive, multi-objective **question policy** (docs/POLICY.md) scores every graph-grounded question on information gain, known-answer coverage, novelty (semantic duplicates are never asked), topic diversity, specificity, repetition and complexity, then samples among the top 5 with a seeded softmax. The game moves through three phases - *Scouting the seas* (broad), *Following the trail* (specific), *Closing in* (separating the last suspects) - chosen from the candidate entropy and confidence. Normal players never see candidate names, probabilities or queries (developer view only); they get a progress meter, short reactions, a dramatic reveal, wrong-guess recovery, an undo button and a voyage summary.
@@ -73,20 +73,21 @@ The adaptive policy matches the deterministic one on accuracy and length while o
 
 How the result was reached, same 200 targets (adaptive policy): open world 72.5% top-1 / 24.0 questions -> closed world 79.5% / 13.1 -> closed world + wiki attributes + story time 92.5% / 12.0. With a simulated player who disagrees with the graph (15% missing facts, 20% soft answers): 51% -> 56% -> 78%.
 
-Accuracy depends on how much the graph knows about the target (adaptive policy, simulated player):
+The table was measured when 353 popular characters had wiki attributes; after the pipeline ran for all characters the same 200 targets give 93.0% top-1 / 100% within 3 guesses / 12.0 questions.
+
+Beyond the popular targets (adaptive policy, simulated player):
 
 | target group | top-1 | found within 3 guesses | avg questions | indistinguishable from another entity |
 |---|---|---|---|---|
-| characters with wiki attributes (300 of 348) | 94.7% | 99.3% | 13.2 | 8% |
-| characters without (300 of 1,166) | 30.3% | 56.7% | 19.2 | 73% |
-| all 151 Devil Fruits | 78.1% | 98.7% | 13.0 | 35% |
+| 300 characters drawn uniformly from all 1,514 | 69.3% | 82.7% | 17.2 | 32% (58% before the full wiki run, 76% before any wiki data) |
+| all 151 Devil Fruits | 76.8% | 98.0% | 13.2 | 35% |
 
 **AI planner:** functionally verified (graph-validated proposals, caching, deadline, circuit breaker, rule-based fallback) but **not benchmarked**: the only complete 12-game run predates robustness fixes and the re-runs stalled when the host machine slept. No accuracy or cost claim is made for it (details: docs/POLICY.md).
 
 ## Known limitations
 * Ships (9), Haki profiles (25 after the sourced patch) and Ancient/Mythical fruits (7) are curated demo data; upstream has none. Un-curated characters have unknown Haki.
-* **58% of the characters and 35% of the Devil Fruits give the same answer to every question as some other entity**, so the game can only guess among them. It is a coverage problem: 8% of the characters with wiki attributes, 73% of those without. Devil Fruits have no ability data.
-* Wiki attributes cover 353 characters and are *unknown* (not false) for everyone else. Family relations and Devil Fruit abilities are not structured on the wiki and were not extracted. The debut arc is the first appearance on the page, which is not always where a fan remembers meeting the character.
+* **32% of the characters and 35% of the Devil Fruits give the same answer to every question as some other entity**, so the game can only guess among them: minor characters whose wiki page states little, and Devil Fruits, which have no ability data.
+* Wiki attributes are *unknown* (not false) for the 112 characters without a usable wiki page. Family relations and Devil Fruit abilities are not structured on the wiki and were not extracted. The debut arc is the first appearance on the page, which is not always where a fan remembers meeting the character.
 * **Closed world by default** (`CLOSED_WORLD=1`): a fact the graph does not record is FALSE (Zoro has not eaten a Devil Fruit), so every answer splits the candidates cleanly. Only life status "Unknown" and missing Haki profiles stay unknown. A "not listed" FALSE is still soft evidence (`ABSENCE_RELIABILITY=0.90`), so a player who disagrees with an incomplete graph is down-weighted, not eliminated. `CLOSED_WORLD=0` restores the old open world (unrecorded = unknown).
 * The default prior is popularity-weighted (degree proxy, docs/ONTOLOGY.md section 6); `PRIOR=uniform` restores the uniform MVP prior (-3 points top-1, +1.6 questions).
 * Removed on purpose as low-quality trivia: voice-actor, blood-type, chapter/episode-debut, height and age questions.
@@ -95,4 +96,4 @@ Accuracy depends on how much the graph knows about the target (adaptive policy, 
 * The Chrome extension was unavailable during development; the React UI was verified with a headless Playwright run in Docker (screenshots in `docs/screenshots/`).
 
 ## Next
-Ordered by measured effect: (1) run the wiki pipeline for the 1,166 characters without attributes (30% vs 95% top-1); (2) Devil Fruit abilities from page text (30 of the 33 fruit misses are indistinguishable pairs); (3) play with real people and read `app.feedback_report` (every number here comes from a simulated player); (4) rewrite the generated question texts and prefer questions a fan can answer (saga before arc); (5) restrict the playable pool to entities the graph can identify.
+Ordered by measured effect: (1) Devil Fruit abilities from page text (31 of the 35 fruit misses are indistinguishable pairs); (2) restrict the playable pool to entities the graph can identify (a third of the characters are minor figures it cannot); (3) play with real people and read `app.feedback_report` (every number here comes from a simulated player); (4) rewrite the generated question texts and prefer questions a fan can answer (saga before arc).
