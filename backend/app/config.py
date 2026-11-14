@@ -9,7 +9,7 @@ FUSEKI_USER = os.environ.get("FUSEKI_USER", "admin")
 FUSEKI_PASSWORD = os.environ.get("FUSEKI_PASSWORD", "")
 
 TOGETHER_API_KEY = os.environ.get("TOGETHER_API_KEY", "")
-TOGETHER_MODEL = os.environ.get("TOGETHER_MODEL", "meta-llama/Llama-3.3-70B-Instruct-Turbo")
+TOGETHER_MODEL = os.environ.get("TOGETHER_MODEL", "deepseek-ai/DeepSeek-V4.1-Flash")
 TOGETHER_BASE_URL = os.environ.get("TOGETHER_BASE_URL", "https://api.together.xyz/v1")
 LLM_TIMEOUT = float(os.environ.get("LLM_TIMEOUT", "25"))
 

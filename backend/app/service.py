@@ -222,7 +222,8 @@ def _ai_plan(sess: Session, phase: str, offered_idx: list[int]) -> dict[str, str
                 {"rel": f["rel"], "target": f["name"], "uri": f["uri"]} for f in kb.entity_facts(kb.entities[i]["uri"])]} for i, p in top[:8]]
             recent = [kb.bank.topics[a["index"]] for a in st.asked[-6:]]
             last = ({"question": st.asked[-1].get("text") or kb.bank.questions[st.asked[-1]["index"]].text, "answer": SEEN[st.asked[-1]["answer"]]} if st.asked else None)
-            reply = llm.ask(kb.schema, cands, [kb.bank.questions[a["index"]].text for a in st.asked], offered, phase=phase, recent_topics=recent, last_answer=last)
+            history = [{"question": a.get("text") or kb.bank.questions[a["index"]].text, "answer": SEEN[a["answer"]]} for a in st.asked]
+            reply = llm.ask(kb.schema, cands, history, offered, phase=phase, recent_topics=recent, last_answer=last)
             _cache_put(_REPLY_CACHE, key, reply, 512)
         info.used = True
         sess.llm_failures = 0

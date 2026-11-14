@@ -38,7 +38,9 @@ Answer with ONE JSON object: {"paraphrases":[{"id","text"}], "new_questions":[{"
 paraphrases: rewrite each offered question as one natural, friendly yes/no question that fits the current game phase. Keep the meaning identical,
   including numeric thresholds and inclusiveness ("by chapter 612" means 612 or earlier). Do not mention any candidate name.
 reaction: <= 90 characters, a playful reaction to the player's LAST answer. Never name or hint at a candidate.
-new_questions (0-3): NEW yes/no questions that would split the current candidates, as a spec. Phases: discovery = broad, natural questions on a
+history: every question asked so far WITH the player's answer. Read it before proposing: the answers tell you what the hidden entity is and is not.
+new_questions (0-3): NEW yes/no questions that would split the current candidates about in half GIVEN the history, as a spec. Never propose
+  something the history already settles (a re-wording of an asked question, or a fact implied or excluded by a yes / no answer). Phases: discovery = broad, natural questions on a
   theme not used recently; investigation = specific relationships; deduction = questions that separate the few remaining candidates.
   spec = {"mode":"any|all","paths":[{"start":"Character|DevilFruit|Ship","steps":[{"rel":REL,"dir":"out|in"}],
     "cond":{"kind":"exists|uri|label|cmp|count","uri":..,"label":..,"prop":..,"op":"<=|>=","value":..},"scope":"closed|status|positive|path|rel:REL|prop:P|last:rel:REL|last:prop:P"}]}
@@ -84,7 +86,7 @@ def available() -> bool:
     return bool(config.TOGETHER_API_KEY)
 
 
-def ask(schema: dict, candidates: list[dict], asked: list[str], offered: list[Question], phase: str = "investigation",
+def ask(schema: dict, candidates: list[dict], history: list[dict], offered: list[Question], phase: str = "investigation",
         recent_topics: list[str] | None = None, last_answer: dict | None = None) -> LLMReply:
     """One chat completion. Raises on transport/parse/validation errors (caller handles fallback)."""
     user = {
@@ -93,12 +95,12 @@ def ask(schema: dict, candidates: list[dict], asked: list[str], offered: list[Qu
         "schema": {"relationships": [f"{r['start']} -{r['rel']}-> ({r['n']})" for r in schema["relationships"][:40]],
                    "labels": [l["label"] for l in schema["labels"][:40]], "numeric_props": schema["numeric_props"]},
         "current_candidates": candidates,
-        "already_asked": asked[-15:],
+        "history": history[-20:],
         "offered_questions_to_paraphrase": [{"id": q.id, "text": q.text} for q in offered],
     }
     def call():
         return _client().chat.completions.create(
-            model=config.TOGETHER_MODEL, temperature=0.4, max_tokens=1000,
+            model=config.TOGETHER_MODEL, temperature=0.4, max_tokens=1500,
             response_format={"type": "json_object"},
             messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": json.dumps(user, ensure_ascii=False)}])
     try:                                                     # hard wall-clock deadline, whatever the network does

@@ -5,7 +5,7 @@ x-backend-env: &backend-env
   FUSEKI_USER: admin
   FUSEKI_PASSWORD: ${FUSEKI_PASSWORD:?set FUSEKI_PASSWORD in .env}
   TOGETHER_API_KEY: ${TOGETHER_API_KEY:-}
-  TOGETHER_MODEL: ${TOGETHER_MODEL:-meta-llama/Llama-3.3-70B-Instruct-Turbo}
+  TOGETHER_MODEL: ${TOGETHER_MODEL:-deepseek-ai/DeepSeek-V4.1-Flash}
   TOGETHER_BASE_URL: ${TOGETHER_BASE_URL:-https://api.together.xyz/v1}
 
 services:
