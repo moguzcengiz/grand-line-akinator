@@ -32,27 +32,25 @@ def no_fruit_characters(kb):
     return [i for i, e in enumerate(kb.entities) if e["category"] == "Character" and e["uri"] not in with_fruit]
 
 
-# ---------------------------------------------------------------- unknown is never silently false
-def test_missing_devil_fruit_relation_is_unknown_not_false(kb):
+# ---------------------------------------------------------------- closed world: what the graph does not record is FALSE
+def test_missing_devil_fruit_relation_is_false_in_the_closed_world(kb):
     t = kb.bank.truth[q_by_text(kb, "Has your character eaten a Devil Fruit?")]
     missing = no_fruit_characters(kb)
     assert len(missing) > 1000
-    assert all(t[i] == -1 for i in missing), "a character with no recorded fruit must be UNKNOWN, not FALSE"
+    assert all(t[i] == 0 for i in missing), "closed world: no recorded fruit = has not eaten one"
     assert all(t[i] == 1 for i, e in enumerate(kb.entities) if e["category"] == "Character" and i not in set(missing))
 
 
-def test_fruit_type_question_is_unknown_for_characters_without_a_recorded_fruit(kb):
+def test_fruit_type_question_is_false_for_characters_without_a_recorded_fruit(kb):
     q = next(i for i, q in enumerate(kb.bank.questions) if "Zoan-type" in q.text)
     t = kb.bank.truth[q]
-    assert all(t[i] == -1 for i in no_fruit_characters(kb))
+    assert all(t[i] == 0 for i in no_fruit_characters(kb))
 
 
-def test_unknown_ship_builder_and_type_are_unknown(kb):
+def test_unrecorded_ship_builder_and_type_are_false(kb):
     built = kb.bank.truth[q_by_text(kb, "Was it built by Franky?")]
     assert built[idx(kb, "Thousand Sunny")] == 1
-    assert built[idx(kb, "Going Merry")] == -1 and built[idx(kb, "Moby Dick")] == -1       # builder not recorded -> unknown
-    caravel = kb.bank.truth[q_by_text(kb, "Is it a Caravel?")]
-    assert caravel[idx(kb, "Going Merry")] == 1 and caravel[idx(kb, "Red Force")] == -1
+    assert built[idx(kb, "Going Merry")] == 0 and built[idx(kb, "Moby Dick")] == 0
 
 
 def test_unknown_life_status_is_unknown(kb):
@@ -236,36 +234,35 @@ def test_new_grammar_questions_have_three_valued_semantics(kb):
     owner = q_by_text(kb, "Is it owned by someone who ate a Devil Fruit?")
     assert t[owner, idx(kb, "Thousand Sunny")] == 1                      # Luffy: current user
     assert t[owner, idx(kb, "Moby Dick")] == 1                           # Whitebeard: FORMER user of Gura Gura counts as "ate a Devil Fruit"
-    assert t[owner, idx(kb, "Red Force")] == -1                          # Shanks: no recorded fruit -> UNKNOWN, not false
-    myth = q_by_text(kb, "Does your character possess a Mythical Zoan Devil Fruit, or is it one?")
+    assert t[owner, idx(kb, "Red Force")] == 0                           # Shanks: no recorded fruit
+    myth = q_by_text(kb, "Is it (or does it eat) a Mythical Zoan Devil Fruit?")
     assert t[myth, idx(kb, "Bird-Bird Fruit, Model: Phoenix")] == 1
-    assert (t[myth] == 0).sum() == len([e for e in kb.entities if e["category"] == "Ship"]) and (t[myth] == -1).sum() > 100
+    assert (t[myth] == -1).sum() == 0
     assert any(q.spec.mode == "all" for q in kb.bank.questions) and any(d.dir == "in" for q in kb.bank.questions for p in q.spec.paths for d in p.steps)
 
 
-def test_conjunction_is_unknown_when_a_conjunct_is_unknown(kb):
+def test_conjunction_is_false_without_a_recorded_fruit(kb):
     q = q_by_text(kb, "Is your character a pirate who ate a Devil Fruit?")
     t = kb.bank.truth[q]
     no_fruit = no_fruit_characters(kb)
-    pirates_unknown = [i for i in no_fruit if t[i] == 1]
-    assert not pirates_unknown, "a character without a recorded fruit can never be TRUE"
-    assert sum(t[i] == -1 for i in no_fruit) > 500                 # pirates without a recorded fruit stay UNKNOWN (Kleene AND)
-    assert all(t[i] == 0 for i in no_fruit if kb.bank.truth[q_by_text(kb, "Is your character affiliated with a pirate crew?"), i] == 0 and False) or True
+    assert all(t[i] == 0 for i in no_fruit), "a character without a recorded fruit is never a pirate who ate one"
 
 
-def test_fruit_user_questions_stay_unknown_when_the_users_facts_are_missing(kb):
+def test_fruit_user_questions_are_false_when_the_users_facts_are_missing(kb):
     t = kb.bank.truth
     no_user = [i for i, e in enumerate(kb.entities) if e["category"] == "DevilFruit" and not graph.run(
         'SELECT (COUNT(*) AS ?c) WHERE { $u ?p ?x . ?p g:relType "DEVIL_FRUIT_CURRENT_USER" }', u=graph.iri(e["uri"]))[0]["c"]]
     assert no_user
-    for text in ("Was it eaten by a captain?", "Was it eaten by a pirate?", "Is the person who ate it still alive?"):
+    for text in ("Was it eaten by a captain?", "Was it eaten by a pirate?"):
         q = q_by_text(kb, text)
-        assert all(t[q, i] == -1 for i in no_user), text
+        assert all(t[q, i] == 0 for i in no_user), text
+    alive = q_by_text(kb, "Is the person who ate it still alive?")              # life status is the one fact that stays three-valued
+    assert all(t[alive, i] == -1 for i in no_user)
     cap = q_by_text(kb, "Was it eaten by a captain?")
     no_job_user = graph.run(
         'SELECT DISTINCT (?f AS ?u) WHERE { ?f g:category "DevilFruit" . ?f ?p ?x . ?p g:relType "DEVIL_FRUIT_CURRENT_USER" . '
         'FILTER NOT EXISTS { ?x ?p2 ?o . ?p2 g:relType "OCCUPATION" } }')
-    assert no_job_user and all(t[cap, kb.idx[r["u"]]] == -1 for r in no_job_user), "a user without a recorded occupation must not make the answer FALSE"
+    assert no_job_user and all(t[cap, kb.idx[r["u"]]] == 0 for r in no_job_user)
 
 
 # ---------------------------------------------------------------- regression: the "can't reach Whitebeard" report
@@ -274,7 +271,7 @@ def test_whitebeard_counts_as_a_devil_fruit_eater_and_a_pirate(kb):
     t = kb.bank.truth
     w = idx(kb, "Edward Newgate")
     assert t[q_by_text(kb, "Has your character eaten a Devil Fruit?"), w] == 1            # previous user of Gura Gura
-    pirate = q_by_text(kb, 'Does it have the role or occupation "Pirate"?')
+    pirate = q_by_text(kb, "Is your character affiliated with a pirate crew?")     # same answers as the "Pirate" role: one question kept
     assert t[pirate, w] == 1                                                              # inferred from Pirate Captain via the occupation hierarchy
     assert graph.run(
         'SELECT (COUNT(*) AS ?c) WHERE { GRAPH <urn:akinator:inferred> { ?a ?p ?o } ?p g:relType "OCCUPATION" . '

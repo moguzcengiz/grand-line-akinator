@@ -35,8 +35,8 @@ class KB:
         self.rule_questions = Q.generate_rule_questions(n_by_cat)
         seen_rows: dict[bytes, str] = {}
         self.duplicates_dropped = 0
-        # when two questions have identical answers keep the more natural one: class / conjunction wording before raw relation wording
-        for q in sorted(self.rule_questions, key=lambda q: 0 if q.spec.mode == "all" or q.spec.paths[0].cond.kind == "label" else 1):
+        # when two questions have identical answers keep the more natural one: plain category, then class / conjunction wording, then raw relation wording
+        for q in sorted(self.rule_questions, key=lambda q: -1 if not q.spec.paths[0].steps and q.spec.paths[0].cond.kind == "exists" else 0 if q.spec.mode == "all" or q.spec.paths[0].cond.kind == "label" else 1):
             row = self.truth_row(q.spec)
             # two questions with identical answers for every entity are the same question in different words
             if row.tobytes() in seen_rows:

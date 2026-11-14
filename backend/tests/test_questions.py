@@ -34,8 +34,10 @@ def test_cmp_scope_is_unknown_when_property_missing():
     assert "?e g:height ?val" in true_q and "FILTER(?val >= $v)" in true_q and "FILTER(" not in known_q and "g:height" in known_q
 
 
-def test_open_scope_compiles_to_relationship_check():
+def test_open_scope_compiles_to_relationship_check(monkeypatch):
     p = Path(start="Character", steps=[Step(rel="OCCUPATION")], cond=Cond(kind="uri", uri="u"), scope="rel:OCCUPATION")
+    assert "relType" not in compile_path(p)[1]                                  # closed world (default): every character is known
+    monkeypatch.setattr("app.config.CLOSED_WORLD", False)
     assert 'g:relType "OCCUPATION"' in compile_path(p)[1]
 
 
@@ -61,7 +63,8 @@ def test_status_scope_keeps_unknown_status_unknown():
     assert '"Alive", "Deceased"' in compile_path(p)[1]
 
 
-def test_new_scopes_compile_and_validate():
+def test_new_scopes_compile_and_validate(monkeypatch):
+    monkeypatch.setattr("app.config.CLOSED_WORLD", False)
     from app.questions import validate_spec
     p = Path(start="DevilFruit", steps=[Step(rel="DEVIL_FRUIT_CURRENT_USER")], cond=Cond(kind="label", label="CaptainCharacter"), scope="last:rel:OCCUPATION")
     assert 'g:relType "OCCUPATION"' in compile_path(p)[1] and "?n1" in compile_path(p)[1]

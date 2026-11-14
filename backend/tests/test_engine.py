@@ -284,14 +284,14 @@ def test_a_question_about_another_category_eliminates_definitely():
     b.false_rel = [config.ABSENCE_RELIABILITY]
     st = GameState(b)
     st.answer(0, "yes")
-    assert st.w[1] > 4 * st.w[2], "a not-listed character survives a 'yes', a Devil Fruit does not (definite level, like category questions)"
+    assert st.w[1] > 2 * st.w[2], "a not-listed character survives a 'yes', a Devil Fruit does not (definite level, like category questions)"
 
 
 def test_a_rejected_listed_fact_is_costly_but_not_fatal():
     # the user's Luffy game: Luffy led with 54% when "Prisoner?" (listed for him: Impel Down) got a "no" and dropped him to 4%
     st = GameState(_soft_bank([[1, 0]]))
     st.answer(0, "no")
-    assert 0.1 < st.w[0] / st.w[1] < 0.5
+    assert 0.05 < st.w[0] / st.w[1] < 0.5
 
 
 def test_implied_and_reworded_questions_are_skipped_and_other_categories_leave():

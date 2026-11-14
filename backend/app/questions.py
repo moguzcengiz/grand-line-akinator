@@ -15,6 +15,10 @@ from . import config, graph
 IDENT = re.compile(r"^[A-Za-z][A-Za-z0-9_]{0,63}$")
 SCOPE = re.compile(r"^(closed|status|positive|path|(last:)?(rel|prop):[A-Za-z][A-Za-z0-9_]*)$")
 NUMERIC_PROPS = {"height", "age", "number"}
+# the only scopes that stay UNKNOWN in the closed world: the graph itself records that it does not know (status "Unknown", no Haki profile)
+OPEN_SCOPES = {"status", "prop:haki_known", "last:prop:haki_known",
+               # facts only a part of the cast has a source for: wiki attributes (about 350 popular characters have a wiki record), race, debut
+               "rel:GENDER", "rel:RACE", "rel:DEBUT_ARC", "rel:DEBUT_SAGA", "rel:DEBUT_ERA"}
 COMPLETE_RELS: set[str] = set()      # relations whose edge list is known to be complete (none established in the upstream data)
 
 
@@ -80,6 +84,8 @@ _LABEL_TOPIC = {"DevilFruitUser": "fruit", "DevilFruitEater": "fruit", "HakiUser
 _REL_TOPIC = {"STATUS_OF_CHARACTER": "status", "AFFILIATES_WITH": "affiliation", "OPERATED_BY": "affiliation", "OCCUPATION": "role",
               "PLACE_OF_ORIGIN": "origin", "RESIDENCE": "origin", "RACE": "race", "HAS_HAKI": "haki", "HAS_FRUIT_TYPE": "fruit",
               "HAS_FRUIT_SUBTYPE": "fruit", "HAS_DEVIL_FRUIT": "fruit", "DEVIL_FRUIT_PREVIOUS_USER": "fruit", "DEVIL_FRUIT_CURRENT_USER": "fruit-user",
+              "GENDER": "identity", "FIGHTING_STYLE": "combat", "HAS_TITLE": "title", "BOUNTY_TIER": "bounty", "CURRENT_AFFILIATION": "affiliation",
+              "FORMER_AFFILIATION": "past", "CURRENT_OCCUPATION": "role", "FORMER_OCCUPATION": "past", "DEBUT_ARC": "story", "DEBUT_SAGA": "story", "DEBUT_ERA": "story",
               "SHIP_OWNER": "ship", "OWNS_SHIP": "ship", "SHIP_TYPE": "ship", "BUILT_BY": "ship", "SAILS_ON": "ship", "SHIP_STATUS": "ship"}
 
 
@@ -191,8 +197,8 @@ def compile_path(path: Path) -> tuple[str, str, dict]:
     true_q = _select(path, f"{pat} {_cond(path, last)}")
     if path.cond.kind == "cmp":
         known_q = _select(path, f"{pat} {last} {_prop(path.cond.prop)} ?val .")
-    elif path.scope == "closed":
-        known_q = all_q
+    elif path.scope == "closed" or (config.CLOSED_WORLD and path.scope not in OPEN_SCOPES):
+        known_q = all_q               # closed world: a fact the graph does not record is FALSE
     elif path.scope == "positive":    # open world: absence of the fact is NOT evidence of falsity
         known_q = true_q
     elif path.scope == "status":      # "Unknown" status must stay unknown, not become "not alive"
@@ -342,16 +348,30 @@ REL_TEXT = {
     "BUILT_BY": "Was it built by {t}?",
     "SAILS_ON": "Does it sail on the {t}?",
     "SHIP_STATUS": "Is the ship's status \"{t}\"?",
+    # wiki attributes (ontology/patches/wiki-attributes.add.ttl) and story time (debut-arc.add.ttl)
+    "FIGHTING_STYLE": "Is your character {a} {t}?",
+    "HAS_TITLE": "Is your character one of the {t}?",
+    "BOUNTY_TIER": "Does your character have a bounty of {t}?",
+    "CURRENT_AFFILIATION": "Is your character with {t} right now?",
+    "FORMER_AFFILIATION": "Was your character once with {t}, but no longer?",
+    "CURRENT_OCCUPATION": "Is your character's current role \"{t}\"?",
+    "FORMER_OCCUPATION": "Did your character use to have the role \"{t}\", but no longer?",
+    "DEBUT_ARC": "Did we first meet it in the {t}?",
+    "DEBUT_SAGA": "Did we first meet it in the {t}?",
 }
 # relations whose absence means "unknown" rather than "false"
 OPEN_RELS = {"BUILT_BY", "SHIP_TYPE", "AFFILIATES_WITH", "OCCUPATION", "STATUS_OF_CHARACTER", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "HAS_BLOOD_TYPE",
-             "JAPANESE_VOICE_ACTOR", "ENGLISH_VOICE_ACTOR", "SHIP_STATUS"}
+             "JAPANESE_VOICE_ACTOR", "ENGLISH_VOICE_ACTOR", "SHIP_STATUS", "DEBUT_ARC", "DEBUT_SAGA", "DEBUT_ERA"}
 # relations derived from another one (extension.ttl property chains): known exactly where the source relation is (sailsOn = affiliatesWith o operates)
-KNOWN_VIA = {"SAILS_ON": "AFFILIATES_WITH"}
+WIKI_RELS = ["GENDER", "FIGHTING_STYLE", "HAS_TITLE", "BOUNTY_TIER", "CURRENT_AFFILIATION", "FORMER_AFFILIATION", "CURRENT_OCCUPATION", "FORMER_OCCUPATION"]
+# wiki attributes are known exactly for the characters that have a wiki record (a swordsman category that is absent there means "no").
+# The marker is the gender edge (348 of the 353 wiki characters): the wiki page node itself is an external URL, not a graph resource.
+KNOWN_VIA = {"SAILS_ON": "AFFILIATES_WITH", **{r: "GENDER" for r in WIKI_RELS}}
 REL_MIN_SUPPORT = {"RESIDENCE": 15, "PLACE_OF_ORIGIN": 15, "OCCUPATION": 12}   # obscure relations need broader support
 # the ONLY relations the generic relation->target sweep may turn into questions (whitelist: a new relation in the data is never asked
 # about by accident).  Fruit, affiliation, Haki and ship-ownership relations get dedicated questions below.  Full list: docs/CONNECTIONS.md
-SWEEP_RELS = ["STATUS_OF_CHARACTER", "OCCUPATION", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "SHIP_OWNER", "SHIP_TYPE", "BUILT_BY", "SAILS_ON", "SHIP_STATUS"]
+SWEEP_RELS = ["STATUS_OF_CHARACTER", "OCCUPATION", "RACE", "PLACE_OF_ORIGIN", "RESIDENCE", "SHIP_OWNER", "SHIP_TYPE", "BUILT_BY", "SAILS_ON", "SHIP_STATUS",
+              *WIKI_RELS, "DEBUT_ARC", "DEBUT_SAGA", "DEBUT_ERA"]
 # umbrella organisations already asked through the OWL-inferred class questions below (would be near-duplicates)
 UMBRELLA_ORGS = {"Marines", "Revolutionary_Army", "World_Government"}
 # OWL-RL-derived classes (see ontology/extension.ttl) -> (question, start category, completeness scope)
@@ -404,10 +424,14 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
         name = r["name"].replace("_", " ")
         if r["rel"] == "STATUS_OF_CHARACTER" and name in ("Alive", "Deceased"):
             text = f"Is it a {'living' if name == 'Alive' else 'deceased'} character?"
+        elif r["rel"] == "GENDER":
+            text = f"Is your character {name.lower()}?"
+        elif r["rel"] == "DEBUT_ERA":
+            text = f"Did we first meet it {'before' if name.startswith('Before') else 'after'} the timeskip?"
         elif r["rel"] == "SHIP_STATUS" and name in ("Destroyed", "Active"):
             text = "Has the ship been destroyed?" if name == "Destroyed" else "Is the ship still sailing?"
         else:
-            text = REL_TEXT.get(r["rel"], "Is it related to {t}?").format(t=name)
+            text = REL_TEXT.get(r["rel"], "Is it related to {t}?").format(t=name, a="an" if name[0] in "AEIOU" else "a")
         add(_mk(text, [Path(start=r["cat"], steps=[Step(rel=r["rel"])], cond=Cond(kind="uri", uri=r["uri"]),
                             scope="status" if r["rel"] == "STATUS_OF_CHARACTER" else (f"rel:{KNOWN_VIA.get(r['rel'], r['rel'])}" if r["rel"] in OPEN_RELS | set(KNOWN_VIA) else "closed"))]))
 
@@ -461,7 +485,7 @@ def generate_rule_questions(n_by_cat: dict[str, int]) -> list[Question]:
     # sub-class membership of fruits (curated Ancient / Mythical Zoan): TRUE where recorded, UNKNOWN elsewhere (never FALSE)
     for sub, nm in (("MythicalZoan", "Mythical Zoan"), ("AncientZoan", "Ancient Zoan")):
         c = Cond(kind="uri", uri=config.OPX + sub)
-        add(_mk(f"Does your character possess a {nm} Devil Fruit, or is it one?", [
+        add(_mk(f"Is it (or does it eat) {nm[0] in 'AEIOU' and 'an' or 'a'} {nm} Devil Fruit?", [
             Path(start="DevilFruit", steps=[Step(rel="HAS_FRUIT_SUBTYPE")], cond=c, scope="positive"),
             Path(start="Character", steps=[Step(rel="HAS_DEVIL_FRUIT"), Step(rel="HAS_FRUIT_SUBTYPE")], cond=c, scope="positive")]))
     # conjunctions of supported facts (Kleene AND: one UNKNOWN conjunct keeps the answer UNKNOWN unless the other is FALSE)
