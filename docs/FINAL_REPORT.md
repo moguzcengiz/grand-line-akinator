@@ -1,5 +1,7 @@
 # Final report - Grand Line Akinator
 
+> **Superseded numbers.** This report describes the open-world game. The game is now closed-world with wiki attributes and story time (README, "Results" and "Known limitations"); the tables below are kept as the record of how the earlier version was measured.
+
 Every number below is measured by a script in this repository (commands in section 6); nothing is estimated. "Previous policy" = the deterministic information-gain policy that existed before the adaptive policy.
 
 ## 1. Ontology quality (docs/ONTOLOGY_AUDIT.md)

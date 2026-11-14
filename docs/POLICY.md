@@ -1,5 +1,7 @@
 # Adaptive question policy - investigation, design, measured results
 
+> **Superseded numbers.** This report describes the open-world game. The game is now closed-world with wiki attributes and story time (README, "Results" and "Known limitations"); the tables below are kept as the record of how the earlier version was measured.
+
 All numbers are produced by the scripts in `eval_results/` (`policy_eval.sh`, `ai_eval.sh`, `final_eval.sh`) on **identical pinned targets** (`targets-popularity.json`, 200 popular entities) and identical seeds. Raw JSON is next to them.
 
 ## 1. Why games felt repetitive (investigation of the previous implementation)

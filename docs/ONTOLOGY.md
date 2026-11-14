@@ -70,7 +70,7 @@ The game's question *"Does your character possess a Devil Fruit?"* is answered f
 The ingestion replaces the four named graphs (Graph Store Protocol PUT; deterministic, idempotent), validates counts/provenance, and stores a JSON report as `<urn:akinator:run:latest> g:report`, exposed at `/api/ontology/stats`.
 
 ## 5. Explicit / inferred / unknown
-Each (question, entity) cell is **True / False / Unknown**. Missing facts are *not* automatically false:
+Each (question, entity) cell is **True / False / Unknown**. Since the closed-world switch (`CLOSED_WORLD=1`, default) a fact the graph does not record is **False**; only the scopes in `questions.OPEN_SCOPES` stay Unknown: life status "Unknown", Haki (few profiles), and the facts only part of the cast has a source for (wiki attributes, race, debut arc / saga / era). With `CLOSED_WORLD=0` the scopes below apply as written:
 * `scope: closed` – the graph is assumed complete for this question (Devil Fruit ownership, ship owner, categories). Absence = False (documented closed-world assumption).
 * `scope: rel:R` – known only if the entity has ≥ 1 `R` edge (e.g. a character with no listed affiliation is *unknown* for every affiliation question).
 * `scope: prop:P` – known only if the node has property `P` (Haki profile, height, age).

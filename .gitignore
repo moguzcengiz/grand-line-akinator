@@ -4,6 +4,8 @@ __pycache__/
 node_modules/
 frontend/dist/
 *.pyc
-eval_results/
+eval_results/*
+!eval_results/*.sh
+!eval_results/targets-*.json
 .DS_Store
 work/
