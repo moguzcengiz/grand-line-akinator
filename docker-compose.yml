@@ -34,7 +34,11 @@ services:
 
   backend:
     build: { context: ., dockerfile: backend/Dockerfile }
-    environment: *backend-env
+    environment:
+      <<: *backend-env
+      FEEDBACK_DIR: /data/player-feedback
+    volumes:
+      - ./work/player-feedback:/data/player-feedback
     ports: ["${BACKEND_PORT:-8000}:8000"]
     depends_on:
       fuseki: { condition: service_healthy }

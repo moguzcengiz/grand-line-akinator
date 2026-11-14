@@ -40,5 +40,7 @@ export const api = {
   get: (id: string) => call<GameView>(`/game/${id}${q()}`),
   answer: (id: string, answer: Answer, question_id: string) => call<GameView>(`/game/${id}/answer${q()}`, { answer, question_id }),
   undo: (id: string) => call<GameView>(`/game/${id}/undo${q()}`, {}),
+  entities: (q: string) => call<{ items: { name: string }[] }>(`/entities?limit=15&q=${encodeURIComponent(q)}`),
+  reveal: (id: string, name: string) => call<{ known: boolean; name: string }>(`/game/${id}/reveal`, { name }),
   feedback: (id: string, correct: boolean) => call<GameView>(`/game/${id}/guess-feedback${q()}`, { correct }),
 };

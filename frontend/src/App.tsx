@@ -88,6 +88,24 @@ function Summary({ g, onRestart }: { g: GameView; onRestart: () => void }) {
   );
 }
 
+function Reveal({ id }: { id: string }) {
+  const [name, setName] = useState(""), [opts, setOpts] = useState<string[]>([]), [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!name.trim()) return setOpts([]);
+    const t = setTimeout(() => api.entities(name.trim()).then((r) => setOpts(r.items.map((i) => i.name))).catch(() => {}), 200);
+    return () => clearTimeout(t);
+  }, [name]);
+  if (done) return <p className="parchment p-4 text-center font-display" data-testid="reveal-thanks">Thank you, captain. We'll chart that waterway.</p>;
+  return (
+    <form className="parchment p-4 flex gap-2 items-center flex-wrap" onSubmit={(e) => { e.preventDefault(); if (name.trim()) api.reveal(id, name.trim()).then(() => setDone(true)).catch(() => setDone(true)); }}>
+      <label className="font-display font-bold" htmlFor="reveal">Who was it?</label>
+      <input id="reveal" list="reveal-opts" className="flex-1 min-w-[12rem] rounded border border-ink/40 bg-parchment-100 px-2 py-1" value={name} onChange={(e) => setName(e.target.value)} maxLength={200} />
+      <datalist id="reveal-opts">{opts.map((o) => <option key={o} value={o} />)}</datalist>
+      <button className="btn btn-gold" disabled={!name.trim()}>Tell us</button>
+    </form>
+  );
+}
+
 function Wanted({ g, onFeedback, onRestart, onExplore, onUndo }: { g: GameView; onFeedback: (c: boolean) => void; onRestart: () => void; onExplore: (id: string) => void; onUndo: () => void }) {
   const p = g.prediction!;
   const [stage, setStage] = useState(0);               // 0 consulting · 1 poster drops · 2 name + buttons
@@ -138,6 +156,7 @@ function Wanted({ g, onFeedback, onRestart, onExplore, onUndo }: { g: GameView; 
         })()}
         {p.inferred_facts.length > 0 && <><h3 className="font-display font-bold mt-4">Inferred by OWL RL reasoning</h3><ul className="text-sm list-disc ml-5">{p.inferred_facts.map((f, i) => <li key={i} className="font-mono text-xs">{f}</li>)}</ul></>}
       </div>}
+      {g.status === "lost" && <Reveal key={g.session_id} id={g.session_id} />}
       {g.status === "lost" && <button className="btn btn-gold" onClick={onRestart}>The seas defeated us — play again</button>}
     </div>
   );

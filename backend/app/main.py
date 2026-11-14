@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from . import config, graph, llm, service
-from .schemas import AnswerRequest, GameView, GuessFeedback, StartRequest
+from .schemas import AnswerRequest, GameView, GuessFeedback, RevealRequest, StartRequest
 
 app = FastAPI(title="Grand Line Akinator", version="1.0",
               description="Ontology-driven One Piece guessing game: Apache Jena Fuseki knowledge graph (SPARQL) + information-gain question selection.")
@@ -68,6 +68,14 @@ def guess_feedback(session_id: str, req: GuessFeedback, dev: bool = False):
     except ValueError as e:
         raise HTTPException(409, str(e))
     return service.view(s, dev)
+
+
+@app.post("/api/game/{session_id}/reveal")
+def reveal(session_id: str, req: RevealRequest):
+    try:
+        return service.reveal(_session(session_id), req.name)
+    except ValueError as e:
+        raise HTTPException(409, str(e))
 
 
 @app.post("/api/game/{session_id}/undo", response_model=GameView)

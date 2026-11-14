@@ -1,10 +1,13 @@
 """Application service: knowledge base cache, game sessions, AI-mode question selection, explanations."""
+import json
+import os
 import random
 import re
 import threading
 import time
 import uuid
 from collections import OrderedDict
+from datetime import datetime, timezone
 
 import numpy as np
 
@@ -13,6 +16,7 @@ from .engine import ANSWERS, Bank, GameState, expected_info_gain, likelihood_ten
 
 SEEN = {"yes": "Yes", "probably": "Probably", "dont_know": "Don't know", "probably_not": "Probably not", "no": "No"}
 _lock = threading.Lock()
+FEEDBACK_DIR = os.environ.get("FEEDBACK_DIR", "/data/player-feedback")      # not in config.py: that file is owned by another change
 
 
 class KB:
@@ -125,6 +129,7 @@ class Session:
         self.select_ms: list[int] = []
         self.llm_failures, self.llm_pause = 0, 0
         self.relaxed = False
+        self.revealed = False
         self.llm_totals = {"calls": 0, "cache_hits": 0, "failures": 0, "proposed": 0, "accepted": 0, "rejected": {}}   # cumulative over the game
 
 
@@ -454,16 +459,64 @@ def answer(sess: Session, ans: str, question_id: str | None):
     advance(sess)
 
 
+# ------------------------------------------------------------------ player feedback log (append-only JSONL, see feedback_report.py)
+def feedback_record(sess: Session, status: str, revealed: dict | None = None) -> dict:
+    """One log line. Nothing about the player is recorded; disagreements = yes/no answers that differ from the graph for the revealed entity."""
+    kb, st = sess.kb, sess.state
+    asked, dis = [], []
+    idx = kb.idx.get(revealed["uri"]) if revealed and revealed.get("uri") else None
+    for a in st.asked:
+        q = kb.bank.questions[a["index"]]
+        text = a.get("text") or q.text
+        asked.append({"id": q.id, "text": text, "answer": a["answer"]})
+        if idx is None or a["answer"] == "dont_know":
+            continue
+        graph_v = {1: "true", 0: "false", -1: "unknown"}[int(kb.bank.truth[a["index"], idx])]
+        said_yes = a["answer"] in ("yes", "probably")
+        if graph_v != ("true" if said_yes else "false"):
+            dis.append({"question_id": q.id, "question": text, "answer": a["answer"], "graph": graph_v})
+    guesses = [kb.entities[i]["name"] for i in st.rejected] + ([kb.entities[sess.prediction_idx]["name"]] if status == "won" else [])
+    return {"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"), "seed": sess.seed, "mode": sess.mode, "status": status, "asked": asked,
+            "guesses": guesses, "revealed": revealed, "disagreements": dis if idx is not None else None}
+
+
+def log_feedback(sess: Session, status: str, revealed: dict | None = None):
+    try:
+        line = json.dumps(feedback_record(sess, status, revealed), ensure_ascii=False) + "\n"
+        with _lock:                                                    # ponytail: one file, global lock; rotate/ship it if volume ever matters
+            os.makedirs(FEEDBACK_DIR, exist_ok=True)
+            with open(os.path.join(FEEDBACK_DIR, "games.jsonl"), "a", encoding="utf-8") as f:
+                f.write(line)
+    except Exception as e:                                             # logging must never break the game
+        print("feedback log failed:", e)
+
+
+def reveal(sess: Session, name: str) -> dict:
+    """After a lost game: who the player was thinking of. Only `lost` is supported (a wrong guess mid-game keeps playing, so there is no end to log)."""
+    if sess.status != "lost":
+        raise ValueError("the game is not over")
+    if sess.revealed:
+        raise ValueError("already revealed")
+    name = name.strip()
+    ents = sess.kb.entities
+    hit = next((e for e in ents if e["name"] == name), None) or next((e for e in ents if e["name"].casefold() == name.casefold()), None)
+    sess.revealed = True
+    log_feedback(sess, "revealed", {"uri": hit["uri"], "name": hit["name"]} if hit else {"text": name})
+    return {"recorded": True, "known": hit is not None, "name": hit["name"] if hit else name}
+
+
 def feedback(sess: Session, correct: bool):
     if sess.status != "guessing":
         raise ValueError("no pending guess")
     if correct:
         sess.status = "won"
+        log_feedback(sess, "won")
         return
     sess.state.reject(sess.prediction_idx)
     sess.reaction = "Not quite! Let me think again…"
     if sess.state.guesses >= 5 or sess.state.w.max() <= 0:
         sess.status = "lost"
+        log_feedback(sess, "lost")
         return
     sess.status, sess.prediction_idx = "asking", None
     # after a wrong guess keep playing until confident again; always ask at least one more question

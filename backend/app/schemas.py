@@ -22,6 +22,10 @@ class GuessFeedback(BaseModel):
     correct: bool
 
 
+class RevealRequest(BaseModel):
+    name: str = Field(min_length=1, max_length=200)
+
+
 class QueryView(BaseModel):
     true_query: str
     known_query: str
