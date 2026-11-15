@@ -100,7 +100,7 @@ def ask(schema: dict, candidates: list[dict], history: list[dict], offered: list
     }
     def call():
         return _client().chat.completions.create(
-            model=config.TOGETHER_MODEL, temperature=0.4, max_tokens=1500,
+            model=config.TOGETHER_MODEL, temperature=0.4, max_tokens=8000,
             response_format={"type": "json_object"},
             messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": json.dumps(user, ensure_ascii=False)}])
     try:                                                     # hard wall-clock deadline, whatever the network does

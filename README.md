@@ -19,6 +19,17 @@ If 3000/8000 are taken on your machine set `FRONTEND_PORT` / `BACKEND_PORT` (and
 Re-run ingestion any time (idempotent): `docker compose run --rm backend python -m app.ingestion`
 Fuseki data lives in the named volume `fuseki_data`. Without a Together key the app still works (rule-based; AI mode falls back per turn).
 
+## Repository layout
+| Path | Contents |
+|---|---|
+| [`backend/`](backend/README.md) | FastAPI service: ingestion, question bank, game engine, AI planner, evaluation |
+| [`frontend/`](frontend/README.md) | React + TypeScript UI |
+| [`ontology/`](ontology/README.md) | this project's ontology layer: extension axioms, curated data, SHACL shapes, patches |
+| `ontology-src/` | the upstream ontology, vendored unchanged |
+| `fuseki/` | Apache Jena Fuseki configuration |
+| `docs/` | architecture, ontology, policy and audit reports |
+| `eval_results/` | evaluation scripts and pinned target lists |
+
 ## How the upstream ontology is integrated and extended
 Full details: [docs/ONTOLOGY.md](docs/ONTOLOGY.md) · architecture diagram: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 * The repo is vendored unchanged in `ontology-src/`; its schema + 33k-triple dataset + the hand-curated Straw Hat model are parsed with RDFLib. All URIs are preserved.
@@ -55,7 +66,7 @@ When a game is lost the player is asked **"Who was it?"**; every finished game i
 docker compose run --rm --no-deps backend python -m pytest -q tests          # unit + integration (integration needs the running fuseki service)
 ./eval_results/policy_eval.sh     # the results table below, ~10 min
 ./eval_results/final_eval.sh      # ontology-patch x unknown-handling ablation, baselines (previous deterministic policy), ~10 min
-./eval_results/ai_eval.sh         # AI-assisted planner on the same 12 targets, ~10 min
+./eval_results/ai_eval.sh         # AI-assisted planner on pinned targets, ~10 min
 docker compose run --rm ingestion python -m app.audit                        # ontology audit (before/after reasoning, SHACL); also docs/ONTOLOGY_AUDIT.md
 ```
 Simulated players answer from the graph (true -> yes, false -> no, unknown -> "don't know"). The player model is conservative: a real player knows that Zoro has no Devil Fruit and says "no" where the simulator says "don't know".
@@ -82,7 +93,19 @@ Beyond the popular targets (adaptive policy, simulated player):
 | 300 characters drawn uniformly from all 1,514 | 69.3% | 82.7% | 17.2 | 32% (58% before the full wiki run, 76% before any wiki data) |
 | all 151 Devil Fruits | 76.8% | 98.0% | 13.2 | 35% |
 
-**AI planner:** functionally verified (graph-validated proposals, caching, deadline, circuit breaker, rule-based fallback) but **not benchmarked**: the only complete 12-game run predates robustness fixes and the re-runs stalled when the host machine slept. No accuracy or cost claim is made for it (details: docs/POLICY.md).
+### AI planner (optional, `mode: "ai"`)
+Each turn an LLM sees the remaining suspects and every earlier question with the player's answer, and proposes new questions; a proposal is only used after it is validated against the graph. Same 20 pinned targets, same seeds:
+
+| | rule-based | AI planner (`MiniMaxAI/MiniMax-M3.1-Flash`) |
+|---|---|---|
+| top-1 | 95% | 95% |
+| avg questions | 11.65 | 11.10 |
+| LLM questions asked per game | 0 | 3.85 |
+| time per turn (mean / p95) | 9 ms / 21 ms | 2.1 s / 4.6 s |
+
+The 0.55-question difference is within the noise of 20 games (per-target differences range from -4 to +3), so no claim is made that the planner shortens the game. The room is small in any case: a target needs 9.7 bits on average and the rule-based game already finishes in 12.0 questions. Of 421 proposals 75 were accepted; 223 were rejected as duplicates of questions already in the bank, because the planner can only combine relations the graph already has.
+
+An offline experiment points to where an LLM does help: when the game ends unsure, letting the LLM read the wiki text of the last five suspects and ask three questions raised top-1 on 300 uniformly drawn characters from 69% to 83% (45 wrong guesses fixed, 3 right ones broken). The player in that experiment is a second LLM call that sees only the target's page, and the feature is not part of the game yet.
 
 ## Known limitations
 * Ships (9), Haki profiles (25 after the sourced patch) and Ancient/Mythical fruits (7) are curated demo data; upstream has none. Un-curated characters have unknown Haki.
@@ -92,8 +115,11 @@ Beyond the popular targets (adaptive policy, simulated player):
 * The default prior is popularity-weighted (degree proxy, docs/ONTOLOGY.md section 6); `PRIOR=uniform` restores the uniform MVP prior (-3 points top-1, +1.6 questions).
 * Removed on purpose as low-quality trivia: voice-actor, blood-type, chapter/episode-debut, height and age questions.
 * Cardinality questions exist in the grammar but are never generated: no relation is established as complete.
-* The AI planner costs one LLM round-trip per uncached turn (about 3-8 s); sessions live in memory (lost on backend restart).
+* The AI planner costs one LLM round-trip per uncached turn (about 2 s); sessions live in memory (lost on backend restart).
 * The Chrome extension was unavailable during development; the React UI was verified with a headless Playwright run in Docker (screenshots in `docs/screenshots/`).
 
 ## Next
 Ordered by measured effect: (1) Devil Fruit abilities from page text (31 of the 35 fruit misses are indistinguishable pairs); (2) restrict the playable pool to entities the graph can identify (a third of the characters are minor figures it cannot); (3) play with real people and read `app.feedback_report` (every number here comes from a simulated player); (4) rewrite the generated question texts and prefer questions a fan can answer (saga before arc).
+
+## License and credits
+Code: MIT (see [LICENSE](LICENSE)). The upstream ontology in `ontology-src/` is by Kareem Alnassag, MIT (`ontology-src/LICENSE`). Data derived from the [One Piece Wiki](https://onepiece.fandom.com) (`ontology/patches/wiki-attributes.add.ttl`, `ontology/patches/debut-arc.add.ttl`, `ontology/story-arcs.json`) is CC BY-SA. One Piece is the work of Eiichiro Oda; this is an unofficial fan and study project.
